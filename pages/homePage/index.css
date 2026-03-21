@@ -889,10 +889,13 @@ nav {
 
 
     /* Main-content */
+    #main-content {
+      width: 100%;
+    }
     .main-content-inner{
       width: 100%;
       background-image: url('../../assets/mainBg.svg');
-      /* padding: 2rem; */
+      position: relative;
     }
     .main-info {
       width: 100%;
@@ -903,9 +906,8 @@ nav {
     }
 
    .social-content {
-      position: fixed;        
-      right: 0;               
-      top: 60%;               
+      position: absolute;        
+      right: 0; 
       transform: translateY(-50%);  
       z-index: 500;           
     }
@@ -1265,9 +1267,6 @@ nav {
     }
     /* End here Social media section */
 
-    /* End here Social media section */
-
-
     .imp-button{
       padding : 2rem 2.5rem;
       display: flex;
@@ -1328,7 +1327,7 @@ width: 30%;
   @media (max-width: 1024px) {
     
     .main-info {
-      padding: 1rem 2rem;
+      padding: 1rem 3rem;
       font-size: 1rem;
       line-height: 1.5;
     }
@@ -1347,8 +1346,34 @@ width: 30%;
     /* keep social icons on right side */
     .social-content {
       right: 0;
-      top: 60%;
+      top: 5%;
       transform: translateY(-50%);
+    }
+    .imp-button{
+      padding : 1.5rem 1rem;
+      gap: 2.5rem;
+      font-size: 1.5rem;
+    }
+    .imp-button .one{
+      padding: 2.5rem 1rem;
+      width: 30%;
+      border-radius: 25px;
+    }
+    .imp-button .two{
+      padding: 2.9rem 1rem;
+      width: 30%;
+      border-radius: 25px;
+    }
+    .imp-button .three{
+      padding: 2.9rem 1rem;
+      width: 30%;
+      border-radius: 25px;
+    }
+    .icon {
+      font-size: 3rem;
+      right: -1rem;
+      top: 45%;
+      right: 3.6%;
     }
   }
  
@@ -1356,7 +1381,7 @@ width: 30%;
   @media (max-width: 768px) {
     
     .main-info {
-      padding: 1rem 1.2rem;
+      padding: 1rem 3rem;
       font-size: 0.95rem;
       line-height: 1.5;
     }
@@ -1390,9 +1415,28 @@ width: 30%;
       font-size: 3rem;
       right: -1rem;
       top: 45%;
+      right: 2%;
     }
     .icon i {
       font-size: 3rem;
+    }
+    .imp-button{
+      flex-direction: column;
+      padding : 1.5rem 1rem;
+      gap: 2.5rem;
+      font-size: 1.5rem;
+    }
+    .imp-button .one{
+      padding: 3rem 1rem;
+      width: 90%;
+    }
+    .imp-button .two{
+      padding: 3rem 1rem;
+      width: 90%;
+    }
+    .imp-button .three{
+      padding: 3rem 1rem;
+      width: 90%;
     }
  
   }
@@ -1401,7 +1445,7 @@ width: 30%;
   @media (max-width: 480px) {
     
     .main-info {
-      padding: 0.8rem 0.75rem;
+      padding: 0.8rem 3rem;
       font-size: 0.88rem;
       line-height: 1.45;
     }
@@ -1433,8 +1477,8 @@ width: 30%;
     /* Tuck icon inside card on mobile */
     .icon {
       font-size: 2.5rem;
-      right: 0.5rem;
-      top: auto;
+      right: 3%;
+      top: 10%;
       bottom: -1.5rem;
     }
     .icon i {
@@ -1452,11 +1496,10 @@ width: 30%;
 
 
 
-  /* footer */
+/* footer */
   :root {
-  --footer-text:         #c8d4f0;
-  --footer-heading:      #ffffff;
-  --footer-link:         #c8d4f0;
+  --footer-text:         #FFFFFF;
+  --footer-link:         #FAFAFA;
   --footer-link-hover:   #ffffff;
   --footer-line:         rgba(255, 255, 255, 0.35);
   --footer-bottom-bg:    rgba(0, 0, 0, 0.25);
@@ -1470,18 +1513,12 @@ width: 30%;
 ══════════════════════════════════════════ */
 .site-footer {
   position: relative;
-  /* The gradient is the base background of the footer itself */
   background: linear-gradient(78.34deg, #162F6A 35.98%, rgba(0, 51, 101, 0.8) 95.96%);
   color: var(--footer-text);
   font-family: 'Segoe UI', 'Noto Sans', sans-serif;
   overflow: hidden;
 }
  
-/* ══════════════════════════════════════════
-   SVG CIRCUIT OVERLAY — absolutely on top of gradient
-   The SVG already has fill-opacity="0.35" baked in,
-   so it sits as a transparent pattern over the gradient
-══════════════════════════════════════════ */
 .footer-bg-svg {
   position: absolute;
   inset: 0;
@@ -1520,19 +1557,13 @@ width: 30%;
 .footer-section-title {
   font-size: 1.4rem;
   font-weight: 700;
-  color: var(--footer-heading);
+  color: var(--footer-text);
   margin-bottom: 0.5rem;
   text-decoration: underline;
   text-underline-offset: 5px;
-  text-decoration-color: rgba(255, 255, 255, 0.45);
+  text-decoration-color: rgb(255, 255, 255);
 }
  
-.footer-title-line {
-  width: 100%;
-  height: 1.5px;
-  background: var(--footer-line);
-  margin-bottom: 1.3rem;
-}
  
 /* ══════════════════════════════════════════
    LEFT — POSTAL ADDRESS
@@ -1565,32 +1596,16 @@ width: 30%;
  
 .footer-toll-free strong { color: var(--footer-heading); }
  
-/* ── Partner Logos 2×2 grid ── */
+/* ── Partner Logos 2×2 ── */
 .footer-logos {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.55rem;
-}
- 
-.footer-logo-item {
-  background: var(--footer-logo-bg);
-  border-radius: 6px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.5rem 0.9rem;
-  min-height: 58px;
-  transition: opacity 0.2s;
-  overflow: hidden;
+  flex-direction: column;
+  gap: 0.7rem;
 }
- 
-.footer-logo-item:hover { opacity: 0.85; }
- 
-.footer-logo-item img {
-  max-width: 100%;
-  max-height: 44px;
-  object-fit: contain;
-  display: block;
+.footer-logo{
+  display: flex;
+  flex-direction: row;
+  gap: 0.7rem;
 }
  
 /* ══════════════════════════════════════════
@@ -1640,7 +1655,6 @@ width: 30%;
   flex-wrap: wrap;
   gap: 0.8rem;
   padding-top: 1rem;
-  border-top: 1px solid var(--footer-line);
 }
  
 .footer-follow {
@@ -1659,10 +1673,9 @@ width: 30%;
 .footer-social-icons { display: flex; gap: 0.45rem; }
  
 .footer-social-icons a {
-  width: 34px;
-  height: 34px;
+  width: 2rem;
+  height: 2rem;
   background: var(--footer-social-bg);
-  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1681,14 +1694,14 @@ width: 30%;
 .footer-last-updated {
   font-size: 0.85rem;
   color: var(--footer-text);
-  white-space: nowrap;
 }
  
 /* ══════════════════════════════════════════
    BOTTOM DISCLAIMER BAR
 ══════════════════════════════════════════ */
 .footer-bottom {
-  background: var(--footer-bottom-bg);
+  
+  background: var(--footer-bg);
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   padding: 0.8rem 3.5rem;
   display: flex;
@@ -1696,6 +1709,26 @@ width: 30%;
   justify-content: space-between;
   gap: 1rem;
   flex-wrap: wrap;
+  position: relative;
+}
+.footer-bottom::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    #C34E24 0%,
+    #C34E24 30%,
+    #FFFFFF80 30%,
+    #FFFFFF80 70%,
+    #1F9605 70%,
+    #1F9605 100%
+  );
+  pointer-events: none;
+  z-index: 2;
 }
  
 .footer-disclaimer {
@@ -1718,7 +1751,7 @@ width: 30%;
 /* ══════════════════════════════════════════
    RESPONSIVE — TABLET (≤ 900px)
 ══════════════════════════════════════════ */
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .footer-main {
     flex-direction: row;
     flex-wrap: wrap;
@@ -1743,18 +1776,33 @@ width: 30%;
   /* Follow Us stays in a row but Last Updated drops below */
   .footer-social-row {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
     gap: 0.6rem;
   }
- 
-  .footer-last-updated {
-    align-self: flex-end;
-    font-size: 0.8rem;
+  .footer-follow {
+      gap: 0.3rem;
   }
- 
-  .footer-bottom { padding: 0.75rem 2rem; }
+    
+   .footer-label{
+    font-size: 0.9rem;
+   } 
+    .footer-social-icons {  gap: 0.3rem; }
+    
+  .footer-logos{
+    width: 100%;
+  }  
+  .footer-logo{
+    width: 100%;
+  }
+  .footer-logo-item{
+    width: 100%;
+  }
+  .footer-logo-item img{
+    width: 100%;
+  }
 }
- 
+
 /* ══════════════════════════════════════════
    RESPONSIVE — MOBILE (≤ 600px)
 ══════════════════════════════════════════ */
@@ -1762,45 +1810,82 @@ width: 30%;
   .footer-main {
     flex-direction: column;
     padding: 1.5rem 1.2rem 1.2rem;
-    gap: 2rem;
+    gap: 2rem; 
+    position: relative;
+    padding-bottom: 5rem;
   }
  
-  /* Important Links comes FIRST on mobile */
-  .footer-links { order: -1; flex: unset; width: 100%; }
+  /* Make footer-links flex column to reorder its children */
+  .footer-links {
+    /* flex: unset; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
  
-  .footer-address { flex: unset; max-width: 100%; width: 100%; }
+  /* Make links section appear FIRST */
+  .footer-links-grid {
+    order: 1;
+    flex-direction: row;
+    gap: 1rem;
+    margin-bottom: 0;
+  }
  
+  /* Make social row appear AFTER links (but BEFORE address) */
+  .footer-social-row {
+    order: 2;
+    width: 100%;
+  }
+ 
+  /* Address section appears LAST overall in footer-main */
+  .footer-address {
+    order: 1;
+    max-width: 100%;
+    width: 100%;
+  }
+  
+ .footer-logos{
+  width: 100%;
+  /* padding-right: 1rem; */
+ }
+ .footer-logo{
+  width: 100%;
+ }
+ .footer-logo-item {
+  width: 100%;
+ }
+ .footer-logo-item img{
+  max-width: 100%;
+ }
   .footer-section-title { font-size: 1.15rem; }
- 
-  .footer-links-grid { gap: 1rem; }
  
   .footer-link-col li a { font-size: 0.88rem; }
  
-  /* 2×2 logo grid stays same on mobile */
-  .footer-logos { grid-template-columns: 1fr 1fr; gap: 0.5rem; }
-  .footer-logo-item { min-height: 50px; padding: 0.4rem 0.6rem; }
+  
  
   .footer-social-row {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 0.8rem;
-    padding-top: 0.9rem;
+    align-items: center;
+    justify-content: center;
+    gap: 01rem;
+    position: absolute;
+    bottom: 0.3rem;
   }
  
   .footer-follow { flex-direction: row; align-items: center; gap: 0.8rem; }
  
-  .footer-last-updated { align-self: flex-end; font-size: 0.8rem; }
+  .footer-last-updated { align-self: center; font-size: 0.8rem; }
  
   .footer-bottom {
     padding: 0.75rem 1.2rem;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 0.4rem;
   }
  
-  .footer-copyright { align-self: flex-end; }
+  .footer-copyright { align-self: center; }
  
   .footer-disclaimer,
   .footer-copyright { font-size: 0.78rem; }
 }
- 
