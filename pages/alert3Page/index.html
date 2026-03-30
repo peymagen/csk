@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="../../components/header/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <input type="checkbox" id="acc-toggle" hidden />
+  <header >
+  
+    <div class="header-inner">
+      <!-- LEFT: Government of India -->
+      <div class="left-section">
+        <div class="national-emblem">
+          <img src="../../assets/emblem.svg" alt=" national emblem" >
+        </div>
+        <div class="goi-text">
+          <div class="gov-title">Government of India</div>
+          <span class="ministry">Ministry of Electronics and</span>
+          <span class="ministry">Information Technology</span>
+        </div>
+      </div>
+
+
+      <!-- CENTER: Title -->
+      <div class="center-section">
+        <div class="hindi-title">
+          <span class="word-साइबर">साइबर</span>&nbsp;
+          <span class="word-स्वच्छता">स्वच्छता</span>&nbsp;
+          <span class="word-केन्द्र">केन्द्र</span>
+        </div>
+
+        <div class="title-divider">
+          <div class="line"></div>
+          <div class="dot"></div>
+        </div>
+
+        <div class="english-title">
+          <span class="word-cyber">CYBER</span>&nbsp;
+          <span class="word-swachhta">SWACHHTA</span>&nbsp;
+          <span class="word-kendra">KENDRA</span>
+        </div>
+
+        <div class="subtitle">Botnet Cleaning and Malware Analysis Centre</div>
+      </div>
+
+      <!-- RIGHT: Accessibility + CERT-In -->
+      <div class="right-section">
+        <div class="accessibility-icons">
+          <a href="#main-content" title="Skip to main content">
+              <i class="fa-solid fa-right-to-bracket"></i>
+          </a>
+          <span class="icon-separator">|</span>
+          <i class="fa-solid fa-globe" title="Language"></i>
+          <span class="icon-separator">|</span>
+          <label for="acc-toggle" class="acc-open-btn" title="Accessibility">
+              <i class="fa-solid fa-universal-access"></i>
+          </label>
+        </div>
+
+        <div class="certin-logo">
+              <img src="../../assets/certin.svg" alt="">
+        </div>
+      </div>
+
+      </div>
+  </header>
+      <div class="acc-overlay">
+        <div class="acc-panel">
+
+          <div class="acc-panel-header">
+            <h2>Accessibility Options</h2>
+            <!-- close button -->
+            <label for="acc-toggle" class="acc-close-btn" title="Close">
+              <i class="fa-solid fa-xmark"></i>
+            </label>
+          </div>
+
+          <!-- Language -->
+          <div class="acc-language-row">
+            <div class="lang-left">
+              <div class="lang-icon-box">
+                <i class="fa-solid fa-language"></i>
+              </div>
+              <span class="lang-label">Language</span>
+            </div>
+            <!-- <label for="lang-select" class="visually-hidden">Select Language</label> -->
+            <select class="lang-select" id="lang-select" title="Select Language">
+              <option>English</option>
+              <option>हिंदी</option>
+            </select>
+          </div>
+
+          <!-- Grid -->
+          <div class="acc-options">
+            <div class="acc-grid">
+              <div class="acc-option"><i class="fa-solid fa-volume-high"></i><span>Screen Reader</span></div>
+              <div class="acc-option"><i class="fa-solid fa-text-height"></i><span>Bigger Text</span></div>
+              <div class="acc-option"><i class="fa-solid fa-bars"></i><span>Line Height</span></div>
+              <div class="acc-option"><i class="fa-solid fa-a"></i><span>Text Spacing</span></div>
+              <div class="acc-option"><i class="fa-solid fa-link"></i><span>Highlight Links</span></div>
+              <div class="acc-option"><i class="fa-solid fa-d"></i><span>Dyslexia Friendly</span></div>
+              <div class="acc-option"><i class="fa-solid fa-brain"></i><span>ADHD Friendly</span></div>
+              <div class="acc-option"><i class="fa-regular fa-image"></i><span>Hide Images</span></div>
+              <div class="acc-option"><i class="fa-solid fa-circle-half-stroke"></i><span>Invert Color</span></div>
+              <div class="acc-option"><i class="fa-solid fa-moon"></i><span>Dark Mode</span></div>
+            </div>
+          </div>
+
+          <!-- Reset -->
+          <div class="acc-footer">
+            <label for="acc-toggle" class="acc-reset-btn">
+              <i class="fa-solid fa-rotate-left"></i> Reset
+            </label>
+          </div>
+
+        </div>
+      </div>
+
+  <input type="checkbox" id="nav-toggle" hidden />
+ 
+<nav>
+  <div class="nav-inner">
+ 
+    <!-- Nav Links -->
+    <ul class="nav-links">
+ 
+      <li>
+        <a href="../homePage/index.html">Home</a>
+      </li>
+ 
+      <li  class="active">
+        <a href="../aboutPage/index.html">About Us</a>
+      </li>
+ 
+      <li>
+        <a href="#">CERT-In</a>
+      </li>
+ 
+      <li>
+        <a href="../securityTools/index.html">Security Tools</a>
+      </li>
+ 
+      <li>
+        <a href="../alert2Page/index.html">Alerts</a>
+      </li>
+ 
+      <!-- Awareness with dropdown -->
+      <li class="has-dropdown">
+        <button class="nav-btn">
+          Awareness <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a href="#">Cyber Hygiene</a></li>
+          <li><a href="#">Phishing Awareness</a></li>
+          <li><a href="#">Safe Banking</a></li>
+          <li><a href="#">Social Media Safety</a></li>
+          <li><a href="#">Malware Protection</a></li>
+          <li><a href="#">Password Security</a></li>
+        </ul>
+      </li>
+ 
+      <li>
+        <a href="#">FAQ's</a>
+      </li>
+ 
+      <li>
+        <a href="#">Contact Us</a>
+      </li>
+ 
+    </ul>
+ 
+    <!-- Search Box -->
+    <div class="nav-search">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" placeholder="Search for" />
+    </div>
+ 
+    <!-- Hamburger (mobile only) -->
+    <label for="nav-toggle" class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+ 
+  </div>
+</nav>    
+
+   <main id="main-content">
+    <div class="main-content-inner">
+      <section class="security-banner">
+        <h2>Alerts - Current Cyber Security Threats & Security Measures</h2>
+      </section>
+      <div class="alerts-bar">
+
+        <div class="alerts-left">
+            <span class="label">New Alerts</span>
+            <span class="icon">🔊</span>
+        </div>
+
+        <div class="alerts-marquee">
+            <div class="alerts-track">
+            <span>RansomWare</span>
+            <span>Gl00Dy Ransomware</span>
+            <span>Remcos RAT</span>
+            </div>
+        </div>
+
+        <div class="alerts-right">
+            <button class="pause-btn">⏸</button>
+        </div>
+      </div>
+
+      <section class="table-section">
+        <div class="container">
+          
+          <h2>
+            1. <span class="title">Ransomware :</span>
+            Encrypts Files And Demands Ransom.
+          </h2>
+
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Locky Ransomware</th>
+                  <th>Cerber Ransomware</th>
+                  <th>Revil Ransomware</th>
+                  <th>Ryuk Ransomware</th>
+                  <th>WannaCry Ransomware</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Empty rows for layout -->
+                <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td></td><td></td><td></td><td></td><td></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+        <div class="container">
+          
+          <h2>
+            2. <span class="title">Information Stealers :</span>
+            Steal User Data, Credentials.
+          </h2>
+
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Locky Ransomware</th>
+                  <th>Cerber Ransomware</th>
+                  <th>Revil Ransomware</th>
+                  <th>Ryuk Ransomware</th>
+                  <th>WannaCry Ransomware</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Empty rows for layout -->
+                <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td></td><td colspan="4"></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+        <div class="container">
+          
+          <h2>
+            3. <span class="title">Banking Trojans :</span>
+            Steals Banking Credentials.
+          </h2>
+
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Zeus Banking Trojan</th>
+                  <th>Dridex Trojan</th>
+                  <th>Ursnif Banking Trojan</th>
+                  <th>Tinba Banking Trojan</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Empty rows for layout -->
+                <tr><td>Gozi Banking Trojan</td><td></td><td></td><td></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+        <div class="container">
+          
+          <h2>
+            4. <span class="title">Botnets :</span>
+            Networks of compromised devices controlled remotely.   
+          </h2>
+
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>KV Botnet</th>
+                  <th>Panchan Botnet</th>
+                  <th>Necrus Botnet</th>
+                  <th>Avalnche Botnet</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Empty rows for layout -->
+                <tr><td>Andromeda Botnet</td><td></td><td></td><td></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+        <div class="container">
+          
+          <h2>
+            5. <span class="title">Crypto-Miners :</span>
+          </h2>
+
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>CoinMiners</th>
+                  <th>MoneroMiner</th>
+                  <th>KingMiner</th>
+                  <th>Rocke</th>
+                  <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Empty rows for layout -->
+                <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td></td><td></td><td></td><td></td><td></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+        <div class="container">
+          
+          <h2>
+            6. <span class="title">IOT Botnets :</span>
+          </h2>
+
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Mirai Botnet</th>
+                  <th>VPNFilter</th>
+                  <th>MoziBotnet</th>
+                  <th>IOTReaper</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Empty rows for layout -->
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+        <div class="container">
+          
+          <h2>
+            7. <span class="title">Mobile Botnets :</span>
+          </h2>
+
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Flubot</th>
+                  <th>Triada</th>
+                  <th>Marcher</th>
+                  <th>Joker</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Empty rows for layout -->
+                <tr><td></td><td></td><td></td><td></td></tr>
+                <tr><td></td><td></td><td></td><td></td></tr>
+              </tbody>
+            </table>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+          </div>
+          <p class="linker"><i>For more alerts kindly visit CERT-In Virus Alerts Section <a href="www.cert-in.org.in">Www.Cert-In.Org.In</a></i></p>
+        </div>
+      </section>
+    </div>
+    
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+</body>
+</html>
