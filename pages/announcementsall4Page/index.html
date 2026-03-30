@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="../../components/header/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <input type="checkbox" id="acc-toggle" hidden />
+  <header >
+  
+    <div class="header-inner">
+      <!-- LEFT: Government of India -->
+      <div class="left-section">
+        <div class="national-emblem">
+          <img src="../../assets/emblem.svg" alt=" national emblem" >
+        </div>
+        <div class="goi-text">
+          <div class="gov-title">Government of India</div>
+          <span class="ministry">Ministry of Electronics and</span>
+          <span class="ministry">Information Technology</span>
+        </div>
+      </div>
+
+
+      <!-- CENTER: Title -->
+      <div class="center-section">
+        <div class="hindi-title">
+          <span class="word-साइबर">साइबर</span>&nbsp;
+          <span class="word-स्वच्छता">स्वच्छता</span>&nbsp;
+          <span class="word-केन्द्र">केन्द्र</span>
+        </div>
+
+        <div class="title-divider">
+          <div class="line"></div>
+          <div class="dot"></div>
+        </div>
+
+        <div class="english-title">
+          <span class="word-cyber">CYBER</span>&nbsp;
+          <span class="word-swachhta">SWACHHTA</span>&nbsp;
+          <span class="word-kendra">KENDRA</span>
+        </div>
+
+        <div class="subtitle">Botnet Cleaning and Malware Analysis Centre</div>
+      </div>
+
+      <!-- RIGHT: Accessibility + CERT-In -->
+      <div class="right-section">
+        <div class="accessibility-icons">
+          <a href="#main-content" title="Skip to main content">
+              <i class="fa-solid fa-right-to-bracket"></i>
+          </a>
+          <span class="icon-separator">|</span>
+          <i class="fa-solid fa-globe" title="Language"></i>
+          <span class="icon-separator">|</span>
+          <label for="acc-toggle" class="acc-open-btn" title="Accessibility">
+              <i class="fa-solid fa-universal-access"></i>
+          </label>
+        </div>
+
+        <div class="certin-logo">
+              <img src="../../assets/certin.svg" alt="">
+        </div>
+      </div>
+
+      </div>
+  </header>
+      <div class="acc-overlay">
+        <div class="acc-panel">
+
+          <div class="acc-panel-header">
+            <h2>Accessibility Options</h2>
+            <!-- close button -->
+            <label for="acc-toggle" class="acc-close-btn" title="Close">
+              <i class="fa-solid fa-xmark"></i>
+            </label>
+          </div>
+
+          <!-- Language -->
+          <div class="acc-language-row">
+            <div class="lang-left">
+              <div class="lang-icon-box">
+                <i class="fa-solid fa-language"></i>
+              </div>
+              <span class="lang-label">Language</span>
+            </div>
+            <!-- <label for="lang-select" class="visually-hidden">Select Language</label> -->
+            <select class="lang-select" id="lang-select" title="Select Language">
+              <option>English</option>
+              <option>हिंदी</option>
+            </select>
+          </div>
+
+          <!-- Grid -->
+          <div class="acc-options">
+            <div class="acc-grid">
+              <div class="acc-option"><i class="fa-solid fa-volume-high"></i><span>Screen Reader</span></div>
+              <div class="acc-option"><i class="fa-solid fa-text-height"></i><span>Bigger Text</span></div>
+              <div class="acc-option"><i class="fa-solid fa-bars"></i><span>Line Height</span></div>
+              <div class="acc-option"><i class="fa-solid fa-a"></i><span>Text Spacing</span></div>
+              <div class="acc-option"><i class="fa-solid fa-link"></i><span>Highlight Links</span></div>
+              <div class="acc-option"><i class="fa-solid fa-d"></i><span>Dyslexia Friendly</span></div>
+              <div class="acc-option"><i class="fa-solid fa-brain"></i><span>ADHD Friendly</span></div>
+              <div class="acc-option"><i class="fa-regular fa-image"></i><span>Hide Images</span></div>
+              <div class="acc-option"><i class="fa-solid fa-circle-half-stroke"></i><span>Invert Color</span></div>
+              <div class="acc-option"><i class="fa-solid fa-moon"></i><span>Dark Mode</span></div>
+            </div>
+          </div>
+
+          <!-- Reset -->
+          <div class="acc-footer">
+            <label for="acc-toggle" class="acc-reset-btn">
+              <i class="fa-solid fa-rotate-left"></i> Reset
+            </label>
+          </div>
+
+        </div>
+      </div>
+
+  <input type="checkbox" id="nav-toggle" hidden />
+ 
+<nav>
+  <div class="nav-inner">
+ 
+    <!-- Nav Links -->
+    <ul class="nav-links">
+ 
+      <li>
+        <a href="../homePage/index.html">Home</a>
+      </li>
+ 
+      <li  class="active">
+        <a href="../aboutPage/index.html">About Us</a>
+      </li>
+ 
+      <li>
+        <a href="#">CERT-In</a>
+      </li>
+ 
+      <li>
+        <a href="../securityTools/index.html">Security Tools</a>
+      </li>
+ 
+      <li>
+        <a href="../alert2Page/index.html">Alerts</a>
+      </li>
+ 
+      <!-- Awareness with dropdown -->
+      <li class="has-dropdown">
+        <button class="nav-btn">
+          Awareness <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a href="#">Cyber Hygiene</a></li>
+          <li><a href="#">Phishing Awareness</a></li>
+          <li><a href="#">Safe Banking</a></li>
+          <li><a href="#">Social Media Safety</a></li>
+          <li><a href="#">Malware Protection</a></li>
+          <li><a href="#">Password Security</a></li>
+        </ul>
+      </li>
+ 
+      <li>
+        <a href="#">FAQ's</a>
+      </li>
+ 
+      <li>
+        <a href="#">Contact Us</a>
+      </li>
+ 
+    </ul>
+ 
+    <!-- Search Box -->
+    <div class="nav-search">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" placeholder="Search for" />
+    </div>
+ 
+    <!-- Hamburger (mobile only) -->
+    <label for="nav-toggle" class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+ 
+  </div>
+</nav>    
+
+   <main id="main-content">
+    <div class="main-content-inner">
+        <section class="campaigns">
+
+          <!-- Header -->
+          <div class="header">
+            <h2>Awareness</h2>
+          </div>
+
+          <!-- Tabs -->
+          <div class="tabs">
+            <button>Guidelines & Advisories</button>
+            <button class="active">Our Campaigns</button>
+            <button>Best Practices</button>
+            <button>Our Reports</button>
+            <button>White Papers</button>
+          </div>
+
+          <!-- Title -->
+          <h2 class="title">Our Campaigns</h2>
+
+          <!-- Top Content -->
+          
+          
+          <div class="slider">
+
+            <!-- Radio Buttons -->
+            <input type="radio" name="slide" id="s1" checked>
+            <input type="radio" name="slide" id="s2">
+            <input type="radio" name="slide" id="s3">
+            <input type="radio" name="slide" id="s4">
+
+            <!-- Slides -->
+            <div class="slides">
+
+              <!-- SLIDE 1 -->
+              <div class="slide" id="s1">
+                <div class="cyber-container">
+
+                  <!-- Left Image -->
+                  <div class="cyber-image">
+                    <img src="../../assets/security.png" alt="Cyber Security">
+                  </div>
+
+                  <!-- Right Content -->
+                  <div class="cyber-content">
+
+                    <div class="back"><button><i style='font-size:12px; padding:2px 5px' class='fas'>&#xf104;</i>Back</button></div>
+
+                    <h2>
+                      NATIONAL 
+                      <span class="blue">CYBER</span> 
+                      <span class="orange">SECURITY</span> 
+                      <span class="green">AWARENESS</span> MONTH
+                    </h2>
+
+                    <br/>
+
+                    <p class="hashtags">
+                      @GoI_MeitY @DigitalIndia @IndianCERT #DigitalIndia #NCSAM #CyberSecurityAwareness #IndianCERT #CyberSwachhtaKendra #CSK #Phishing #SecureOurWorld
+                    </p>
+
+                    <br/>
+
+                    <p class="description">
+                      As part of services of CERT-In, for creation of awareness in the area of cyber security as well as training, upgrading the technical knowhow of various stakeholders, CERT-In observes 
+                      <strong>NATIONAL CYBER SECURITY AWARENESS</strong> Month during the month of October each year.
+                    </p>
+
+                  </div>
+
+                </div>
+
+                <!-- Campaign List -->
+                <div class="campaign-list">
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2025
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2024
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2023
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2022
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2021
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2020
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2019
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2018
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2025
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2024
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2023
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2022
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2021
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2020
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                </div>
+                  
+              </div>
+
+              <!-- SLIDE 2 -->
+              <div class="slide" id="s2">
+                <div class="cyber-container">
+
+                  <!-- Left Image -->
+                  <div class="cyber-image">
+                    <img src="../../assets/internet.jpg" alt="Cyber Security">
+                  </div>
+
+                  <!-- Right Content -->
+                  <div class="cyber-content">
+
+                    <br/>
+                    <br/>
+                    <br/>
+
+                    <h2>
+                      <div class="back"><button><i style='font-size:12px; padding:2px 5px' class='fas'>&#xf104;</i>Back</button></div>
+                      <span class="blue">SAFER</span> 
+                      <span class="orange">INTERNET</span> 
+                      <span class="green">DAY</span>
+                    </h2>
+
+                    <br/>
+
+                    <p class="hashtags">
+                      <b><i>@GoI_MeitY @DigitalIndia @IndianCERT #DigitalIndia #NCSAM #CyberSecurityAwareness #IndianCERT #CyberSwachhtaKendra #CSK #Phishing #SecureOurWorld</i></b>
+                    </p>
+
+                    <br/>
+
+
+                  </div>
+
+                </div>
+
+                <!-- Campaign List -->
+                <div class="campaign-list">
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2025
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2024
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2023
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2022
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2021
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2020
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2019
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2018
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2025
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2024
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2023
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2022
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2021
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2020
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- SLIDE 3 -->
+              <div class="slide" id="s3">
+                <div class="cyber-container">
+
+                  <!-- Left Image -->
+                  <div class="cyber-image">
+                    <img src="../../assets/security.png" alt="Cyber Security">
+                  </div>
+
+                  <!-- Right Content -->
+                  <div class="cyber-content">
+
+                    <h2>
+                      <div class="back"><button><i style='font-size:12px; padding:2px 5px' class='fas'>&#xf104;</i>Back</button></div>
+                      <span class="blue">CYBER</span> 
+                      <span class="orange">SWACHHTA</span> 
+                      <span class="green">PAKHWADA</span>
+                    </h2>
+
+                    <br/>
+
+                    <p class="hashtags">
+                      @GoI_MeitY @DigitalIndia @IndianCERT #DigitalIndia #NCSAM #CyberSecurityAwareness #IndianCERT #CyberSwachhtaKendra #CSK #Phishing #SecureOurWorld
+                    </p>
+
+                    <br/>
+
+                    <p class="description">
+                      CERT-In observes “<span class="blue"><b>Cyber</b></span> <span class="orange"><b>Swachhta</b></span> <span class="green"><b>Pakhwada</b></span>” from 1–15 February every year to promote digital hygiene and safe cyber practices, encouraging citizens to stay secure online.
+                    </p>
+
+                  </div>
+
+                </div>
+
+                <!-- Campaign List -->
+                <div class="campaign-list">
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2025
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2024
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2023
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2022
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2021
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2020
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2019
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2018
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2025
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2024
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2023
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2022
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2021
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2020
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- SLIDE 4 -->
+              <div class="slide" id="s4">
+                <div class="cyber-container">
+
+                  <!-- Left Image -->
+                  <div class="cyber-image">
+                    <img src="../../assets/security.png" alt="Cyber Security">
+                  </div>
+
+                  <!-- Right Content -->
+                  <div class="cyber-content">
+
+                    
+
+                    <h2>
+                      <div class="back"><button><i style='font-size:12px; padding:2px 5px' class='fas'>&#xf104;</i>Back</button></div>
+                      <span class="blue">CYBER</span> 
+                      <span class="orange">JAGROOKTA</span> 
+                      <span class="green">DIWAS</span>
+                    </h2>
+
+                    <br/>
+
+                    <p class="hashtags">
+                      @GoI_MeitY @DigitalIndia @IndianCERT #DigitalIndia #NCSAM #CyberSecurityAwareness #IndianCERT #CyberSwachhtaKendra #CSK #Phishing #SecureOurWorld
+                    </p>
+
+                    <br/>
+
+                    <p class="description">
+                      <span class="blue"><b>Cyber</b></span> <span class="orange"><b>Jaagrookta</b></span> <span class="green"><b>Diwas</b></span> is observed every month to spread awareness about safe and responsible use of the internet. It encourages individuals to follow good cyber hygiene, stay alert against online threats, and contribute to a secure digital environment.
+                    </p>
+
+                  </div>
+
+                </div>
+
+                <!-- Campaign List -->
+                <div class="campaign-list">
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2025
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2024
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2023
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2022
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2021
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2020
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2019
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2018
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2025
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2024
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2023
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2022
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2021
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                  <div class="campaign-item">
+                    National Cyber Security Awareness Month October 2020
+                    <span><i class="fa fa-eye"></i> View</span>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+              <label for="s1" class="arrow left">&#10094;</label>
+              <label for="s1">1</label>
+              <label for="s2">2</label>
+              <label for="s3">3</label>
+              <label for="s4">4</label>
+              <label for="s4" class="arrow right">&#10095;</label>
+            </div>
+
+          </div>
+
+        </section>
+    </div>
+    
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+</body>
+</html>
