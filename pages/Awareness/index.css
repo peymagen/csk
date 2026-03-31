@@ -428,7 +428,7 @@ nav {
   width: 100%;
   background: linear-gradient(90deg, #162F6A 0%, #405891 69.68%, #536FB7 100%);
   position: relative;
-  z-index: 2;
+  z-index: 10;
 }
 
 .nav-inner {
@@ -508,6 +508,7 @@ nav {
   z-index: 201;
   border-radius: 0 0 6px 6px;
   list-style: none;
+  z-index: 1001;
 }
 
 .dropdown-menu li a {

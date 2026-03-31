@@ -504,6 +504,7 @@ nav {
   z-index: 201;
   border-radius: 0 0 6px 6px;
   list-style: none;
+  z-index: 1001;
 }
 
 .dropdown-menu li a {
@@ -511,6 +512,7 @@ nav {
   font-size: 0.85rem;
   border-bottom: 1px solid rgba(255,255,255,0.08);
   display: block;
+  
 }
 .dropdown-menu li:last-child a { border-bottom: none; }
 .dropdown-menu li a:hover {

@@ -760,13 +760,15 @@ nav {
     white-space: normal;
   }
 
-  .nav-links li.active a {
-    background: rgba(25, 135, 84, 1);
-    border-radius: 0;
-    margin: 0;
-    padding: 0.85rem 1.5rem;
-    font-size: 0.95rem;
-  }
+  .nav-links li .active a {
+  font-size: 1.2rem;
+  background: rgba(25, 135, 84, 1);
+  color: #fff;
+  border-radius: 1rem;
+  padding: 0.2rem 1rem;
+  margin: 0 0.2rem;
+  font-weight: 600;
+}
 
   .dropdown-menu {
     position: static;
