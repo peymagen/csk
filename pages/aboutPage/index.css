@@ -789,8 +789,33 @@ nav {
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
   background: #f5f7fa;
+}
+
+.security-banner {
+  height: 140px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  color: white;
+  font-weight: bold;
+  font-size: 22px;
+
+  /* Background image + overlay */
+  background: linear-gradient(
+      rgba(10, 40, 80, 0.85),
+      rgba(10, 40, 80, 0.85)
+    ),
+    url('../../assets/sectools.jpg'); /* replace with your image */
+
+  background-size: cover;
+  background-position: center;
+}
+
+/* Left vertical line */
+.security-banner h2 {
+  border-left: 4px solid white;
+  padding-left: 10px;
 }
 
 .info-section {
@@ -806,12 +831,13 @@ body {
   color: #1d3c6a;
   margin-bottom: 10px;
   position: relative;
+  font-size: 40px;
 }
 
 .section-block h2::after {
   content: "";
-  width: 210px;
-  height: 4px;
+  width: 280px;
+  height: 6px;
   background: linear-gradient(
     to right,
     #1d3c6a,
@@ -853,6 +879,7 @@ body {
   justify-content: space-between;
   max-width: 1282px;
   margin: 0 auto;
+  font-size:25px;
   padding-left:30px ;
   margin-top: 50px;
   text-align: left;
@@ -879,62 +906,109 @@ body {
 .partners ul {
   list-style: disc;
   padding-left: 20px;
-  font-size: 18px;
+  font-size: 22px;
 }
+
+
 
 .antivirus {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;   
+  align-items: flex-start;  
   max-width: 1282px;
   margin: 0 auto;
-  padding-left:30px ;
+  font-size: 25px; 
+  padding-left: 30px;
   margin-top: 50px;
   text-align: left;
 }
 
+.antivirus h3 {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 20px;
+}
+
 .antivirus h3::after {
   content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;      
   width: 210px;
   height: 4px;
-  background: linear-gradient(
-    to right,
-    #1d3c6a,
-    transparent
-  );
+  background: linear-gradient(to right, #1d3c6a, transparent);
   border-radius: 2px;
-  display: block;
-  margin: 10px 10px 20px 0;
 }
 
 /* Cards */
 .cards {
-  display: flex;
   max-width: 1282px;
-  gap: 60px;
-  margin:0 auto;
-  margin-top: 80px;
-  margin-left:-220px;
+  margin: 20px auto 0;   
+  padding-left: 30px; 
+  font-size: 18px;    
+  display: flex;
+  gap: 40px;
 }
 
 .card {
   background: #fff;
   border-radius: 10px;
-  padding: 15px;
-  width: 372px;
-  height:182px;
-  margin:0 auto;
+  padding: 20px;
+  width: calc(33.33% - 20px);     
+  max-width: 442px;
+  height: auto;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 .card img {
-  max-width: 200px;
-  max-height: 100px;
-  margin-bottom: 10px;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
 }
 
 .card p {
-  font-size: 14px;
+  font-size: 22px;
   color: #333;
   text-align: center;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .antivirus {
+    flex-direction: column;
+    padding-left: 15px;
+  }
+
+  .cards {
+    flex-wrap: wrap;              
+    justify-content: center;
+  }
+
+  .card {
+    width: 45%;                  
+    max-width: 300px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .antivirus {
+    padding-left: 10px;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+  }
+
+  .card img {
+    max-width: 150px;
+  }
 }
