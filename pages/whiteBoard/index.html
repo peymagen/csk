@@ -134,7 +134,7 @@
             </label>
           </li>
 
-          <li class="active">
+          <li>
             <a href="../homePage/index.html">Home</a>
           </li>
           <li>
@@ -147,19 +147,19 @@
             <a href="../securityTools/index.html">Security Tools</a>
           </li>
           <li>
-            <a href="../alert2Page//index.html">Alerts</a>
+            <a href="../alert2Page/index.html">Alerts</a>
           </li>
 
-          <li class="has-dropdown">
-            <button class="nav-btn">
+          <li class="has-dropdown ">
+            <button class="nav-btn active">
               Awareness <i class="fa-solid fa-chevron-down"></i>
             </button>
             <ul class="dropdown-menu">
               <li><a href="../Awareness/index.html">Guidelines & Advisories</a></li>
-              <li><a href="../Awareness/index.html">Our Campaigns</a></li>
+              <li><a href="../announcementsall4Page/index.html">Our Campaigns</a></li>
               <li><a href="../bestPraactice/index.html">Best Practices</a></li>
               <li><a href="../ourReports/index.html">Our Reports</a></li>
-              <li><a href="../whiteBoard/index.html">White Papers</a></li>
+              <li class="dropdown-menu-active"><a href="../whiteBoard/index.html">White Papers</a></li>
             </ul>
           </li>
 
@@ -187,72 +187,39 @@
 
       </div>
     </nav>
-
-    <!-- ✅ nav-overlay AFTER nav — direct sibling of nav-toggle -->
     <div class="nav-overlay">
       <label for="nav-toggle"></label>
     </div>
 
+    <!-- nav end -->
 
-    <!-- Slider -->
-     <input type="radio" name="slide" id="s1" hidden checked />
-    <input type="radio" name="slide" id="s2" hidden />
-    <input type="radio" name="slide" id="s3" hidden />
-    <input type="radio" name="slide" id="s4" hidden />
-    
-    <div class="slider">
-    
-      <div class="slider-track">
-    
-        <div class="slide">
-          <img src="../../assets/slide1.svg" alt="Cybersecurity Awareness" class="slide-img" />
-        </div>
-    
-        <div class="slide">
-          <img src="../../assets/slide2.svg" alt="Protect Your Data" class="slide-img" />
-        </div>
-    
-        <div class="slide">
-          <img src="../../assets/slide3.jpg" alt="Avoid Phishing" class="slide-img" />
-        </div>
-    
-        <div class="slide">
-          <img src="../../assets/slide4.jpg" alt="Stop Malware" class="slide-img" />
-        </div>
-    
+    <div class="join-here">
+      <img src="../../assets/Awareness/Join us .svg" alt="">
+      <div class="join-content">
+        <div></div>
+        <!-- <p>Awareness</p> -->
       </div>
-    
-      <!-- PREV BUTTONS -->
-      <label for="s4" class="slider-btn prev btn-prev-s4"><i class="fa-solid fa-chevron-left"></i></label>
-      <label for="s1" class="slider-btn prev btn-prev-s1"><i class="fa-solid fa-chevron-left"></i></label>
-      <label for="s2" class="slider-btn prev btn-prev-s2"><i class="fa-solid fa-chevron-left"></i></label>
-      <label for="s3" class="slider-btn prev btn-prev-s3"><i class="fa-solid fa-chevron-left"></i></label>
-    
-      <!-- NEXT BUTTONS -->
-      <label for="s2" class="slider-btn next btn-next-s2"><i class="fa-solid fa-chevron-right"></i></label>
-      <label for="s3" class="slider-btn next btn-next-s3"><i class="fa-solid fa-chevron-right"></i></label>
-      <label for="s4" class="slider-btn next btn-next-s4"><i class="fa-solid fa-chevron-right"></i></label>
-      <label for="s1" class="slider-btn next btn-next-s1"><i class="fa-solid fa-chevron-right"></i></label>
-    
-      <!-- DOTS -->
-      <div class="slider-controls">
-        <label for="s1" class="dot"></label>
-        <label for="s2" class="dot"></label>
-        <label for="s3" class="dot"></label>
-        <label for="s4" class="dot"></label>
-      </div>
-    
+      
     </div>
 
-    <!-- Main COntent -->
+    <div class="awareness-nav">
+      <div class="awareness-content">
+        <a href="../Awareness/index.html" >Guidelines & Advisories</a>
+        <a href="../announcementsall4Page/index.html" >Our Campaigns</a>
+        <a href="../bestPraactice/index.html">Best Practices</a>
+        <a href="../ourReports/index.html">Our Reports</a>
+        <a href="../whiteBoard/index.html" class="active-aware">White Papers</a>
+      </div>
+    </div>
 
+    <!-- main start -->
     <main id="main-content">
       <div class="main-content-inner">
-        <div class="main-info" >
-          <p>The "Cyber Swachhta Kendra" (Botnet Cleaning and Malware Analysis Centre) is a part of the Government of India's Digital India initiative under the Ministry of Electronics and Information Technology (MeitY) to create a secure cyber space by detecting botnet infections in India and to notify, enable cleaning and securing systems of end users so as to prevent further infections. The "Cyber Swachhta Kendra" (Botnet Cleaning and Malware Analysis Centre) is set up in accordance with the objectives of the "National Cyber Security Policy", which envisages creating a secure cyber eco system in the country. This centre operates in close coordination and collaboration with Internet Service Providers and Product/Antivirus companies. This website provides information and tools to users to secure their systems/devices. This centre is being operated by the Indian Computer Emergency Response Team (CERT-In) under provisions of Section 70B of the Information Technology Act, 2000.</p>
-        </div>
-        
-        <div class="social-content">
+        <label for="acc-toggle" class="acc-open-btn main-acc-btn" title="Accessibility">
+          <i class="fa-solid fa-universal-access"></i>
+        </label>
+
+      <div class="social-content">
           <div class="social-icons">
             <a href="https://www.facebook.com/IndianCERT/" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
             <a href="https://www.instagram.com/cert_india/" title="Instagram"><i class="fa-brands fa-square-instagram"></i></a>
@@ -263,120 +230,47 @@
           
         </div>
 
-        <div class="contain-card">
-
-          <!-- CARD 1 -->
-        <div class="card-wrapper">
-          <img src="../../assets/mainCard.svg" alt="circle" class="mainCircle" />
-          <div class="card">
-            <p class="card-header">Why have I Reached this page?</p>
-            <div class="under-line"></div>
-            <div class="one-content">
-              <p>You have reached this page because your computer / system / device is probably infected with malware called 'Bot' and could become a part of a botnet. If your computer / system / device is part of a botnet, the following could happen.</p>
-              <ul>
-                <li>Information on your computer / system / device could be stolen</li>
-                <li>Your computer / system / device may be used to send out spam</li>
-                <li>Your computer / system / device could be used for launching attacks on other computer / system / devices</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARD 2 -->
-        <div class="card-wrapper">
-          <img src="../../assets/mainCard.svg" alt="circle" class="mainCircle" />
-          <div class="card">
-            <p class="card-header">What should I do?</p>
-            <div class="under-line"></div>
-            <div class="two-content">
-              <p>To remove the malware, you need to scan your computer / system / device with the tools recommend below and take steps to improve the security of your computer / system / device.</p>
-              <p>We encourage you to visit the website of Antivirus Companies who are providing Free Bot Removal Tools for this initiative</p>
-              <p>For downloading Free Bot Removal Tools and other necessary tools / software, please visit <strong>Security Tools </strong> <button>Download</button> Section.</p>
-            </div>
-          </div>
-          <label for="acc-toggle" class="icon">
-            <i class="fa-solid fa-universal-access"></i>
-          </label>
-        </div>
-
-        </div>
-
-      <div class="social-media">
-        <div class="social-head">
-            <div>
-               <img src="../../assets/internet.svg" alt="" class="internet">
-                <img src="../../assets/youtue.svg" alt="" class="youtube-icon">
-            </div>
-            <h3>In Social Media</h3>
-        </div>
-
-        <div class="social-grid-container">
-          <div class="social-card">
-             <blockquote class="twitter-tweet">
-                 <p lang="en" dir="ltr">
-                     On the occasion of International Women's Day, CERT-In has released the "Mahila Raksha" booklet to promote cyber safety and awareness for women. The booklet is available in English and 22 Indian languages.
-                     <a href="https://twitter.com/hashtag/IndianCERT?src=hash&amp;ref_src=twsrc%5Etfw">#IndianCERT</a> 
-                     <a href="https://twitter.com/hashtag/CyberSecurityAwareness?src=hash&amp;ref_src=twsrc%5Etfw">#CyberSecurityAwareness</a> 
-                     <a href="https://t.co/zK0U4RZ6Hr">pic.twitter.com/zK0U4RZ6Hr</a>
-                 </p>
-                 &mdash; CERT-In (@IndianCERT) 
-                 <a href="https://twitter.com/IndianCERT/status/2030563777960460507?ref_src=twsrc%5Etfw">March 8, 2026</a>
-             </blockquote>
-             <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-          </div>
-          
-          <div class="social-card">
-            <iframe 
-                src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FIndianCERT%2Fposts%2Fpfbid02MgKCkghrhTQSwjKaVZrmzSsuhiFMg93iox9aASmuUtpWFjAMMuhTYiXL6Mf3oGyLl&show_text=true&width=500" 
-                style="border:none;overflow:hidden; width:100%; height:100%;" 
-                scrolling="no" 
-                frameborder="0" 
-                allowfullscreen="true" 
-                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                loading="lazy">
-            </iframe>
-          </div>
-          
-          <div class="social-card">
-            <iframe 
-                src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FIndianCERT%2Fposts%2Fpfbid02MgKCkghrhTQSwjKaVZrmzSsuhiFMg93iox9aASmuUtpWFjAMMuhTYiXL6Mf3oGyLl&show_text=true&width=500" 
-                style="border:none;overflow:hidden; width:100%; height:100%;" 
-                scrolling="no" 
-                frameborder="0" 
-                allowfullscreen="true" 
-                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                loading="lazy">
-            </iframe>
-          </div>
-          
-          <div class="social-card">
-            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DVneWu0iTNT/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; margin: 1px; max-width:100%; padding:0; width:100%;"></blockquote>
-            <script async src="//www.instagram.com/embed.js"></script>
+        <div class="wrapper">
+          <div class="section-header">
+            <h2>White Papers</h2>
           </div>
 
-          <div class="social-yt-container">
-            <h3>▶ Youtube</h3>
-            <div class="yt-video-wrapper">
-              <div class="yt-video"><iframe src="https://www.youtube-nocookie.com/embed/AsSf71Sx2do" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div>
-
-              <div class="yt-video"><iframe src="https://www.youtube-nocookie.com/embed/AsSf71Sx2do" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div>
+          <div class="content">
+            <div class="content-top">
+              <p class="content-text">API Security: Threats, Best Practices, Challenges, and Way forward using AI -- by CSIRT-Fin, CERT-In and Mastercard -> CIWP-2023-0001 </p>
+                <span class="pdf-tag"><i class="fa-solid fa-file">37.80kb</i></span>
+                <span class="card-view">
+                      <i class="fa-solid fa-eye"></i>
+                      <button>view</button> 
+                </span>
               
-              <div class="yt-video"><iframe src="https://www.youtube-nocookie.com/embed/AsSf71Sx2do" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div>
+              <div class="url-tooltip">
+                <a href="https://www.csk.gov.in/documents/CIWP-2023-0001.pdf" target="_blank">
+                  https://www.csk.gov.in/documents/CIWP-2023-0001.pdf
+                </a>
+              </div>
             </div>
+            <p class="content-bottom">An Application Programming Interface (API) is a data connection allowing data to be shared with other applications. They can be viewed as digital middlemen between organisations / enterprises and platforms that need to access data for driving innovation, increasing reach, discover new business models, increase partner network, etc.</p>
+
+
+
           </div>
+          <div class="viewALL-button">
+              <span>View All</span>
+              <button class="view-btn"><i class="fa-regular fa-eye"></i> VIEW</button>
+            </div>
         </div>
+      
+       
+
+
       </div>
 
- 
-
-        <div class="imp-button">
-          <div class="one">Security Best Practices</div>
-          <div class="two">Alerts</div>
-          <div class="three"> Security Tools</div>
-        </div>
-      </div>
     </main>
 
+     <!-- main end -->
+
+   
 
 
     <!-- Footer -->

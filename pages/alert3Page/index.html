@@ -122,74 +122,80 @@
         </div>
       </div>
 
-  <input type="checkbox" id="nav-toggle" hidden />
- 
-<nav>
-  <div class="nav-inner">
- 
-    <!-- Nav Links -->
-    <ul class="nav-links">
- 
-      <li>
-        <a href="../homePage/index.html">Home</a>
-      </li>
- 
-      <li  class="active">
-        <a href="../aboutPage/index.html">About Us</a>
-      </li>
- 
-      <li>
-        <a href="#">CERT-In</a>
-      </li>
- 
-      <li>
-        <a href="../securityTools/index.html">Security Tools</a>
-      </li>
- 
-      <li>
-        <a href="../alert2Page/index.html">Alerts</a>
-      </li>
- 
-      <!-- Awareness with dropdown -->
-      <li class="has-dropdown">
-        <button class="nav-btn">
-          Awareness <i class="fa-solid fa-chevron-down"></i>
-        </button>
-        <ul class="dropdown-menu">
-          <li><a href="#">Cyber Hygiene</a></li>
-          <li><a href="#">Phishing Awareness</a></li>
-          <li><a href="#">Safe Banking</a></li>
-          <li><a href="#">Social Media Safety</a></li>
-          <li><a href="#">Malware Protection</a></li>
-          <li><a href="#">Password Security</a></li>
+       <!-- nav-toggle MUST be second, before nav -->
+     <input type="checkbox" id="search-toggle" hidden />
+    <input type="checkbox" id="nav-toggle" hidden />
+    <!-- NAVBAR -->
+    <nav>
+      <div class="nav-inner">
+
+        <ul class="nav-links">
+
+          <!--  close button inside panel -->
+          <li class="nav-close-item">
+            <label for="nav-toggle" class="nav-close-btn">
+              <i class="fa-solid fa-xmark"></i>
+            </label>
+          </li>
+
+          <li >
+            <a href="../homePage/index.html">Home</a>
+          </li>
+          <li>
+            <a href="../aboutPage/index.html">About Us</a>
+          </li>
+          <li>
+            <a href="#">CERT-In</a>
+          </li>
+          <li>
+            <a href="../securityTools/index.html">Security Tools</a>
+          </li>
+          <li class="active">
+            <a href="../alert2Page//index.html">Alerts</a>
+          </li>
+
+          <li class="has-dropdown">
+            <button class="nav-btn">
+              Awareness <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a href="../Awareness/index.html">Guidelines & Advisories</a></li>
+              <li><a href="../Awareness/index.html">Our Campaigns</a></li>
+              <li><a href="../bestPraactice/index.html">Best Practices</a></li>
+              <li><a href="../ourReports/index.html">Our Reports</a></li>
+              <li><a href="../whiteBoard/index.html">White Papers</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="../FrequentQuestion/index.html">FAQ's</a>
+          </li>
+          <li>
+            <a href="../contactUs/index.html">Contact Us</a>
+          </li>
+
         </ul>
-      </li>
- 
-      <li>
-        <a href="#">FAQ's</a>
-      </li>
- 
-      <li>
-        <a href="#">Contact Us</a>
-      </li>
- 
-    </ul>
- 
-    <!-- Search Box -->
-    <div class="nav-search">
-      <i class="fa-solid fa-magnifying-glass"></i>
-      <input type="text" placeholder="Search for" />
+
+        <div class="nav-search">
+          <!-- clicking icon toggles search open -->
+          <label for="search-toggle" style="cursor:pointer; display:flex; align-items:center;">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </label>
+          <input type="text" placeholder="Search for" />
+        </div>
+
+        <label for="nav-toggle" class="hamburger">
+          <i class="fa-solid fa-bars"></i>
+          <i class="fa-solid fa-xmark"></i>
+        </label>
+
+      </div>
+    </nav>
+
+    <!-- ✅ nav-overlay AFTER nav — direct sibling of nav-toggle -->
+    <div class="nav-overlay">
+      <label for="nav-toggle"></label>
     </div>
- 
-    <!-- Hamburger (mobile only) -->
-    <label for="nav-toggle" class="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </label>
- 
-  </div>
-</nav>    
 
    <main id="main-content">
     <div class="main-content-inner">
@@ -410,7 +416,105 @@
     
   </main>
 
-  <div id="footer-placeholder"></div>
+  <footer class="site-footer">
+ 
+      <!-- Layer 1: gradient (on .site-footer itself) -->
+      <!-- Layer 2: SVG circuit overlay -->
+      <div class="footer-bg-svg"></div>
+    
+      <!-- MAIN CONTENT -->
+      <div class="footer-main">
+    
+        <!-- LEFT: Postal Address -->
+        <div class="footer-address">
+          <h3 class="footer-section-title">Postal Address:</h3>
+          <div class="footer-title-line"></div>
+    
+          <address>
+            <p><strong>Indian Computer Emergency Response Team (CERT-In)</strong></p>
+            <p>Ministry of Electronics and Information Technology,</p>
+            <p>Government of India,</p>
+            <p>Electronics Niketan, 6 CGO Complex,</p>
+            <p>Lodhi Road, New Delhi - 110 003</p>
+          </address>
+    
+          <p class="footer-toll-free">
+            <strong>Toll Free Number:</strong> +91-1800-11-4949
+          </p>
+    
+          <div class="footer-logos">
+            <div class="footer-logo">
+              <a href="#" class="footer-logo-item">
+              <img src="../../assets/digital-india.svg" alt="Digital India - Power To Empower" />
+              </a>
+              <a href="#" class="footer-logo-item">
+                <img src="../../assets/footer-certin.svg" alt="CERT-In" />
+              </a>
+            </div>
+            <div class="footer-logo">
+              <a href="#" class="footer-logo-item">
+              <img src="../../assets/infosec.svg" alt="InfoSec Awareness" />
+              </a>
+              <a href="#" class="footer-logo-item">
+                <img src="../../assets/staysafe.svg" alt="Stay Safe Online" />
+              </a>
+            </div>
+          </div>
+        </div>
+    
+        <!-- RIGHT: Important Links -->
+        <div class="footer-links">
+          <h3 class="footer-section-title">Important Links</h3>
+          <div class="footer-title-line"></div>
+    
+          <div class="footer-links-grid">
+            <ul class="footer-link-col">
+              <li><a href="../homePage/index.html">Home</a></li>
+              <li><a href="../aboutPage//index.html">About Us</a></li>
+              <li><a href="#">CERT-In</a></li>
+              <li><a href="#">MeiTY</a></li>
+              <li><a href="../FrequentQuestion/index.html">FAQ's</a></li>
+              <li><a href="../contactUs/index.html">Contact Us</a></li>
+            </ul>
+            <ul class="footer-link-col">
+              <li><a href="../TermOfUse/index.html">Website Policies</a></li>
+              <li><a href="#">Terms &amp; Conditions</a></li>
+              <li><a href="../PrivacyPolicy/index.html">Privacy Policy</a></li>
+              <li><a href="#">Help</a></li>
+              <li><a href="#">Archives</a></li>
+              <li><a href="#">Sitemap</a></li>
+            </ul>
+          </div>
+    
+          <div class="footer-social-row">
+            <div class="footer-follow">
+              <span class="follow-label">Follow Us</span>
+              <div class="footer-social-icons">
+                <a href="https://www.linkedin.com/company/cert-in/" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/cert_india/" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/IndianCERT/" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://x.com/IndianCERT" title="X"><i class="fa-solid fa-x"></i></a>
+                <a href="https://www.youtube.com/hashtag/certin" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+              </div>
+            </div>
+            <p class="footer-last-updated">Last updated on: November 10, 2025</p>
+          </div>
+        </div>
+    
+      </div>
+    
+      <!-- BOTTOM BAR -->
+      <div class="footer-bottom">
+        <p class="footer-disclaimer">
+          Disclaimer :-The information provided herein is on "as is" basis, without warranty of any kind.
+        </p>
+        <p class="footer-copyright">
+          <i class="fa-regular fa-copyright"></i> Copyright 2025. All right reserved
+        </p>
+      </div>
+    
+    </footer>
+
 
 </body>
 </html>
