@@ -787,26 +787,26 @@ nav {
       /* padding: 2rem; */
 }
 
-.info-section {
-  padding: 50px 10%;
+
+.container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
 }
 
-.section-block {
-  margin-bottom: 50px;
-  text-align: center;
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
 }
 
-.section-block h2 {
-  color: #1d3c6a;
-  margin-bottom: 10px;
-  font-size: 40px;
-  position: relative;
-}
-
-.section-block h2::after {
+.header h1::after {
   content: "";
-  width: 250px;
+  width: 900px;
   height: 4px;
+  margin-top:40px;
   background: linear-gradient(
     to right,
     #1d3c6a,
@@ -814,51 +814,95 @@ nav {
   );
   border-radius: 2px;
   display: block;
-  margin: 10px auto;
+  /* margin: 0 auto; */
 }
 
-.section-block p {
-  max-width: 1582px;
-  margin: 0 auto;
+.header h1 {
+  margin: 0;
+  font-size: 45px;
+}
+
+.meta{
+  margin-top: -40px;
+  padding-left: 10px;
+  height:90px;
+  border-left: 6px solid #1d3c6a;
+  border-radius: 8px;
+}
+
+.meta p {
+  font-size: 26px;
+}
+
+.meta .gree {
+  color: green;
+}
+
+.meta .orr {
+  color: rgb(255, 106, 0);
+}
+
+
+/* Sections */
+.section {
+  margin: 20px 0;
   line-height: 1.6;
-  font-size: 28.5px;
-  font-weight: 500;
+}
+
+.section p{
+  font-size: 22px;
   text-align: justify;
 }
 
-.highlight1 {
-  color: red;
-  font-weight: 700;
-}
 
-.highlight2 {
-  color: blue;
-  font-weight: 700;
-}
-
-.highlight3 {
-  color: rgb(61, 200, 40);
-  font-weight: 700;
-}
-
-/* Partners layout */
-.partners {
+/* Flow Diagram */
+.flow {
   display: flex;
-  justify-content: space-between;
-  max-width: 1582px;
-  margin: 0 auto;
-  padding-left:30px ;
-  margin-top: 50px;
-  text-align: left;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 30px 0;
 }
 
-.partners h3{
-  font-size: 36px;
+/* Back button */
+.back {
+  margin-top:20px;
+  display: inline-block;
+  font-size: 12px;
+  margin-right:5px;
+  color: #1b3b6f;
+  margin-bottom: 10px;
+  cursor: pointer;
 }
 
-.partners h3::after {
+.back button{
+  border: 1px solid white;
+  background-color: rgb(192, 188, 191);
+  padding:2px 6px 2px 0;
+  border-radius: 80px 80px 80px 80px;
+}
+
+.back .fas{
+  border-radius: 45%;
+  background-color: #041a33;
+  color: #fff;
+}
+
+
+/* Section */
+.section {
+  margin-bottom: 25px;
+}
+
+.section h2 {
+  font-size: 40px;
+  padding-bottom: 5px;
+}
+
+.section h2::after {
   content: "";
-  width: 300px;
+  width: 450px;
   height: 4px;
   background: linear-gradient(
     to right,
@@ -867,92 +911,49 @@ nav {
   );
   border-radius: 2px;
   display: block;
-  margin: 10px 10px 20px 0;
+  /* margin: 0 auto; */
 }
 
-.partners div {
-  width: 45%;
+/* IOC Block */
+.ioc-block h4 {
+  font-weight: 400;
+  font-size: 26px;
+  margin-top: 15px;
+  margin-bottom: 5px;
 }
 
-.partners ul {
-  list-style: disc;
+.ioc-block ul {
+  font-size: 22px;
+  margin: 0;
   padding-left: 20px;
-  font-size: 36px;
 }
 
-.antivirus {
-  display: flex;
-  justify-content: space-between;
-  max-width: 1582px;
-  margin: 0 auto;
-  padding-left:30px ;
-  margin-top: 50px;
-  text-align: left;
+/* Links */
+.links {
+  padding-left: 20px;
 }
 
-.antivirus h3{
-  font-size: 36px;
+.links li {
+  font-size: 22px;
+  margin: 5px 0;
 }
 
-.antivirus h3::after {
-  content: "";
-  width: 300px;
-  height: 4px;
-  background: linear-gradient(
-    to right,
-    #1d3c6a,
-    transparent
-  );
-  border-radius: 2px;
-  display: block;
-  margin: 10px 10px 20px 0;
+.links a {
+  color: #007bff;
+  text-decoration: none;
 }
 
-/* Cards */
-.cards {
-  display: flex;
-  max-width: 1282px;
-  gap: 60px;
-  margin:0 auto;
-  margin-top: 110px;
-  margin-left:-350px;
-  margin-bottom: 50px;
+.links a:hover {
+  text-decoration: underline;
 }
 
-.card {
-  background: #fff;
-  border-radius: 10px;
-  padding: 15px;
-  width: 372px;
-  height:182px;
-  box-shadow: 0 16px 20px rgba(0,0,0,0.3);
+/* Bullet list */
+.bullet {
+  padding-left: 20px;
 }
 
-.card .img1 {
-  max-width: 300px;
-  max-height: 100px;
-  margin-bottom: 2px;
-}
-
-.card .img2 {
-  max-width: 240px;
-  margin-left:15px;
-  max-height: 200px;
-  margin-top:-35px;
-  margin-bottom: -42px;
-}
-
-.card .img3 {
-  max-width: 280px;
-  margin-left:10px;
-  max-height: 100px;
-  margin-bottom: 2px;
-
-}
-
-.card p {
-  padding-right: 20px;
-  margin-left: 10px;
-  font-size: 24px;
-  text-align: left;
+.bullet li {
+  font-size: 22px;
+  margin-bottom: 8px;
+  line-height: 1.5;
 }

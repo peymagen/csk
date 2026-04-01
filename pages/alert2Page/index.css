@@ -787,172 +787,209 @@ nav {
       /* padding: 2rem; */
 }
 
-.info-section {
-  padding: 50px 10%;
-}
-
-.section-block {
-  margin-bottom: 50px;
-  text-align: center;
-}
-
-.section-block h2 {
-  color: #1d3c6a;
-  margin-bottom: 10px;
-  font-size: 40px;
-  position: relative;
-}
-
-.section-block h2::after {
-  content: "";
-  width: 250px;
-  height: 4px;
-  background: linear-gradient(
-    to right,
-    #1d3c6a,
-    transparent
-  );
-  border-radius: 2px;
-  display: block;
-  margin: 10px auto;
-}
-
-.section-block p {
-  max-width: 1582px;
-  margin: 0 auto;
-  line-height: 1.6;
-  font-size: 28.5px;
-  font-weight: 500;
-  text-align: justify;
-}
-
-.highlight1 {
-  color: red;
-  font-weight: 700;
-}
-
-.highlight2 {
-  color: blue;
-  font-weight: 700;
-}
-
-.highlight3 {
-  color: rgb(61, 200, 40);
-  font-weight: 700;
-}
-
-/* Partners layout */
-.partners {
+.security-banner {
+  height: 140px;
   display: flex;
-  justify-content: space-between;
-  max-width: 1582px;
-  margin: 0 auto;
-  padding-left:30px ;
-  margin-top: 50px;
-  text-align: left;
-}
-
-.partners h3{
-  font-size: 36px;
-}
-
-.partners h3::after {
-  content: "";
-  width: 300px;
-  height: 4px;
-  background: linear-gradient(
-    to right,
-    #1d3c6a,
-    transparent
-  );
-  border-radius: 2px;
-  display: block;
-  margin: 10px 10px 20px 0;
-}
-
-.partners div {
-  width: 45%;
-}
-
-.partners ul {
-  list-style: disc;
+  align-items: center;
   padding-left: 20px;
-  font-size: 36px;
+  color: white;
+  font-weight: bold;
+  font-size: 22px;
+
+  /* Background image + overlay */
+  background: linear-gradient(
+      rgba(10, 40, 80, 0.85),
+      rgba(10, 40, 80, 0.85)
+    ),
+    url('../../assets/sectools.jpg'); /* replace with your image */
+
+  background-size: cover;
+  background-position: center;
 }
 
-.antivirus {
+/* Left vertical line */
+.security-banner h2 {
+  border-left: 4px solid white;
+  padding-left: 10px;
+}
+
+/* Main bar */
+.alerts-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1d3c6a;
+  color: white;
+  padding: 8px 15px;
+  font-size: 14px;
+}
+
+/* Left */
+.alerts-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.icon {
+  font-size: 16px;
+}
+
+/* Marquee */
+.alerts-marquee {
+  flex: 1;
+  overflow: hidden;
+  margin: 0 15px;
+}
+
+.alerts-track {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll 12s linear infinite;
+}
+
+.alerts-track span {
+  margin-right: 40px;
+}
+
+/* Scroll animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Right */
+.pause-btn {
+  background: white;
+  border: none;
+  font-size: 20px;
+  border-radius: 50%;
+  padding: 0.5px 5px 4px 5px;
+  cursor: pointer;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f7fb;
+}
+
+/* Section */
+.ransomware-section {
+  padding: 40px;
+  max-width: 1298px;
+  margin: 40px auto;
+  background-size: cover;
+}
+
+/* Heading */
+.ransomware-section h3 {
+  color: #254371;
+  margin-left:-50px;
+  font-weight: 500;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+/* Layout */
+.ransomware-container {
+  display: flex;
+  gap: 100px;
+  align-items: center;
+}
+
+/* Left Box */
+.ransomware-list {
+  background: #e9eef9;
+  padding: 20px;
+  border: 1px solid #bccff1;
+  border-radius: 15px;
+  width: 450px;
+  height: 367px;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+}
+
+.ransomware-list a{
+  text-decoration: none;
+}
+
+/* List Items */
+.item {
+  background: #fff;
+  margin-bottom: 15px;
+  width:400px;
+  height:43px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 20px;
   display: flex;
   justify-content: space-between;
-  max-width: 1582px;
-  margin: 0 auto;
-  padding-left:30px ;
-  margin-top: 50px;
-  text-align: left;
+  align-items: center;
+  color: #2c3e70;
 }
 
-.antivirus h3{
-  font-size: 36px;
+.item span {
+  font-size: 20px;
+  width:40px;
+  height:30px;
+  padding:3px 7px;
+  cursor: pointer;
+  border-radius: 40%;
+  border:1px solid #d5e0f4;
+  background-color: #d5e0f4;
 }
 
-.antivirus h3::after {
-  content: "";
-  width: 300px;
-  height: 4px;
-  background: linear-gradient(
-    to right,
-    #1d3c6a,
-    transparent
-  );
-  border-radius: 2px;
+/* View All */
+.view-all {
   display: block;
-  margin: 10px 10px 20px 0;
+  text-align: center;
+  font-size: 20px;
+  margin-top: 36px;
+  color: #1d3c6a;
+  text-decoration: none;
 }
 
-/* Cards */
-.cards {
-  display: flex;
-  max-width: 1282px;
-  gap: 60px;
-  margin:0 auto;
-  margin-top: 110px;
-  margin-left:-350px;
-  margin-bottom: 50px;
+/* Video Card */
+.video-card {
+  position: relative;
+  background: #eee;
+  width:600px;
+  height: 367px;
+  padding: 25px 30px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.card {
-  background: #fff;
-  border-radius: 10px;
-  padding: 15px;
-  width: 372px;
-  height:182px;
-  box-shadow: 0 16px 20px rgba(0,0,0,0.3);
+.video-card img {
+  width: 535px;
+  height: 310px;
+  border-radius: 15px;
 }
 
-.card .img1 {
-  max-width: 300px;
-  max-height: 100px;
-  margin-bottom: 2px;
+/* Play Button */
+.play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  background: #1d3c6a;
+  color: white;
+  border-radius: 50%;
+  padding: 12px 16px;
+  font-size: 14px;
+  cursor: pointer;
 }
 
-.card .img2 {
-  max-width: 240px;
-  margin-left:15px;
-  max-height: 200px;
-  margin-top:-35px;
-  margin-bottom: -42px;
-}
-
-.card .img3 {
-  max-width: 280px;
-  margin-left:10px;
-  max-height: 100px;
-  margin-bottom: 2px;
-
-}
-
-.card p {
-  padding-right: 20px;
-  margin-left: 10px;
-  font-size: 24px;
-  text-align: left;
+.linker{
+  font-size:20px;
+  color: #333;
+  margin-left:-40px;
 }
