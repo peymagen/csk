@@ -4,9 +4,10 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Document</title>
-      <link rel="stylesheet" href="./index.css">
-      <link rel="stylesheet" href="../../components/header/index.css">
+      <link rel="stylesheet" href="../index.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+      <!-- UX4G Official Accessibility Widget -->
+      <script src="https://cdn.ux4g.gov.in/tools/accessibility-widget.js" async></script>
   </head>
   <body>
 
@@ -194,14 +195,36 @@
     </div>
 
    <main id="main-content">
-    <div class="main-content-inner">
-      <section class="security-banner">
+    <div class="main-content-about">
+      <div class="poster">
+        <img src="../assets/about/aboutPoster.svg" alt="About Us">
+        <div class="poster-border"></div>
+      </div>
+      
+      <div class="social-content">
+          <div class="social-icons">
+            <a href="https://www.facebook.com/IndianCERT/" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/cert_india/" title="Instagram"><i class="fa-brands fa-square-instagram"></i></a>
+            <a href="https://x.com/IndianCERT" title="X"><i class="fa-solid fa-x"></i></a>
+            <a href="https://www.linkedin.com/company/cert-in/" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://www.youtube.com/hashtag/certin" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>  
+        </div>
+
+        <label for="acc-toggle" class="icon">
+            <!-- <i class="fa-solid fa-universal-access"></i> -->
+             <img src="../assets/access_icon.svg" alt="">
+        </label>
+
+      <!-- <section class="security-banner">
         <h2>Alerts - Current Cyber Security Threats & Security Measures</h2>
-      </section>
-      <br/>
-      <br/>
+      </section> -->
+      <!-- <br/>
+      <br/> -->
       <div class="section-block">
-        <h2>Who We Are</h2>
+        <div class="about-header">
+          <h2>Who We Are</h2>
+        </div>
         <p>
           The "<span class="highlight1">Cyber</span> <span class="highlight2">Swachhta</span> <span class="highlight3">Kendra</span>" (Botnet Cleaning and Malware Analysis Centre) is a part of the Indian Computer Emergency Response Team (CERT-In). It has been set up for analyzing BOTs/malware characteristics and providing information and enabling citizens for removal of BOTs/malware. In addition, "Cyber Swachhta Kendra" will strive to create awareness among citizens to secure their data, computers, mobile phones and devices such as home routers.</p>
 
@@ -211,7 +234,7 @@
       </div>
 
       <!-- Mission -->
-      <div class="section-block">
+      <div class="mission-block">
         <h2>Our Mission</h2>
         <p>
           To enhance the cyber security of Digital India's IT infrastructure by providing information on botnet/malware threats and suggesting remedial measures.
@@ -219,62 +242,51 @@
       </div>  
 
       <!-- Partners -->
-      <div class="section-block">
-        <h2>Our Partners</h2>
-
-        <div class="partners">
-          <div>
-            <h3>Collaborative Partners</h3>
-            <ul>
-              <li><h4>Internet Service Provider</h4></li>
-              <br/>
-              <li><h4>Department Of Telecommunications</h4></li>
-            </ul>
+      <div class="partner">
+        <h2 class="section-title">Our Partners</h2>
+  
+        <p class="collab-heading">Collaborative Partners</p>
+  
+        <div class="partners-grid">
+          <div class="partner-item">
+            <span class="bullet"></span>
+            Internet Service Provider
           </div>
-
-          <div>
-            <p>&nbsp;</p>
-            <br/>
-            <ul>
-              <li><h4>Academia</h4></li>
-            </ul>
+          <div class="partner-item">
+            <span class="bullet"></span>
+            Academia
+          </div>
+          <div class="partner-item">
+            <span class="bullet"></span>
+            Department Of Telecommunications
           </div>
         </div>
+        
+      </div>
 
-        <div class="antivirus">
-          <h3>Antivirus Companies:</h3>
 
-          <div class="cards">
-            <div class="card">
-              <br/>
-              <img src="../../assets/qh1.png" alt="Quick Heal">
-              <br/>
-              <br/>
-              <p>Quick Heal Technologies Ltd.</p>
-            </div>
+      <div class="antivirus">
+        <h2 class="collab-antivirus-heading">Antivirus Companies:</h2>
 
-            <div class="card">
-              <br/>
-              <br/>
-              <img src="../../assets/k71.png" alt="K7">
-              <br/>
-              <br/>
-              <br/>
-              <br/>
-              <p>K7 Computing Pvt Ltd.</p>
-            </div>
+        <div class="cards">
+          <div class="card">
+            <img src="../assets/about/heal.svg" alt="Quick Heal">
+            <p>Quick Heal Technologies Ltd.</p>
+          </div>
 
-            <div class="card">
-              <br/>
-              <br/>
-              <img src="../../assets/esian.png" alt="eScan">
-              <br/>
-              <br/>
-              <br/>
-              <p>MicroWorld Software Services Pvt. Ltd. (eScan)</p>
-            </div>
+          <div class="card">
+            <img src="../assets/about/k7.svg" alt="K7">
+            <p>K7 Computing Pvt Ltd.</p>
+          </div>
+
+          <div class="card">
+            <img src="../assets/about/escan.svg" alt="eScan">
+            <p>MicroWorld Software Services Pvt. Ltd. (eScan)</p>
           </div>
         </div>
+      </div>
+
+        
 
       </div>
     </div>
@@ -379,6 +391,41 @@
       </div>
     
     </footer>
+
+
+    <!-- UX4G Bridge Script -->
+  <script>
+    
+    function accToggle(el, ux4gId) {
+      el.classList.toggle('acc-option--active');
+      // Try clicking immediately, retry up to 20 times if widget not yet loaded
+      var attempts = 0;
+      function tryClick() {
+        var btn = document.getElementById(ux4gId);
+        if (btn) {
+          btn.click();
+        } else if (attempts < 20) {
+          attempts++;
+          setTimeout(tryClick, 100);
+        }
+      }
+      tryClick();
+    }
+
+    function accResetAll() {
+      // Clear all active states
+      document.querySelectorAll('.acc-option--active').forEach(function(el) {
+        el.classList.remove('acc-option--active');
+      });
+      // Click ux4G's own reset button
+      var resetBtn = document.querySelector('.uwaw-reset') || document.querySelector('[onclick="resetAll()"]');
+      if (resetBtn) {
+        resetBtn.click();
+      } else if (typeof resetAll === 'function') {
+        resetAll();
+      }
+    }
+  </script>
 
 
 </body>
