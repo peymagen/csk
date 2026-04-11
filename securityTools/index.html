@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <input type="checkbox" id="acc-toggle" hidden />
+  <header >
+  
+    <div class="header-inner">
+      <!-- LEFT: Government of India -->
+      <div class="left-section">
+        <div class="national-emblem">
+          <img src="../../assets/emblem.svg" alt=" national emblem" >
+        </div>
+        <div class="goi-text">
+          <div class="gov-title">Government of India</div>
+          <span class="ministry">Ministry of Electronics and</span>
+          <span class="ministry">Information Technology</span>
+        </div>
+      </div>
+
+
+      <!-- CENTER: Title -->
+      <div class="center-section">
+          <img src="../assets/header.png" alt="">
+        </div>
+
+      <!-- RIGHT: Accessibility + CERT-In -->
+      <div class="right-section">
+        <div class="accessibility-icons">
+          <a href="#main-content" title="Skip to main content">
+              <i class="fa-solid fa-right-to-bracket"></i>
+          </a>
+          <span class="icon-separator">|</span>
+          <i class="fa-solid fa-globe" title="Language"></i>
+          <span class="icon-separator">|</span>
+          <label for="acc-toggle" class="acc-open-btn" title="Accessibility">
+              <i class="fa-solid fa-universal-access"></i>
+          </label>
+        </div>
+
+        <div class="certin-logo">
+              <img src="../../assets/certin.svg" alt="">
+        </div>
+      </div>
+
+      </div>
+  </header>
+      <div class="acc-overlay">
+        <div class="acc-panel">
+
+          <div class="acc-panel-header">
+            <h2>Accessibility Options</h2>
+            <!-- close button -->
+            <label for="acc-toggle" class="acc-close-btn" title="Close">
+              <i class="fa-solid fa-xmark"></i>
+            </label>
+          </div>
+
+          <!-- Language -->
+          <div class="acc-language-row">
+            <div class="lang-left">
+              <div class="lang-icon-box">
+                <i class="fa-solid fa-language"></i>
+              </div>
+              <span class="lang-label">Language</span>
+            </div>
+            <!-- <label for="lang-select" class="visually-hidden">Select Language</label> -->
+            <select class="lang-select" id="lang-select" title="Select Language">
+              <option>English</option>
+              <option>हिंदी</option>
+            </select>
+          </div>
+
+          <!-- Grid -->
+          <div class="acc-options">
+            <div class="acc-grid">
+              <div class="acc-option"><i class="fa-solid fa-volume-high"></i><span>Screen Reader</span></div>
+              <div class="acc-option"><i class="fa-solid fa-text-height"></i><span>Bigger Text</span></div>
+              <div class="acc-option"><i class="fa-solid fa-bars"></i><span>Line Height</span></div>
+              <div class="acc-option"><i class="fa-solid fa-a"></i><span>Text Spacing</span></div>
+              <div class="acc-option"><i class="fa-solid fa-link"></i><span>Highlight Links</span></div>
+              <div class="acc-option"><i class="fa-solid fa-d"></i><span>Dyslexia Friendly</span></div>
+              <div class="acc-option"><i class="fa-solid fa-brain"></i><span>ADHD Friendly</span></div>
+              <div class="acc-option"><i class="fa-regular fa-image"></i><span>Hide Images</span></div>
+              <div class="acc-option"><i class="fa-solid fa-circle-half-stroke"></i><span>Invert Color</span></div>
+              <div class="acc-option"><i class="fa-solid fa-moon"></i><span>Dark Mode</span></div>
+            </div>
+          </div>
+
+          <!-- Reset -->
+          <div class="acc-footer">
+            <label for="acc-toggle" class="acc-reset-btn">
+              <i class="fa-solid fa-rotate-left"></i> Reset
+            </label>
+          </div>
+
+        </div>
+      </div>
+
+       <!-- nav-toggle MUST be second, before nav -->
+     <input type="checkbox" id="search-toggle" hidden />
+    <input type="checkbox" id="nav-toggle" hidden />
+    <!-- NAVBAR -->
+    <nav>
+      <div class="nav-inner">
+
+        <ul class="nav-links">
+
+          <!--  close button inside panel -->
+          <li class="nav-close-item">
+            <label for="nav-toggle" class="nav-close-btn">
+              <i class="fa-solid fa-xmark"></i>
+            </label>
+          </li>
+
+          <li >
+            <a href="../homePage/index.html">Home</a>
+          </li>
+          <li >
+            <a href="../aboutPage/index.html">About Us</a>
+          </li>
+          <li>
+            <a href="#">CERT-In</a>
+          </li>
+          <li class="active">
+            <a href="../securityTools/index.html">Security Tools</a>
+          </li>
+          <li>
+            <a href="../alert/index.html">Alerts</a>
+          </li>
+
+          <li class="has-dropdown">
+            <button class="nav-btn">
+              Awareness <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a href="../Awareness/index.html">Guidelines & Advisories</a></li>
+              <li><a href="../announcementsall4Page/index.html">Our Campaigns</a></li>
+              <li><a href="../bestPraactice/index.html">Best Practices</a></li>
+              <li><a href="../ourReports/index.html">Our Reports</a></li>
+              <li><a href="../whiteBoard/">White Papers</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="../FrequentQuestion/index.html">FAQ's</a>
+          </li>
+          <li>
+            <a href="../contactUs/index.html">Contact Us</a>
+          </li>
+
+        </ul>
+
+        <div class="nav-search">
+          <!-- clicking icon toggles search open -->
+          <label for="search-toggle" style="cursor:pointer; display:flex; align-items:center;">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </label>
+          <input type="text" placeholder="Search for" />
+        </div>
+
+        <label for="nav-toggle" class="hamburger">
+          <i class="fa-solid fa-bars"></i>
+          <i class="fa-solid fa-xmark"></i>
+        </label>
+
+      </div>
+    </nav>
+
+    <!-- ✅ nav-overlay AFTER nav — direct sibling of nav-toggle -->
+    <div class="nav-overlay">
+      <label for="nav-toggle"></label>
+    </div>
+
+   <main id="main-content">
+    <div class="main-content-security">
+
+      <div class="poster">
+        <img src="../assets/security/security-poster.svg" alt="Security Tools">
+        <div class="poster-border"></div>
+      </div>
+
+      <div class="social-content">
+          <div class="social-icons">
+            <a href="https://www.facebook.com/IndianCERT/" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/cert_india/" title="Instagram"><i class="fa-brands fa-square-instagram"></i></a>
+            <a href="https://x.com/IndianCERT" title="X"><i class="fa-solid fa-x"></i></a>
+            <a href="https://www.linkedin.com/company/cert-in/" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://www.youtube.com/hashtag/certin" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>  
+        </div>
+
+        <label for="acc-toggle" class="icon">
+            <!-- <i class="fa-solid fa-universal-access"></i> -->
+             <img src="../assets/access_icon.svg" alt="">
+        </label>
+
+      
+      <div class="container">
+        <section class="tools-section">
+
+        <h2>Free Bot Removal Tools</h2>
+        <p class="subtitle">
+            <b>you may use any of the following bot removal tool for your digital device</b>
+        </p>
+
+        <!-- Windows Section -->
+        <h3>For Desktops/ Laptops (Windows)</h3>
+
+        <div class="tool-card">
+            <div class="tool-text">
+              <div class="up">
+                <img src="../assets/security/k7.svg" class="img2" alt="Quick Heal"> 
+              </div>
+              <div class="down">
+                <p>
+                  The antivirus company <span class="highlight">K7 Security</span> is providing 
+                  the free bot removal Tool. Click the below mentioned link to download the tool.
+                </p>
+                <a href="https://www.k7computing.com/in/k7-bot-removal-tool" class="link">https://www.k7computing.com/in/k7-bot-removal-tool</a>
+                
+                <button class="btn">Download</button>
+              </div>
+            </div>
+
+            <div class="tool-media">
+              <img class="bg-upper" src="../assets/security/Rectangle.svg" alt="">
+              <img class="img" src="../assets/security/security-tool.svg" alt="tool image">
+              <div class="play">▶</div>
+              <img class="bg-lower" src="../assets/security/Rectangle.svg" alt="">
+            </div>
+        </div>
+
+        <div class="tool-card">
+            <div class="tool-text">
+              <div class="up">
+                  <img src="../assets/security/heal.svg" class="img1" alt="Quick Heal">
+              </div>
+              <div class="down">
+                  <p>
+                      The antivirus company <span class="highlight">Quick Heal</span> is providing 
+                      the free bot removal Tool. Click the below mentioned link to download the tool.
+                  </p>
+                  <a href="https://www.quickheal.com/in/bot-removal-tool" class="link">https://www.quickheal.com/in/bot-removal-tool</a>
+            
+                <button class="btn">Download</button>
+              </div>
+            </div>  
+
+            <div class="tool-media">
+              <img class="bg-upper" src="../assets/security/Rectangle.svg" alt="">
+              <img class="img" src="../assets/security/security-tool.svg" alt="tool image">
+              <div class="play">▶</div>
+              <img class="bg-lower" src="../assets/security/Rectangle.svg" alt="">
+            </div>
+        </div>
+
+        <p class="note">
+            Note: To identify, the architecture of your computer system whether it is 32-bit or 64-bit, right click on "My computer"/ "This PC" -> Properties-> Check your system architecture
+        </p>
+
+        <!-- Android Section -->
+        <h3>For Mobiles (Android)</h3>
+
+        <div class="tool-card mobile">
+            <div class="tool-text">
+              <div class="up">
+                <img src="../assets/security/escan.svg" class="img3" alt="eScan Antivirus">
+                <p class="heading">eScan Antivirus</p>
+              </div>
+              <div class="down">
+                <p>
+                  The antivirus company eScan Antivirus is providing the Smartphone Safety Toolkit.
+                  Click the link or scan QR Code.
+                </p>
+                <a href="https://play.google.com/store/apps/details?id=com.escan" class="link">https://play.google.com/store/apps/details?id=com.escan</a>
+              </div>
+              <img src="../assets/security/playstore.svg" class="playstore" alt="Google Play">
+            </div>
+
+            <div class="qr">
+              <img src="../assets/security/qr.svg" alt="QR Code">
+            </div>
+        </div>
+
+      </section>
+
+
+      <section class="tools-section">
+
+        <h2>Free Bot Removal Tools</h2>
+
+        <div class="tool-card mobile">
+            <div class="tool-text">
+            <div class="up">
+              <p class="heading">C-DAC Hyderabad</p>
+            </div>
+            <div class="down">
+              <p>
+                The antivirus company eScan Antivirus is providing the Smartphone Safety Toolkit.
+                Click the link or scan QR Code.
+            </p>
+            <a href="#" class="link">https://play.google.com/store/apps/details?id=com.escan</a>
+            </div>
+
+            <img src="../../assets/google-play.png" class="playstore" alt="Google Play">
+            </div>
+
+            <div class="qr">
+            <img src="../assets/security/qr.svg" alt="QR Code">
+            </div>
+        </div>
+
+      </section>
+
+      </div>
+    </div>
+    
+  </main>
+
+  <footer class="site-footer">
+ 
+      <!-- Layer 1: gradient (on .site-footer itself) -->
+      <!-- Layer 2: SVG circuit overlay -->
+      <div class="footer-bg-svg"></div>
+    
+      <!-- MAIN CONTENT -->
+      <div class="footer-main">
+    
+        <!-- LEFT: Postal Address -->
+        <div class="footer-address">
+          <h3 class="footer-section-title">Postal Address:</h3>
+          <div class="footer-title-line"></div>
+    
+          <address>
+            <p><strong>Indian Computer Emergency Response Team (CERT-In)</strong></p>
+            <p>Ministry of Electronics and Information Technology,</p>
+            <p>Government of India,</p>
+            <p>Electronics Niketan, 6 CGO Complex,</p>
+            <p>Lodhi Road, New Delhi - 110 003</p>
+          </address>
+    
+          <p class="footer-toll-free">
+            <strong>Toll Free Number:</strong> +91-1800-11-4949
+          </p>
+    
+          <div class="footer-logos">
+            <div class="footer-logo">
+              <a href="#" class="footer-logo-item">
+              <img src="../../assets/digital-india.svg" alt="Digital India - Power To Empower" />
+              </a>
+              <a href="#" class="footer-logo-item">
+                <img src="../../assets/footer-certin.svg" alt="CERT-In" />
+              </a>
+            </div>
+            <div class="footer-logo">
+              <a href="#" class="footer-logo-item">
+              <img src="../../assets/infosec.svg" alt="InfoSec Awareness" />
+              </a>
+              <a href="#" class="footer-logo-item">
+                <img src="../../assets/staysafe.svg" alt="Stay Safe Online" />
+              </a>
+            </div>
+          </div>
+        </div>
+    
+        <!-- RIGHT: Important Links -->
+        <div class="footer-links">
+          <h3 class="footer-section-title">Important Links</h3>
+          <div class="footer-title-line"></div>
+    
+          <div class="footer-links-grid">
+            <ul class="footer-link-col">
+              <li><a href="../homePage/index.html">Home</a></li>
+              <li><a href="../aboutPage/index.html">About Us</a></li>
+              <li><a href="#">CERT-In</a></li>
+              <li><a href="#">MeiTY</a></li>
+              <li><a href="../FrequentQuestion/index.html">FAQ's</a></li>
+              <li><a href="../contactUs/index.html">Contact Us</a></li>
+            </ul>
+            <ul class="footer-link-col">
+              <li><a href="../TermOfUse/index.html">Website Policies</a></li>
+              <li><a href="#">Terms &amp; Conditions</a></li>
+              <li><a href="../PrivacyPolicy/index.html">Privacy Policy</a></li>
+              <li><a href="#">Help</a></li>
+              <li><a href="#">Archives</a></li>
+              <li><a href="#">Sitemap</a></li>
+            </ul>
+          </div>
+    
+          <div class="footer-social-row">
+            <div class="footer-follow">
+              <span class="follow-label">Follow Us</span>
+              <div class="footer-social-icons">
+                <a href="https://www.linkedin.com/company/cert-in/" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/cert_india/" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/IndianCERT/" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://x.com/IndianCERT" title="X"><i class="fa-solid fa-x"></i></a>
+                <a href="https://www.youtube.com/hashtag/certin" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+              </div>
+            </div>
+            <p class="footer-last-updated">Last updated on: November 10, 2025</p>
+          </div>
+        </div>
+    
+      </div>
+    
+      <!-- BOTTOM BAR -->
+      <div class="footer-bottom">
+        <p class="footer-disclaimer">
+          Disclaimer :-The information provided herein is on "as is" basis, without warranty of any kind.
+        </p>
+        <p class="footer-copyright">
+          <i class="fa-regular fa-copyright"></i> Copyright 2025. All right reserved
+        </p>
+      </div>
+    
+    </footer>
+
+
+</body>
+</html>
