@@ -1,191 +1,227 @@
 <!DOCTYPE html>
-  <html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Document</title>
-      <link rel="stylesheet" href="../index.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-      <!-- UX4G Official Accessibility Widget -->
-      <script src="https://cdn.ux4g.gov.in/tools/accessibility-widget.js" async></script>
-      <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  </head>
-  <body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.ux4g.gov.in/tools/accessibility-widget.js" async></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
 
-    <!-- acc-toggle MUST be first, before everything -->
-    <input type="checkbox" id="acc-toggle" hidden />
+  <!-- acc-toggle MUST be first -->
+  <input type="checkbox" id="acc-toggle" hidden />
 
-    <!-- HEADER -->
-    <header>
-      <div class="header-inner">
-
-        <!-- LEFT -->
-        <div class="left-section">
-          <div class="national-emblem">
-            <img src="../../assets/emblem.svg" alt="national emblem">
-          </div>
-          <div class="goi-text">
-            <div class="gov-title">Government of India</div>
-            <span class="ministry">Ministry of Electronics and</span>
-            <span class="ministry">Information Technology</span>
-          </div>
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <div class="left-section">
+        <div class="national-emblem">
+          <img src="../assets/header2.svg" alt="">
         </div>
-
-        <!-- CENTER -->
-        <div class="center-section">
-          <img src="../assets/header.png" alt="">
-        </div>
-
-        <!-- RIGHT -->
-        <div class="right-section">
-          <div class="accessibility-icons">
-            <a href="#main-content" title="Skip to main content">
-              <i class="fa-solid fa-right-to-bracket"></i>
-            </a>
-            <span class="icon-separator">|</span>
-            <i class="fa-solid fa-globe" title="Language"></i>
-            <span class="icon-separator">|</span>
-            <label for="acc-toggle" class="acc-open-btn" title="Accessibility">
-              <i class="fa-solid fa-universal-access"></i>
-            </label>
-          </div>
-          <div class="certin-logo">
-            <img src="../../assets/certin.svg" alt="">
-          </div>
-        </div>
-
       </div>
-    </header>
-
-    <!--  acc-overlay is direct sibling of acc-toggle -->
-    <div class="acc-overlay">
-      <div class="acc-panel">
-
-        <div class="acc-panel-header">
-          <h2>Accessibility Options</h2>
-          <label for="acc-toggle" class="acc-close-btn" title="Close">
-            <i class="fa-solid fa-xmark"></i>
-          </label>
-        </div>
-
-        <div class="acc-language-row">
-          <div class="lang-left">
-            <div class="lang-icon-box">
-              <i class="fa-solid fa-language"></i>
-            </div>
-            <span class="lang-label">Language</span>
+      <div class="center-section">
+        <img src="../assets/header.png" alt="">
+      </div>
+      <div class="right-section">
+        <div class="accessibility-icons">
+          <a href="#main-content" title="Skip to main content">
+            <img src="../assets/Translate.svg" alt="">
+          </a>
+          <span class="icon-separator">|</span>
+          <div class="bhashini-plugin-container">
+            <img src="../assets/Language.svg" alt="">
           </div>
-          <select class="lang-select" id="lang-select" title="Select Language">
-            <option>English</option>
-            <option>हिंदी</option>
-          </select>
+          <span class="icon-separator">|</span>
+          <label for="acc-toggle" class="acc-open-btn" title="Accessibility"></label>
+          <img src="../assets/accessibility_figure.svg" alt="">
         </div>
-
-        <div class="acc-options">
-          <div class="acc-grid">
-            <div class="acc-option"><i class="fa-solid fa-volume-high"></i><span>Screen Reader</span></div>
-            <div class="acc-option"><i class="fa-solid fa-text-height"></i><span>Bigger Text</span></div>
-            <div class="acc-option"><i class="fa-solid fa-bars"></i><span>Line Height</span></div>
-            <div class="acc-option"><i class="fa-solid fa-a"></i><span>Text Spacing</span></div>
-            <div class="acc-option"><i class="fa-solid fa-link"></i><span>Highlight Links</span></div>
-            <div class="acc-option"><i class="fa-solid fa-d"></i><span>Dyslexia Friendly</span></div>
-            <div class="acc-option"><i class="fa-solid fa-brain"></i><span>ADHD Friendly</span></div>
-            <div class="acc-option"><i class="fa-regular fa-image"></i><span>Hide Images</span></div>
-            <div class="acc-option"><i class="fa-solid fa-circle-half-stroke"></i><span>Invert Color</span></div>
-            <div class="acc-option"><i class="fa-solid fa-moon"></i><span>Dark Mode</span></div>
-          </div>
+        <div class="certin-logo">
+          <img src="../assets/certin.svg" alt="">
         </div>
-
-        <div class="acc-footer">
-          <label for="acc-toggle" class="acc-reset-btn">
-            <i class="fa-solid fa-rotate-left"></i> Reset
-          </label>
-        </div>
-
       </div>
     </div>
+  </header>
 
-
-    <!-- nav-toggle MUST be second, before nav -->
-     <input type="checkbox" id="search-toggle" hidden />
-    <input type="checkbox" id="nav-toggle" hidden />
-    <!-- NAVBAR -->
-    <nav>
-      <div class="nav-inner">
-
-        <ul class="nav-links">
-
-          <!--  close button inside panel -->
-          <li class="nav-close-item">
-            <label for="nav-toggle" class="nav-close-btn">
-              <i class="fa-solid fa-xmark"></i>
-            </label>
-          </li>
-
-          <li >
-            <a href="../homePage/index.html">Home</a>
-          </li>
-          <li class="active">
-            <a href="../aboutPage/index.html">About Us</a>
-          </li>
-          <li>
-            <a href="#">CERT-In</a>
-          </li>
-          <li>
-            <a href="../securityTools/index.html">Security Tools</a>
-          </li>
-          <li>
-            <a href="../alert/index.html">Alerts</a>
-          </li>
-
-          <li class="has-dropdown">
-            <button class="nav-btn">
-              Awareness <i class="fa-solid fa-chevron-down"></i>
-            </button>
-            <ul class="dropdown-menu">
-              <li><a href="../Awareness/index.html">Guidelines & Advisories</a></li>
-              <li><a href="../campaign/index.html">Our Campaigns</a></li>
-              <li><a href="../bestPraactice/index.html">Best Practices</a></li>
-              <li><a href="../ourReports/index.html">Our Reports</a></li>
-              <li><a href="../whiteBoard/index.html">White Papers</a></li>
-            </ul>
-          </li>
-
-          <li>
-            <a href="../FrequentQuestion/index.html">FAQ's</a>
-          </li>
-          <li>
-            <a href="../contactUs/index.html">Contact Us</a>
-          </li>
-
-        </ul>
-
-        <div class="nav-search">
-          <!-- clicking icon toggles search open -->
-          <label for="search-toggle" style="cursor:pointer; display:flex; align-items:center;">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </label>
-          <input type="text" placeholder="Search for" />
-        </div>
-
-        <label for="nav-toggle" class="hamburger">
-          <i class="fa-solid fa-bars"></i>
+  <!-- acc-overlay: direct sibling of acc-toggle -->
+  <div class="acc-overlay">
+    <div class="acc-panel">
+      <div class="acc-panel-header">
+        <h2>Accessibility Options</h2>
+        <label for="acc-toggle" class="acc-close-btn" title="Close">
           <i class="fa-solid fa-xmark"></i>
         </label>
-
       </div>
-    </nav>
+      <div class="acc-language-row">
+        <div class="lang-left">
+          <div class="lang-icon-box"><i class="fa-solid fa-language"></i></div>
+          <span class="lang-label">Language</span>
+        </div>
+        <select class="lang-select" id="lang-select" title="Select Language">
+          <option>English</option>
+          <option>हिंदी</option>
+        </select>
+      </div>
+      <div class="acc-options">
+        <div class="acc-grid">
+          <div class="acc-option" onclick="accToggle(this,'speak')"><i class="fa-solid fa-volume-high"></i><span>Screen Reader</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s9')"><i class="fa-solid fa-text-height"></i><span>Bigger Text</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s12')"><i class="fa-solid fa-bars"></i><span>Line Height</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s13')"><i class="fa-solid fa-a"></i><span>Text Spacing</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s10')"><i class="fa-solid fa-link"></i><span>Highlight Links</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-df')"><i class="fa-solid fa-d"></i><span>Dyslexia Friendly</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-cursor')"><i class="fa-solid fa-brain"></i><span>ADHD Friendly</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s11')"><i class="fa-regular fa-image"></i><span>Hide Images</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-invert')"><i class="fa-solid fa-circle-half-stroke"></i><span>Invert Color</span></div>
+          <div class="acc-option" onclick="accToggle(this,'dark-btn')"><i class="fa-solid fa-moon"></i><span>Dark Mode</span></div>
+        </div>
+      </div>
+      <div class="acc-footer">
+        <label for="acc-toggle" class="acc-reset-btn" onclick="accResetAll()">
+          <i class="fa-solid fa-rotate-left"></i> Reset
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!--  nav-toggle MUST be BEFORE <nav> so ~ selector works -->
+  <input type="checkbox" id="search-toggle" hidden />
+  <input type="checkbox" id="nav-toggle" hidden />
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-inner">
+
+      <!-- ✅ HAMBURGER — label targets #nav-toggle -->
+      <label for="nav-toggle" class="hamburger" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+        <i class="fa-solid fa-xmark"></i>
+      </label>
+
+      <!-- NAV LINKS (slide-in panel on mobile) -->
+      <ul class="nav-links">
+
+        <!-- Close button inside panel -->
+        <li class="nav-close-item">
+          <label for="nav-toggle" class="nav-close-btn">
+            <i class="fa-solid fa-xmark"></i>
+          </label>
+        </li>
+
+        <li class="active"><a href="../index.html">Home</a></li>
+        <li><a href="../about/index.html">About Us</a></li>
+        <li><a href="#">CERT-In</a></li>
+        <li><a href="../security-tools/index.html">Security Tools</a></li>
+        <li><a href="../alert/index.html">Alerts</a></li>
+
+        <li class="has-dropdown">
+          <button class="nav-btn">
+            Awareness <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="./Awareness/index.html">Guidelines &amp; Advisories</a></li>
+            <li><a href="./Awareness/index.html">Our Campaigns</a></li>
+            <li><a href="./bestPraactice/index.html">Best Practices</a></li>
+            <li><a href="./ourReports/index.html">Our Reports</a></li>
+            <li><a href="./whiteBoard/index.html">White Papers</a></li>
+          </ul>
+        </li>
+
+        <li><a href="../FrequentQuestion/index.html">FAQ's</a></li>
+        <li><a href="../contactUs/index.html">Contact Us</a></li>
+
+      </ul>
+
+      <!-- ===== SEARCH BAR ===== -->
+      <div class="nav-search">
+        <div class="csk-search">
+
+          <input type="radio" name="se" id="s-google" checked>
+          <input type="radio" name="se" id="s-bing">
+          <input type="radio" name="se" id="s-duck">
+
+          <div class="search-box">
+
+            <!-- Dropdown (Left) -->
+            <div class="engine-picker">
+              <button type="button" class="engine-current" aria-label="Select search engine">
+                <span class="current-engine cur-g">
+                  <span class="dot g-dot">G</span>
+                  <span class="engine-label">&nbsp;Google</span>
+                </span>
+                <span class="current-engine cur-b">
+                  <span class="dot b-dot">b</span>
+                  <span class="engine-label">&nbsp;Bing</span>
+                </span>
+                <span class="current-engine cur-d">
+                  <span class="dot d-dot">D</span>
+                  <span class="engine-label">&nbsp;Duck</span>
+                </span>
+              </button>
+              <div class="engine-menu">
+                <label for="s-google" class="engine-opt"><span class="dot g-dot">G</span>Google.com</label>
+                <label for="s-bing"   class="engine-opt"><span class="dot b-dot">b</span>Bing.com</label>
+                <label for="s-duck"   class="engine-opt"><span class="dot d-dot">D</span>DuckDuckGo</label>
+              </div>
+            </div>
+
+            <!-- Input + Search Icon (Right) -->
+            <div class="form-wrap">
+
+              <!-- Google -->
+              <form class="sf" id="fg" action="https://www.google.com/search" method="GET" target="_blank">
+                <input class="si" type="text" name="q" placeholder="Search csk.gov.in" required>
+                <input type="hidden" name="as_sitesearch" value="csk.gov.in">
+                <button type="submit" class="sb" aria-label="Search">
+                  <svg viewBox="0 0 20 20"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17" y2="17"/></svg>
+                </button>
+              </form>
+
+              
+              <!-- Bing -->
+<form class="sf" id="fb" action="https://www.bing.com/search" method="GET" target="_blank"
+  onsubmit="this.querySelector('[name=q]').value = this.querySelector('.si').value + ' site:csk.gov.in'; return true;">
+  <input class="si" type="text" placeholder="Search csk.gov.in" required>
+  <input type="hidden" name="q" value="">
+  <button type="submit" class="sb" aria-label="Search">
+    <svg viewBox="0 0 20 20"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17" y2="17"/></svg>
+  </button>
+</form>
+              <!-- DuckDuckGo -->
+              <!-- DuckDuckGo -->
+<form class="sf" id="fd" action="https://duckduckgo.com/" method="GET" target="_blank"
+  onsubmit="this.querySelector('[name=q]').value = this.querySelector('.si').value + ' site:csk.gov.in'; return true;">
+  <input class="si" type="text" placeholder="Search csk.gov.in" required>
+  <input type="hidden" name="q" value="">
+  <button type="submit" class="sb" aria-label="Search">
+    <svg viewBox="0 0 20 20"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17" y2="17"/></svg>
+  </button>
+</form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ===== SEARCH BAR END ===== -->
+
+    </div>
+  </nav>
 
     <!-- ✅ nav-overlay AFTER nav — direct sibling of nav-toggle -->
-    <div class="nav-overlay">
+    <!-- <div class="nav-overlay">
       <label for="nav-toggle"></label>
-    </div>
+    </div> -->
 
    <main id="main-content">
     <div class="main-content-about">
       <div class="poster">
-        <img src="../assets/about/aboutPoster.svg" alt="About Us">
+        <img src="../assets/about/about-alertPoster.svg" alt="About Us">
         <div class="poster-border"></div>
+        <div class="poster-content">
+            <p>About Us</p>
+          </div>
       </div>
       
       <div class="social-content">
@@ -236,17 +272,11 @@
   
         <div class="partners-grid">
           <div class="partner-item">
-            <span class="bullet"></span>
-            Internet Service Provider
-          </div>
-          <div class="partner-item">
-            <span class="bullet"></span>
-            Academia
-          </div>
-          <div class="partner-item">
-            <span class="bullet"></span>
-            Department Of Telecommunications
-          </div>
+          <ul>
+            <li>Internet Service Provider</li>
+            <li>Academia</li>
+            <li>Department Of Telecommunications</li>
+          </ul>
         </div>
         
       </div>

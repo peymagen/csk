@@ -4,9 +4,12 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Document</title>
-      <link rel="stylesheet" href="./index.css">
-      <link rel="stylesheet" href="../../components/header/index.css">
+      <link rel="stylesheet" href="../index.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+	  <!-- UX4G Official Accessibility Widget -->
+	  <script src="https://cdn.ux4g.gov.in/tools/accessibility-widget.js" async></script>
+	  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   </head>
   <body>
 
@@ -119,7 +122,7 @@
 
 
     <!-- nav-toggle MUST be second, before nav -->
-     <input type="checkbox" id="search-toggle" hidden />
+    <input type="checkbox" id="search-toggle" hidden />
     <input type="checkbox" id="nav-toggle" hidden />
     <!-- NAVBAR -->
     <nav>
@@ -134,7 +137,7 @@
             </label>
           </li>
 
-          <li>
+          <li class="active">
             <a href="../homePage/index.html">Home</a>
           </li>
           <li>
@@ -147,19 +150,19 @@
             <a href="../securityTools/index.html">Security Tools</a>
           </li>
           <li>
-            <a href="../alert2Page/index.html">Alerts</a>
+            <a href="../alert2Page//index.html">Alerts</a>
           </li>
 
-          <li class="has-dropdown ">
-            <button class="nav-btn active">
+          <li class="has-dropdown">
+            <button class="nav-btn">
               Awareness <i class="fa-solid fa-chevron-down"></i>
             </button>
             <ul class="dropdown-menu">
               <li><a href="../Awareness/index.html">Guidelines & Advisories</a></li>
               <li><a href="../announcementsall4Page/index.html">Our Campaigns</a></li>
-              <li><a href="../bestPraactice/index.html">Best Practices</a></li>
+              <li class="dropdown-menu-active"><a href="../bestPraactice/index.html">Best Practices</a></li>
               <li><a href="../ourReports/index.html">Our Reports</a></li>
-              <li class="dropdown-menu-active"><a href="../whiteBoard/index.html">White Papers</a></li>
+              <li><a href="../whiteBoard/index.html">White Papers</a></li>
             </ul>
           </li>
 
@@ -187,81 +190,68 @@
 
       </div>
     </nav>
+
+    <!-- ✅ nav-overlay AFTER nav — direct sibling of nav-toggle -->
     <div class="nav-overlay">
       <label for="nav-toggle"></label>
     </div>
 
     <!-- nav end -->
 
-    <div class="join-here">
-      <img src="../../assets/Awareness/Join us .svg" alt="">
-      <div class="join-content">
-        <div></div>
-        <!-- <p>Awareness</p> -->
-      </div>
-      
-    </div>
-
-    <div class="awareness-nav">
-      <div class="awareness-content">
-        <a href="../Awareness/index.html" >Guidelines & Advisories</a>
-        <a href="../announcementsall4Page/index.html" >Our Campaigns</a>
-        <a href="../bestPraactice/index.html">Best Practices</a>
-        <a href="../ourReports/index.html">Our Reports</a>
-        <a href="../whiteBoard/index.html" class="active-aware">White Papers</a>
-      </div>
-    </div>
 
     <!-- main start -->
     <main id="main-content">
-      <div class="main-content-inner">
-        <label for="acc-toggle" class="acc-open-btn main-acc-btn" title="Accessibility">
-          <i class="fa-solid fa-universal-access"></i>
-        </label>
+      <div class="main-content-best">
 
-      <div class="social-content">
+        <div class="poster">
+          <img src="../assets/Awareness/Join us .svg" alt="Security Tools">
+          <div class="poster-border"></div>
+        </div>
+          <div class="awareness-content">
+                <a href="../Awareness/index.html" >Guidelines & Advisories</a>
+                <a href="../campaign/index.html" >Our Campaigns</a>
+                <a href="../bestPraactice/index.html">Best Practices</a>
+                <a href="../ourReports/index.html">Our Reports</a>
+                <a href="../whiteBoard/index.html" class="active-aware">White Papers</a>
+          </div>
+       <div class="social-content">
           <div class="social-icons">
             <a href="https://www.facebook.com/IndianCERT/" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
             <a href="https://www.instagram.com/cert_india/" title="Instagram"><i class="fa-brands fa-square-instagram"></i></a>
             <a href="https://x.com/IndianCERT" title="X"><i class="fa-solid fa-x"></i></a>
             <a href="https://www.linkedin.com/company/cert-in/" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
             <a href="https://www.youtube.com/hashtag/certin" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
-          </div>
-          
+          </div>  
         </div>
 
-        <div class="wrapper">
-          <div class="section-header">
-            <h2>White Papers</h2>
-          </div>
+        <label for="acc-toggle" class="icon">
+            <!-- <i class="fa-solid fa-universal-access"></i> -->
+             <img src="../assets/access_icon.svg" alt="">
+        </label>
 
-          <div class="content">
-            <div class="content-top">
-              <p class="content-text">API Security: Threats, Best Practices, Challenges, and Way forward using AI -- by CSIRT-Fin, CERT-In and Mastercard -> CIWP-2023-0001 </p>
-                <span class="pdf-tag"><i class="fa-solid fa-file">37.80kb</i></span>
-                <span class="card-view">
-                      <i class="fa-solid fa-eye"></i>
-                      <button>view</button> 
-                </span>
-              
-              <div class="url-tooltip">
-                <a href="https://www.csk.gov.in/documents/CIWP-2023-0001.pdf" target="_blank">
-                  https://www.csk.gov.in/documents/CIWP-2023-0001.pdf
-                </a>
-              </div>
+
+	  
+       <div class="wrapper">
+	   
+		 <div class="section-header">
+			<h2>White Papers</h2>
+     	 </div>
+	  
+		<div class="Best-practice">
+            <div class="left"><div class="inline-header">
+				<p>API Security: Threats, Best Practices, Challenges, and Way forward using AI -- by CSIRT-Fin, CERT-In and Mastercard -> CIWP-2023-0001 </p>
+				<span class="card-pdf"><img src="../assets/pdf.png" width="20px" alt="pdf" /><span>37.15 KB</span></span>
+				<span class="card-view"><i class="fa-solid fa-eye"></i><button>view</button></span>
+			</div>
+          <p>An Application Programming Interface (API) is a data connection allowing data to be shared with other applications. They can be viewed as digital middlemen between organisations / enterprises and platforms that need to access data for driving innovation, increasing reach, discover new business models, increase partner network, etc.</p>
+          </div>
             </div>
-            <p class="content-bottom">An Application Programming Interface (API) is a data connection allowing data to be shared with other applications. They can be viewed as digital middlemen between organisations / enterprises and platforms that need to access data for driving innovation, increasing reach, discover new business models, increase partner network, etc.</p>
-
-
-
-          </div>
-          <div class="viewALL-button">
+		        
+            <div class="viewALL-button">
               <span>View All</span>
               <button class="view-btn"><i class="fa-regular fa-eye"></i> VIEW</button>
             </div>
-        </div>
-      
-       
+		</div>
 
 
       </div>

@@ -4,9 +4,10 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Document</title>
-      <link rel="stylesheet" href="./index.css">
+      <link rel="stylesheet" href="../index.css">
       <link rel="stylesheet" href="../../components/header/index.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+      <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   </head>
   <body>
 
@@ -190,22 +191,19 @@
 
     <!-- nav end -->
 
-    <div class="join-here">
-      <img src="../../assets/f&q/f&q.svg" alt="">
-      <div class="join-content">
-        <div></div>
-        <!-- <p>Awareness</p> -->
-      </div>
-      
-    </div>
+    
 
     <!-- main start -->
     <main id="main-content">
-      <div class="main-content-inner">
-        <label for="acc-toggle" class="acc-open-btn main-acc-btn" title="Accessibility">
-          <i class="fa-solid fa-universal-access"></i>
-        </label>
-
+      <div class="main-content-fAq">
+        <div class="poster">
+          <img src="../assets/f&q/FaqPoster.svg" alt="About Us">
+          <div class="poster-border"></div>
+          <div class="poster-content">
+            <p>Frequently Asked Questions</p>
+          </div>
+        </div>
+      
       <div class="social-content">
           <div class="social-icons">
             <a href="https://www.facebook.com/IndianCERT/" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
@@ -213,10 +211,23 @@
             <a href="https://x.com/IndianCERT" title="X"><i class="fa-solid fa-x"></i></a>
             <a href="https://www.linkedin.com/company/cert-in/" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
             <a href="https://www.youtube.com/hashtag/certin" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
-          </div>
-          
+          </div>  
         </div>
+
+        <label for="acc-toggle" class="icon">
+            <!-- <i class="fa-solid fa-universal-access"></i> -->
+             <img src="../assets/access_icon.svg" alt="">
+        </label>
         
+        
+
+      <div class="faq-wrapper">
+          <input type="checkbox" id="global-expand" hidden>
+          <div class="faq-controls">
+            <label for="global-expand" class="master-btn">
+              <span class="btn-text"></span>
+            </label>
+          </div>
 
         <div class="container">
  
@@ -569,6 +580,9 @@
           </div>
         </div>
       
+      </div>
+
+
       </div>
       
       
