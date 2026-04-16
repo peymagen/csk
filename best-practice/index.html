@@ -111,7 +111,7 @@
         </li>
 
         <li ><a href="../index.html">Home</a></li>
-        <li class="active"><a href="../about/index.html">About Us</a></li>
+        <li><a href="../about/index.html">About Us</a></li>
         <li><a href="https://www.cert-in.org.in/" target="_blank" rel="noopener noreferrer">CERT-In</a></li>
         <li><a href="../security-tools/index.html">Security Tools</a></li>
         <li><a href="../alert/index.html">Alerts</a></li>
@@ -209,22 +209,26 @@
     </div>
   </nav>
 
-    <!-- ✅ nav-overlay AFTER nav — direct sibling of nav-toggle -->
-    <!-- <div class="nav-overlay">
-      <label for="nav-toggle"></label>
-    </div> -->
 
-   <main id="main-content">
-    <div class="main-content-about">
-      <div class="poster">
-        <img src="../assets/about/about-alertPoster.svg" alt="About Us">
-        <div class="poster-border"></div>
-        <div class="poster-content">
-            <p>About Us</p>
+    <!-- nav end -->
+
+
+    <!-- main start -->
+    <main id="main-content">
+      <div class="main-content-best">
+
+        <div class="poster">
+          <img src="../assets/Awareness/Join us .svg" alt="Security Tools">
+          <div class="poster-border"></div>
+        </div>
+          <div class="awareness-content">
+                <a href="../guidlines/index.html" >Guidelines & Advisories</a>
+                <a href="../campaign/index.html" >Our Campaigns</a>
+                <a href="../bestPraactice/index.html" class="active-aware">Best Practices</a>
+                <a href="../our-report/index.html">Our Reports</a>
+                <a href="../white-board/index.html">White Papers</a>
           </div>
-      </div>
-      
-      <div class="social-content">
+       <div class="social-content">
           <div class="social-icons">
             <a href="https://www.facebook.com/IndianCERT/" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
             <a href="https://www.instagram.com/cert_india/" title="Instagram"><i class="fa-brands fa-square-instagram"></i></a>
@@ -239,78 +243,172 @@
              <img src="../assets/access_icon.svg" alt="">
         </label>
 
-      <!-- <section class="security-banner">
-        <h2>Alerts - Current Cyber Security Threats & Security Measures</h2>
-      </section> -->
-      <!-- <br/>
-      <br/> -->
-      <div class="section-block">
-        <div class="about-header">
-          <h2>Who We Are</h2>
-        </div>
-        <p>
-          The "<span class="highlight1">Cyber</span> <span class="highlight2">Swachhta</span> <span class="highlight3">Kendra</span>" (Botnet Cleaning and Malware Analysis Centre) is a part of the Indian Computer Emergency Response Team (CERT-In). It has been set up for analyzing BOTs/malware characteristics and providing information and enabling citizens for removal of BOTs/malware. In addition, "Cyber Swachhta Kendra" will strive to create awareness among citizens to secure their data, computers, mobile phones and devices such as home routers.</p>
 
-        <p>
-          The "<span class="highlight1">Cyber</span> <span class="highlight2">Swachhta</span> <span class="highlight3">Kendra</span>" collaborates with industry and academia to detect systems infected by bots. It also collaborates with the Internet Service Providers to notify the end users regarding infection of their system and providing them assistance to clean their systems. The center will also enhance awareness of common users regarding botnet, malware infections and measures to be taken to prevent malware infections and secure their computers / systems / devices.
-        </p>
+       <div class="wrapper">
+ 
+      <div class="section-header">
+        <h2>Best Practices</h2>
       </div>
+ 
+      <!-- ✅ Radio inputs MUST be direct children of wrapper, BEFORE .pages -->
+      <input type="radio" name="page" id="p1" checked />
+      <input type="radio" name="page" id="p2" />
+      <input type="radio" name="page" id="p3" />
+      <input type="radio" name="page" id="p4" />
+ 
+      <!-- Pages -->
+      <div class="pages">
+ 
+        <!-- Page 1 -->
+        <div class="page" id="page-1">
+          <div class="Best-practice">
+            <div class="left">
+              <div class="best-practice-header">
+                <img src="../assets/file.png" width="30px" alt="file" />
+                <p>Cyber Security Handbook for Mahila Suraksha</p>
+              </div>
+              <p>On the occasion of International Women's Day, CERT-In is releasing this booklet to educate women on Cyber security best practices.</p>
+            </div>
+            <div class="right">
+              <div class="card-pdf">
+                <img src="../assets/pdf.png" width="20px" alt="pdf" />
+                <span>37.15 KB</span>
+              </div>
 
-      <!-- Mission -->
-      <div class="mission-block">
-        <h2>Our Mission</h2>
-        <p>
-          To enhance the cyber security of Digital India's IT infrastructure by providing information on botnet/malware threats and suggesting remedial measures.
-        </p>
-      </div>  
-
-      <!-- Partners -->
-      <div class="partner">
-        <h2 class="section-title">Our Partners</h2>
-  
-        <p class="collab-heading">Collaborative Partners</p>
-  
-        <div class="partners-grid">
-          <div class="partner-item">
-          <ul>
-            <li>Internet Service Provider</li>
-            <li>Academia</li>
-            <li>Department Of Telecommunications</li>
-          </ul>
-        </div>
-        
-      </div>
-
-
-      <div class="antivirus">
-        <h2 >Antivirus Companies:</h2>
-
-        <div class="cards">
-          <div class="card">
-            <img src="../assets/about/heal.svg" alt="Quick Heal">
-            <p>Quick Heal Technologies Ltd.</p>
+              <div class="card-view">
+                <i class="fa-solid fa-eye"></i>
+                <button>view</button>
+              </div>
+            </div>
           </div>
-
-          <div class="card">
-            <img src="../assets/about/k7.svg" alt="K7">
-            <p>K7 Computing Pvt Ltd.</p>
+          <div class="Best-practice">
+            <div class="left"><div class="best-practice-header"><img src="../assets/file.png" width="30px" alt="file" /><p>Digital Payment Brochure For Merchants</p></div>
+          <p>On the occasion of Digital India ,CERT-IN is releasing this booklet to educate merchants on Digital Payment best practices.</p>
           </div>
-
-          <div class="card">
-            <img src="../assets/about/escan.svg" alt="eScan">
-            <p>MicroWorld Software Services Pvt. Ltd. (eScan)</p>
+            <div class="right"><div class="card-pdf"><img src="../assets/pdf.png" width="20px" alt="pdf" /><span>37.15 KB</span></div><div class="card-view"><i class="fa-solid fa-eye"></i><button>view</button></div></div>
+          </div>
+          <div class="Best-practice">
+            <div class="left"><div class="best-practice-header"><img src="../assets/file.png" width="30px" alt="file" /><p>Digital Payment Brochure For Customers</p></div>
+            <p>On the occasion of Digital India ,CERT-IN is releasing this booklet to educate customers on Digital Payment best practices.</p>
+          </div>
+            <div class="right"><div class="card-pdf"><img src="../assets/pdf.png" width="20px" alt="pdf" /><span>37.15 KB</span></div><div class="card-view"><i class="fa-solid fa-eye"></i><button>view</button></div></div>
+          </div>
+          <div class="Best-practice">
+            <div class="left"><div class="best-practice-header"><img src="../assets/file.png" width="30px" alt="file" /><p>Digital Payment Suraksha - Awareness Video in English</p></div>
+            <p>On the occasion of Digital payment ,CERT-IN is releasing this booklet to educate customers on Digital suraksha best practices.</p>
+            </div>
+            <div class="right"><i class="fa-brands fa-youtube video-icon"></i><div class="card-view"><i class="fa-solid fa-eye"></i><button>view</button></div></div>
+          </div>
+          <div class="Best-practice">
+            <div class="left"><div class="best-practice-header"><img src="../assets/file.png" width="30px" alt="file" /><p>Security for Personal Computer</p></div>
+          <p>On the occasion of Digital India ,CERT-IN is releasing this booklet to educate customers on Security for Personal Computer.</p>
+          </div>
+            <div class="right"><div class="card-pdf"><img src="../assets/pdf.png" width="20px" alt="pdf" /><span>37.15 KB</span></div><div class="card-view"><i class="fa-solid fa-eye"></i><button>view</button></div></div>
+          </div>
+          <div class="Best-practice">
+            <div class="left"><div class="best-practice-header"><img src="../assets/file.png" width="30px" alt="file" /><p>Awareness Booklet for Children</p></div>
+          <p>On the occasion of Digital India ,CERT-IN is releasing this booklet to educate children on Digital Payment best practices.</p> 
+          </div>
+            <div class="right"><div class="card-pdf"><img src="../assets/pdf.png" width="20px" alt="pdf" /><span>37.15 KB</span></div><div class="card-view"><i class="fa-solid fa-eye"></i><button>view</button></div></div>
           </div>
         </div>
+ 
+        <!-- Page 2 -->
+        <div class="page" id="page-2">
+          <div class="Best-practice">
+            <div class="left"><div class="best-practice-header"><img src="../assets/file.png" width="30px" alt="file" /><p>Best Practices for Digital Nagriks &amp; Enterprises</p></div>
+          <p>On the occasion of Digital India ,CERT-IN is releasing this booklet to educate customers onBest Practices for Digital Nagriks.</p>
+          </div>
+            <div class="right"><div class="card-pdf"><img src="../assets/pdf.png" width="20px" alt="pdf" /><span>37.15 KB</span></div><div class="card-view"><i class="fa-solid fa-eye"></i><button>view</button></div></div>
+          </div>
+          <div class="Best-practice">
+            <div class="left"><div class="best-practice-header"><img src="../assets/file.png" width="30px" alt="file" /><p>Desktop Security</p></div></div>
+            <div class="right"><div class="card-pdf"><img src="../assets/pdf.png" width="20px" alt="pdf" /><span>37.15 KB</span></div><div class="card-view"><i class="fa-solid fa-eye"></i><button>view</button></div></div>
+          </div>
+          <div class="Best-practice">
+            <div class="left"><div class="best-practice-header"><img src="../assets/file.png" width="30px" alt="file" /><p>Broadband Security</p></div></div>
+            <div class="right"><div class="card-pdf"><img src="../assets/pdf.png" width="20px" alt="pdf" /><span>37.15 KB</span></div><div class="card-view"><i class="fa-solid fa-eye"></i><button>view</button></div></div>
+          </div>
+        </div>
+ 
+        <!-- Page 3 -->
+        <div class="page" id="page-3">
+          <div class="Best-practice">
+            <div class="left"><div class="best-practice-header"><img src="../assets/file.png" width="30px" alt="file" /><p>USB Security</p></div>
+          <p>On the occasion of Digital India ,CERT-IN is releasing this booklet to educate customers on USB Security.</p>
+          </div>
+            <div class="right"><div class="card-pdf"><img src="../assets/pdf.png" width="20px" alt="pdf" /><span>37.15 KB</span></div><div class="card-view"><i class="fa-solid fa-eye"></i><button>view</button></div></div>
+          </div>
+          <div class="Best-practice">
+            <div class="left"><div class="best-practice-header"><img src="../assets/file.png" width="30px" alt="file" /><p>Avoid Phishing Attacks</p></div></div>
+            <div class="right"><div class="card-pdf"><img src="../assets/pdf.png" width="20px" alt="pdf" /><span>37.15 KB</span></div><div class="card-view"><i class="fa-solid fa-eye"></i><button>view</button></div></div>
+          </div>
+          <div class="Best-practice">
+            <div class="left"><div class="best-practice-header"><img src="../assets/file.png" width="30px" alt="file" /><p>Mobile Phone Security</p></div></div>
+            <div class="right"><div class="card-pdf"><img src="../assets/pdf.png" width="20px" alt="pdf" /><span>37.15 KB</span></div><div class="card-view"><i class="fa-solid fa-eye"></i><button>view</button></div></div>
+          </div>
+        </div>
+ 
+        <!-- Page 4 -->
+        <div class="page" id="page-4">
+          <div class="Best-practice">
+            <div class="left"><div class="best-practice-header"><img src="../assets/file.png" width="30px" alt="file" /><p>Email Security Guidelines</p></div>
+          <p>On the occasion of Digital India ,CERT-IN is releasing this booklet to educate customers on Email Security Guidelines.</p>
+          </div>
+            <div class="right"><div class="card-pdf"><img src="../assets/pdf.png" width="20px" alt="pdf" /><span>37.15 KB</span></div><div class="card-view"><i class="fa-solid fa-eye"></i><button>view</button></div></div>
+          </div>
+          <div class="Best-practice">
+            <div class="left"><div class="best-practice-header"><img src="../assets/file.png" width="30px" alt="file" /><p>Social Media Security</p></div></div>
+            <div class="right"><div class="card-pdf"><img src="../assets/pdf.png" width="20px" alt="pdf" /><span>37.15 KB</span></div><div class="card-view"><i class="fa-solid fa-eye"></i><button>view</button></div></div>
+          </div>
+          <div class="Best-practice">
+            <div class="left"><div class="best-practice-header"><img src="../assets/file.png" width="30px" alt="file" /><p>Wi-Fi Security Best Practices</p></div></div>
+            <div class="right"><div class="card-pdf"><img src="../assets/pdf.png" width="20px" alt="pdf" /><span>37.15 KB</span></div><div class="card-view"><i class="fa-solid fa-eye"></i><button>view</button></div></div>
+          </div>
+        </div>
+ 
+      </div><!-- /pages -->
+	<div class="body-footer">
+		<div></div>
+      <!-- ✅ Pagination — MUST be direct sibling of .pages inside .wrapper -->
+      <div class="pagination">
+ 
+        <!-- PREV buttons (one shows at a time) -->
+        <label class="pg-btn btn-prev btn-prev-dis disabled">&#8249;</label>  <!-- p1: disabled -->
+        <label class="pg-btn btn-prev btn-prev-2" for="p1">&#8249;</label>    <!-- p2 → p1 -->
+        <label class="pg-btn btn-prev btn-prev-3" for="p2">&#8249;</label>    <!-- p3 → p2 -->
+        <label class="pg-btn btn-prev btn-prev-4" for="p3">&#8249;</label>    <!-- p4 → p3 -->
+ 
+        <!-- Page numbers -->
+        <label class="pg-btn" for="p1">1</label>
+        <label class="pg-btn" for="p2">2</label>
+        <label class="pg-btn" for="p3">3</label>
+        <label class="pg-btn" for="p4">4</label>
+ 
+        <!-- NEXT buttons (one shows at a time) -->
+        <label class="pg-btn btn-next btn-next-1" for="p2">&#8250;</label>    <!-- p1 → p2 -->
+        <label class="pg-btn btn-next btn-next-2" for="p3">&#8250;</label>    <!-- p2 → p3 -->
+        <label class="pg-btn btn-next btn-next-3" for="p4">&#8250;</label>    <!-- p3 → p4 -->
+        <label class="pg-btn btn-next btn-next-dis disabled">&#8250;</label>  <!-- p4: disabled -->
+ 
       </div>
-
-        
-
-      </div>
+		<button class="archive">
+			<img src="../assets/archive.png" alt="Archive" width="20px" />View Archive
+		</button>
+	
+	</div>
     </div>
-    
-  </main>
 
- <!-- Footer -->
+
+      </div>
+
+    </main>
+
+     <!-- main end -->
+
+   
+
+<!-- Footer -->
   <footer class="site-footer">
     <div class="footer-bg-svg"></div>
     <div class="footer-main">
