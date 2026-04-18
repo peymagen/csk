@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.ux4g.gov.in/tools/accessibility-widget.js" async></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- acc-toggle MUST be first -->
+  <input type="checkbox" id="acc-toggle" hidden />
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <div class="left-section">
+        <div class="national-emblem">
+          <img src="../../assets/header2.svg" alt="">
+        </div>
+      </div>
+      <div class="center-section">
+        <img src="../../assets/header.png" alt="">
+      </div>
+      <div class="right-section">
+        <div class="accessibility-icons">
+          <a href="#main-content" title="Skip to main content">
+            <img src="../../assets/Translate.svg" alt="">
+          </a>
+          <span class="icon-separator">|</span>
+          <div class="bhashini-plugin-container">
+            <img src="../../assets/Language.svg" alt="">
+          </div>
+          <span class="icon-separator">|</span>
+          <label for="acc-toggle" class="acc-open-btn" title="Accessibility"></label>
+          <img src="../../assets/accessibility_figure.svg" alt="">
+        </div>
+        <div class="certin-logo">
+          <img src="../../assets/certin.svg" alt="">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- acc-overlay: direct sibling of acc-toggle -->
+  <div class="acc-overlay">
+    <div class="acc-panel">
+      <div class="acc-panel-header">
+        <h2>Accessibility Options</h2>
+        <label for="acc-toggle" class="acc-close-btn" title="Close">
+          <i class="fa-solid fa-xmark"></i>
+        </label>
+      </div>
+      <div class="acc-language-row">
+        <div class="lang-left">
+          <div class="lang-icon-box"><i class="fa-solid fa-language"></i></div>
+          <span class="lang-label">Language</span>
+        </div>
+        <select class="lang-select" id="lang-select" title="Select Language">
+          <option>English</option>
+          <option>हिंदी</option>
+        </select>
+      </div>
+      <div class="acc-options">
+        <div class="acc-grid">
+          <div class="acc-option" onclick="accToggle(this,'speak')"><i class="fa-solid fa-volume-high"></i><span>Screen Reader</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s9')"><i class="fa-solid fa-text-height"></i><span>Bigger Text</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s12')"><i class="fa-solid fa-bars"></i><span>Line Height</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s13')"><i class="fa-solid fa-a"></i><span>Text Spacing</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s10')"><i class="fa-solid fa-link"></i><span>Highlight Links</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-df')"><i class="fa-solid fa-d"></i><span>Dyslexia Friendly</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-cursor')"><i class="fa-solid fa-brain"></i><span>ADHD Friendly</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s11')"><i class="fa-regular fa-image"></i><span>Hide Images</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-invert')"><i class="fa-solid fa-circle-half-stroke"></i><span>Invert Color</span></div>
+          <div class="acc-option" onclick="accToggle(this,'dark-btn')"><i class="fa-solid fa-moon"></i><span>Dark Mode</span></div>
+        </div>
+      </div>
+      <div class="acc-footer">
+        <label for="acc-toggle" class="acc-reset-btn" onclick="accResetAll()">
+          <i class="fa-solid fa-rotate-left"></i> Reset
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!--  nav-toggle MUST be BEFORE <nav> so ~ selector works -->
+  <input type="checkbox" id="search-toggle" hidden />
+  <input type="checkbox" id="nav-toggle" hidden />
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-inner">
+
+      <!-- ✅ HAMBURGER — label targets #nav-toggle -->
+      <label for="nav-toggle" class="hamburger" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+        <i class="fa-solid fa-xmark"></i>
+      </label>
+
+      <!-- NAV LINKS (slide-in panel on mobile) -->
+      <ul class="nav-links">
+
+        <!-- Close button inside panel -->
+        <li class="nav-close-item">
+          <label for="nav-toggle" class="nav-close-btn">
+            <i class="fa-solid fa-xmark"></i>
+          </label>
+        </li>
+
+        <li ><a href="../index.html">Home</a></li>
+        <li><a href="../about/index.html">About Us</a></li>
+        <li><a href="#">CERT-In</a></li>
+        <li><a href="../security-tools/index.html">Security Tools</a></li>
+        <li class="active"><a href="../alert/index.html">Alerts</a></li>
+
+        <li class="has-dropdown">
+          <button class="nav-btn">
+            Awareness <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="./guideline/index.html">Guidelines &amp; Advisories</a></li>
+            <li><a href="./Awareness/index.html">Our Campaigns</a></li>
+            <li><a href="./bestPraactice/index.html">Best Practices</a></li>
+            <li><a href="./ourReports/index.html">Our Reports</a></li>
+            <li><a href="./whiteBoard/index.html">White Papers</a></li>
+          </ul>
+        </li>
+
+        <li><a href="../FrequentQuestion/index.html">FAQ's</a></li>
+        <li><a href="../contactUs/index.html">Contact Us</a></li>
+
+      </ul>
+
+      <!-- ===== SEARCH BAR ===== -->
+      <div class="nav-search">
+        <div class="csk-search">
+
+          <input type="radio" name="se" id="s-google" checked>
+          <input type="radio" name="se" id="s-bing">
+          <input type="radio" name="se" id="s-duck">
+
+          <div class="search-box">
+
+            <!-- Dropdown (Left) -->
+            <div class="engine-picker">
+              <button type="button" class="engine-current" aria-label="Select search engine">
+                <span class="current-engine cur-g">
+                  <span class="dot g-dot">G</span>
+                  <span class="engine-label">&nbsp;Google</span>
+                </span>
+                <span class="current-engine cur-b">
+                  <span class="dot b-dot">b</span>
+                  <span class="engine-label">&nbsp;Bing</span>
+                </span>
+                <span class="current-engine cur-d">
+                  <span class="dot d-dot">D</span>
+                  <span class="engine-label">&nbsp;Duck</span>
+                </span>
+              </button>
+              <div class="engine-menu">
+                <label for="s-google" class="engine-opt"><span class="dot g-dot">G</span>Google.com</label>
+                <label for="s-bing"   class="engine-opt"><span class="dot b-dot">b</span>Bing.com</label>
+                <label for="s-duck"   class="engine-opt"><span class="dot d-dot">D</span>DuckDuckGo</label>
+              </div>
+            </div>
+
+            <!-- Input + Search Icon (Right) -->
+            <div class="form-wrap">
+
+              <!-- Google -->
+              <form class="sf" id="fg" action="https://www.google.com/search" method="GET" target="_blank">
+                <input class="si" type="text" name="q" placeholder="Search csk.gov.in" required>
+                <input type="hidden" name="as_sitesearch" value="csk.gov.in">
+                <button type="submit" class="sb" aria-label="Search">
+                  <svg viewBox="0 0 20 20"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17" y2="17"/></svg>
+                </button>
+              </form>
+
+              
+              <!-- Bing -->
+<form class="sf" id="fb" action="https://www.bing.com/search" method="GET" target="_blank"
+  onsubmit="this.querySelector('[name=q]').value = this.querySelector('.si').value + ' site:csk.gov.in'; return true;">
+  <input class="si" type="text" placeholder="Search csk.gov.in" required>
+  <input type="hidden" name="q" value="">
+  <button type="submit" class="sb" aria-label="Search">
+    <svg viewBox="0 0 20 20"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17" y2="17"/></svg>
+  </button>
+</form>
+              <!-- DuckDuckGo -->
+              <!-- DuckDuckGo -->
+<form class="sf" id="fd" action="https://duckduckgo.com/" method="GET" target="_blank"
+  onsubmit="this.querySelector('[name=q]').value = this.querySelector('.si').value + ' site:csk.gov.in'; return true;">
+  <input class="si" type="text" placeholder="Search csk.gov.in" required>
+  <input type="hidden" name="q" value="">
+  <button type="submit" class="sb" aria-label="Search">
+    <svg viewBox="0 0 20 20"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17" y2="17"/></svg>
+  </button>
+</form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ===== SEARCH BAR END ===== -->
+
+    </div>
+  </nav>
+
+    <!-- ✅ nav-overlay AFTER nav — direct sibling of nav-toggle -->
+    <!-- <div class="nav-overlay">
+      <label for="nav-toggle"></label>
+    </div> -->
+
+   <main id="main-content">
+    <div class="main-content-Locky">
+
+      <div class="social-content">
+            <div class="social-icons">
+              <a href="https://www.facebook.com/IndianCERT/" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+              <a href="https://www.instagram.com/cert_india/" title="Instagram"><i class="fa-brands fa-square-instagram"></i></a>
+              <a href="https://x.com/IndianCERT" title="X"><i class="fa-solid fa-x"></i></a>
+              <a href="https://www.linkedin.com/company/cert-in/" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="https://www.youtube.com/hashtag/certin" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>  
+          </div>
+
+          <label for="acc-toggle" class="icon">
+              <!-- <i class="fa-solid fa-universal-access"></i> -->
+              <img src="../assets/access_icon.svg" alt="">
+          </label>
+
+        <div class="container">
+
+          <div class="header">
+
+            <div class="left">
+              <a href="javascript:history.back()" class="back-btn">
+                <i class="fa-solid fa-angle-left"></i> BACK
+              </a>
+              <h1>VictoryGate Botnet</h1>
+            </div>
+
+          <!-- Header -->
+            <div class="header-right">
+              
+                <div class="meta">
+                  <div class="border-left"></div>
+                  <div class="righ-content">
+                    <p><span class="gree">Original Issue Date:</span>  May 08, 2020</p>
+                    
+                    <p><span class="orr">Virus Type:</span> Botne</p>
+                    <p><span class="orr">Severity: </span>Low</p>
+                    
+                  </div>
+                  
+                </div>
+            </div>
+
+          </div>
+
+          
+
+
+          <!-- Description -->
+          <div class="section">
+              <p>
+                It has been observed that a Botnet named VictoryGate is spreading, this botnet has been active since at least May 2019. Till date, three different variants of initial module have been identified along with ten secondary payloads that are downloaded from file hosting websites.
+              </p>
+              <p>
+                Botnet was designed for cryptocurrency Monero mining, abusing the compromised devices resources, resulting slower down the performances. It is also capable to download and execute additional payloads by commands of Botmaster. The malicious code uses all the available threads to perform cryptocurrency mining resulting in 90-99% CPU load thus slowing down infected device and causing overheating that could even damage it. Also, when a USB drive is connected to infected machine, its files are copied in the hidden directory by malicious code.
+              </p>
+              <p>
+                The VictoryGate bot uses only subdomains registered at dynamic DNS service provider No-IP to control infected devices. These subdomains have been taken down by No-IP and co-ordination thus removing the control of bots from the attacker. The list of domains is as follows:
+              </p>
+          </div>
+
+          <!-- Infection Mechanism -->
+          <div class="section">
+              <h2>C&C Domains:</h2>
+              
+              <ul>
+                <li>
+                    scitie.ddns[.]net
+                </li>
+                <li>
+                    ddw.ddns[.]net
+                </li>
+                <li>
+                    c0d3.ddns[.]nets
+                </li>
+                <li>
+                    volvo.ddns[.]net
+                </li>
+                <li>
+                    xcod.ddns[.]net
+                </li>
+                <li>
+                    mrxud.ddns[.]net
+                </li>
+                <li>
+                    d001.ddns[.]net
+                </li>
+                <li>
+                    xkm.ddns[.]net
+                </li>
+                <li>
+                    luio.ddns[.]net
+                </li>
+                <li>
+                    xcud.ddns[.]net
+                </li>
+                <li>
+                    aut2scr.ddns[.]net
+                </li>
+                <li>
+                    fanbmypersondrive[.]icu
+                </li>
+                <li>
+                    mydrivepersonpdvsa[.]icu
+                </li>
+                <li>
+                    mydrivepersonfanb[.]icu
+                </li>
+                <li>
+                    mycountermppd[.]xyz
+                </li>
+                <li>
+                    calypsoempire.ddns[.]net
+                </li>
+                <li>
+                    mgud2xd.ddns[.]net
+                </li>
+                <li>
+                    aut0hk.ddns[.]net
+                </li>
+                <li>
+                    xcud.zapto[.]org
+                </li>
+                <li>
+                    accountantlive[.]icu
+                </li>
+                <li>
+                    shittybooks[.]review
+                </li>
+                <li>
+                    hakerz123.ddns[.]net
+                </li>
+                <li>
+                    jcmewjjkyc0d3.ddns[.]net
+                </li>
+                <li>
+                    urtyerc0d3.ddns[.]net
+                </li>
+                <li>
+                    MoOHyAYeuaut2scr.ddns[.]net
+                </li>
+                <li>
+                    pNUMWWDLjPmzg.ddns[.]net
+                </li>
+                <li>
+                    gJyapcAGoc0d3.ddns[.]net
+                </li>
+                <li>
+                    OHOFqlXNJluio.ddns[.]net
+                </li>
+              </ul>
+              
+          </div>
+        
+
+          <!-- Indicator of Compromise -->
+          <div class="section">
+            <h2>Propagation mechanism:</h2>
+                <p>
+                    The only propagation mechanism observed is through removable devices.
+                </p>
+                <div class="img-caption">
+                    <img src="../../assets//alert/victorgate.jpeg" alt="">
+                    <p>Figure:1 Comparison of a drive before & after compromise (Source: ESET)</p>
+                </div>
+                <p>
+                    The infected USB drive have all the files with same names and icons that it contained originally (Fig.1). However, original files are copied into a hidden directory in root on the drive by malicious code, then it uses Windows executables (AutoIt scripts) compiled on the fly as apparent namesakes (Fig 2).
+                </p>
+                <div class="img-caption">
+                    <img src="../../assets//alert/victorgate1.jpeg" alt="">
+                    <p>Figure:2 Template used by VictoryGate to compile the propagation scripts (Source: ESET)</p>
+                </div>
+                <p>
+                    It is also observed that the build process adds random metadata to each file so that any two compiled scripts will have different hash/checksum.
+                </p>
+                <p>
+                    The infected USB drive would appear benign to the victims, but when they attempt to open a file, AutoIt script opens both , the intended file and initial module of bot (Fig.3), which copies itself to %AppData% and places a shortcut in the startup folder, to achieve persistence at the next reboot.
+                </p>
+                <div class="img-caption">
+                    <img src="../../assets//alert/victorgate2.jpeg" alt="">
+                    <p>Figure:3 Propagation scripts showing launch of a regular file along with executing malicious module (Source: ESET)</p>
+                </div>
+                <p>
+                    This module is an approx. 200MB .NET assembly containing a huge array of garbage bytes to avoid scanning by security products. The array also contains a XORed and gzip-compressed DLL that, at runtime, is deciphered and loaded with a late binding call using the .NET Reflection API.
+                </p>
+                <p>
+                    The bot injects an AutoIt-compiled script into legitimate Windows processes to communicate with the command and control (C&C) server; it is also able to download and execute additional payloads. The Botmaster sends command to infected nodes for downloading secondary payloads
+                </p>
+          </div>
+
+
+
+          <!-- References -->
+          <div class="section">
+            <h2>Payloads::</h2>
+            <p>The bot attempts to download payloads in the form of AutoIt-compiled scripts.</p>
+            <div class="img-caption">
+                <img src="../../assets//alert/victorgate3.jpeg" alt="">
+                <p>Figure:4 Workflow of downloaded payload (Source: ESET)</p>
+            </div>
+            <p>
+                The payloads inject code into a legitimate Windows process and attempt to inject XMRig mining software into the ucsvc.exe (Boot File Servicing Utility) process. Once the ucsvc.exe process is injected with the XMRig miner, the C&C will start the mining on the node. The malware uses a stratum/XMRig proxy to hide the mining pool and terminates the mining process when the user opens Task Manager, to avoid to show the CPU usage. Mining is resumed as soon as Task Manage is closed.
+            </p>
+          </div>
+
+          <div class="section">
+            <h2>Indicators of Compromise:</h2>
+            <div class="sub-section">
+                <h3>Sample Hashes:</h3>
+                
+                <ul>
+                    <li>398C99FD804043863959CC34C68B0305B1131388</li>
+                    <li>a187d8be61b7ad6c328f3ee9ac66f3d2f4b48c6b
+                    </li>
+                    <li>
+                       483a55389702cdc83223c563efb9151a704a973e
+                    </li>
+                    <li>
+                        686eef924e6b7aadb5bcff1045b25163501670e6
+                    </li>
+                    
+                </ul>
+                <h3>Filesystem:</h3>
+                
+                <ul>
+                    <li>%ProgramData%\JcmewjJky\jcmewjjky.ico
+                    </li>
+                    <li>%ProgramData%\JcmewjJky\jcmewjjky.exe
+                    </li>
+                    <li>
+                       %ProgramData%\JcmewjJky\jcmewjjky.au3
+                    </li>
+                    <li>
+                        %AppData%\Microsoft\Windows\Start Menu\Programs\Startup\ctfmon.url.lnk
+                    </li>
+                    <li>
+                        %AppData%\Microsoft\Windows\Start Menu\Programs\Startup\tpmvsucgr.url
+                    </li>
+                    <li>
+                        %AppData%\tpmvscugr.exe
+                    </li>
+                    <li>
+                        %AppData%\ctfmon2.exe
+                    </li>
+                    <li>
+                        HKCU/Software/JcMewjJKy
+                    </li>
+                    <li>
+                        HKLM/Software/Microsoft/Windows <br> NT/CurrentVersion/Schedule/TaskCache/Tree/rwIAMblfuvoss
+                    </li>
+                    <li>
+                        HKCU/Software/Victory
+
+                    </li>
+                </ul>
+                <h3>
+                   Payload URLs:
+                </h3>
+                <ul>
+                    <li>
+                        gulfup[.]me/i/00711/2czcy5xvh7br.jpeg
+                    </li>
+                    <li>
+                        gulfup[.]me/i/00711/a8nr26g1zcot.jpeg
+                    </li>
+                    <li>
+                        gulfup[.]me/i/00711/6400e1i9fsj6.jpeg
+                    </li>
+                    <li>
+                        gulfup[.]me/i/00711/pwgzuq5902m2.jpeg
+                    </li>
+                    <li>
+                        gulfup[.]me/i/00711/lhm3w37zuiwy.jpeg
+                    </li>
+                    <li>
+                        gulfup[.]me/i/00711/3mwdm6tbgcq6.jpeg
+                    </li>
+                    <li>
+                        gulfup[.]me/i/00712/sy8rtcxlh1pu.jpeg
+                    </li>
+                    <li>
+                        gulfup[.]me/i/00712/o56zgjhefny0.jpeg
+                    </li>
+                    <li>
+                        b.top4top[.]io/p_152411ncc1.jpeg
+                    </li>
+                    <li>
+                        pastebin[.]com/raw/fEAuhPYh
+                    </li>
+                </ul>
+            </div>
+          </div>
+
+          <div class="section">
+            <h2>
+                Countermeasures:
+            </h2>
+            <ul>
+                <li>
+                    Keep software and OS up-to-date so that attackers may not take advantages of or exploit known vulnerabilities.
+                </li>
+                <li>
+                    Keep updated Antivirus/Antimalware software to detect any threat before it infects the system/network. Always scan the external drives/removable devices before use. Leverage anti-phishing solutions that help protect credentials and against malicious file downloads.
+                </li>
+                <li>
+                    It is also important to keep web filtering tools updated.
+                </li>
+                <li>
+                    Change default login credentials as they are readily available with attackers.
+                </li>
+                <li>
+                    Use limited privilege user on the computer or allow administrative access to systems with special administrative accounts for administrators.
+                </li>
+                <li>
+                    Avoid downloading files from untrusted websites.
+                </li>
+                <li>
+                    Network administrators should continuously monitor systems and guide their employees to recognize any above-normal sustained CPU loading activity on computer workstations, mobile devices, and network servers. Network activity should continuously be motored for any unusual activity.
+                </li>
+                <li>
+                    Maintain appropriate Firewall policies to block malicious traffic entering the system/network. Enable a personal firewall on workstation.
+                </li>
+                <li>
+                    Block the IP addresses of known malicious sites to prevent devices from being able to access them. Activate intelligent website blacklisting to block known bad websites.
+                </li>
+                <li>
+                   Block websites hosting JavaScript miners both at the gateway and the endpoints. 
+                </li>
+                <li>
+                    Maintain browser extensions as some attackers are using malicious browser extensions or poisoning legitimate extensions to execute cryptomining scripts. <br>
+                    Go beyond intrusion detection to protect servers with runtime memory protection
+                </li>
+                <li>
+                    for critical applications and server workloads, ensuring a defense against actors who already have a grip on your server.
+                </li>
+                <li>
+                    Disable Autorun and Autoplay policies.
+                </li>
+                <li>
+                    Consider using application whitelists to prevent unknown executables from launching autonomously.
+                </li>
+                <li>
+                    Delete the system changes made by the malware such as files created/ registry entries /services etc.
+                </li>
+                <li>
+                    Monitor traffic generated from client machines to the domains and IP address mentioned in Installation section.
+                </li>
+                <li>
+                    Disable unnecessary services on agency workstations and servers.
+                </li>
+            </ul>
+          </div>
+
+          <div class="section">
+            <h2>References:</h2>
+            <ul>
+                <li>
+                    <a href="https://www.welivesecurity.com/2020/04/23/eset-discovery-monero-mining-botnet-disrupted/">
+                        https://www.welivesecurity.com/2020/04/23/eset-discovery-monero-mining-botnet-disrupted/
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://securityaffairs.co/wordpress/102331/malware/victorygate-mining-botnet.html">
+                       https://securityaffairs.co/wordpress/102331/malware/victorygate-mining-botnet.html
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.us-cert.gov/ncas/tips/ST18-002">
+                    https://www.us-cert.gov/ncas/tips/ST18-002
+                    </a>
+                </li>
+                
+            </ul>
+          </div>
+
+        </div>  
+    </div>
+    
+  </main>
+
+  <footer class="site-footer">
+ 
+      <!-- Layer 1: gradient (on .site-footer itself) -->
+      <!-- Layer 2: SVG circuit overlay -->
+      <div class="footer-bg-svg"></div>
+    
+      <!-- MAIN CONTENT -->
+      <div class="footer-main">
+    
+        <!-- LEFT: Postal Address -->
+        <div class="footer-address">
+          <h3 class="footer-section-title">Postal Address:</h3>
+          <div class="footer-title-line"></div>
+    
+          <address>
+            <p><strong>Indian Computer Emergency Response Team (CERT-In)</strong></p>
+            <p>Ministry of Electronics and Information Technology,</p>
+            <p>Government of India,</p>
+            <p>Electronics Niketan, 6 CGO Complex,</p>
+            <p>Lodhi Road, New Delhi - 110 003</p>
+          </address>
+    
+          <p class="footer-toll-free">
+            <strong>Toll Free Number:</strong> +91-1800-11-4949
+          </p>
+    
+          <div class="footer-logos">
+            <div class="footer-logo">
+              <a href="#" class="footer-logo-item">
+              <img src="../../assets/digital-india.svg" alt="Digital India - Power To Empower" />
+              </a>
+              <a href="#" class="footer-logo-item">
+                <img src="../../assets/footer-certin.svg" alt="CERT-In" />
+              </a>
+            </div>
+            <div class="footer-logo">
+              <a href="#" class="footer-logo-item">
+              <img src="../../assets/infosec.svg" alt="InfoSec Awareness" />
+              </a>
+              <a href="#" class="footer-logo-item">
+                <img src="../../assets/staysafe.svg" alt="Stay Safe Online" />
+              </a>
+            </div>
+          </div>
+        </div>
+    
+        <!-- RIGHT: Important Links -->
+        <div class="footer-links">
+          <h3 class="footer-section-title">Important Links</h3>
+          <div class="footer-title-line"></div>
+    
+          <div class="footer-links-grid">
+            <ul class="footer-link-col">
+              <li><a href="../homePage/index.html">Home</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">CERT-In</a></li>
+              <li><a href="#">MeiTY</a></li>
+              <li><a href="#">FAQ's</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+            <ul class="footer-link-col">
+              <li><a href="#">Website Policies</a></li>
+              <li><a href="#">Terms &amp; Conditions</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Help</a></li>
+              <li><a href="#">Archives</a></li>
+              <li><a href="#">Sitemap</a></li>
+            </ul>
+          </div>
+    
+          <div class="footer-social-row">
+            <div class="footer-follow">
+              <span class="follow-label">Follow Us</span>
+              <div class="footer-social-icons">
+                <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" title="X"><i class="fa-solid fa-x"></i></a>
+                <a href="#" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+              </div>
+            </div>
+            <p class="footer-last-updated">Last updated on: November 10, 2025</p>
+          </div>
+        </div>
+    
+      </div>
+    
+      <!-- BOTTOM BAR -->
+      <div class="footer-bottom">
+        <p class="footer-disclaimer">
+          Disclaimer :-The information provided herein is on "as is" basis, without warranty of any kind.
+        </p>
+        <p class="footer-copyright">
+          <i class="fa-regular fa-copyright"></i> Copyright 2025. All right reserved
+        </p>
+      </div>
+    
+    </footer>
+
+
+</body>
+</html>

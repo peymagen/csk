@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.ux4g.gov.in/tools/accessibility-widget.js" async></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- acc-toggle MUST be first -->
+  <input type="checkbox" id="acc-toggle" hidden />
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <div class="left-section">
+        <div class="national-emblem">
+          <img src="../../assets/header2.svg" alt="">
+        </div>
+      </div>
+      <div class="center-section">
+        <img src="../../assets/header.png" alt="">
+      </div>
+      <div class="right-section">
+        <div class="accessibility-icons">
+          <a href="#main-content" title="Skip to main content">
+            <img src="../../assets/Translate.svg" alt="">
+          </a>
+          <span class="icon-separator">|</span>
+          <div class="bhashini-plugin-container">
+            <img src="../../assets/Language.svg" alt="">
+          </div>
+          <span class="icon-separator">|</span>
+          <label for="acc-toggle" class="acc-open-btn" title="Accessibility"></label>
+          <img src="../../assets/accessibility_figure.svg" alt="">
+        </div>
+        <div class="certin-logo">
+          <img src="../../assets/certin.svg" alt="">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- acc-overlay: direct sibling of acc-toggle -->
+  <div class="acc-overlay">
+    <div class="acc-panel">
+      <div class="acc-panel-header">
+        <h2>Accessibility Options</h2>
+        <label for="acc-toggle" class="acc-close-btn" title="Close">
+          <i class="fa-solid fa-xmark"></i>
+        </label>
+      </div>
+      <div class="acc-language-row">
+        <div class="lang-left">
+          <div class="lang-icon-box"><i class="fa-solid fa-language"></i></div>
+          <span class="lang-label">Language</span>
+        </div>
+        <select class="lang-select" id="lang-select" title="Select Language">
+          <option>English</option>
+          <option>हिंदी</option>
+        </select>
+      </div>
+      <div class="acc-options">
+        <div class="acc-grid">
+          <div class="acc-option" onclick="accToggle(this,'speak')"><i class="fa-solid fa-volume-high"></i><span>Screen Reader</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s9')"><i class="fa-solid fa-text-height"></i><span>Bigger Text</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s12')"><i class="fa-solid fa-bars"></i><span>Line Height</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s13')"><i class="fa-solid fa-a"></i><span>Text Spacing</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s10')"><i class="fa-solid fa-link"></i><span>Highlight Links</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-df')"><i class="fa-solid fa-d"></i><span>Dyslexia Friendly</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-cursor')"><i class="fa-solid fa-brain"></i><span>ADHD Friendly</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s11')"><i class="fa-regular fa-image"></i><span>Hide Images</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-invert')"><i class="fa-solid fa-circle-half-stroke"></i><span>Invert Color</span></div>
+          <div class="acc-option" onclick="accToggle(this,'dark-btn')"><i class="fa-solid fa-moon"></i><span>Dark Mode</span></div>
+        </div>
+      </div>
+      <div class="acc-footer">
+        <label for="acc-toggle" class="acc-reset-btn" onclick="accResetAll()">
+          <i class="fa-solid fa-rotate-left"></i> Reset
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!--  nav-toggle MUST be BEFORE <nav> so ~ selector works -->
+  <input type="checkbox" id="search-toggle" hidden />
+  <input type="checkbox" id="nav-toggle" hidden />
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-inner">
+
+      <!-- ✅ HAMBURGER — label targets #nav-toggle -->
+      <label for="nav-toggle" class="hamburger" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+        <i class="fa-solid fa-xmark"></i>
+      </label>
+
+      <!-- NAV LINKS (slide-in panel on mobile) -->
+      <ul class="nav-links">
+
+        <!-- Close button inside panel -->
+        <li class="nav-close-item">
+          <label for="nav-toggle" class="nav-close-btn">
+            <i class="fa-solid fa-xmark"></i>
+          </label>
+        </li>
+
+        <li ><a href="../index.html">Home</a></li>
+        <li><a href="../about/index.html">About Us</a></li>
+        <li><a href="#">CERT-In</a></li>
+        <li><a href="../security-tools/index.html">Security Tools</a></li>
+        <li class="active"><a href="../alert/index.html">Alerts</a></li>
+
+        <li class="has-dropdown">
+          <button class="nav-btn">
+            Awareness <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="./guideline/index.html">Guidelines &amp; Advisories</a></li>
+            <li><a href="./Awareness/index.html">Our Campaigns</a></li>
+            <li><a href="./bestPraactice/index.html">Best Practices</a></li>
+            <li><a href="./ourReports/index.html">Our Reports</a></li>
+            <li><a href="./whiteBoard/index.html">White Papers</a></li>
+          </ul>
+        </li>
+
+        <li><a href="../FrequentQuestion/index.html">FAQ's</a></li>
+        <li><a href="../contactUs/index.html">Contact Us</a></li>
+
+      </ul>
+
+      <!-- ===== SEARCH BAR ===== -->
+      <div class="nav-search">
+        <div class="csk-search">
+
+          <input type="radio" name="se" id="s-google" checked>
+          <input type="radio" name="se" id="s-bing">
+          <input type="radio" name="se" id="s-duck">
+
+          <div class="search-box">
+
+            <!-- Dropdown (Left) -->
+            <div class="engine-picker">
+              <button type="button" class="engine-current" aria-label="Select search engine">
+                <span class="current-engine cur-g">
+                  <span class="dot g-dot">G</span>
+                  <span class="engine-label">&nbsp;Google</span>
+                </span>
+                <span class="current-engine cur-b">
+                  <span class="dot b-dot">b</span>
+                  <span class="engine-label">&nbsp;Bing</span>
+                </span>
+                <span class="current-engine cur-d">
+                  <span class="dot d-dot">D</span>
+                  <span class="engine-label">&nbsp;Duck</span>
+                </span>
+              </button>
+              <div class="engine-menu">
+                <label for="s-google" class="engine-opt"><span class="dot g-dot">G</span>Google.com</label>
+                <label for="s-bing"   class="engine-opt"><span class="dot b-dot">b</span>Bing.com</label>
+                <label for="s-duck"   class="engine-opt"><span class="dot d-dot">D</span>DuckDuckGo</label>
+              </div>
+            </div>
+
+            <!-- Input + Search Icon (Right) -->
+            <div class="form-wrap">
+
+              <!-- Google -->
+              <form class="sf" id="fg" action="https://www.google.com/search" method="GET" target="_blank">
+                <input class="si" type="text" name="q" placeholder="Search csk.gov.in" required>
+                <input type="hidden" name="as_sitesearch" value="csk.gov.in">
+                <button type="submit" class="sb" aria-label="Search">
+                  <svg viewBox="0 0 20 20"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17" y2="17"/></svg>
+                </button>
+              </form>
+
+              
+              <!-- Bing -->
+<form class="sf" id="fb" action="https://www.bing.com/search" method="GET" target="_blank"
+  onsubmit="this.querySelector('[name=q]').value = this.querySelector('.si').value + ' site:csk.gov.in'; return true;">
+  <input class="si" type="text" placeholder="Search csk.gov.in" required>
+  <input type="hidden" name="q" value="">
+  <button type="submit" class="sb" aria-label="Search">
+    <svg viewBox="0 0 20 20"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17" y2="17"/></svg>
+  </button>
+</form>
+              <!-- DuckDuckGo -->
+              <!-- DuckDuckGo -->
+<form class="sf" id="fd" action="https://duckduckgo.com/" method="GET" target="_blank"
+  onsubmit="this.querySelector('[name=q]').value = this.querySelector('.si').value + ' site:csk.gov.in'; return true;">
+  <input class="si" type="text" placeholder="Search csk.gov.in" required>
+  <input type="hidden" name="q" value="">
+  <button type="submit" class="sb" aria-label="Search">
+    <svg viewBox="0 0 20 20"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17" y2="17"/></svg>
+  </button>
+</form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ===== SEARCH BAR END ===== -->
+
+    </div>
+  </nav>
+
+    <!-- ✅ nav-overlay AFTER nav — direct sibling of nav-toggle -->
+    <!-- <div class="nav-overlay">
+      <label for="nav-toggle"></label>
+    </div> -->
+
+   <main id="main-content">
+    <div class="main-content-Locky">
+
+      <div class="social-content">
+            <div class="social-icons">
+              <a href="https://www.facebook.com/IndianCERT/" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+              <a href="https://www.instagram.com/cert_india/" title="Instagram"><i class="fa-brands fa-square-instagram"></i></a>
+              <a href="https://x.com/IndianCERT" title="X"><i class="fa-solid fa-x"></i></a>
+              <a href="https://www.linkedin.com/company/cert-in/" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="https://www.youtube.com/hashtag/certin" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>  
+          </div>
+
+          <label for="acc-toggle" class="icon">
+              <!-- <i class="fa-solid fa-universal-access"></i> -->
+              <img src="../assets/access_icon.svg" alt="">
+          </label>
+
+        <div class="container">
+
+          <div class="header">
+
+            <div class="left">
+              <a href="javascript:history.back()" class="back-btn">
+                <i class="fa-solid fa-angle-left"></i> BACK
+              </a>
+              <h1>Win/Phorpiex Worm</h1>
+            </div>
+
+          <!-- Header -->
+            <div class="header-right">
+              
+                <div class="meta">
+                  <div class="border-left"></div>
+                  <div class="righ-content">
+                    <p><span class="gree">Original Issue Date:</span>  July 17, 2019</p>
+                    
+                    <p><span class="orr">Virus Type:</span> Worm</p>
+                    <p><span class="orr">Severity: </span>High</p>
+                    
+                  </div>
+                  
+                </div>
+            </div>
+
+          </div>
+
+          
+
+
+          <!-- Description -->
+          <div class="section">
+              <p>
+                It has been reported that the variants of a worm named as “phorpiex” is spreading. The worm mainly targets the windows operating systems and spreads by means of removable devices and instant messaging software. The malware may also arrive on the system as a result of drive-by-download or files created by other malware. The malware is capable of performing the following functions:
+              </p>
+              <ul>
+                <li>
+                   Allows backdoor access and control 
+                </li>
+                <li>
+                    Creates hidden folder in removable drives containing a copy of malware and creates shortcut pointing to those hidden folders.
+                </li>
+                <li>
+                    Malware checks for messaging software in computer such as AIM, Google Talk, ICQ, Paltalk, Windows Live Messenger, Xfire chat, if found, then worm sends a malicious link using these messenger automatically.
+                </li>
+                <li>
+                    Make network connections to IRC server and receive commands from the remote server indicating malicious actions to be performed
+                </li>
+                <li>
+                    Chenge firewall settings to authorize itself to access the internet without any barrier.
+                </li>
+                <li>
+                    Act as a platform for sending phishing emails containing other malware such as GandCrab.
+                </li>
+                <li>
+                    Malware uses anti analysis techniques and terminates itself if analysis tools are found running.
+                </li>
+              </ul>
+          </div>
+
+          <!-- Infection Mechanism -->
+          <div class="section">
+              <h2>Indicators of Compromise:</h2>
+              
+              <ul>
+                <li>
+                    Malware upon spreading via removable drives makes a copy of itself in following directory:
+                    <ul>
+                        <li>
+                            %USERPROFILE%\M-1-52-5782-8752-5245
+                        </li>
+                        <li>
+                            C:\Users\$USERNAME\%TEMP%
+                        </li>
+                        <li>
+                            C:\Windows
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    File names used by the malware while copying it are:
+                    <ul>
+                       <li>
+                        windsrcn.exe
+                       </li> 
+                       <li>
+                        winmgr.exe
+                       </li>
+                       <li>
+                        winsam.exe
+                       </li>
+                       <li>
+                        winsam.exe
+                       </li>
+                       <li>
+                        winsrvc.exe
+                       </li>
+                       <li>
+                        winsvc.exe
+
+                       </li>
+                    </ul>
+
+                </li>
+                <li>
+                    It creates “autorun.inf” file in root directory of targeted drive to spread itself via removable drives.
+                </li>
+                
+              </ul>
+              
+          </div>
+        
+
+          <!-- Indicator of Compromise -->
+          <div class="section">
+            <h2>Registry Changes:</h2>
+                <p>
+                    In subkey: <br>
+                    HKLM\Software\Microsoft\Windows\CurrentVersion\Run <br>
+                    Sets value: "Microsoft Windows Update" <br>
+                    With data: "%USERPROFILE%\M-1-52-5782-8752-5245\winsvc.exe" <br>
+                </p>
+                
+          </div>
+
+
+
+          <!-- References -->
+          <div class="section">
+            <h2>Malware Hashes:</h2>
+            <ul>
+                <li>c3727564b74452f0f7eae38ad8f13808</li>
+                <li>f6b48dc6144f175c75c6c142ae8d3ffe</li>
+                <li>b6fffc0fca2276a76ecec891039bdaa1</li>
+                <li>7ba150c8808edf187a1ccf8d0532d0732fff2bbe28f76d6e2f02f8196669dd06</li>
+                <li>0b4996c03b059d1a10349f715b6b21ad9926912faae834581f0c96b24ff1b33f</li>
+                <li>9f3f80167c5d39efb9e81507efec6d9bdc5e31323f9d6d89630374c7fe490f33</li>
+                <li>ef1563a962d2d86ceb1dd09056f87fcab4c32e3ca6481c51950d3b6db49d1087</li>
+                <li>5bf79a111467a85abe57f1f3e92f2279b277cccae53ed28c584267717ba372f8</li>
+                <li>2035ef02a014f9ae2a21d39c98604ca4863d77c47dcc12d31bb9b7b2d3e5fc98</li>
+                <li>3df16261b28f30683dce6a66331452f4ddc1d3472fb194ff5b505270a8f64311</li>
+            </ul>
+          </div>
+
+          <div class="section">
+            <h2>Network Communication::</h2>
+            <ul>
+                <li>185[.]189[.]58[.]222</li>
+                <li>zfdiositdfgizdifzgif[.]ru</li>
+                <li>uwgfusubwbusswf[.]ru</li>
+                <li>auoegfiaefuageudn[.]ru</li>
+                <li>92[.]63[.]197[.]106 :5050</li>
+                <li>112[.]126[.]94[.]107 :5050</li>
+                <li>123[.]56[.]228v49 :5050</li>
+                <li>220[.]181[.]87[.]80 :5050</li>
+                <li>185[.]189[.]58[.]222 :5050</li>
+            </ul>
+          </div>
+
+          <div class="section">
+            <h2>
+                Countermeasures:
+            </h2>
+            <ul>
+                <li>
+                    Monitor and block network traffic and systems making connections to the above mentioned domain/IPs at firewall, IDS, web gateways, routers or other perimeter based devices.
+                </li>
+                <li>
+                    Delete the file system and registry changes made by the malware.
+                </li>
+                <li>
+                    Disable the Autorun functionality in Windows. <br>
+                    <a href="http://support.microsoft.com/kb/967715">http://support.microsoft.com/kb/967715</a>
+                </li>
+                <li>
+                    Keep up-to-date patches and fixes on the operating system and application software.
+                </li>
+                <li>
+                    Keep up-to-date Antivirus and Antispyware signatures at desktop and gateway level.
+                </li>
+                <li>
+                    Application whitelisting/Strict implementation of Software Restriction Policies (SRP) to block binaries running from %APPDATA% and %TEMP% paths. Ransomware sample drops and executes generally from these locations.
+                </li>
+                <li>
+                    Network administrators should continuously monitor systems and guide their employees to recognize any above-normal sustained CPU loading activity on computer workstations, mobile devices, and network servers. Network activity should continuously be motored for any unusual activity.
+                </li>
+                <li>
+                    Don't open attachments in unsolicited e-mails, even if they come from people in your contact list, and never click on a URL contained in an unsolicited e-mail, even if the link seems benign. In cases of genuine URLs close out the e-mail and go to the organization's website directly through browser.
+                </li>
+                <li>
+                    Block the attachments of file types, exe|pif|tmp|url|vb|vbe|scr|reg|cer|pst|cmd|com|bat|dll|dat|hlp|hta|js|wsf.
+                </li>
+                <li>
+                    Consider encrypting the confidential data as the ransomware generally targets common file types.                </li>
+                <li>
+                    Exercise caution while visiting links to Web pages.
+                </li>
+                <li>
+                    Do not visit untrusted websites.
+                </li>
+                <li>
+                    Use strong passwords and also enable password policies.
+                </li>
+                <li>
+                    Enable firewall at desktop and gateway level.
+                </li>
+                <li>
+                    Protect yourself against social engineering attacks.
+                </li>
+                
+            </ul>
+          </div>
+
+          <div class="section">
+            <h2>References:</h2>
+            <ul>
+                <li>
+                    <a href="https://www.proofpoint.com/us/threat-insight/post/phorpiex-decade-spamming-shadows">
+                        https://www.proofpoint.com/us/threat-insight/post/phorpiex-decade-spamming-shadows
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://exchange.xforce.ibmcloud.com/collection/Trik-Phorpiex-Malware-updates-dd18355e32e73ee2b2c7acf256343443">
+                       https://exchange.xforce.ibmcloud.com/collection/Trik-Phorpiex-Malware-updates-dd18355e32e73ee2b2c7acf256343443
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.trendmicro.com/vinfo/us/threat-encyclopedia/malware/worm.win32.phorpiex.ab">
+                    https://www.trendmicro.com/vinfo/us/threat-encyclopedia/malware/worm.win32.phorpiex.ab
+                    </a>
+                </li>
+                <li>
+                    <a href="https://inquest.net/blog/2018/05/29/phorpiex-spreads-gandcrab">
+                    https://inquest.net/blog/2018/05/29/phorpiex-spreads-gandcrab
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?name=win32%2Fphorpiex">https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?name=win32%2Fphorpiex</a>
+                </li>
+                <li>
+                    <a href="https://www.sophos.com/en-us/threat-center/threat-analyses/viruses-and-spyware/Mal~Phorpiex-A/detailed-analysis.aspx">
+                        https://www.sophos.com/en-us/threat-center/threat-analyses/viruses-and-spyware/Mal~Phorpiex-A/detailed-analysis.aspx
+                    </a>
+                </li>
+                
+            </ul>
+          </div>
+
+        </div>  
+    </div>
+    
+  </main>
+
+  <footer class="site-footer">
+ 
+      <!-- Layer 1: gradient (on .site-footer itself) -->
+      <!-- Layer 2: SVG circuit overlay -->
+      <div class="footer-bg-svg"></div>
+    
+      <!-- MAIN CONTENT -->
+      <div class="footer-main">
+    
+        <!-- LEFT: Postal Address -->
+        <div class="footer-address">
+          <h3 class="footer-section-title">Postal Address:</h3>
+          <div class="footer-title-line"></div>
+    
+          <address>
+            <p><strong>Indian Computer Emergency Response Team (CERT-In)</strong></p>
+            <p>Ministry of Electronics and Information Technology,</p>
+            <p>Government of India,</p>
+            <p>Electronics Niketan, 6 CGO Complex,</p>
+            <p>Lodhi Road, New Delhi - 110 003</p>
+          </address>
+    
+          <p class="footer-toll-free">
+            <strong>Toll Free Number:</strong> +91-1800-11-4949
+          </p>
+    
+          <div class="footer-logos">
+            <div class="footer-logo">
+              <a href="#" class="footer-logo-item">
+              <img src="../../assets/digital-india.svg" alt="Digital India - Power To Empower" />
+              </a>
+              <a href="#" class="footer-logo-item">
+                <img src="../../assets/footer-certin.svg" alt="CERT-In" />
+              </a>
+            </div>
+            <div class="footer-logo">
+              <a href="#" class="footer-logo-item">
+              <img src="../../assets/infosec.svg" alt="InfoSec Awareness" />
+              </a>
+              <a href="#" class="footer-logo-item">
+                <img src="../../assets/staysafe.svg" alt="Stay Safe Online" />
+              </a>
+            </div>
+          </div>
+        </div>
+    
+        <!-- RIGHT: Important Links -->
+        <div class="footer-links">
+          <h3 class="footer-section-title">Important Links</h3>
+          <div class="footer-title-line"></div>
+    
+          <div class="footer-links-grid">
+            <ul class="footer-link-col">
+              <li><a href="../homePage/index.html">Home</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">CERT-In</a></li>
+              <li><a href="#">MeiTY</a></li>
+              <li><a href="#">FAQ's</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+            <ul class="footer-link-col">
+              <li><a href="#">Website Policies</a></li>
+              <li><a href="#">Terms &amp; Conditions</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Help</a></li>
+              <li><a href="#">Archives</a></li>
+              <li><a href="#">Sitemap</a></li>
+            </ul>
+          </div>
+    
+          <div class="footer-social-row">
+            <div class="footer-follow">
+              <span class="follow-label">Follow Us</span>
+              <div class="footer-social-icons">
+                <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" title="X"><i class="fa-solid fa-x"></i></a>
+                <a href="#" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+              </div>
+            </div>
+            <p class="footer-last-updated">Last updated on: November 10, 2025</p>
+          </div>
+        </div>
+    
+      </div>
+    
+      <!-- BOTTOM BAR -->
+      <div class="footer-bottom">
+        <p class="footer-disclaimer">
+          Disclaimer :-The information provided herein is on "as is" basis, without warranty of any kind.
+        </p>
+        <p class="footer-copyright">
+          <i class="fa-regular fa-copyright"></i> Copyright 2025. All right reserved
+        </p>
+      </div>
+    
+    </footer>
+
+
+</body>
+</html>

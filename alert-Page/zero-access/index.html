@@ -110,18 +110,18 @@
           </label>
         </li>
 
-        <li class="active"><a href="../index.html">Home</a></li>
+        <li ><a href="../index.html">Home</a></li>
         <li><a href="../about/index.html">About Us</a></li>
         <li><a href="#">CERT-In</a></li>
         <li><a href="../security-tools/index.html">Security Tools</a></li>
-        <li><a href="../alert/index.html">Alerts</a></li>
+        <li class="active"><a href="../alert/index.html">Alerts</a></li>
 
         <li class="has-dropdown">
           <button class="nav-btn">
             Awareness <i class="fa-solid fa-chevron-down"></i>
           </button>
           <ul class="dropdown-menu">
-            <li><a href="./Awareness/index.html">Guidelines &amp; Advisories</a></li>
+            <li><a href="./guideline/index.html">Guidelines &amp; Advisories</a></li>
             <li><a href="./Awareness/index.html">Our Campaigns</a></li>
             <li><a href="./bestPraactice/index.html">Best Practices</a></li>
             <li><a href="./ourReports/index.html">Our Reports</a></li>
@@ -210,13 +210,13 @@
   </nav>
 
     <!-- ✅ nav-overlay AFTER nav — direct sibling of nav-toggle -->
-    <div class="nav-overlay">
+    <!-- <div class="nav-overlay">
       <label for="nav-toggle"></label>
-    </div>
+    </div> -->
 
    <main id="main-content">
     <div class="main-content-Locky">
- 
+
       <div class="social-content">
             <div class="social-icons">
               <a href="https://www.facebook.com/IndianCERT/" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
@@ -226,111 +226,204 @@
               <a href="https://www.youtube.com/hashtag/certin" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
             </div>  
           </div>
- 
+
           <label for="acc-toggle" class="icon">
+              <!-- <i class="fa-solid fa-universal-access"></i> -->
               <img src="../assets/access_icon.svg" alt="">
           </label>
- 
+
         <div class="container">
- 
+
           <div class="header">
- 
+
             <div class="left">
               <a href="javascript:history.back()" class="back-btn">
                 <i class="fa-solid fa-angle-left"></i> BACK
               </a>
-              <h1>Mozi IoT Botnet</h1>
+              <h1>Zero Access</h1>
             </div>
- 
+
+          <!-- Header -->
             <div class="header-right">
-              <div class="meta">
-                <div class="border-left"></div>
-                <div class="righ-content">
-                  <p><span class="gree">Original Issue Date:</span> November 12, 2020</p>
-                  <p><span class="orr">Virus Type:</span> IoT Botnet</p>
-                  <p><span class="orr">Severity:</span> Medium</p>
+              
+                <div class="meta">
+                  <div class="border-left"></div>
+                  <div class="righ-content">
+                    <p><span class="gree">Original Issue Date:</span>  April 15, 2013</p>
+                    
+                    <p><span class="orr">Virus Type:</span> Trojan/botnet</p>
+                    <p><span class="orr">Severity: </span>High</p>
+                    
+                  </div>
+                  
                 </div>
-              </div>
             </div>
- 
+
           </div>
- 
+
+          
+
+
           <!-- Description -->
           <div class="section">
+              <p>
+                Win32/Sirefef a.k.a <strong>"Zero Access"</strong> is a widespread multi-component malware family of rootkits which is affecting the windows operating systems. The threat spreads majorly by exploit kits, use of pirated softwares and other malware downloaders. It uses disk-level hooking to hide itself (hide processes, related files, network activites,) in order to hinder its detection and removal on infected computer. It uses multi-layers self-defense mechanism to protect itself against security related softwares by stopping or deleting any process that attempts to access.
+              </p>
+             <div class="sub-section">
+                <p>The Trojan is responsible for the following functions:</p>
+                <ul>
+                    <li>Download and execute arbitrary files</li>
+                    <li>Contact foreign hosts</li>
+                    <li>Disable security features</li>
+                    <li>Modifying browser search engine results</li>
+                    <li>Generating pay-per-click revenue</li>
+                    <li>Performing Bitcoin mining</li>
+                </ul>
+             </div>
+          </div>
+
+          <div class="section">
             <p>
-              It has been reported that a new malware named Mozi is affecting IoT devices globally. Affected IoT devices are being assembled into an IoT botnet which could be employed by botnet owner for launching distributed denial-of-service (DDoS) attacks, data exfiltration and payload execution.
+                <strong>Aliases:  </strong>
+                Trojan-Dropper.Win32.PMax.a (Kaspersky, Trojan.Horse (Symantec), TrojanDropper:Win32/Sirefef.A (Microsoft), Trojan.Win32.Agent.csaf [Kaspersky], Trojan.Cryptor.A [BitDefender]Trojan.Win32.Agent.csaf [F-Secure], Mal/Crot-A [Sophos], Trojan.Agent.csaf (CAT-QuickHeal), Crot.gen.b [McAfee] , TrojWare.Win32.Agent.csaf [Comodo])
             </p>
-            <p>
-              According to the reports, Mozi malware is comprised of source code from Gafgyt, Mirai, and IoT Reaper; malware families which are targeting IoT devices. Mozi could compromise embedded Linux device with an exposed telnet. It mainly targets home routers and DVRs which are either unpatched, loosely configured or have weak/default telnet credentials. The infected devices form a peer-to-peer (P2P) botnet and uses a distributed hash table (DHT) to communicate with other infected host systems.
-            </p>
-            <p>The overall network structure is shown in the following figure:</p>
-            <img src="../assets/alert/mozi_network_structure.png" alt="Figure 1: Mozi Network Structure (Source: 360 NetLab)">
-            <p><em>Figure:1 Mozi Network Structure (Source: 360 NetLab)</em></p>
+
           </div>
- 
-          <!-- Infection Process -->
+
+          <!-- Infection Mechanism -->
           <div class="section">
-            <h2>Infection Process:</h2>
-            <p>The infection process comprises the follows:</p>
+              <h2>Installation:</h2>
+              <p>
+                The Trojan has been distributed by various ways such as exploit kits ( e.g. Blackhole Kit ), Malware/TrojanDownloaders ( such as TrojanDownloader: Win32/Beebone.gen!A , TrojanDownloader:Win32/Karagany.I and Win32/Dofoil family variants ) , and use of pirated softwares related to 'crack' and 'keygen'. Some of the softwares are:
+              </p>
+              <div class="sub-section">
+                <ul>
+                    <li>"Download Nokia Dongle.exe"</li>
+                    <li>"Facebook Password Cracker.exe"</li>
+                    <li>"autocad_2007_full_crack.exe".</li>
+                </ul>
+              </div>
+              <p>The files dropped by Sirefef are as follows:</p>
+              <p>Location: c:\recycler\ [Redacted]</p>
+          </div>
+        
+
+          <!-- Indicator of Compromise -->
+          <div class="section">
+            <h2>Files Dropped:</h2>
+                <p>
+                   The registry changes made by the trojan Sirefef to ensure its persistence are as follows: 
+                </p>
+                <p>
+                    In subkey: HKLM\Software\Classes\clsid\{5839fca9-774d-42a1-acda-d6a79037f57f}\InprocServer32 <br>
+                    Modifies value: "(Default)" <br>
+                    From data: " < system folder > \wbem\wbemess.dll"  <br>
+                    With data: " " (For Example : "c:\recycler\ \n" )
+                </p>
+                <div class="sub-section">
+                    <p>To intercept and hijack network traffic, it drops the following files:</p>
+                    <ul>
+                        <li>%windir%\assembly\GAC\desktop.ini or</li>
+                        <li>%windir%\assembly\GAC_32\desktop.ini</li>
+                    </ul>
+                    <p>It stops and attempts to delete Windows security services like Windows Defender (windefend), IP helper (iphlpsvc),Windows Security Center(wscsvc), windows firewall (mpssvc), Base filtering engine (bfe)</p>
+                </div>
+                <p>
+                    On execution Sirefef replaces a randomly-selected system driver with its own malicious copy. Some of the drivers replaced are afd.sys, i8042prt.sys, ipsec.sys, mrxsmb.sys, netbt.sys, raspppoe.sys, serial.sys. It creates a folder to retain the original copy of drivers and also for additional malware components in an encrypted and non accessible manner.
+                </p>
+                <p>
+                    Format for the folder name is as follows:
+                </p>
+                <p>
+                    \$NtUninstallKB $
+                </p>
+                <div class="img-caption">
+                    <img src="../../assets//alert/zero-access.jpeg" alt="">
+                    
+                </div>
+          </div>
+
+
+          <div class="section">
+            <h2>
+                Countermeasures:
+            </h2>
             <ul>
-              <li>Current Bot node randomly uses a local port to start the http service to provide sample downloads or receives the sample download address in the Config file issued by the Botnet owner/Master.</li>
-              <li>Current Bot node logs in to the target device (which has weak password) and writes the downloader file in echo mode. Later execute it and downloads the sample file from the sample download address provided by the current Bot node. Another way for infecting is by exploiting vulnerability at target, and then obtain a sample file from the sample download address provided by the current Bot node.</li>
-              <li>Run the Mozi Bot sample on the infected target device sample file name Mozi.m or Mozi.a join the Mozi P2P network to become the new Mozi Bot node and continue to infect other new devices.</li>
+                <li>
+                    Perform scanning on computer for possible infection with the removal tools mentioned below.
+                </li>
+                <li>
+                    Exercise caution while visiting links within emails received from untrusted users or unexpectedly received from trusted users.
+                </li>
+                
+                <li>
+                    Do not download and open attachments in emails received from untrusted users or unexpectedly received from trusted users.
+                </li>
+                <li>
+                    Exercise caution while visiting links to web pages.
+                </li>
+                <li>Protect yourself against social engineering attacks.                </li>
+                <li>
+Do not visit untrusted websites.                </li>
+                <li>
+                    Enable firewall at desktop and gateway level.
+                </li>
+                <li>
+                    Use strong password and also enable password policies.
+                </li>
+                <li>
+                    Avoid downloading pirated software.   </li>
+                <li>
+                    Keep up-to-date patches and fixes on the operating system and application softwares
+                </li>
+                <li>
+                    Keep up-to-date antivirus and antispyware signatures at desktop and gateway level.
+                </li>
+                <li>
+                    Selectively disable Java/Flash and javascript.
+                </li>
+                <li>
+                    Exercise caution while using external drives, disable autoplay.
+
+                </li>
+                
+                
             </ul>
           </div>
- 
-          <!-- Vulnerabilities Table -->
-          <div class="section">
-            <h2>Vulnerabilities Exploited by Mozi Botnet:</h2>
-            <img src="../assets/alert/mozi_vulnerability_table.png" alt="Vulnerabilities exploited by Mozi Botnet">
-          </div>
- 
-          <!-- IOC -->
-          <div class="section">
-            <h2>IOC (Sample MD5):</h2>
-            <ul>
-              <li>eda730498b3d0a97066807a2d98909f3</li>
-              <li>849b165f28ae8b1cebe0c7430f44aff3</li>
-            </ul>
- 
-            <h3>IOC (File Hash):</h3>
-            <ul>
-              <li>File Name, File Hash</li>
-              <li>mozi.m, 4dde761601684d7edad4e5e1fdb940b</li>
-              <li>5738f1bc69e78d234dd04e2fbfcfb4b86403fc9117b133cf1bb7cda67e7eef0a, 86d42d968d3d12c36722e16c78e49ffb</li>
-              <li>mozi.a, 9a111588a7db15b796421bd13a949cd4</li>
-              <li>83441d77abb6cf328e77e372dc17c607fb9c4a261722ae80d83708ae3865053d, dd4b6f3216709e193ed9f06c37bcc3890</li>
-            </ul>
-          </div>
- 
-          <!-- Countermeasures -->
-          <div class="section">
-            <h2>Countermeasures and Best practices for prevention:</h2>
-            <p>Users and administrators are advised to take the following preventive measures to protect their devices:</p>
-            <ul>
-              <li>Users are advised to update their devices with patches as &amp; when released by respective OEM of devices</li>
-              <li>If devices found infected, it is recommended to reset device firmware or restore it from trusted backup.</li>
-              <li>Monitor or block UDP traffic from the device to Bit Torrent DHT bootstrap nodes</li>
-              <li>Block outgoing TCP traffic with destination ports 22, 23, 2323, 80, 81, 5555, 7574, 8080, 8443, 37215, 49152, and 52869, if not in use.</li>
-            </ul>
-          </div>
- 
-          <!-- References -->
+
           <div class="section">
             <h2>References:</h2>
-            <ul class="links">
-              <li><a href="https://www.darkreading.com/iot/new-malware-family-assembles-iot-botnet--/d/d-id/1337578">https://www.darkreading.com/iot/new-malware-family-assembles-iot-botnet--/d/d-id/1337578</a></li>
-              <li><a href="https://blog.netlab.360.com/mozi-another-botnet-using-dht/">https://blog.netlab.360.com/mozi-another-botnet-using-dht/</a></li>
-              <li><a href="https://www.internet-sicherheit.de/research/botnetze/iot-botnetze/mozi/">https://www.internet-sicherheit.de/research/botnetze/iot-botnetze/mozi/</a></li>
-              <li><a href="https://threatpost.com/mozi-botnet-majority-iot-traffic/159337/">https://threatpost.com/mozi-botnet-majority-iot-traffic/159337/</a></li>
-              <li><a href="https://securityintelligence.com/posts/botnet-attack-mozi-mozied-into-town/">https://securityintelligence.com/posts/botnet-attack-mozi-mozied-into-town/</a></li>
-              <li><a href="https://www.cyberswachhtkendra.gov.in/alerts/mirai.html">https://www.cyberswachhtkendra.gov.in/alerts/mirai.html</a></li>
-              <li><a href="https://www.cyberswachhtkendra.gov.in/alerts/IOT_Botnets_Targeting_Vulnerable_IP_cameras.html">https://www.cyberswachhtkendra.gov.in/alerts/IOT_Botnets_Targeting_Vulnerable_IP_cameras.html</a></li>
-              <li><a href="https://www.cyberswachhtkendra.gov.in/alerts/IOTReaper.html">https://www.cyberswachhtkendra.gov.in/alerts/IOTReaper.html</a></li>
-              <li><a href="https://www.cyberswachhtkendra.gov.in/alerts/BrickerBot_IoT_Malware.html">https://www.cyberswachhtkendra.gov.in/alerts/BrickerBot_IoT_Malware.html</a></li>
+            <ul>
+                <li>
+                    <a href="http://blogs.technet.com/b/mmpc/archive/2013/02/12/msrt-february-2013-sirefef.aspx">
+                        http://blogs.technet.com/b/mmpc/archive/2013/02/12/msrt-february-2013-sirefef.aspx
+                    </a>
+                </li>
+
+                <li>
+                    <a href="http://www.microsoft.com/security/portal/threat/encyclopedia/Entry.aspx?Name=Win32/Sirefef">
+                      http://www.microsoft.com/security/portal/threat/encyclopedia/Entry.aspx?Name=Win32/Sirefef
+                    </a>
+                </li>
+
+                <li>
+                    <a href="http://nakedsecurity.sophos.com/zeroaccess4/">
+                    http://nakedsecurity.sophos.com/zeroaccess4/
+                    </a>
+                </li>
+                <li>
+                    <a href="http://virusremovalstation.blogspot.in/2013/03/how-to-remove-sirefefgenc-virus-get-rid.html">
+                    http://virusremovalstation.blogspot.in/2013/03/how-to-remove-sirefefgenc-virus-get-rid.html
+                    </a>
+                </li>
+                <li>
+                    <a href="http://gmer.net/">http://gmer.net/</a>
+                </li>
+                
+                
             </ul>
           </div>
- 
+
         </div>  
     </div>
     

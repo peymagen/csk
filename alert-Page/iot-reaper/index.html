@@ -210,9 +210,9 @@
   </nav>
 
     <!-- ✅ nav-overlay AFTER nav — direct sibling of nav-toggle -->
-    <!-- <div class="nav-overlay">
+    <div class="nav-overlay">
       <label for="nav-toggle"></label>
-    </div> -->
+    </div>
 
    <main id="main-content">
     <div class="main-content-Locky">
@@ -239,17 +239,17 @@
               <a href="javascript:history.back()" class="back-btn">
                 <i class="fa-solid fa-angle-left"></i> BACK
               </a>
-              <h1>Panchan Botnet</h1>
+              <h1>IOT Reaper/IOTRoop Botnet</h1>
             </div>
  
             <div class="header-right">
               <div class="meta">
-                  <div class="border-left"></div>
-                  <div class="righ-content">
-                    <p><span class="gree">Original Issue Date:</span> September 16, 2022</p>
-                    <p><span class="orr">Virus Type:</span> Botnet / Worm</p>
-                    <p><span class="orr">Severity:</span> Medium</p>
-                  </div>
+                <div class="border-left"></div>
+                <div class="righ-content">
+                  <p><span class="gree">Original Issue Date:</span> October 24, 2017</p>
+                  <p><span class="orr">Type:</span> Botnet</p>
+                  <p><span class="orr">Severity:</span> High</p>
+                </div>
               </div>
             </div>
  
@@ -257,90 +257,58 @@
  
           <!-- Description -->
           <div class="section">
-              <p>
-                It is reported that a new p2p botnet with its main focus on crypto mining through its novel methods, is spreading across the globe. It is dubbed as "Panchan" and currently targeting Linux servers in telecom and education sector organizations. The malware is written in Golang and utilizes concurrency features to enhance spread and execute modules. The botnet/worm take credit of stolen SSH keys for its lateral movement across the network.
-              </p>
+            <p>
+              An IOT botnet dubbed "IoTroop" or "Reaper" targeting vulnerable internet-connected devices, such as CCTV, IP cameras and Wi-Fi routers, are reported rampant spreading worldwide. The botnet targets reported vulnerabilities in the major IoT device vendors such as Dlink, Netgear, Linksys, AVTECH, Goahead, JAWS.
+            </p>
+            <p>
+              These compromised devices lets cyber criminals to intrude on private networks and gain access to other devices and information attached to these networks and can also be used for activities such as DDoS or other malicious activities leading to full loss of confidentiality, integrity and availability, depending on the actions of the attacker.
+            </p>
+           
           </div>
  
-          <!-- Infection Mechanism -->
+          <!-- Vulnerable Systems -->
           <div class="section">
-              <h2>Infection Mechanism</h2>
-              <p>
-                As observed, this is a worm that spreads across the network via gaining access through SSH brute force or stealing SSH keys. During brute forcing, it attempts for the credentials with basic user names and passwords. While in the other unique method the malware tries to read ~/.HOME/.ssh/id_rsa and ~/.HOME/.ssh/known_hosts files to harvest SSH keys to authenticate credentials for its lateral movement.
-              </p>
- 
-              <img src="../assets/alert/panchan.jpeg" alt="Fig.1 Exploring malware infection flow (Source: Akamai)">
-              <p class="img-caption">Fig.1 Exploring malware infection flow (Source: Akamai)</p>
- 
-              <p>
-                After successfully authentication, the malware creates a hidden folder in root directory and place itself in that folder with the name xinetd using sftp on the target machine. Then the malware binary is remotely executed and supplied with a list of peers. Later, the malware initiates HTTPS POST operation to a Discord webhook. In its peer-2- peer communication, messages are sent as plan text on TCP port 1919, the malware sends configuration commands in specific format.
-              </p>
- 
-              <p>
-                In its specific feature, the malware itself contains a "godmode"- an admin panel that is capable of customizing the mining configuration and later distributed to peers. To access the godmode admin panel, a private key is required that is verified with the public key contained the malware to open the interface. On the interface, the first section is peer statistics while the second section contains crypto mining configuration that is in same format as mining configuration sent among peers.
-              </p>
- 
-              <p>
-                The malware deploys two miners- "xmrig" and "nbhash" and their binaries are base64 encoded inside malware itself. The unique feature here is that both the miners are dropped as memory mapped files without any disk presence so it can be executed directly from memory without any traceable path. As observed, the miner use Nicehash for its mining process.
-              </p>
- 
-              <p>
-                The malware continuously search for process monitoring module (top and htop) and terminates mining if it finds them making it hard to identify.
-              </p>
-          </div>
- 
-          <!-- Indicator of Compromise -->
-          <div class="section">
-            <h2>Indicator of Compromise:</h2>
-            <p>For detailed list of IOC kindly refer the URL:</p>
+            <h2>Vulnerable Systems:</h2>
+            <p>The following systems are currently reported to be vulnerable to the Reaper malware:</p>
             <ul>
-              <li>
-                <a href="https://github.com/akamai/akamai-security-research/tree/main/malware/panchan">https://github.com/akamai/akamai-security-research/tree/main/malware/panchan</a>
-              </li>
+              <li>Dlink (router) <a href="https://blogs.securiteam.com/index.php/archives/3364">https://blogs.securiteam.com/index.php/archives/3364</a></li>
+              <li>Dlink (router) <a href="http://www.s3cur1ty.de/m1adv2013-003">http://www.s3cur1ty.de/m1adv2013-003</a></li>
+              <li>Netgear (router) <a href="https://blogs.securiteam.com/index.php/archives/3409">https://blogs.securiteam.com/index.php/archives/3409</a></li>
+              <li>Netgear (router) <a href="http://seclists.org/bugtraq/2013/Jun/8">http://seclists.org/bugtraq/2013/Jun/8</a></li>
+              <li>Linksys (router) <a href="http://www.s3cur1ty.de/m1adv2013-004">http://www.s3cur1ty.de/m1adv2013-004</a></li>
+              <li>AVTECH (IP camera) <a href="https://github.com/Trietptm-on-Security/AVTECH">https://github.com/Trietptm-on-Security/AVTECH</a></li>
+              <li>Goahead (IP camera) <a href="https://pierrekim.github.io/blog/2017-03-08-camera-goahead-0day.html">https://pierrekim.github.io/blog/2017-03-08-camera-goahead-0day.html</a></li>
+              <li>JAWS (IP camera) <a href="https://www.pentestpartners.com/blog/pwning-cctv-cameras/">https://www.pentestpartners.com/blog/pwning-cctv-cameras/</a></li>
+              <li>Vacron NVR (Network Video Recorder) <a href="https://blogs.securiteam.com/index.php/archives/3445">https://blogs.securiteam.com/index.php/archives/3445</a></li>
             </ul>
           </div>
  
-          <!-- Best Practices and Recommendations -->
+          <!-- Recommendations -->
           <div class="section">
-            <h2>Best Practices and Recommendations:</h2>
+            <h2>Recommendations</h2>
             <ul>
-                <li>Implement all accounts with complex password logins (e.g., service account, admin accounts, and domain admin accounts) to have strong, unique passwords.</li>
-                <li>Implement multi-factor authentication for all services to the extent possible, particularly for webmail, virtual private networks, and accounts that access critical systems.</li>
-                <li>Remove unnecessary access to administrative shares.</li>
-                <li>Network segmentation and segregation into security zones - help protect sensitive information and critical services. Separate administrative network from business processes with physical controls and Virtual Local Area Networks.</li>
-                <li>Monitor system/ VM resources activity for any abnormal high usage.</li>
-                <li>Use a host-based firewall to only allow connections to administrative shares via server message block (SMB) from a limited set of administrator machines.</li>
-                <li>Enable protected files in the Windows Operating System to prevent unauthorized changes to critical files.</li>
-                <li>Disable remote Desktop Connections, employ least-privileged accounts. Limit users who can log in using Remote Desktop, set an account lockout policy. Ensure proper RDP logging and configuration.</li>
-                <li>Keep the operating system, third party applications (MS office, browsers, browser Plugins) up-to-date with the latest patches.</li>
-                <li>Restrict access using firewalls and allow only to selected remote endpoints, VPN may also be used with dedicated pool for RDP access.</li>
-                <li>Additional Security measures that may be considered are:
-                    <ul>
-                        <li>Use RDP Gateways for better management</li>
-                        <li>Change the listening port for Remote Desktop</li>
-                        <li>Tunnel Remote Desktop connections through IPSec or SSH</li>
-                        <li>Two-factor authentication may also be considered for highly critical systems</li>
-                    </ul>
-                </li>
+              <li>Run updates and contact manufacturers to confirm devices are patched with the latest software and firmware.</li>
+              <li>Review IOT devices (home Internet routers, DVRs, IP cameras) to ensure they support the latest security protocols and standards and disable older insecure protocols. (check the vendors websites for updates &amp; patches).</li>
+              <li>Change the default OEM credentials and ensure that passwords meet the minimum complexity.</li>
+              <li>Disable Universal Plug and Play (UPnP) unless absolutely necessary.</li>
+              <li>Implement account lockout policies to reduce the risk of brute forcing attacks.</li>
+              <li>Telnet and SSH should be disabled on device if there is no requirement of remote management</li>
+              <li>Configure VPN and SSH to access device if remote access is required.</li>
+              <li>Configure certificate based authentication for telnet client for remote management of devices</li>
+              <li>Implement Egress and Ingress filtering at router level.</li>
+              <li>Unnecessary port and services should be stopped and closed.</li>
+              <li>Logging must be enabled on the device to log all the activities.</li>
+              <li>Enable and monitor perimeter device logs to detect scan attempts towards critical devices/systems.</li>
             </ul>
           </div>
  
           <!-- References -->
           <div class="section">
-            <h2>References:</h2>
+            <h2>References</h2>
             <ul class="links">
-              <li>
-                <a href="https://www.akamai.com/blog/security/new-p2p-botnet-panchan">https://www.akamai.com/blog/security/new-p2p-botnet-panchan</a>
-              </li>
-              <li>
-                <a href="https://www.linode.com/blog/security/linode-security-digest-panchan-malware-lelastic-vulnerability/">https://www.linode.com/blog/security/linode-security-digest-panchan-malware-lelastic-vulnerability/</a>
-              </li>
-              <li>
-                <a href="https://thehackernews.com/2022/06/panchan-new-golang-based-peer-to-peer.html">https://thehackernews.com/2022/06/panchan-new-golang-based-peer-to-peer.html</a>
-              </li>
-              <li>
-                <a href="https://www.techrepublic.com/article/botnet-panchan-attacking-server/">https://www.techrepublic.com/article/botnet-panchan-attacking-server/</a>
-              </li>
+              <li><a href="http://blog.netlab.360.com/iot_reaper-a-rappid-spreading-new-iot-botnet-en/">http://blog.netlab.360.com/iot_reaper-a-rappid-spreading-new-iot-botnet-en/</a></li>
+              <li><a href="https://research.checkpoint.com/new-iot-botnet-storm-coming/">https://research.checkpoint.com/new-iot-botnet-storm-coming/</a></li>
+              <li><a href="https://www.csa.gov.sg/singcert/news/advisories-alerts/alert-on-botnet-iot-reaper">https://www.csa.gov.sg/singcert/news/advisories-alerts/alert-on-botnet-iot-reaper</a></li>
             </ul>
           </div>
  

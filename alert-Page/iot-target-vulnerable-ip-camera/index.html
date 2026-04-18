@@ -110,18 +110,18 @@
           </label>
         </li>
 
-        <li class="active"><a href="../index.html">Home</a></li>
+        <li ><a href="../index.html">Home</a></li>
         <li><a href="../about/index.html">About Us</a></li>
         <li><a href="#">CERT-In</a></li>
         <li><a href="../security-tools/index.html">Security Tools</a></li>
-        <li><a href="../alert/index.html">Alerts</a></li>
+        <li class="active"><a href="../alert/index.html">Alerts</a></li>
 
         <li class="has-dropdown">
           <button class="nav-btn">
             Awareness <i class="fa-solid fa-chevron-down"></i>
           </button>
           <ul class="dropdown-menu">
-            <li><a href="./Awareness/index.html">Guidelines &amp; Advisories</a></li>
+            <li><a href="./guideline/index.html">Guidelines &amp; Advisories</a></li>
             <li><a href="./Awareness/index.html">Our Campaigns</a></li>
             <li><a href="./bestPraactice/index.html">Best Practices</a></li>
             <li><a href="./ourReports/index.html">Our Reports</a></li>
@@ -208,6 +208,7 @@
 
     </div>
   </nav>
+
     <!-- ✅ nav-overlay AFTER nav — direct sibling of nav-toggle -->
     <!-- <div class="nav-overlay">
       <label for="nav-toggle"></label>
@@ -215,7 +216,7 @@
 
    <main id="main-content">
     <div class="main-content-Locky">
- 
+
       <div class="social-content">
             <div class="social-icons">
               <a href="https://www.facebook.com/IndianCERT/" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
@@ -225,151 +226,126 @@
               <a href="https://www.youtube.com/hashtag/certin" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
             </div>  
           </div>
- 
+
           <label for="acc-toggle" class="icon">
               <!-- <i class="fa-solid fa-universal-access"></i> -->
               <img src="../assets/access_icon.svg" alt="">
           </label>
- 
+
         <div class="container">
- 
+
           <div class="header">
- 
+
             <div class="left">
               <a href="javascript:history.back()" class="back-btn">
                 <i class="fa-solid fa-angle-left"></i> BACK
               </a>
-              <h1>KV Botnet</h1>
+              <h1>IOT Botnets Targeting Vulnerable IP Cameras</h1>
             </div>
- 
+
           <!-- Header -->
             <div class="header-right">
               
                 <div class="meta">
                   <div class="border-left"></div>
                   <div class="righ-content">
-                    <p><span class="gree">Original Issue Date:</span> April 12, 2024</p>
-                    <p><span class="orr">Virus Type:</span> Botnet</p>
-                    <p><span class="orr">Severity:</span> Medium</p>
+                    <p><span class="gree">Original Issue Date:</span>  June 19, 2017</p>
+                    
+                    <p><span class="orr">Virus Type:</span> Worm/Backdoor</p>
+                    <p><span class="orr">Severity: </span>High</p>
+                    
                   </div>
                   
                 </div>
             </div>
- 
+
           </div>
- 
+
+          
+
+
           <!-- Description -->
           <div class="section">
               <p>
-                It has been reported that a botnet dubbed "KV Botnet", is targeting Small Office/Home Office (SOHO) routers and VPN devices. The botnet can be utilized for various malicious activities, including data exfiltration, espionage, and network disruption.
+                Several malicious internet worms, targeting embedded/Internet of Things (“IoT”) IP cameras of various OEM’s spreads by scanning the public internet for devices running with insecure default credentials/ inherent security weaknesses is reported.
+              </p>
+              <p>
+                A remote attacker can completely control the vulnerable device, can remotely control the camera operations, can view the video feeds, upload and download files from attacker controlled remote servers. Additionally these compromised devices can also be used for activities such as DDoS or other malicious activities leading to full loss of confidentiality, integrity and availability, depending on the actions of the attacker.
+              </p>
+              <p>
+                These successors of IOT Mirai botnets [dubbed Persirai, TheMoon, DvrHelper, TheMoon, Hajime] leverage default-insecure user credentials, hidden functionalities, missing authorizations, command injection vulnerabilities, UPnP protocol, in the device firmware to own the devices and further spreading.
               </p>
           </div>
- 
+
           <!-- Infection Mechanism -->
           <div class="section">
-              <h2>Infection Mechanism</h2>
-              <p>
-                The KV Botnet is a hidden network that transfers data secretly. It is created by hacking small office/home office routers and firewalls from popular brands such as Fortinet, NETGEAR and Cisco etc. This botnet is operated by two separate sections: one section infects devices, and the other section transmits data. This botnet is believed to be associated with a Chinese state-sponsored hacking group known as Volt Typhoon, also referred to as Bronze Silhouette.
-              </p>
- 
-              <img src="../assets/alert/kv1.jpeg" alt="Fig-1: Malware installation process (Source: Lumen)">
-              <p class="img-caption">Fig-1: Malware installation process (Source: Lumen)</p>
- 
-              <p>
-                The KV botnet is designed to exploit vulnerabilities in firmware and web interfaces of small office/home office (SOHO) devices. It uses brute-force attacks to crack weak passwords for admin accounts and gain access to the devices. The botnet can also infect devices through third-party applications or malicious firmware updates.
-              </p>
- 
-              <img src="../assets/alert/kv2.jpeg" alt="Fig-2: Two separate groups of activity linked to KV-botnet (Source: Lumen)">
-              <p class="img-caption">Fig-2: Two separate groups of activity linked to KV-botnet (Source: Lumen)</p>
- 
-              <p>Once infected, the malware creates a hidden communication channel within the device and uses it for:</p>
+              <h2>Recommendations:</h2>
               <ul>
-                <li><strong>Data exfiltration:</strong> Stealing sensitive data, including user credentials, financial information, and confidential documents, from the infected network.</li>
-                <li><strong>Lateral movement:</strong> The malware is spreading through the network, attempting to compromise more devices.</li>
-                <li><strong>Command and control:</strong> Attackers can take control of systems, using them to launch DDoS attacks or deploy malware.</li>
-              </ul>
-          </div>
- 
-          <!-- Indicator of Compromise -->
-          <div class="section">
-            <h2>Indicator of Compromise:</h2>
- 
-            <p><strong>IP:</strong></p>
-            <ul>
-              <li>207.246.100[dot]151</li>
-              <li>66.42.124[dot]155</li>
-              <li>104.156.246[dot]150</li>
-            </ul>
- 
-            <p><strong>SHA256:</strong></p>
-            <ul>
-              <li>c524e118b1e263fccac6e94365b3a0b148a53ea96df21c8377ccd8ec3d6a0874</li>
-              <li>2711f1341d2f150a0c3e2d596939805d66ba7c6403346513d1fc826324f63c87</li>
-              <li>5928f67db54220510f6863c0edc0343fdb68f7c707049 6a3f49f99b3b545daf9</li>
-            </ul>
- 
-            <p><strong>Files:</strong></p>
-            <ul>
-              <li>Kv-all.sh (Cisco)- 7043ffd9ce3fe48c9fb948ae958a2e9966d29afe380d6b61d5efb826b70334f5</li>
-              <li>Kv-arm - 690638c702170dba9e43b0096944c4e7540b827218afbfaebc902143cda4f2a7</li>
-              <li>Kv-mipsel - 48299c2c568ce5f0d4f801b4aee0a6109b68613d2948ce4948334bbd7adc49eb</li>
-            </ul>
- 
-            <p>For more detailed list of IoC, kindly refer to the below URL:</p>
-            <ul>
-              <li><a href="https://github.com/blacklotuslabs/IOCs/blob/main/KVbotnet_IOCs.txt">https://github.com/blacklotuslabs/IOCs/blob/main/KVbotnet_IOCs.txt</a></li>
-            </ul>
-          </div>
- 
-          <!-- Best Practices and Recommendations -->
-          <div class="section">
-            <h2>Best Practices and Recommendations:</h2>
-            <ul>
-                <li>Implement all accounts with complex password logins (e.g., service accounts, admin accounts, and domain admin accounts) to have strong, unique passwords.</li>
-                <li>Implement multi-factor authentication for all services to the extent possible, particularly for webmail, virtual private networks, and accounts that access critical systems.</li>
-                <li>Remove unnecessary access to administrative shares.</li>
-                <li>Network segmentation and segregation into security zones - help protect sensitive information and critical services. Separate administrative network from business processes with physical controls and Virtual Local Area Networks.</li>
-                <li>Do not browse un-trusted websites or follow un-trusted links and exercise caution while clicking on the link provided in any unsolicited emails and SMSs.</li>
-                <li>Monitor system/ VM resources activity for any abnormal high usage.</li>
-                <li>Use a host-based firewall to only allow connections to administrative shares via server message block (SMB) from a limited set of administrator machines.</li>
-                <li>Enable protected files in the Windows Operating System to prevent unauthorized changes to critical files.</li>
-                <li>Disable remote Desktop Connections, and employ least-privileged accounts. Limit users who can log in using Remote Desktop, and set an account lockout policy. Ensure proper RDP logging and configuration.</li>
-                <li>Keep the operating system, and third-party applications (MS Office, browsers, browser Plugins) up-to-date with the latest patches.</li>
-                <li>Restrict access using firewalls and allow only to selected remote endpoints, VPN may also be used with a dedicated pool for RDP access.</li>
-                <li>Additional Security measures that may be considered are:
-                    <ul>
-                        <li>Use RDP Gateways for better management</li>
-                        <li>Change the listening port for the Remote Desktop</li>
-                        <li>Tunnel Remote Desktop connections through IPSec or SSH</li>
-                        <li>Two-factor authentication may also be considered for highly critical systems</li>
-                    </ul>
+                <li>
+                    Review IOT devices [home Internet routers, DVRs, IP cameras] to ensure they support the latest security protocols and standards and disable older insecure protocols. (check the vendors websites for updates & patches).
                 </li>
-            </ul>
+                <li>
+                    Run updates and contact manufacturers to confirm devices are patched with the latest software and firmware.
+                </li>
+                <li>
+                    Change the default OEM credentials and ensure that passwords meet the minimum complexity.
+                </li>
+                <li>
+                    Disable Universal Plug and Play (UPnP) unless absolutely necessary.
+                </li>
+                <li>
+                    Implement account lockout policies to reduce the risk of brute forcing attacks.
+                </li>
+                <li>
+                    Telnet and SSH should be disabled on device if there is no requirement of remote management.
+                </li>
+                <li>
+                    Configure VPN and SSH to access device if remote access is required.
+                </li>
+                <li>
+                    Configure certificate based authentication for telnet client for remote management of devices.
+                </li>
+                <li>
+                    Implement Egress and Ingress filtering at router level.
+                </li>
+                <li>
+                    Unnecessary port and services should be stopped and closed.
+                </li>
+                <li>
+                    Logging must be enabled on the device to log all the activities.
+                </li>
+                <li>
+                    Enable and monitor perimeter device logs to detect scan attempts towards critical devices/systems.
+                </li>
+              </ul>
+              
+
           </div>
- 
-          <!-- References -->
+        
+
           <div class="section">
             <h2>References:</h2>
- 
-            <ul class="links">
-              <li>
-                <a href="https://blog.lumen.com/routers-roasting-on-an-open-firewall-the-kv-botnet-investigation/">https://blog.lumen.com/routers-roasting-on-an-open-firewall-the-kv-botnet-investigation/</a>
-              </li>
-              <li>
-                <a href="https://thehackernews.com/2023/12/new-kv-botnet-targeting-cisco-draytek.html">https://thehackernews.com/2023/12/new-kv-botnet-targeting-cisco-draytek.html</a>
-              </li>
-              <li>
-                <a href="https://www.bleepingcomputer.com/news/security/stealthy-kv-botnet-hijacks-soho-routers-and-vpn-devices/#google_vignette">https://www.bleepingcomputer.com/news/security/stealthy-kv-botnet-hijacks-soho-routers-and-vpn-devices/#google_vignette</a>
-              </li>
+            <ul>
+                <li>
+                    <a href="http://blog.trendmicro.com/trendlabs-security-intelligence/persirai-new-internet-things-iot-botnet-targets-ip-cameras/">
+                       http://blog.trendmicro.com/trendlabs-security-intelligence/persirai-new-internet-things-iot-botnet-targets-ip-cameras/
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.dhs.gov/sites/default/files/publications/Strategic_Principles_for_Securing_the_Internet_of_Things-2016-1115-FINAL....pdf">
+                        https://www.dhs.gov/sites/default/files/publications/Strategic_Principles_for_Securing_the_Internet_of_Things-2016-1115-FINAL....pdf
+                    </a>
+                </li>
+
+               
             </ul>
-          
           </div>
- 
+
         </div>  
     </div>
     
   </main>
-
 
   <footer class="site-footer">
  

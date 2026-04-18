@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.ux4g.gov.in/tools/accessibility-widget.js" async></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- acc-toggle MUST be first -->
+  <input type="checkbox" id="acc-toggle" hidden />
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <div class="left-section">
+        <div class="national-emblem">
+          <img src="../../assets/header2.svg" alt="">
+        </div>
+      </div>
+      <div class="center-section">
+        <img src="../../assets/header.png" alt="">
+      </div>
+      <div class="right-section">
+        <div class="accessibility-icons">
+          <a href="#main-content" title="Skip to main content">
+            <img src="../../assets/Translate.svg" alt="">
+          </a>
+          <span class="icon-separator">|</span>
+          <div class="bhashini-plugin-container">
+            <img src="../../assets/Language.svg" alt="">
+          </div>
+          <span class="icon-separator">|</span>
+          <label for="acc-toggle" class="acc-open-btn" title="Accessibility"></label>
+          <img src="../../assets/accessibility_figure.svg" alt="">
+        </div>
+        <div class="certin-logo">
+          <img src="../../assets/certin.svg" alt="">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- acc-overlay: direct sibling of acc-toggle -->
+  <div class="acc-overlay">
+    <div class="acc-panel">
+      <div class="acc-panel-header">
+        <h2>Accessibility Options</h2>
+        <label for="acc-toggle" class="acc-close-btn" title="Close">
+          <i class="fa-solid fa-xmark"></i>
+        </label>
+      </div>
+      <div class="acc-language-row">
+        <div class="lang-left">
+          <div class="lang-icon-box"><i class="fa-solid fa-language"></i></div>
+          <span class="lang-label">Language</span>
+        </div>
+        <select class="lang-select" id="lang-select" title="Select Language">
+          <option>English</option>
+          <option>हिंदी</option>
+        </select>
+      </div>
+      <div class="acc-options">
+        <div class="acc-grid">
+          <div class="acc-option" onclick="accToggle(this,'speak')"><i class="fa-solid fa-volume-high"></i><span>Screen Reader</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s9')"><i class="fa-solid fa-text-height"></i><span>Bigger Text</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s12')"><i class="fa-solid fa-bars"></i><span>Line Height</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s13')"><i class="fa-solid fa-a"></i><span>Text Spacing</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s10')"><i class="fa-solid fa-link"></i><span>Highlight Links</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-df')"><i class="fa-solid fa-d"></i><span>Dyslexia Friendly</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-cursor')"><i class="fa-solid fa-brain"></i><span>ADHD Friendly</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s11')"><i class="fa-regular fa-image"></i><span>Hide Images</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-invert')"><i class="fa-solid fa-circle-half-stroke"></i><span>Invert Color</span></div>
+          <div class="acc-option" onclick="accToggle(this,'dark-btn')"><i class="fa-solid fa-moon"></i><span>Dark Mode</span></div>
+        </div>
+      </div>
+      <div class="acc-footer">
+        <label for="acc-toggle" class="acc-reset-btn" onclick="accResetAll()">
+          <i class="fa-solid fa-rotate-left"></i> Reset
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!--  nav-toggle MUST be BEFORE <nav> so ~ selector works -->
+  <input type="checkbox" id="search-toggle" hidden />
+  <input type="checkbox" id="nav-toggle" hidden />
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-inner">
+
+      <!-- ✅ HAMBURGER — label targets #nav-toggle -->
+      <label for="nav-toggle" class="hamburger" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+        <i class="fa-solid fa-xmark"></i>
+      </label>
+
+      <!-- NAV LINKS (slide-in panel on mobile) -->
+      <ul class="nav-links">
+
+        <!-- Close button inside panel -->
+        <li class="nav-close-item">
+          <label for="nav-toggle" class="nav-close-btn">
+            <i class="fa-solid fa-xmark"></i>
+          </label>
+        </li>
+
+        <li class="active"><a href="../index.html">Home</a></li>
+        <li><a href="../about/index.html">About Us</a></li>
+        <li><a href="#">CERT-In</a></li>
+        <li><a href="../security-tools/index.html">Security Tools</a></li>
+        <li><a href="../alert/index.html">Alerts</a></li>
+
+        <li class="has-dropdown">
+          <button class="nav-btn">
+            Awareness <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="./Awareness/index.html">Guidelines &amp; Advisories</a></li>
+            <li><a href="./Awareness/index.html">Our Campaigns</a></li>
+            <li><a href="./bestPraactice/index.html">Best Practices</a></li>
+            <li><a href="./ourReports/index.html">Our Reports</a></li>
+            <li><a href="./whiteBoard/index.html">White Papers</a></li>
+          </ul>
+        </li>
+
+        <li><a href="../FrequentQuestion/index.html">FAQ's</a></li>
+        <li><a href="../contactUs/index.html">Contact Us</a></li>
+
+      </ul>
+
+      <!-- ===== SEARCH BAR ===== -->
+      <div class="nav-search">
+        <div class="csk-search">
+
+          <input type="radio" name="se" id="s-google" checked>
+          <input type="radio" name="se" id="s-bing">
+          <input type="radio" name="se" id="s-duck">
+
+          <div class="search-box">
+
+            <!-- Dropdown (Left) -->
+            <div class="engine-picker">
+              <button type="button" class="engine-current" aria-label="Select search engine">
+                <span class="current-engine cur-g">
+                  <span class="dot g-dot">G</span>
+                  <span class="engine-label">&nbsp;Google</span>
+                </span>
+                <span class="current-engine cur-b">
+                  <span class="dot b-dot">b</span>
+                  <span class="engine-label">&nbsp;Bing</span>
+                </span>
+                <span class="current-engine cur-d">
+                  <span class="dot d-dot">D</span>
+                  <span class="engine-label">&nbsp;Duck</span>
+                </span>
+              </button>
+              <div class="engine-menu">
+                <label for="s-google" class="engine-opt"><span class="dot g-dot">G</span>Google.com</label>
+                <label for="s-bing"   class="engine-opt"><span class="dot b-dot">b</span>Bing.com</label>
+                <label for="s-duck"   class="engine-opt"><span class="dot d-dot">D</span>DuckDuckGo</label>
+              </div>
+            </div>
+
+            <!-- Input + Search Icon (Right) -->
+            <div class="form-wrap">
+
+              <!-- Google -->
+              <form class="sf" id="fg" action="https://www.google.com/search" method="GET" target="_blank">
+                <input class="si" type="text" name="q" placeholder="Search csk.gov.in" required>
+                <input type="hidden" name="as_sitesearch" value="csk.gov.in">
+                <button type="submit" class="sb" aria-label="Search">
+                  <svg viewBox="0 0 20 20"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17" y2="17"/></svg>
+                </button>
+              </form>
+
+              
+              <!-- Bing -->
+<form class="sf" id="fb" action="https://www.bing.com/search" method="GET" target="_blank"
+  onsubmit="this.querySelector('[name=q]').value = this.querySelector('.si').value + ' site:csk.gov.in'; return true;">
+  <input class="si" type="text" placeholder="Search csk.gov.in" required>
+  <input type="hidden" name="q" value="">
+  <button type="submit" class="sb" aria-label="Search">
+    <svg viewBox="0 0 20 20"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17" y2="17"/></svg>
+  </button>
+</form>
+              <!-- DuckDuckGo -->
+              <!-- DuckDuckGo -->
+<form class="sf" id="fd" action="https://duckduckgo.com/" method="GET" target="_blank"
+  onsubmit="this.querySelector('[name=q]').value = this.querySelector('.si').value + ' site:csk.gov.in'; return true;">
+  <input class="si" type="text" placeholder="Search csk.gov.in" required>
+  <input type="hidden" name="q" value="">
+  <button type="submit" class="sb" aria-label="Search">
+    <svg viewBox="0 0 20 20"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17" y2="17"/></svg>
+  </button>
+</form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ===== SEARCH BAR END ===== -->
+
+    </div>
+  </nav>
+
+    <!-- ✅ nav-overlay AFTER nav — direct sibling of nav-toggle -->
+    <div class="nav-overlay">
+      <label for="nav-toggle"></label>
+    </div>
+
+   <main id="main-content">
+    <div class="main-content-Locky">
+ 
+      <div class="social-content">
+            <div class="social-icons">
+              <a href="https://www.facebook.com/IndianCERT/" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+              <a href="https://www.instagram.com/cert_india/" title="Instagram"><i class="fa-brands fa-square-instagram"></i></a>
+              <a href="https://x.com/IndianCERT" title="X"><i class="fa-solid fa-x"></i></a>
+              <a href="https://www.linkedin.com/company/cert-in/" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="https://www.youtube.com/hashtag/certin" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>  
+          </div>
+ 
+          <label for="acc-toggle" class="icon">
+              <img src="../assets/access_icon.svg" alt="">
+          </label>
+ 
+        <div class="container">
+ 
+          <div class="header">
+ 
+            <div class="left">
+              <a href="javascript:history.back()" class="back-btn">
+                <i class="fa-solid fa-angle-left"></i> BACK
+              </a>
+              <h1>Mozi IoT Botnet</h1>
+            </div>
+ 
+            <div class="header-right">
+              <div class="meta">
+                <div class="border-left"></div>
+                <div class="righ-content">
+                  <p><span class="gree">Original Issue Date:</span> November 12, 2020</p>
+                  <p><span class="orr">Virus Type:</span> IoT Botnet</p>
+                  <p><span class="orr">Severity:</span> Medium</p>
+                </div>
+              </div>
+            </div>
+ 
+          </div>
+ 
+          <!-- Description -->
+          <div class="section">
+            <p>
+              It has been reported that a new malware named Mozi is affecting IoT devices globally. Affected IoT devices are being assembled into an IoT botnet which could be employed by botnet owner for launching distributed denial-of-service (DDoS) attacks, data exfiltration and payload execution.
+            </p>
+            <p>
+              According to the reports, Mozi malware is comprised of source code from Gafgyt, Mirai, and IoT Reaper; malware families which are targeting IoT devices. Mozi could compromise embedded Linux device with an exposed telnet. It mainly targets home routers and DVRs which are either unpatched, loosely configured or have weak/default telnet credentials. The infected devices form a peer-to-peer (P2P) botnet and uses a distributed hash table (DHT) to communicate with other infected host systems.
+            </p>
+            <p>The overall network structure is shown in the following figure:</p>
+            <div class="img-caption">
+                <img src="../../assets//alert/mozi.jpeg" alt="">
+                <p>The Kinsing malware attack chain (Source: Aqua Security)</p>
+              </div>
+          </div>
+ 
+          <!-- Infection Process -->
+          <div class="section">
+            <h2>Infection Process:</h2>
+            <p>The infection process comprises the follows:</p>
+            <ul>
+              <li>Run the Mozi Bot sample on the infected target device sample file name Mozi.m or Mozi.a join the Mozi P2P network to become the new Mozi Bot node and continue to infect other new devices..</li>
+              <li>Current Bot node logs in to the target device (which has weak password) and writes the downloader file in echo mode. Later execute it and downloads the sample file from the sample download address provided by the current Bot node. Another way for infecting is by exploiting vulnerability at target, and then obtain a sample file from the sample download address provided by the current Bot node..</li>
+              <li>Run the Mozi Bot sample on the infected target device sample file name Mozi.m or Mozi.a join the Mozi P2P network to become the new Mozi Bot node and continue to infect other new devices.</li>
+            </ul>
+            <p>
+              The vulnerabilities exploited by Mozi Botnet are shown as:
+            </p>
+             <table>
+            <thead>
+              <tr>
+                <th>VULNERABILITY</th>
+                <th>AFFECTED DEVICES</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Eir D1000 Wireless Router RCI</td>
+                <td>Eir D1000 Router</td>
+              </tr>
+              <tr>
+                <td>Vacron NVR RCE</td>
+                <td>Vacron NVR devices</td>
+              </tr>
+              <tr>
+                <td>CVE-2014-8361</td>
+                <td>Devices using the Realtek SDK</td>
+              </tr>
+              <tr>
+                <td>Netgear cig-bin Command Injection</td>
+                <td>Netgear R7000 and R6400</td>
+              </tr>
+              <tr>
+                <td>Netgear setup.cgi unauthenticated RCE</td>
+                <td>DGN1000 Netgear routers</td>
+              </tr>
+              <tr>
+                <td>JAWS Webserver unauthenticated shell command execution</td>
+                <td>MVPower DVR</td>
+              </tr>
+              <tr>
+                <td>CVE-2017-17215</td>
+                <td>Huawei Router HG532</td>
+              </tr>
+              <tr>
+                <td>HNAP SoapAction-Header Command Execution</td>
+                <td>D-Link Devices</td>
+              </tr>
+              <tr>
+                <td>CVE-2018-10561, CVE-2018-10562</td>
+                <td>GPON Routers</td>
+              </tr>
+              <tr>
+                <td>UPnP SOAP TelnetD Command Execution</td>
+                <td>D-Link Devices</td>
+              </tr>
+              <tr>
+                <td>CCTV/DVR Remote Code Execution</td>
+                <td>CCTV DVR</td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+ 
+          <!-- Vulnerabilities Table -->
+          <div class="section">
+            <h2>Vulnerabilities Exploited by Mozi Botnet:</h2>
+            <img src="../assets/alert/mozi_vulnerability_table.png" alt="Vulnerabilities exploited by Mozi Botnet">
+          </div>
+ 
+          <!-- IOC -->
+          <div class="section">
+            <h2>IOC (Sample MD5):</h2>
+            <ul>
+              <li>eda730498b3d0a97066807a2d98909f3</li>
+              <li>849b165f28ae8b1cebe0c7430f44aff3</li>
+            </ul>
+ 
+            <h3>IOC (File Hash):</h3>
+            <ul>
+              <li>File Name, File Hash</li>
+              <li>mozi.m, 4dde761601684d7edad4e5e1fdb940b</li>
+              <li>5738f1bc69e78d234dd04e2fbfcfb4b86403fc9117b133cf1bb7cda67e7eef0a, 86d42d968d3d12c36722e16c78e49ffb</li>
+              <li>mozi.a, 9a111588a7db15b796421bd13a949cd4</li>
+              <li>83441d77abb6cf328e77e372dc17c607fb9c4a261722ae80d83708ae3865053d, dd4b6f3216709e193ed9f06c37bcc3890</li>
+            </ul>
+          </div>
+ 
+          <!-- Countermeasures -->
+          <div class="section">
+            <h2>Countermeasures and Best practices for prevention:</h2>
+            <p>Users and administrators are advised to take the following preventive measures to protect their devices:</p>
+            <ul>
+              <li>Users are advised to update their devices with patches as &amp; when released by respective OEM of devices</li>
+              <li>If devices found infected, it is recommended to reset device firmware or restore it from trusted backup.</li>
+              <li>Monitor or block UDP traffic from the device to Bit Torrent DHT bootstrap nodes</li>
+              <li>Block outgoing TCP traffic with destination ports 22, 23, 2323, 80, 81, 5555, 7574, 8080, 8443, 37215, 49152, and 52869, if not in use.</li>
+            </ul>
+          </div>
+ 
+          <!-- References -->
+          <div class="section">
+            <h2>References:</h2>
+            <ul class="links">
+              <li><a href="https://www.darkreading.com/iot/new-malware-family-assembles-iot-botnet--/d/d-id/1337578">https://www.darkreading.com/iot/new-malware-family-assembles-iot-botnet--/d/d-id/1337578</a></li>
+              <li><a href="https://blog.netlab.360.com/mozi-another-botnet-using-dht/">https://blog.netlab.360.com/mozi-another-botnet-using-dht/</a></li>
+              <li><a href="https://www.internet-sicherheit.de/research/botnetze/iot-botnetze/mozi/">https://www.internet-sicherheit.de/research/botnetze/iot-botnetze/mozi/</a></li>
+              <li><a href="https://threatpost.com/mozi-botnet-majority-iot-traffic/159337/">https://threatpost.com/mozi-botnet-majority-iot-traffic/159337/</a></li>
+              <li><a href="https://securityintelligence.com/posts/botnet-attack-mozi-mozied-into-town/">https://securityintelligence.com/posts/botnet-attack-mozi-mozied-into-town/</a></li>
+              <li><a href="https://www.cyberswachhtkendra.gov.in/alerts/mirai.html">https://www.cyberswachhtkendra.gov.in/alerts/mirai.html</a></li>
+              <li><a href="https://www.cyberswachhtkendra.gov.in/alerts/IOT_Botnets_Targeting_Vulnerable_IP_cameras.html">https://www.cyberswachhtkendra.gov.in/alerts/IOT_Botnets_Targeting_Vulnerable_IP_cameras.html</a></li>
+              <li><a href="https://www.cyberswachhtkendra.gov.in/alerts/IOTReaper.html">https://www.cyberswachhtkendra.gov.in/alerts/IOTReaper.html</a></li>
+              <li><a href="https://www.cyberswachhtkendra.gov.in/alerts/BrickerBot_IoT_Malware.html">https://www.cyberswachhtkendra.gov.in/alerts/BrickerBot_IoT_Malware.html</a></li>
+            </ul>
+          </div>
+ 
+        </div>  
+    </div>
+    
+  </main>
+
+  <footer class="site-footer">
+ 
+      <!-- Layer 1: gradient (on .site-footer itself) -->
+      <!-- Layer 2: SVG circuit overlay -->
+      <div class="footer-bg-svg"></div>
+    
+      <!-- MAIN CONTENT -->
+      <div class="footer-main">
+    
+        <!-- LEFT: Postal Address -->
+        <div class="footer-address">
+          <h3 class="footer-section-title">Postal Address:</h3>
+          <div class="footer-title-line"></div>
+    
+          <address>
+            <p><strong>Indian Computer Emergency Response Team (CERT-In)</strong></p>
+            <p>Ministry of Electronics and Information Technology,</p>
+            <p>Government of India,</p>
+            <p>Electronics Niketan, 6 CGO Complex,</p>
+            <p>Lodhi Road, New Delhi - 110 003</p>
+          </address>
+    
+          <p class="footer-toll-free">
+            <strong>Toll Free Number:</strong> +91-1800-11-4949
+          </p>
+    
+          <div class="footer-logos">
+            <div class="footer-logo">
+              <a href="#" class="footer-logo-item">
+              <img src="../../assets/digital-india.svg" alt="Digital India - Power To Empower" />
+              </a>
+              <a href="#" class="footer-logo-item">
+                <img src="../../assets/footer-certin.svg" alt="CERT-In" />
+              </a>
+            </div>
+            <div class="footer-logo">
+              <a href="#" class="footer-logo-item">
+              <img src="../../assets/infosec.svg" alt="InfoSec Awareness" />
+              </a>
+              <a href="#" class="footer-logo-item">
+                <img src="../../assets/staysafe.svg" alt="Stay Safe Online" />
+              </a>
+            </div>
+          </div>
+        </div>
+    
+        <!-- RIGHT: Important Links -->
+        <div class="footer-links">
+          <h3 class="footer-section-title">Important Links</h3>
+          <div class="footer-title-line"></div>
+    
+          <div class="footer-links-grid">
+            <ul class="footer-link-col">
+              <li><a href="../homePage/index.html">Home</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">CERT-In</a></li>
+              <li><a href="#">MeiTY</a></li>
+              <li><a href="#">FAQ's</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+            <ul class="footer-link-col">
+              <li><a href="#">Website Policies</a></li>
+              <li><a href="#">Terms &amp; Conditions</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Help</a></li>
+              <li><a href="#">Archives</a></li>
+              <li><a href="#">Sitemap</a></li>
+            </ul>
+          </div>
+    
+          <div class="footer-social-row">
+            <div class="footer-follow">
+              <span class="follow-label">Follow Us</span>
+              <div class="footer-social-icons">
+                <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" title="X"><i class="fa-solid fa-x"></i></a>
+                <a href="#" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+              </div>
+            </div>
+            <p class="footer-last-updated">Last updated on: November 10, 2025</p>
+          </div>
+        </div>
+    
+      </div>
+    
+      <!-- BOTTOM BAR -->
+      <div class="footer-bottom">
+        <p class="footer-disclaimer">
+          Disclaimer :-The information provided herein is on "as is" basis, without warranty of any kind.
+        </p>
+        <p class="footer-copyright">
+          <i class="fa-regular fa-copyright"></i> Copyright 2025. All right reserved
+        </p>
+      </div>
+    
+    </footer>
+
+
+</body>
+</html>
