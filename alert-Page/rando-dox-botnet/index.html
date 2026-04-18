@@ -110,18 +110,18 @@
           </label>
         </li>
 
-        <li class="active"><a href="../index.html">Home</a></li>
+        <li ><a href="../index.html">Home</a></li>
         <li><a href="../about/index.html">About Us</a></li>
         <li><a href="#">CERT-In</a></li>
         <li><a href="../security-tools/index.html">Security Tools</a></li>
-        <li><a href="../alert/index.html">Alerts</a></li>
+        <li class="active"><a href="../alert/index.html">Alerts</a></li>
 
         <li class="has-dropdown">
           <button class="nav-btn">
             Awareness <i class="fa-solid fa-chevron-down"></i>
           </button>
           <ul class="dropdown-menu">
-            <li><a href="./Awareness/index.html">Guidelines &amp; Advisories</a></li>
+            <li><a href="./guideline/index.html">Guidelines &amp; Advisories</a></li>
             <li><a href="./Awareness/index.html">Our Campaigns</a></li>
             <li><a href="./bestPraactice/index.html">Best Practices</a></li>
             <li><a href="./ourReports/index.html">Our Reports</a></li>
@@ -216,7 +216,7 @@
 
    <main id="main-content">
     <div class="main-content-Locky">
- 
+
       <div class="social-content">
             <div class="social-icons">
               <a href="https://www.facebook.com/IndianCERT/" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
@@ -226,196 +226,309 @@
               <a href="https://www.youtube.com/hashtag/certin" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
             </div>  
           </div>
- 
+
           <label for="acc-toggle" class="icon">
+              <!-- <i class="fa-solid fa-universal-access"></i> -->
               <img src="../assets/access_icon.svg" alt="">
           </label>
- 
+
         <div class="container">
- 
+
           <div class="header">
- 
+
             <div class="left">
               <a href="javascript:history.back()" class="back-btn">
                 <i class="fa-solid fa-angle-left"></i> BACK
               </a>
-              <h1>RedLine Info-Stealer Malware</h1>
+              <h1>RondoDox Botnet</h1>
             </div>
- 
+
           <!-- Header -->
             <div class="header-right">
               
                 <div class="meta">
                   <div class="border-left"></div>
                   <div class="righ-content">
-                    <p><span class="gree">Original Issue Date:</span> May 19, 2023</p>
-                    <p><span class="orr">Virus Type:</span> Info-Stealer</p>
-                    <p><span class="orr">Severity:</span> High</p>
+                    <p><span class="gree">Original Issue Date:</span>  January 21, 2026</p>
+                    
+                    <p><span class="orr">Virus Type:</span> IoT Botnet / Web Application Malware</p>
+                    <p><span class="orr">Severity: </span>High</p>
+                    
                   </div>
                   
                 </div>
             </div>
- 
+
           </div>
- 
+
+          
+
+
           <!-- Description -->
           <div class="section">
               <p>
-                It has been reported that a critical info-stealing malware, named as "RedLine Info-stealer" is spreading as MaaS (malware-as-a-service) framework. The malware is distributed through phishing email campaigns and tricks users to click on files/attachments. The info-stealer malware is capable of stealing user data, credentials, information of crypto wallets, browser information, FTP accounts, VPN credentials etc. Moreover, details about the victim's compromised system such as geolocation, IP, OS etc. are also siphoned off to the attacker. Recently it has been observed that the malware is being distributed through the OneNote service also.
+                It has been reported that a sophisticated botnet dubbed “RondoDox” is actively targeting IoT devices, network appliances, and vulnerable web applications, including Next.js Server Actions, routers, and CMS platforms. The malware has been observed weaponizing recently disclosed vulnerabilities to deploy botnet payloads, cryptominers, and remote access tools. RondoDox is capable of persistent compromise, botnet enrollment, cryptojacking, DDoS operations, and lateral movement across enterprise and cloud environments.
               </p>
-              <div class="img-caption">
-                <img src="../../assets/alert/redline1.jpeg" alt="">
-                <p><strong>Fig.1 Applications targeted by RedLine (Source: CloudSEK)</strong></p>
-              </div>
-              <p>The malware is developed through C# / .NET framework and disguises itself as a legitimate service on the compromised system. The binary has its configuration in the form of class which contains various fields for e.g., IP, Key, version etc. that are related to malicious operation. The malware utilizes base64 encoding scheme and XOR technique for the malware binary encoding/decoding and C2 communication. The malware also tries to obtain the region of compromised systems then it identifies IP from its configuration. The malware binary also loads DLLs for malicious activities. These are responsible for collecting browser data and screenshots of compromised system. The malware also uses WMI to get the system info such as username, browser, memory info.</p>
-              <div class="img-caption">
-                <img src="../assets/alert/redline2.jpeg" alt="">
-                <p><strong>Fig.2 Crypto Wallet Applications targeted by RedLine (Source: CloudSEK)</strong></p>
-              </div>
-              <p>Moreover, the attacker C2 configuration also contains the cryptocurrency wallets list that are to be targeted and sensitive information to be sent to C2. The attacker can also run the additional malicious payloads such as RAT.</p>
-              <div class="img-caption">
-                <img src="../assets/alert/redline3.jpeg" alt="">
-                <p><strong>Fig.3 RedLine official channel using Telegram (Source: Security Boulevard)</strong></p>
-              </div>
           </div>
- 
-          
-         <!--  <div class="section">
-              <h2>Technical Details:</h2>
+
+          <!-- Infection Mechanism -->
+          <div class="section">
+              <h2>Infection Mechanism:</h2>
               <p>
-                The malware is developed through C# / .NET framework and disguises itself as a legitimate service on the compromised system. The binary has its configuration in the form of a class which contains various fields for e.g., IP, Key, version etc. that are related to malicious operation. The malware utilizes base64 encoding scheme and XOR technique for malware binary encoding/decoding and C2 communication. The malware also tries to obtain the region of compromised systems then it identifies IP from its configuration. The malware binary also loads DLLs for malicious activities. These are responsible for collecting browser data and screenshots of the compromised system. The malware also uses WMI to get the system info such as username, browser, memory info.
+                RondoDox botnet operates as a Linux-based, automated exploitation framework that compromises devices through exposed management interfaces and vulnerable web applications. The botnet has demonstrated a shift from early reconnaissance activity to coordinated, high-volume exploitation campaigns, and automated botnet deployment. The campaign has entered a more concerning phase, as reliable exploits are now observed in the wild, lowering the barrier to exploitation and increasing the likelihood of widespread compromise.
               </p>
- 
-              <div>
-                <h3>Targeted Applications</h3>
-                <p>RedLine targets a wide range of browsers and applications to steal sensitive data, including:</p>
-                <ul>
-                  <li>All Chromium-based browsers (Chrome, Chromium, Edge, Brave, Opera, Vivaldi, Yandex Browser, CocCoc, and many more)</li>
-                  <li>All Gecko-based browsers (Mozilla Firefox, etc.)</li>
-                  <li>FTP clients and IM clients</li>
-                  <li>Crypto wallet applications: Armory, Atomic, Binance, Coinomi, Electrum, Ethereum, Exodus, Guarda, Jaxx, Monero, and others</li>
-                  <li>Steam, Battle.net, and other gaming platform data</li>
-                  <li>VPN credentials</li>
-                </ul>
-              </div>
- 
-              <div>
-                <h3>Data Collected from Browsers</h3>
-                <ul>
-                  <li>Login credentials (usernames and passwords)</li>
-                  <li>Cookies</li>
-                  <li>Autocomplete fields</li>
-                  <li>Credit card information</li>
-                </ul>
-              </div>
- 
-              <div>
-                <h3>System Information Collected</h3>
-                <ul>
-                  <li>IP address and geolocation (country, city)</li>
-                  <li>Current username and HWID</li>
-                  <li>Keyboard layouts and screen resolution</li>
-                  <li>Screenshot of the active desktop</li>
-                  <li>Operating system and UAC settings</li>
-                  <li>User agent and installed antivirus software</li>
-                  <li>PC hardware information (video cards, processors)</li>
-                  <li>Whether the build is running with administrator rights</li>
-                </ul>
-              </div>
- 
-              <div>
-                <h3>Additional Capabilities</h3>
-                <ul>
-                  <li><strong>Download:</strong> Download a file via a direct link to a specified path</li>
-                  <li><strong>RunPE:</strong> Inject a 32-bit file downloaded from a direct link into another file</li>
-                  <li><strong>DownloadAndEx:</strong> Download a file via a direct link with subsequent launch</li>
-                  <li><strong>OpenLink:</strong> Open a link in the default browser</li>
-                  <li>Customizable grabber file configured by path, extension, and subfolder search (can be configured for cold wallets, Steam, etc.)</li>
-                  <li>Country-based filtering — can be set to skip specified countries</li>
-                  <li>Anti-duplicate log settings in the panel</li>
-                </ul>
-                <p>Furthermore, RedLine is also being circulated through the Telegram platform due to its favorable features from an attacker's perspective. The attacker's C2 configuration also contains a cryptocurrency wallets list to be targeted and can run additional malicious payloads such as RAT.</p>
-              </div>
-          </div> -->
- 
+              <p>
+               The botnet primarily targets:
+              </p>
+              <ul>
+                <li>
+                    Internet-facing IoT devices (routers, cameras, NAS)
+                </li>
+                <li>
+                    Web applications (Next.js, WordPress, Drupal, Struts2, WebLogic)
+                </li>
+                <li>
+                    Cloud and Linux servers
+                </li>
+              </ul>
+              <p>
+               Primary Infection Vectors
+              </p>
+              <ul>
+                <li>
+                    Exploitation of Next.js Server Actions remote code execution vulnerabilities (e.g., prototype pollution / deserialization flaws)
+                </li>
+                <li>
+                    Command injection via router and network appliance diagnostic interfaces
+                </li>
+                <li>
+                    Exploitation of CMS plugins and framework vulnerabilities
+                </li>
+                <li>
+                    Weak or default credentials on IoT devices and network devices
+                </li>
+                <li>
+                    Exploitation of critical infrastructure management vulnerabilities, including unauthenticated REST API endpoints enabling remote code execution (e.g., CVE-2025-37164 affecting HPE OneView)
+                </li>
+              </ul>
+            <p>
+                Once a system is compromised, RondoDox establishes persistence and creates a covert communication channel used for:
+            </p>
+            <ul>
+                <li>
+                    Command and Control: Remote execution of system commands and deployment of additional payloads.
+                </li>
+                <li>
+                   Cryptomining: Unauthorized use of system resources for cryptocurrency mining. 
+                </li>
+                <li>
+                    Botnet Operations: Enrolling compromised systems for DDoS attacks and further exploitation campaigns.
+                </li>
+                <li>
+                   Lateral Movement: Pivoting from compromised infrastructure management platforms to additional network segments. 
+                </li>
+            </ul>
+
+          </div>
+        
+
           <!-- Indicator of Compromise -->
           <div class="section">
             <h2>Indicators of Compromise:</h2>
- 
-            <h3>Hashes:</h3>
-            <ul>
-              <li>6cc44d98ce2fb628b25519eb2aa476b81c1dca23b4c11fb3f26951bba8e68d64</li>
-              <li>5be845902145831466d3b710541d2c5a53cfc50108126c8802b48226e89e1887</li>
-              <li>1365e7708c818ae8a3cbed2a295ce2d585c654d80b78b1e5b3af9f30c654a4fa</li>
-              <li>7701ee20f7c99aadf95e31bf775bf1614f66aea3e9f03dfedf5ee247ab8eb29c</li>
-              <li>1d18b3c7e5845a5c5cf519471a7b6ee354f848764b7c64b6f3ec59d0e3492e9b</li>
-              <li>710b3f75954a006368d8ebff83e35a8c815f26bdf2b58d62e1a5ffdbc88cd20f</li>
-            </ul>
- 
-            <h3>SHA1 Hashes:</h3>
-            <ul>
-              <li>61F9DBE256052D6315361119C7B733088O899D4C</li>
-              <li>ADCE7CA8C1860E513FB70BCC384237DAE4BC9D26</li>
-              <li>F6F1C1AB9743E267AC5E998336AF917632D2F8ED</li>
-              <li>6C404F19EC17609AD3AB375B613EA429E802F063</li>
-            </ul>
- 
-            <h3>IP Addresses:</h3>
-            <ul>
-              <li>95.179.163[.]157</li>
-              <li>193.106.191[.]226</li>
-              <li>49.12.69[.]202</li>
-              <li>185.250.148[.]76</li>
-              <li>172.245.45[.]213</li>
-            </ul>
- 
-            <h3>Domains:</h3>
-            <ul>
-              <li>tempuri[.]org/Entity/Id&lt;1-24&gt;</li>
-              <li>santaanarealtor[.]icu</li>
-            </ul>
+                <p>
+                    IP addresses
+                </p>
+                <ul>
+                    <li>483[.]252[.]42[.]112
+                    </li>
+                    <li>38[.]59[.]219[.]27
+                    </li>
+                    <li>
+                       192[.]183[.]232[.]142
+                    </li>
+                    <li>
+                       74[.]194[.]191[.]52
+                    </li>
+                    <li>
+                        45[.]135[.]194[.]34
+                    </li>
+                    <li>
+                        83[.]150[.]218[.]93
+                    </li>
+                    <li>
+                        14[.]103[.]145[.]202
+                    </li>
+                    <li>
+                        14[.]103[.]145[.]211
+                    </li>
+                    <li>
+                        154[.]91[.]254[.]95
+                    </li>
+                    <li>
+                        78[.]153[.]149[.]90
+                    </li>
+                    <li>
+                        51[.]81[.]104[.]115
+                    </li>
+                    <li>
+                        89[.]144[.]31[.]18
+                    </li>
+                    <li>
+                        5[.]255[.]121[.]141
+                    </li>
+                    <li>
+                        41[.]231[.]37[.]153
+                    </li>
+                    <li>
+                        70[.]184[.]13[.]47
+                    </li>
+                    <li>
+                        192[.]159[.]99[.]95
+                    </li>
+                    
+                </ul>
           </div>
- 
-          <!-- Countermeasures -->
-          <div class="section">
-            <h2>Countermeasures:</h2>
-            <ul>
-                <li>Do not download and install applications from untrusted sources (offered via unknown websites / links on unscrupulous messages). Install applications downloaded from reputed application market only. Users must be aware while clicking on links during web search.</li>
-                <li>Update software and operating systems with the latest patches. Outdated applications and operating systems are the targets of most attacks.</li>
-                <li>Don't open attachments in unsolicited e-mails, even if they come from people in your contact list, and never click on a URL contained in an unsolicited e-mail, even if the link seems benign. In cases of genuine URLs close out the e-mail and go to the organization's website directly through browser.</li>
-                <li>It is advised to block office applications from creating executable files.</li>
-                <li>Install ad blockers to combat exploit kits such as Fallout that are distributed via malicious advertising.</li>
-                <li>Prohibit external FTP connections and blacklist downloads of known offensive security tools.</li>
-                <li>All operating systems and applications should be kept updated on a regular basis. Virtual patching can be considered for protecting legacy systems and networks. This measure hinders cybercriminals from gaining easy access to any system through vulnerabilities in outdated applications and software. Avoid applying updates / patches available in any unofficial channel.</li>
-                <li>Restrict execution of PowerShell /WSCRIPT in an enterprise environment. Ensure installation and use of the latest version of PowerShell, with enhanced logging enabled. Script block logging and transcription enabled. Send the associated logs to a centralized log repository for monitoring and analysis. <a href="https://www.fireeye.com/blog/threat-research/2016/02/greater_visibilityt.html">https://www.fireeye.com/blog/threat-research/2016/02/greater_visibilityt.html</a></li>
-                <li>Establish a Sender Policy Framework (SPF) for your domain, which is an email validation system designed to prevent spam by detecting email spoofing by which most of the ransomware samples successfully reach the corporate email boxes.</li>
-                <li>Application whitelisting / Strict implementation of Software Restriction Policies (SRP) to block binaries running from %APPDATA% and %TEMP% paths. Ransomware sample drops and executes generally from these locations.</li>
-                <li>Users are advised to disable their RDP if not in use. If required, it should be placed behind the firewall and users are to bind with proper policies while using the RDP.</li>
-                <li>Block the attachments of file types: exe|pif|tmp|url|vb|vbe|scr|reg|car|pst|cmd|com|bat|dll|dat|hlp|hta|js|wsf</li>
-                <li>Consider encrypting the confidential data as the ransomware generally targets common file types.</li>
-                <li>Perform regular backups of all critical information to limit the impact of data or system loss and to help expedite the recovery process. Ideally, this data should be kept on a separate device, and backups should be stored offline.</li>
-                <li>Network segmentation and segregation into security zones — help protect sensitive information and critical services. Separate administrative network from business processes with physical controls and Virtual Local Area Networks.</li>
-            </ul>
-          </div>
- 
+
+
+
           <!-- References -->
           <div class="section">
-            <h2>References:</h2>
- 
-            <ul class="links">
-              <li>
-                <a href="https://cloudsek.com/blog/technical-analysis-of-the-redline-stealer">https://cloudsek.com/blog/technical-analysis-of-the-redline-stealer</a>
-              </li>
-              <li>
-                <a href="https://www.rapid7.com/blog/post/2023/01/31/rapid7-observes-use-of-microsoft-onenote-to-spread-redline-infostealer-malware">https://www.rapid7.com/blog/post/2023/01/31/rapid7-observes-use-of-microsoft-onenote-to-spread-redline-infostealer-malware</a>
-              </li>
-              <li>
-                <a href="https://securityboulevard.com/2023/02/redline-stealer-malware-the-complete-guide">https://securityboulevard.com/2023/02/redline-stealer-malware-the-complete-guide</a>
-              </li>
+            <h2>Malware SHA256 hashes:</h2>
+            <p>Name    SHA256</p>
+            <ul>
+                <li>
+                    rondo.arc700 – 2af74246497c671cc9976cd9919fdc4beaa459e9b4b30a42f561b45919da950b
+                </li>
+                <li>
+                    rondo.armeb – 5cbe0f93c03b04b6100545448fee6db2a032a7cb13be45421d4ab377d1f88bf6
+                </li>
+                <li>
+                    rondo.armebhf – 3852442d56b08eabb8060f6b72234ff0a5400b89dddf31560b2dc5d8b16c29fav
+                </li>
+                <li>
+                    rondo.armv4l – 032d7b946259add6db097d3ee4375caffe2c7dcf7da81e72c32eaa24b3bde164
+                </li>
+                <li>
+                    rondo.armv5l – 17be568b6b2acb3b237c6dc81b3692976bb83eea76a7a26fd405805d34901016
+                </li>
+                <li>
+                    rondo.armv6l – e683864f4016b24b164ebaa5d900963b730a1df45bcbf9fa947b644d673dbc21
+                </li>
+                <li>
+                    rondo.armv7l – 69a17194dba061f56ec3a23debfa1d3fdee7dd92789af17038387b294093aa5d
+                </li>
+                <li>
+                    rondo.i486 – 470a74b888617299820acbe2daf03001eca7dc64a7002cd00beb163b3663187e
+                </li>
+                <li>
+                    rondo.i586 – 81200976b8717c340041eee6ff051e1a87f8f73d86a9e17465b34be4c9488839
+                </li>
+                <li>
+                    rondo.i686 – cf7a5027a0e562b7749c8025c0394bc3c3208b7b5ce070dcd15787450332efa8
+                </li>
+                <li>
+                   rondo.m68k – 3a4afea2c16905816b922229dc5d03311d58c470fa4580dcd9248302bcdfbdc4 
+                </li>
+                <li>
+                    rondo.mips – f0a73797caa35d4d62a23358fa8102d6c434cfc5177623d5dfd2a3efaff66aae
+                </li>
+                <li>
+                    rondo.mipsel – a65e3438103d31ccb213083b2b6ef40b558580b4246251b558fc68e6a2a2ba92
+                </li>
+                <li>
+                    rondo.powerpc-440fp – c789f239a9cf039752e3926ee3b4387b3f6a1f6657531277caebf90685b018a2
+                </li>
+                <li>
+                    rondo.powerpc – c987e85b19c6462b06615a61998618c0e7d22ac5e38034e53ef0e34bd452464d
+                </li>
+                <li>
+                    rondo.sh4 – f11ede0c682e818357943a166239867a19b0c1d321e84213e28e21beb2c49c87
+                </li>
+                <li>
+                    rondo.sparc – df9f756f355d1122e46ce12bb84553c89cdab71c6402a257b78bc768578f51c7
+                </li>
+                <li>
+                    rondo.x86_64 – 8634f53097f511dd1b7c253a0fbc4bc468e3ee38abd0490a39dd92edaee905de
+                </li>
             </ul>
           
           </div>
- 
+
+          <div class="section">
+            <h2>Other IOCs</h2>
+            <ul>
+                <li>895f8dff9cd26424b691a401c92fa7745e693275c38caf6a6aff277eadf2a70b (Coinminer)</li>
+                <li>
+                    8e0bc23a87d349e5a5356252ce17576093b7858fdf6ea84919fbdcb2e117168e (healthcheck)
+                </li>
+                <li>
+                    50be5257678412f0810d46e0b0bc573eb65c6ce4617346c1527ff0dc9b7fc79e (persistence)
+                </li>
+                <li>
+                    858874057e3df990ccd7958a38936545938630410bde0c0c4b116f92733b1ddb (Mirai)
+                </li>
+            </ul>
+          </div>
+
+          <div class="section">
+            <h2>Best Practices for Docker Security:</h2>
+            <ul>
+                <li>
+                Update critical platforms immediately: Apply the latest security patches to all Node.js and Next.js servers. Temporarily disable high-risk features, such as Server Actions, on internet-facing applications until vendor patches are confirmed safe. Validate all serialized data and input handling to prevent injection attacks.
+                </li>
+                <li>
+                    Segment and harden IoT devices: Isolate routers, cameras, NAS, printers, and other IoT devices into dedicated network segments with strict access controls. Disable unnecessary remote management interfaces, enforce strong and unique credentials, and apply firmware updates from trusted sources.
+                </li>
+                <li>
+                    Strengthen web application defenses: Implement application-level protections, such as input validation, restricting unnecessary functionality, and deploying Web Application Firewalls (WAFs) to detect and block potential exploitation attempts.
+                </li>
+                <li>
+                    Monitor for suspicious activity: Track unusual processes, unexpected system changes, and abnormal network behavior. Ensure centralized logging and alerting are in place to support early detection and response.
+                </li>
+                <li>
+                    Enforce secure administration practices: Require VPN or jump host access for all device management interfaces. Implement multi-factor and certificate-based authentication where possible, and log administrative actions centrally for real-time monitoring.
+                </li>
+                <li>
+                    Institutionalize vulnerability management: Maintain an inventory of all assets and firmware versions. Establish patch management procedures requiring critical vulnerabilities in internet-facing applications to be remediated promptly. Subscribe to threat intelligence feeds, conduct regular penetration testing, and review security controls periodically.
+
+                </li>
+                
+            </ul>
+          </div>
+
+          <div class="section">
+            <h2>References:</h2>
+            <ul>
+                <li>
+                    <a href="https://blog.aquasec.com/threat-alert-kinsing-malware-container-vulnerability">
+                        https://blog.aquasec.com/threat-alert-kinsing-malware-container-vulnerability
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.cloudsek.com/blog/rondodox-botnet-weaponizes-react2shell">
+                        https://www.cloudsek.com/blog/rondodox-botnet-weaponizes-react2shell
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.fortinet.com/blog/threat-research/rondobox-unveiled-breaking-down-a-botnet-threat">
+                    https://www.fortinet.com/blog/threat-research/rondobox-unveiled-breaking-down-a-botnet-threat
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.f5.com/labs/articles/tracking-rondodox-malware-exploiting-many-iot-vulnerabilities">
+                        https://www.f5.com/labs/articles/tracking-rondodox-malware-exploiting-many-iot-vulnerabilities
+                    </a>
+                </li>
+                <li>
+                    <a href="https://blog.checkpoint.com/research/patch-now-active-exploitation-underway-for-critical-hpe-oneview-vulnerability">
+                       https://blog.checkpoint.com/research/patch-now-active-exploitation-underway-for-critical-hpe-oneview-vulnerability
+                    </a>
+                </li>
+            </ul>
+          </div>
+
         </div>  
     </div>
     

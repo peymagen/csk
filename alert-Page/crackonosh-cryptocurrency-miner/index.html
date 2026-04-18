@@ -110,18 +110,18 @@
           </label>
         </li>
 
-        <li class="active"><a href="../index.html">Home</a></li>
+        <li ><a href="../index.html">Home</a></li>
         <li><a href="../about/index.html">About Us</a></li>
         <li><a href="#">CERT-In</a></li>
         <li><a href="../security-tools/index.html">Security Tools</a></li>
-        <li><a href="../alert/index.html">Alerts</a></li>
+        <li class="active"><a href="../alert/index.html">Alerts</a></li>
 
         <li class="has-dropdown">
           <button class="nav-btn">
             Awareness <i class="fa-solid fa-chevron-down"></i>
           </button>
           <ul class="dropdown-menu">
-            <li><a href="./Awareness/index.html">Guidelines &amp; Advisories</a></li>
+            <li><a href="./guideline/index.html">Guidelines &amp; Advisories</a></li>
             <li><a href="./Awareness/index.html">Our Campaigns</a></li>
             <li><a href="./bestPraactice/index.html">Best Practices</a></li>
             <li><a href="./ourReports/index.html">Our Reports</a></li>
@@ -216,7 +216,7 @@
 
    <main id="main-content">
     <div class="main-content-Locky">
- 
+
       <div class="social-content">
             <div class="social-icons">
               <a href="https://www.facebook.com/IndianCERT/" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
@@ -226,196 +226,238 @@
               <a href="https://www.youtube.com/hashtag/certin" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
             </div>  
           </div>
- 
+
           <label for="acc-toggle" class="icon">
+              <!-- <i class="fa-solid fa-universal-access"></i> -->
               <img src="../assets/access_icon.svg" alt="">
           </label>
- 
+
         <div class="container">
- 
+
           <div class="header">
- 
+
             <div class="left">
               <a href="javascript:history.back()" class="back-btn">
                 <i class="fa-solid fa-angle-left"></i> BACK
               </a>
-              <h1>RedLine Info-Stealer Malware</h1>
+              <h1>“Crackonosh” Malware</h1>
             </div>
- 
+
           <!-- Header -->
             <div class="header-right">
               
                 <div class="meta">
                   <div class="border-left"></div>
                   <div class="righ-content">
-                    <p><span class="gree">Original Issue Date:</span> May 19, 2023</p>
-                    <p><span class="orr">Virus Type:</span> Info-Stealer</p>
-                    <p><span class="orr">Severity:</span> High</p>
+                    <p><span class="gree">Original Issue Date:</span> July 01, 2021</p>
+                    
+                    <p><span class="orr">Virus Type:</span>  cryptocurrency miner</p>
+                    <p><span class="orr">Severity: </span>High</p>
                   </div>
                   
                 </div>
             </div>
- 
+
           </div>
- 
+
+          
+
+
           <!-- Description -->
           <div class="section">
               <p>
-                It has been reported that a critical info-stealing malware, named as "RedLine Info-stealer" is spreading as MaaS (malware-as-a-service) framework. The malware is distributed through phishing email campaigns and tricks users to click on files/attachments. The info-stealer malware is capable of stealing user data, credentials, information of crypto wallets, browser information, FTP accounts, VPN credentials etc. Moreover, details about the victim's compromised system such as geolocation, IP, OS etc. are also siphoned off to the attacker. Recently it has been observed that the malware is being distributed through the OneNote service also.
+                It is reported that a new strain of cryptocurrency miner dubbed as Crackonosh is spreading through abusing windows Safe mode in its attack and escape detection. The malware is distributed through illegal and cracked copies of popular software. Crackonosh has been circulating since at least June 2018.
               </p>
-              <div class="img-caption">
-                <img src="../../assets/alert/redline1.jpeg" alt="">
-                <p><strong>Fig.1 Applications targeted by RedLine (Source: CloudSEK)</strong></p>
-              </div>
-              <p>The malware is developed through C# / .NET framework and disguises itself as a legitimate service on the compromised system. The binary has its configuration in the form of class which contains various fields for e.g., IP, Key, version etc. that are related to malicious operation. The malware utilizes base64 encoding scheme and XOR technique for the malware binary encoding/decoding and C2 communication. The malware also tries to obtain the region of compromised systems then it identifies IP from its configuration. The malware binary also loads DLLs for malicious activities. These are responsible for collecting browser data and screenshots of compromised system. The malware also uses WMI to get the system info such as username, browser, memory info.</p>
-              <div class="img-caption">
-                <img src="../assets/alert/redline2.jpeg" alt="">
-                <p><strong>Fig.2 Crypto Wallet Applications targeted by RedLine (Source: CloudSEK)</strong></p>
-              </div>
-              <p>Moreover, the attacker C2 configuration also contains the cryptocurrency wallets list that are to be targeted and sensitive information to be sent to C2. The attacker can also run the additional malicious payloads such as RAT.</p>
-              <div class="img-caption">
-                <img src="../assets/alert/redline3.jpeg" alt="">
-                <p><strong>Fig.3 RedLine official channel using Telegram (Source: Security Boulevard)</strong></p>
-              </div>
           </div>
- 
-          
-         <!--  <div class="section">
-              <h2>Technical Details:</h2>
+
+          <!-- Infection Mechanism -->
+          <div class="section">
+              <h2>Infection Mechanism:</h2>
               <p>
-                The malware is developed through C# / .NET framework and disguises itself as a legitimate service on the compromised system. The binary has its configuration in the form of a class which contains various fields for e.g., IP, Key, version etc. that are related to malicious operation. The malware utilizes base64 encoding scheme and XOR technique for malware binary encoding/decoding and C2 communication. The malware also tries to obtain the region of compromised systems then it identifies IP from its configuration. The malware binary also loads DLLs for malicious activities. These are responsible for collecting browser data and screenshots of the compromised system. The malware also uses WMI to get the system info such as username, browser, memory info.
+                The infection chain starts with an installer and a script that is deployed along with pirated/cracked software and modifies Windows registry to allow critical malware executable to run in Safe mode. The infected system boot in Safe mode in next start up. The malware encase itself in password protected archive and unpack during installation process. While system is in Safe mode, AV software doesn’t work and this can enable the malicious Serviceinstaller.exe to disable/delete Windows defender. It also uses WQL to query all antivirus software installed. Command listed below:
               </p>
- 
-              <div>
-                <h3>Targeted Applications</h3>
-                <p>RedLine targets a wide range of browsers and applications to steal sensitive data, including:</p>
-                <ul>
-                  <li>All Chromium-based browsers (Chrome, Chromium, Edge, Brave, Opera, Vivaldi, Yandex Browser, CocCoc, and many more)</li>
-                  <li>All Gecko-based browsers (Mozilla Firefox, etc.)</li>
-                  <li>FTP clients and IM clients</li>
-                  <li>Crypto wallet applications: Armory, Atomic, Binance, Coinomi, Electrum, Ethereum, Exodus, Guarda, Jaxx, Monero, and others</li>
-                  <li>Steam, Battle.net, and other gaming platform data</li>
-                  <li>VPN credentials</li>
-                </ul>
+              <p>
+                SELECT * FROM AntiVirusProduct
+              </p>
+              <p>
+                The malware also able to disable the anti-virus software from other popular companies including Avast, Kaspersky, Norton, McAfee's scanner and Bitdefender etc. with the following command:
+              </p>
+              <p>
+                "rd < AV directory > /s /q" (here < AV directory > is the default directory name that a specific antivirus software uses.)
+              </p>
+               <div class="img-caption">
+                <img src="../../assets//alert/crackonosh.jpeg" alt="">
+                <p><strong>Fig.1 “Crackonosh” installation process. (source:avast)</strong></p>
               </div>
- 
-              <div>
-                <h3>Data Collected from Browsers</h3>
-                <ul>
-                  <li>Login credentials (usernames and passwords)</li>
-                  <li>Cookies</li>
-                  <li>Autocomplete fields</li>
-                  <li>Credit card information</li>
+              <p>
+                It also deletes registry entries to turn off automatic updates and replace Windows Security with a fake green tick tray icon. Log system files are then wiped to avoid detection. The final step of infection chain is the deployment of XMRig cryptocurrency miner that utilizes the system resources and power to mine the Monero (XMR) cryptocurrency. This miner has proved itself to be very profitable for its authors and in total 30 variants of this malware have been identified.
+              </p>
+          </div>
+          
+
+          <div class="section">
+            <h2>IoC:</h2>
+            <p>Common file names:
+            </p>
+            <ul>
+                <li>C:\Windows\System32\7B296FC0-376B-497d-B013-58F4D9633A22-5P-1.B5841A4C-A289-439d-8115-50AB69CD450
+                </li>
+                <li>
+                    C:\Windows\System32\7B296FC0-376B-497d-B013-58F4D9633A22-5P-1.B5841A4C-A289-439d-8115-50AB69CD450B
+                </li>
+                <li>
+                    C:\Windows\System32\StartupCheckLibrarry.dll
+                </li>
+                <li>
+                    UserAccountControlSettingsDevice.dat
+                </li>
+                <li>
+                    C:\Windows\System32\diskdriver.exe
+                </li>
+                <li>
+                    C:\Windows\System32\install.vbs
+                </li>
+                <li>
+                    C:\Windows\System32\maintenance.vbs
+                </li>
+                <li>
+                    C:\Windows\System32\serviceinstaller.exe
+                </li>
+                <li>
+                    C:\Windows\System32\serviceinstaller.msi
+                </li>
+                <li>
+                    C:\Windows\System32\startupcheck.vbs
+                </li>
+                <li>
+                    C:\Windows\System32\windfn.exe
+                </li>
+                <li>
+                    C:\Windows\System32\winrmsrv.exe
+                </li>
+                <li>
+                    C:\Windows\System32\winscomrssrv.dll
+                </li>
+                <li>
+                    C:\Windows\System32\wksprtcli.dll
+                </li>
+            </ul>
+            <p>
+                For the list of URLs obtaining TXT DNS records, kindly refer the following URL:
+                
+            </p>
+                <ul class="ioc-list">
+                    <li><a href="https://github.com/avast/ioc/blob/master/Crackonosh/network.txt">https://github.com/avast/ioc/blob/master/Crackonosh/network.txt</a></li>
                 </ul>
-              </div>
- 
-              <div>
-                <h3>System Information Collected</h3>
-                <ul>
-                  <li>IP address and geolocation (country, city)</li>
-                  <li>Current username and HWID</li>
-                  <li>Keyboard layouts and screen resolution</li>
-                  <li>Screenshot of the active desktop</li>
-                  <li>Operating system and UAC settings</li>
-                  <li>User agent and installed antivirus software</li>
-                  <li>PC hardware information (video cards, processors)</li>
-                  <li>Whether the build is running with administrator rights</li>
+            <p>
+                For the complete list of IoC including Hashes, Network indicators, file names, registry key, Mutexes and Monero Wallet addresses, kindly refer the following URL:
+                
+            </p>
+            <ul class="ioc-list">
+                    <li>
+                        <a href="https://github.com/avast/ioc/tree/master/Crackonosh">
+                            https://github.com/avast/ioc/tree/master/Crackonosh
+                        </a>
+                    </li>
                 </ul>
-              </div>
- 
-              <div>
-                <h3>Additional Capabilities</h3>
-                <ul>
-                  <li><strong>Download:</strong> Download a file via a direct link to a specified path</li>
-                  <li><strong>RunPE:</strong> Inject a 32-bit file downloaded from a direct link into another file</li>
-                  <li><strong>DownloadAndEx:</strong> Download a file via a direct link with subsequent launch</li>
-                  <li><strong>OpenLink:</strong> Open a link in the default browser</li>
-                  <li>Customizable grabber file configured by path, extension, and subfolder search (can be configured for cold wallets, Steam, etc.)</li>
-                  <li>Country-based filtering — can be set to skip specified countries</li>
-                  <li>Anti-duplicate log settings in the panel</li>
-                </ul>
-                <p>Furthermore, RedLine is also being circulated through the Telegram platform due to its favorable features from an attacker's perspective. The attacker's C2 configuration also contains a cryptocurrency wallets list to be targeted and can run additional malicious payloads such as RAT.</p>
-              </div>
-          </div> -->
- 
+          </div>
+        
+
           <!-- Indicator of Compromise -->
           <div class="section">
-            <h2>Indicators of Compromise:</h2>
- 
-            <h3>Hashes:</h3>
-            <ul>
-              <li>6cc44d98ce2fb628b25519eb2aa476b81c1dca23b4c11fb3f26951bba8e68d64</li>
-              <li>5be845902145831466d3b710541d2c5a53cfc50108126c8802b48226e89e1887</li>
-              <li>1365e7708c818ae8a3cbed2a295ce2d585c654d80b78b1e5b3af9f30c654a4fa</li>
-              <li>7701ee20f7c99aadf95e31bf775bf1614f66aea3e9f03dfedf5ee247ab8eb29c</li>
-              <li>1d18b3c7e5845a5c5cf519471a7b6ee354f848764b7c64b6f3ec59d0e3492e9b</li>
-              <li>710b3f75954a006368d8ebff83e35a8c815f26bdf2b58d62e1a5ffdbc88cd20f</li>
-            </ul>
- 
-            <h3>SHA1 Hashes:</h3>
-            <ul>
-              <li>61F9DBE256052D6315361119C7B733088O899D4C</li>
-              <li>ADCE7CA8C1860E513FB70BCC384237DAE4BC9D26</li>
-              <li>F6F1C1AB9743E267AC5E998336AF917632D2F8ED</li>
-              <li>6C404F19EC17609AD3AB375B613EA429E802F063</li>
-            </ul>
- 
-            <h3>IP Addresses:</h3>
-            <ul>
-              <li>95.179.163[.]157</li>
-              <li>193.106.191[.]226</li>
-              <li>49.12.69[.]202</li>
-              <li>185.250.148[.]76</li>
-              <li>172.245.45[.]213</li>
-            </ul>
- 
-            <h3>Domains:</h3>
-            <ul>
-              <li>tempuri[.]org/Entity/Id&lt;1-24&gt;</li>
-              <li>santaanarealtor[.]icu</li>
-            </ul>
-          </div>
- 
-          <!-- Countermeasures -->
-          <div class="section">
             <h2>Countermeasures:</h2>
-            <ul>
-                <li>Do not download and install applications from untrusted sources (offered via unknown websites / links on unscrupulous messages). Install applications downloaded from reputed application market only. Users must be aware while clicking on links during web search.</li>
-                <li>Update software and operating systems with the latest patches. Outdated applications and operating systems are the targets of most attacks.</li>
-                <li>Don't open attachments in unsolicited e-mails, even if they come from people in your contact list, and never click on a URL contained in an unsolicited e-mail, even if the link seems benign. In cases of genuine URLs close out the e-mail and go to the organization's website directly through browser.</li>
-                <li>It is advised to block office applications from creating executable files.</li>
-                <li>Install ad blockers to combat exploit kits such as Fallout that are distributed via malicious advertising.</li>
-                <li>Prohibit external FTP connections and blacklist downloads of known offensive security tools.</li>
-                <li>All operating systems and applications should be kept updated on a regular basis. Virtual patching can be considered for protecting legacy systems and networks. This measure hinders cybercriminals from gaining easy access to any system through vulnerabilities in outdated applications and software. Avoid applying updates / patches available in any unofficial channel.</li>
-                <li>Restrict execution of PowerShell /WSCRIPT in an enterprise environment. Ensure installation and use of the latest version of PowerShell, with enhanced logging enabled. Script block logging and transcription enabled. Send the associated logs to a centralized log repository for monitoring and analysis. <a href="https://www.fireeye.com/blog/threat-research/2016/02/greater_visibilityt.html">https://www.fireeye.com/blog/threat-research/2016/02/greater_visibilityt.html</a></li>
-                <li>Establish a Sender Policy Framework (SPF) for your domain, which is an email validation system designed to prevent spam by detecting email spoofing by which most of the ransomware samples successfully reach the corporate email boxes.</li>
-                <li>Application whitelisting / Strict implementation of Software Restriction Policies (SRP) to block binaries running from %APPDATA% and %TEMP% paths. Ransomware sample drops and executes generally from these locations.</li>
-                <li>Users are advised to disable their RDP if not in use. If required, it should be placed behind the firewall and users are to bind with proper policies while using the RDP.</li>
-                <li>Block the attachments of file types: exe|pif|tmp|url|vb|vbe|scr|reg|car|pst|cmd|com|bat|dll|dat|hlp|hta|js|wsf</li>
-                <li>Consider encrypting the confidential data as the ransomware generally targets common file types.</li>
-                <li>Perform regular backups of all critical information to limit the impact of data or system loss and to help expedite the recovery process. Ideally, this data should be kept on a separate device, and backups should be stored offline.</li>
-                <li>Network segmentation and segregation into security zones — help protect sensitive information and critical services. Separate administrative network from business processes with physical controls and Virtual Local Area Networks.</li>
-            </ul>
+                <ol>
+                    <li>
+                        Following Scheduled Tasks (Task Schedulers) should be deleted:
+                        <ul>
+                            <li>
+                                Microsoft\Windows\Maintenance\InstallWinSAT
+                            </li>
+                            <li>
+                                Microsoft\Windows\Application Experience\StartupCheckLibrary
+                            </li>
+                            <li>
+                                Microsoft\Windows\WDI\SrvHost\
+                            </li>
+                            <li>
+                                Microsoft\Windows\Wininet\Winlogui\
+                            </li>
+                            <li>
+                                Microsoft\Windows\Windows Error Reporting\winrmsrv\
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Delete the following file from C:\Documents and Settings\All Users\Local Settings\Application Data\Programs\Common (%localappdata%\Programs\Common)
+                        <ul>
+                            <li>
+                                UserAccountControlSettingsDevice.dat
+                            </li>
+                            <li>
+                                For the detailed steps to be taken for the fully removal of Crackonosh malware kindly refer the first URL listed in "References" tab below.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                       Use only genuine and authentic software from reputed service providers/ companies.
+                    </li>
+                    <li>
+                        Keep updated Antivirus/Antimalware software to detect any threat before it infects the system/network. Always scan the external drives/removable devices before use. Leverage anti-phishing solutions that help protect credentials and against malicious file downloads.
+
+                    </li>
+                    <li>
+                       Use limited privilege user on the computer or allow administrative access to systems with special administrative accounts for administrators.
+                    </li>
+                    <li>
+                         Network administrators should continuously monitor systems and guide their employees to recognize any above-normal sustained CPU loading activity on computer workstations, mobile devices, and network servers. Network activity should continuously be monitored for any unusual activity.
+
+                    </li>
+                    <li>
+                        Maintain browser extensions as some attackers are using malicious browser extensions or poisoning legitimate extensions to execute cryptomining scripts.
+                    </li>
+                    <li>
+                         Disable Autorun and Autoplay policies.
+                    </li>
+                    <li>
+                        Consider using application whitelists to prevent unknown executables from launching autonomously.
+
+                    </li>
+                    <li>
+                        Delete the system changes made by the malware such as files created/ registry entries /services etc.
+                    </li>
+                    <li>
+                        Monitor traffic generated from client machines to the domains and IP address mentioned in Installation section.
+                    </li>
+                    <li>
+                        Disable unnecessary services on agency workstations and servers.
+                    </li>
+                </ol>
           </div>
- 
+
+
+
           <!-- References -->
           <div class="section">
             <h2>References:</h2>
- 
+
             <ul class="links">
-              <li>
-                <a href="https://cloudsek.com/blog/technical-analysis-of-the-redline-stealer">https://cloudsek.com/blog/technical-analysis-of-the-redline-stealer</a>
-              </li>
-              <li>
-                <a href="https://www.rapid7.com/blog/post/2023/01/31/rapid7-observes-use-of-microsoft-onenote-to-spread-redline-infostealer-malware">https://www.rapid7.com/blog/post/2023/01/31/rapid7-observes-use-of-microsoft-onenote-to-spread-redline-infostealer-malware</a>
-              </li>
-              <li>
-                <a href="https://securityboulevard.com/2023/02/redline-stealer-malware-the-complete-guide">https://securityboulevard.com/2023/02/redline-stealer-malware-the-complete-guide</a>
-              </li>
+                <li>
+                    <a href="https://decoded.avast.io/danielbenes/crackonosh-a-new-malware-distributed-in-cracked-software/">https://decoded.avast.io/danielbenes/crackonosh-a-new-malware-distributed-in-cracked-software/
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://securityaffairs.co/wordpress/119450/malware/crackonosh-monero-miner.html">https://securityaffairs.co/wordpress/119450/malware/crackonosh-monero-miner.html
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.zdnet.com/article/crackonosh-malware-abuses-windows-safe-mode-to-quietly-mine-for-cryptocurrency/">https://www.zdnet.com/article/crackonosh-malware-abuses-windows-safe-mode-to-quietly-mine-for-cryptocurrency/
+                    </a>
+                </li>
+               
             </ul>
           
           </div>
- 
+
         </div>  
     </div>
     

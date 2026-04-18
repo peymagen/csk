@@ -4032,7 +4032,7 @@ nav {
 /* ── RIGHT: meta info box ── */
 .main-content-Locky .container .header .header-right {
   width: 100%;
-  max-width: 32%;
+  max-width: 33%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -4112,6 +4112,9 @@ nav {
   color: var(--color-black);
   margin: 0;
 }
+.main-content-Locky .container .section  .ioc-list{
+  padding-left: 4rem;
+}
 
 .main-content-Locky .container .section h2 {
   font-size: var(--text-4xl);
@@ -4127,11 +4130,49 @@ nav {
   margin: 0;
 }
 
+.main-content-Locky .container .section .img-caption{
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.main-content-Locky .container .section .img-caption img{
+  width: 100%;
+  max-width: 100%;
+}.main-content-Locky .container .section .img-caption p{
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+  font-size: var(--text-xxl);
+}
+
 .main-content-Locky .container .section ul {
   padding-left: 1.4rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+}
+.main-content-Locky .container .section ol {
+  padding-left: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  list-style: none; 
+  counter-reset: roman-counter;
+  padding-left: 2.5rem;
+}
+.main-content-Locky .container .section ol li {
+  font-size: var(--text-2xl);
+  line-height: 1.6;
+  color: var(--color-black);
+  position: relative; 
+  counter-increment: roman-counter
+}
+ol > li::before {
+  content: "(" counter(roman-counter, lower-roman) ")";
+  position: absolute;
+  left: -2.5rem;
 }
 
 .main-content-Locky .container .section ul li {
