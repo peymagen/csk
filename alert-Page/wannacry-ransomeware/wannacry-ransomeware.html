@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.ux4g.gov.in/tools/accessibility-widget.js" async></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- acc-toggle MUST be first -->
+  <input type="checkbox" id="acc-toggle" hidden />
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <div class="left-section">
+        <div class="national-emblem">
+          <img src="../../assets/header2.svg" alt="">
+        </div>
+      </div>
+      <div class="center-section">
+        <img src="../../assets/header.png" alt="">
+      </div>
+      <div class="right-section">
+        <div class="accessibility-icons">
+          <a href="#main-content" title="Skip to main content">
+            <img src="../../assets/Translate.svg" alt="">
+          </a>
+          <span class="icon-separator">|</span>
+          <div class="bhashini-plugin-container">
+            <img src="../../assets/Language.svg" alt="">
+          </div>
+          <span class="icon-separator">|</span>
+          <label for="acc-toggle" class="acc-open-btn" title="Accessibility"></label>
+          <img src="../../assets/accessibility_figure.svg" alt="">
+        </div>
+        <div class="certin-logo">
+          <img src="../../assets/certin.svg" alt="">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- acc-overlay: direct sibling of acc-toggle -->
+  <div class="acc-overlay">
+    <div class="acc-panel">
+      <div class="acc-panel-header">
+        <h2>Accessibility Options</h2>
+        <label for="acc-toggle" class="acc-close-btn" title="Close">
+          <i class="fa-solid fa-xmark"></i>
+        </label>
+      </div>
+      <div class="acc-language-row">
+        <div class="lang-left">
+          <div class="lang-icon-box"><i class="fa-solid fa-language"></i></div>
+          <span class="lang-label">Language</span>
+        </div>
+        <select class="lang-select" id="lang-select" title="Select Language">
+          <option>English</option>
+          <option>हिंदी</option>
+        </select>
+      </div>
+      <div class="acc-options">
+        <div class="acc-grid">
+          <div class="acc-option" onclick="accToggle(this,'speak')"><i class="fa-solid fa-volume-high"></i><span>Screen Reader</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s9')"><i class="fa-solid fa-text-height"></i><span>Bigger Text</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s12')"><i class="fa-solid fa-bars"></i><span>Line Height</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s13')"><i class="fa-solid fa-a"></i><span>Text Spacing</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s10')"><i class="fa-solid fa-link"></i><span>Highlight Links</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-df')"><i class="fa-solid fa-d"></i><span>Dyslexia Friendly</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-cursor')"><i class="fa-solid fa-brain"></i><span>ADHD Friendly</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s11')"><i class="fa-regular fa-image"></i><span>Hide Images</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-invert')"><i class="fa-solid fa-circle-half-stroke"></i><span>Invert Color</span></div>
+          <div class="acc-option" onclick="accToggle(this,'dark-btn')"><i class="fa-solid fa-moon"></i><span>Dark Mode</span></div>
+        </div>
+      </div>
+      <div class="acc-footer">
+        <label for="acc-toggle" class="acc-reset-btn" onclick="accResetAll()">
+          <i class="fa-solid fa-rotate-left"></i> Reset
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!--  nav-toggle MUST be BEFORE <nav> so ~ selector works -->
+  <input type="checkbox" id="search-toggle" hidden />
+  <input type="checkbox" id="nav-toggle" hidden />
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-inner">
+
+      <!-- ✅ HAMBURGER — label targets #nav-toggle -->
+      <label for="nav-toggle" class="hamburger" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+        <i class="fa-solid fa-xmark"></i>
+      </label>
+
+      <!-- NAV LINKS (slide-in panel on mobile) -->
+      <ul class="nav-links">
+
+        <!-- Close button inside panel -->
+        <li class="nav-close-item">
+          <label for="nav-toggle" class="nav-close-btn">
+            <i class="fa-solid fa-xmark"></i>
+          </label>
+        </li>
+
+        <li ><a href="../index.html">Home</a></li>
+        <li><a href="../about/index.html">About Us</a></li>
+        <li><a href="#">CERT-In</a></li>
+        <li><a href="../security-tools/index.html">Security Tools</a></li>
+        <li class="active"><a href="../alert/index.html">Alerts</a></li>
+
+        <li class="has-dropdown">
+          <button class="nav-btn">
+            Awareness <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="./Awareness/index.html">Guidelines &amp; Advisories</a></li>
+            <li><a href="./Awareness/index.html">Our Campaigns</a></li>
+            <li><a href="./bestPraactice/index.html">Best Practices</a></li>
+            <li><a href="./ourReports/index.html">Our Reports</a></li>
+            <li><a href="./whiteBoard/index.html">White Papers</a></li>
+          </ul>
+        </li>
+
+        <li><a href="../FrequentQuestion/index.html">FAQ's</a></li>
+        <li><a href="../contactUs/index.html">Contact Us</a></li>
+
+      </ul>
+
+      <!-- ===== SEARCH BAR ===== -->
+      <div class="nav-search">
+        <div class="csk-search">
+
+          <input type="radio" name="se" id="s-google" checked>
+          <input type="radio" name="se" id="s-bing">
+          <input type="radio" name="se" id="s-duck">
+
+          <div class="search-box">
+
+            <!-- Dropdown (Left) -->
+            <div class="engine-picker">
+              <button type="button" class="engine-current" aria-label="Select search engine">
+                <span class="current-engine cur-g">
+                  <span class="dot g-dot">G</span>
+                  <span class="engine-label">&nbsp;Google</span>
+                </span>
+                <span class="current-engine cur-b">
+                  <span class="dot b-dot">b</span>
+                  <span class="engine-label">&nbsp;Bing</span>
+                </span>
+                <span class="current-engine cur-d">
+                  <span class="dot d-dot">D</span>
+                  <span class="engine-label">&nbsp;Duck</span>
+                </span>
+              </button>
+              <div class="engine-menu">
+                <label for="s-google" class="engine-opt"><span class="dot g-dot">G</span>Google.com</label>
+                <label for="s-bing"   class="engine-opt"><span class="dot b-dot">b</span>Bing.com</label>
+                <label for="s-duck"   class="engine-opt"><span class="dot d-dot">D</span>DuckDuckGo</label>
+              </div>
+            </div>
+
+            <!-- Input + Search Icon (Right) -->
+            <div class="form-wrap">
+
+              <!-- Google -->
+              <form class="sf" id="fg" action="https://www.google.com/search" method="GET" target="_blank">
+                <input class="si" type="text" name="q" placeholder="Search csk.gov.in" required>
+                <input type="hidden" name="as_sitesearch" value="csk.gov.in">
+                <button type="submit" class="sb" aria-label="Search">
+                  <svg viewBox="0 0 20 20"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17" y2="17"/></svg>
+                </button>
+              </form>
+
+              
+              <!-- Bing -->
+<form class="sf" id="fb" action="https://www.bing.com/search" method="GET" target="_blank"
+  onsubmit="this.querySelector('[name=q]').value = this.querySelector('.si').value + ' site:csk.gov.in'; return true;">
+  <input class="si" type="text" placeholder="Search csk.gov.in" required>
+  <input type="hidden" name="q" value="">
+  <button type="submit" class="sb" aria-label="Search">
+    <svg viewBox="0 0 20 20"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17" y2="17"/></svg>
+  </button>
+</form>
+              <!-- DuckDuckGo -->
+              <!-- DuckDuckGo -->
+<form class="sf" id="fd" action="https://duckduckgo.com/" method="GET" target="_blank"
+  onsubmit="this.querySelector('[name=q]').value = this.querySelector('.si').value + ' site:csk.gov.in'; return true;">
+  <input class="si" type="text" placeholder="Search csk.gov.in" required>
+  <input type="hidden" name="q" value="">
+  <button type="submit" class="sb" aria-label="Search">
+    <svg viewBox="0 0 20 20"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17" y2="17"/></svg>
+  </button>
+</form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ===== SEARCH BAR END ===== -->
+
+    </div>
+  </nav>
+
+    <!-- ✅ nav-overlay AFTER nav — direct sibling of nav-toggle -->
+    <!-- <div class="nav-overlay">
+      <label for="nav-toggle"></label>
+    </div> -->
+
+   <main id="main-content">
+    <div class="main-content-Locky">
+
+      <div class="social-content">
+            <div class="social-icons">
+              <a href="https://www.facebook.com/IndianCERT/" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+              <a href="https://www.instagram.com/cert_india/" title="Instagram"><i class="fa-brands fa-square-instagram"></i></a>
+              <a href="https://x.com/IndianCERT" title="X"><i class="fa-solid fa-x"></i></a>
+              <a href="https://www.linkedin.com/company/cert-in/" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="https://www.youtube.com/hashtag/certin" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>  
+          </div>
+
+          <label for="acc-toggle" class="icon">
+              <!-- <i class="fa-solid fa-universal-access"></i> -->
+              <img src="../assets/access_icon.svg" alt="">
+          </label>
+
+        <div class="container">
+
+          <div class="header">
+
+            <div class="left">
+              <a href="javascript:history.back()" class="back-btn">
+                <i class="fa-solid fa-angle-left"></i> BACK
+              </a>
+              <h1>Wannacry Ransomware</h1>
+            </div>
+
+          <!-- Header -->
+            <div class="header-right">
+              
+                <div class="meta">
+                  <div class="border-left"></div>
+                  <div class="righ-content">
+                    <p><span class="gree">Original Issue Date:</span> June 26, 2025</p>
+                    
+                    <p><span class="orr">Virus Type:</span> Remote Access Trojan</p>
+                    <p><span class="orr">Update On:</span>september 2, 2017</p>
+                  </div>
+                  
+                </div>
+            </div>
+
+          </div>
+
+          
+
+
+          <div class="section">
+          <p>
+            It has been reported that a new ransomware named as "Wannacry" is spreading widely. Wannacry encrypts the files on infected Windows systems. This ransomware spreads by using a vulnerability in implementations of Server Message Block (SMB) in Windows systems. This exploit is named as ETERNALBLUE.
+          </p>
+          <p>
+            The ransomware called WannaCrypt or WannaCry encrypts the computer's hard disk drive and then spreads laterally between computers on the same LAN. The ransomware also spreads through malicious attachments to emails.
+          </p>
+          <p>
+            In order to prevent infection, users and organizations are advised to apply patches to Windows systems as mentioned in Microsoft Security Bulletin MS17-010.
+          </p>
+          <a href="https://technet.microsoft.com/library/security/MS17-010" target="_blank">https://technet.microsoft.com/library/security/MS17-010</a>
+          <p>After infecting, this Wannacry ransomware displays following screen on infected system:</p>
+          <img src="../assets/alert/wannacry1.jpeg" alt="WannaCry ransom screen displayed on infected system">
+          <p class="img-caption">Source: Symantec</p>
+          <p>It also drops a file named !Please Read Me!.txt which contains the text explaining what has happened and how to pay the ransom.</p>
+          <img src="../assets/alert/wannacry2.jpeg" alt="WannaCry ransom note text file">
+          <p class="img-caption">Source: Symantec</p>
+        </div>
+ 
+        <!-- ── ENCRYPTED FILE EXTENSIONS ── -->
+        <div class="section">
+          <p>WannaCry encrypts files with the following extensions, appending .WCRY to the end of the file name:</p>
+          <!-- <div class="ext-grid">
+            <span>.lay6</span><span>.sqlite3</span><span>.sqlitedb</span><span>.accdb</span>
+            <span>.java</span><span>.class</span><span>.mpeg</span><span>.djvu</span>
+            <span>.tiff</span><span>.backup</span><span>.vmdk</span><span>.sldm</span>
+            <span>.sldx</span><span>.potm</span><span>.potx</span><span>.ppam</span>
+            <span>.ppsx</span><span>.ppsm</span><span>.pptm</span><span>.xltm</span>
+            <span>.xltx</span><span>.xlsb</span><span>.xlsm</span><span>.dotx</span>
+            <span>.dotm</span><span>.docm</span><span>.docb</span><span>.jpeg</span>
+            <span>.onetoc2</span><span>.vsdx</span><span>.pptx</span><span>.xlsx</span>
+            <span>.docx</span>
+          </div> -->
+          <ul>
+            <li></li>
+            <li>.lay6</li>
+            <li>.sqlite3</li>
+            <li>.sqlitedb</li>
+            <li>.accdb</li>
+            <li>.java</li>
+            <li>.class</li>
+            <li>.mpeg</li>
+            <li>.djvu</li>
+            <li>.tiff</li>
+            <li>.backup</li>
+            <li>.vmdk</li>
+            <li>.sldm</li>
+            <li>.sldx</li>
+            <li>.potm</li>
+            <li>.potx</li>
+            <li>.ppam</li>
+            <li>.ppsx</li>
+            <li>.pptm</li>
+            <li>.xltm</li>
+            <li>.xltx</li>
+            <li>.xlsb</li>
+            <li>.xlsm</li>
+            <li>.dotx</li>
+            <li>.dotm</li>
+            <li>.docm</li>
+            <li>.docb</li>
+            <li>.jpeg</li>
+            <li>.onetoc2</li>
+            <li>.vsdx</li>
+            <li>.pptx</li>
+            <li>.xlsx</li>
+            <li>.docx</li>
+          </ul>
+ 
+          <p>The file extensions that the malware is targeting contain certain clusters of formats including:</p>
+          <ul>
+            <li>Commonly used office file extensions (.ppt, .doc, .docx, .xlsx, .sxl)</li>
+            <li>Less common and nation-specific office formats (.sxw, .odt, .hwp)</li>
+            <li>Archives, media files (.zip, .rar, .tar, .bz2, .mp4, .mkv)</li>
+            <li>Emails and email databases (.eml, .msg, .ost, .pst, .edb)</li>
+            <li>Database files (.sql, .accdb, .mdb, .dbf, .odb, .myd)</li>
+            <li>Developers' sourcecode and project files (.php, .java, .cpp, .pas, .asm)</li>
+            <li>Encryption keys and certificates (.key, .pfx, .pem, .p12, .csr, .gpg, .aes)</li>
+            <li>Graphic designers, artists and photographers files (.vsd, .odg, .raw, .nef, .svg, .psd)</li>
+            <li>Virtual machine files (.vmx, .vmdk, .vdi)</li>
+          </ul>
+        </div>
+ 
+        <!-- ── INDICATORS OF COMPROMISE ── -->
+        <div class="section">
+          <h2>Indicators of Compromise:</h2>
+ 
+          <p>Ransomware is writing itself into a random character folder in the 'ProgramData' folder with the file name of "tasksche.exe" or in 'C:\Windows\' folder with the file-name "mssecsve.exe" and "tasksche.exe".</p>
+ 
+          <p>Ransomware is granting full access to all files by using the command:</p>
+          <div class="code-block">Icacls . /grant Everyone:F /T /C /Q</div>
+ 
+          <p>Using a batch script for operations:</p>
+          <div class="code-block">176641494574290.bat</div>
+ 
+          <h3>Hashes for WANNACRY ransomware:</h3>
+          <div class="code-block hash-block">
+            5bef35496fcbdbe841c82f4d1ab8b7c2<br>
+            775a0631fb8229b2aa3d762142708Sad<br>
+            7bf2b57f2a205768755c07f238fb32cc<br>
+            7f7ccae16fb15eb1c7399d422f8363e8<br>
+            8495400f199ac77853c53b5a3f278f3e<br>
+            84c82835a5d21bbcf75a61706d8ab549<br>
+            86721e64ffbd69aa6944b9672bcabb6d<br>
+            8dd63adb68ef053e044a5a2f46e0d2cd<br>
+            b0ad5902366f860f85b892867e5b1e87<br>
+            d6114ba5f10ad67a4131ab72531f02da<br>
+            db349b97c37d22f5ea1d1841e3c09eb4<br>
+            e372d07207b4da75b34434584cd9f3450<br>
+            f529f4556a5126bba499c26d67892240
+          </div>
+          <ul>
+            <li>Use endpoint protection/antivirus solutions to detect these files and remove the same</li>
+          </ul>
+ 
+          <h3>Network Connections</h3>
+          <p>The malware uses TOR hidden services for command and control. The list of .onion domains inside is as following:</p>
+          <ul>
+            <li>gx7ekbenv2riucmf.onion</li>
+            <li>57g7spgrzlojinas.onion</li>
+            <li>Xxlvbrloxvrly2c5.onion</li>
+            <li>76jdd2ir2embyv47.onion</li>
+            <li>cwwnhwhlz52maqm7.onion</li>
+            <li>sqjolphimr7jqw6.onion</li>
+          </ul>
+ 
+          <p class="note-italic"><em>Note: For update on latest Indicators of Compromises, please see references to security vendors given in references section</em></p>
+        </div>
+ 
+        <!-- ── SPECIFIC COUNTERMEASURES ── -->
+        <div class="section">
+          <h2>Specific Countermeasures to prevent Wannacry/WannaCrypt Ransomware:</h2>
+          <p>Users and administrators are advised to take the following preventive measures to protect their computer networks from ransomware infection/attacks:</p>
+          <ul>
+            <li>In order to prevent infection users and organizations are advised to apply patches to Windows systems as mentioned in Microsoft Security Bulletin <a href="https://technet.microsoft.com/library/security/MS17-010" target="_blank">MS17-010</a></li>
+            <li>Microsoft Patch for Unsupported Versions such as Windows XP, Vista, Server 2003, Server 2008 etc. <a href="http://www.catalog.update.microsoft.com/Search.aspx?q=KB4012598" target="_blank">http://www.catalog.update.microsoft.com/Search.aspx?q=KB4012598</a></li>
+            <li>To prevent data loss Users &amp; Organisations are advised to take backup of Critical Data</li>
+            <li>Block SMB ports on Enterprise Edge/perimeter network devices [UDP 137, 138 and TCP 139, 445] or Disable SMBv1. <a href="https://support.microsoft.com/en-us/help/2696547" target="_blank">https://support.microsoft.com/en-us/help/2696547</a></li>
+            <li>
+              Apply following signatures/rules at IDS/IPS:
+              <div class="code-block sig-block">
+                alert tcp $HOME_NET 445 -&gt; any any (msg:"ET EXPLOIT Possible ETERNALBLUE MS17-010 Echo Response"; flow:from_server,established; content:"|00 00 00 31 ff|SMB|2b 00 00 00 98 07 c0|"; depth:16; fast_pattern; content:"|4a 6c 4a 6d 49 68 43 6c 42 73 72 00|"; distance:0; flowbits:isset,ETPRO.ETERNALBLUE; classtype:trojan-activity; sid:2024218; rev:2;)
+              </div>
+              <a href="http://docs.emergingthreats.net/bin/view/Main/2024218" target="_blank">(http://docs.emergingthreats.net/bin/view/Main/2024218)</a>
+            </li>
+            <li>
+              <h3>Yara:</h3>
+          <div class="code-block yara-block">
+              rule wannacry_1 : ransom<br>
+              {<br>
+              &nbsp;&nbsp;meta:<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;author = "Joshua Cannell"<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;description = "WannaCry Ransomware strings"<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;weight = 100<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;date = "2017-05-12"<br>
+              <br>
+              &nbsp;&nbsp;Strings:<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;$s1 = "Ooops, your files have been encrypted!" wide ascii nocase<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;$s2 = "Wanna Decryptor" wide ascii nocase<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;$s3 = ".wcry" wide ascii nocase<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;$s4 = "WANNACRY" wide ascii nocase<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;$s5 = "WANACRY!" wide ascii nocase<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;$s7 = "Icacls . /grant Everyone:F /T /C /Q" wide ascii nocase<br>
+              <br>
+              &nbsp;&nbsp;Condition:<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;any of them<br>
+              } <br>
+              rule wannacry_2{<br>
+              meta:<br>
+              author = "Harold Ogden"<br>
+              description = "WannaCry Ransomware Strings"<br>
+              date = "2017-05-12"<br>
+              weight = 100<br>
+              Strings:<br>
+              $string1 = "msg/m_bulgarian.wnry"<br>
+              $string2 = "msg/m_chinese (simplified).wnry"<br>
+              $string3 = "msg/m_chinese (traditional).wnry"<br>
+              $string4 = "msg/m_croatian.wnry"<br>
+              $string5 = "msg/m_czech.wnry"<br>
+              $string6 = "msg/m_danish.wnry"<br>
+              $string7 = "msg/m_dutch.wnry"<br>
+              $string8 = "msg/m_english.wnry"<br>
+              $string9 = "msg/m_filipino.wnry"<br>
+              $string10 = "msg/m_finnish.wnry"<br>
+              $string11 = "msg/m_french.wnry"<br>
+              $string12 = "msg/m_german.wnry"<br>
+              $string13 = "msg/m_greek.wnry"<br>
+              $string14 = "msg/m_indonesian.wnry"<br>
+              $string15 = "msg/m_italian.wnry"<br>
+              $string16 = "msg/m_japanese.wnry"<br>
+              $string17 = "msg/m_korean.wnry"<br>
+              $string18 = "msg/m_latvian.wnry"<br>
+              $string19 = "msg/m_norwegian.wnry"<br>
+              $string20 = "msg/m_polish.wnry"<br>
+              $string21 = "msg/m_portuguese.wnry"<br>
+              $string22 = "msg/m_romanian.wnry"<br>
+              $string23 = "msg/m_russian.wnry"<br>
+              $string24 = "msg/m_slovak.wnry"<br>
+              $string25 = "msg/m_spanish.wnry"<br>
+              $string26 = "msg/m_swedish.wnry"<br>
+              $string27 = "msg/m_turkish.wnry"<br>
+              $string28 = "msg/m_vietnamese.wnry"<br>
+              Condition:<br>
+              any of ($string*)<br>
+              }<br>
+            </li>
+          </ul>
+        </div>
+ 
+        <!-- ── BEST PRACTICES ── -->
+        <div class="section">
+          <h2>Best Practices to prevent Ransomware Attacks:</h2>
+          <ul>
+            <li>Perform regular backups of all critical information to limit the impact of data or system loss and to help expedite the recovery process. Ideally, this data should be kept on a separate device, and backups should be stored offline.</li>
+            <li>Establish a Sender Policy Framework (SPF), Domain Message Authentication Reporting and Conformance (DMARC), and DomainKeys Identified Mail (DKIM) for your domain, which is an email validation system designed to prevent spam by detecting email spoofing by which most of the ransomware samples successfully reaches the corporate email boxes.</li>
+            <li>Don't open attachments in unsolicited e-mails, even if they come from people in your contact list, and never click on a URL contained in an unsolicited e-mail, even if the link seems benign. In cases of genuine URLs close out the e-mail and go to the organization's website directly through browser.</li>
+            <li>Restrict execution of powershell /WSCRIPT in enterprise environment. Ensure installation and use of the latest version (currently v5.0) of PowerShell, with enhanced logging enabled, script block logging, and transcription enabled. Send the associated logs to a centralized log repository for monitoring and analysis.</li>
+            <li>Application whitelisting/Strict implementation of Software Restriction Policies (SRP) to block binaries running from %APPDATA%, %PROGRAMDATA% and %TEMP% paths. Ransomware sample drops and executes generally from these locations. Enforce application whitelisting on all endpoint workstations.</li>
+            <li>Deploy web and email filters on the network. Configure these devices to scan for known bad domains, sources, and addresses; block these before receiving and downloading messages. Scan all emails, attachments, and downloads both on the host and at the mail gateway with a reputable antivirus solution.</li>
+            <li>Disable macros in Microsoft Office products. Some Office products allow for the disabling of macros that originate from outside of an organization and can provide a hybrid approach when the organization depends on the legitimate use of macros. For Windows, specific settings can block macros originating from the Internet from running.</li>
+            <li>Configure access controls including file, directory, and network share permissions with least privilege in mind. If a user only needs to read specific files, they should not have write access to those files, directories, or shares.</li>
+            <li>Maintain updated Antivirus software on all systems.</li>
+            <li>Consider installing Enhanced Mitigation Experience Toolkit, or similar host-level anti-exploitation tools.</li>
+            <li>Block the attachments of file types, exe|pif|tmp|url|vb|vbe|scr|reg|cer|pst|cmd|com|bat|dll|dat|hlp|hta|js|wsf</li>
+            <li>Regularly check the contents of backup files of databases for any unauthorized encrypted contents of data records or external elements (backdoors/malicious scripts).</li>
+            <li>Keep the operating system third party applications (MS office, browsers, browser Plugins) up-to-date with the latest patches.</li>
+            <li>Follow safe practices when browsing the web. Ensure the web browsers are secured enough with appropriate content controls.</li>
+            <li>Network segmentation and segregation into security zones — help protect sensitive information and critical services. Separate administrative network from business processes with physical controls and Virtual Local Area Networks.</li>
+            <li>Disable remote Desktop Connections, employ least-privileged accounts.</li>
+            <li>Ensure integrity of the codes/scripts being used in database, authentication and sensitive systems. Check regularly for the integrity of the information stored in the databases.</li>
+            <li>Restrict users' abilities (permissions) to install and run unwanted software applications.</li>
+            <li>Enable personal firewalls on workstations.</li>
+            <li>Implement strict External Device (USB drive) usage policy.</li>
+            <li>Employ data-at-rest and data-in-transit encryption.</li>
+            <li>Carry out vulnerability Assessment and Penetration Testing (VAPT) and information security audit of critical networks/systems, especially database servers from CERT-In empaneled auditors. Repeat audits at regular intervals.</li>
+            <li>Individuals or organizations are not encouraged to pay the ransom, as this does not guarantee files will be released. Report such instances of fraud to CERT-In and Law Enforcement agencies.</li>
+          </ul>
+        </div>
+ 
+        <!-- ── GENERIC PREVENTION TOOLS ── -->
+        <div class="section">
+          <h2>Generic Prevention Tools:</h2>
+          <ul>
+            <li>
+              Tool (NoMoreCry) to prevent Wannacry Ransomware by CCN-CERT:<br>
+              <a href="https://loreto.ccn-cert.cni.es/index.php/s/tYxMah1T7x7FhND?path=CCN-CERT%20NoMoreCry%20Tool" target="_blank">https://loreto.ccn-cert.cni.es/index.php/s/tYxMah1T7x7FhND?path=CCN-CERT%20NoMoreCry%20Tool</a>
+            </li>
+            <li>
+              Sophos: Hitman.Pro<br>
+              <a href="https://www.hitmanpro.com/en-us/surfright/alert.aspx" target="_blank">https://www.hitmanpro.com/en-us/surfright/alert.aspx</a>
+            </li>
+            <li>
+              Bitdefender Anti-Crypto Vaccine and Anti-Ransomware (discontinued)<br>
+              <a href="https://labs.bitdefender.com/2016/03/combination-crypto-ransomware-vaccine-released/" target="_blank">https://labs.bitdefender.com/2016/03/combination-crypto-ransomware-vaccine-released/</a>
+            </li>
+            <li>
+              Malwarebytes Anti-Ransomware (formally Crypto Monitor)<br>
+              <a href="https://blog.malwarebytes.com/malwarebytes-news/2016/01/introducing-the-malwarebytes-anti-ransomware-beta/" target="_blank">https://blog.malwarebytes.com/malwarebytes-news/2016/01/introducing-the-malwarebytes-anti-ransomware-beta/</a>
+            </li>
+            <li>
+              Trendmicro Ransomware Screen Unlocker tool:<br>
+              <a href="https://esupport.trendmicro.com/en-us/home/pages/technical-support/1105975.aspx" target="_blank">https://esupport.trendmicro.com/en-us/home/pages/technical-support/1105975.aspx</a>
+            </li>
+            <li>
+              Microsoft Enhanced Mitigation and Experience Toolkit (EMET)<br>
+              <a href="https://www.microsoft.com/en-us/download/details.aspx?id=50766" target="_blank">https://www.microsoft.com/en-us/download/details.aspx?id=50766</a>
+            </li>
+          </ul>
+        </div>
+ 
+        <!-- ── REMOVAL TOOLS ── -->
+        <div class="section">
+          <h2>Removal Tools:</h2>
+          <a href="#" class="download-btn">
+            <i class="fa-solid fa-download"></i> Download Free Bot Removal Tool
+          </a>
+        </div>
+ 
+        <!-- ── REFERENCES ── -->
+        <div class="section">
+          <h2>References:</h2>
+          <ul class="links">
+            <li><a href="https://technet.microsoft.com/library/security/MS17-010" target="_blank">https://technet.microsoft.com/library/security/MS17-010</a></li>
+            <li><a href="http://www.catalog.update.microsoft.com/Search.aspx?q=KB4012598" target="_blank">http://www.catalog.update.microsoft.com/Search.aspx?q=KB4012598</a></li>
+            <li><a href="https://blogs.technet.microsoft.com/msrc/2017/05/12/customer-guidance-for-wannacrypt-attacks" target="_blank">https://blogs.technet.microsoft.com/msrc/2017/05/12/customer-guidance-for-wannacrypt-attacks</a></li>
+            <li><a href="https://www.symantec.com/connect/blogs/what-you-need-know-about-wannacry-ransomware" target="_blank">https://www.symantec.com/connect/blogs/what-you-need-know-about-wannacry-ransomware</a></li>
+            <li><a href="https://securelist.com/blog/incidents/78351/wannacry-ransomware-used-in-widespread-attacks-all-over-the-world/" target="_blank">https://securelist.com/blog/incidents/78351/wannacry-ransomware-used-in-widespread-attacks-all-over-the-world/</a></li>
+            <li><a href="https://securingtomorrow.mcafee.com/executive-perspectives/analysis-wannacry-ransomware-outbreak/" target="_blank">https://securingtomorrow.mcafee.com/executive-perspectives/analysis-wannacry-ransomware-outbreak/</a></li>
+            <li><a href="https://www.us-cert.gov/ncas/current-activity/2017/05/12/Multiple-Ransomware-Infections-Reported" target="_blank">https://www.us-cert.gov/ncas/current-activity/2017/05/12/Multiple-Ransomware-Infections-Reported</a></li>
+            <li><a href="http://blog.talosintelligence.com/2017/05/wannacry.html" target="_blank">http://blog.talosintelligence.com/2017/05/wannacry.html</a></li>
+            <li><a href="https://www.trendmicro.com/vinfo/us/threat-encyclopedia/malware/Ransom_Wana.A" target="_blank">https://www.trendmicro.com/vinfo/us/threat-encyclopedia/malware/Ransom_Wana.A</a></li>
+            <li><a href="https://www.us-cert.gov/ncas/alerts/TA17-132A" target="_blank">https://www.us-cert.gov/ncas/alerts/TA17-132A</a></li>
+            <li><a href="http://blogs.quickheal.com/ms17-010-windows-smb-server-exploitation-leads-ransomware-outbreak/" target="_blank">http://blogs.quickheal.com/ms17-010-windows-smb-server-exploitation-leads-ransomware-outbreak/</a></li>
+            <li><a href="http://blogs.quickheal.com/wannacry-ransomware-creating-havoc-worldwide-exploiting-patched-windows-exploit/" target="_blank">http://blogs.quickheal.com/wannacry-ransomware-creating-havoc-worldwide-exploiting-patched-windows-exploit/</a></li>
+            <li><a href="http://www.cyberswachhtakendra.gov.in/alerts/ransomware.html" target="_blank">http://www.cyberswachhtakendra.gov.in/alerts/ransomware.html</a></li>
+            <li><a href="#" target="_blank">Wannacry/WannaCrypt Ransomware Presentation of CERT-In</a></li>
+          </ul>
+        </div>
+ 
+      </div>
+
+        </div>  
+    </div>
+    
+  </main>
+
+  <footer class="site-footer">
+ 
+      <!-- Layer 1: gradient (on .site-footer itself) -->
+      <!-- Layer 2: SVG circuit overlay -->
+      <div class="footer-bg-svg"></div>
+    
+      <!-- MAIN CONTENT -->
+      <div class="footer-main">
+    
+        <!-- LEFT: Postal Address -->
+        <div class="footer-address">
+          <h3 class="footer-section-title">Postal Address:</h3>
+          <div class="footer-title-line"></div>
+    
+          <address>
+            <p><strong>Indian Computer Emergency Response Team (CERT-In)</strong></p>
+            <p>Ministry of Electronics and Information Technology,</p>
+            <p>Government of India,</p>
+            <p>Electronics Niketan, 6 CGO Complex,</p>
+            <p>Lodhi Road, New Delhi - 110 003</p>
+          </address>
+    
+          <p class="footer-toll-free">
+            <strong>Toll Free Number:</strong> +91-1800-11-4949
+          </p>
+    
+          <div class="footer-logos">
+            <div class="footer-logo">
+              <a href="#" class="footer-logo-item">
+              <img src="../../assets/digital-india.svg" alt="Digital India - Power To Empower" />
+              </a>
+              <a href="#" class="footer-logo-item">
+                <img src="../../assets/footer-certin.svg" alt="CERT-In" />
+              </a>
+            </div>
+            <div class="footer-logo">
+              <a href="#" class="footer-logo-item">
+              <img src="../../assets/infosec.svg" alt="InfoSec Awareness" />
+              </a>
+              <a href="#" class="footer-logo-item">
+                <img src="../../assets/staysafe.svg" alt="Stay Safe Online" />
+              </a>
+            </div>
+          </div>
+        </div>
+    
+        <!-- RIGHT: Important Links -->
+        <div class="footer-links">
+          <h3 class="footer-section-title">Important Links</h3>
+          <div class="footer-title-line"></div>
+    
+          <div class="footer-links-grid">
+            <ul class="footer-link-col">
+              <li><a href="../homePage/index.html">Home</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">CERT-In</a></li>
+              <li><a href="#">MeiTY</a></li>
+              <li><a href="#">FAQ's</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+            <ul class="footer-link-col">
+              <li><a href="#">Website Policies</a></li>
+              <li><a href="#">Terms &amp; Conditions</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Help</a></li>
+              <li><a href="#">Archives</a></li>
+              <li><a href="#">Sitemap</a></li>
+            </ul>
+          </div>
+    
+          <div class="footer-social-row">
+            <div class="footer-follow">
+              <span class="follow-label">Follow Us</span>
+              <div class="footer-social-icons">
+                <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" title="X"><i class="fa-solid fa-x"></i></a>
+                <a href="#" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+              </div>
+            </div>
+            <p class="footer-last-updated">Last updated on: November 10, 2025</p>
+          </div>
+        </div>
+    
+      </div>
+    
+      <!-- BOTTOM BAR -->
+      <div class="footer-bottom">
+        <p class="footer-disclaimer">
+          Disclaimer :-The information provided herein is on "as is" basis, without warranty of any kind.
+        </p>
+        <p class="footer-copyright">
+          <i class="fa-regular fa-copyright"></i> Copyright 2025. All right reserved
+        </p>
+      </div>
+    
+    </footer>
+
+
+</body>
+</html>

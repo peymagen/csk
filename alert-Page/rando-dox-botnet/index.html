@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.ux4g.gov.in/tools/accessibility-widget.js" async></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- acc-toggle MUST be first -->
+  <input type="checkbox" id="acc-toggle" hidden />
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <div class="left-section">
+        <div class="national-emblem">
+          <img src="../../assets/header2.svg" alt="">
+        </div>
+      </div>
+      <div class="center-section">
+        <img src="../../assets/header.png" alt="">
+      </div>
+      <div class="right-section">
+        <div class="accessibility-icons">
+          <a href="#main-content" title="Skip to main content">
+            <img src="../../assets/Translate.svg" alt="">
+          </a>
+          <span class="icon-separator">|</span>
+          <div class="bhashini-plugin-container">
+            <img src="../../assets/Language.svg" alt="">
+          </div>
+          <span class="icon-separator">|</span>
+          <label for="acc-toggle" class="acc-open-btn" title="Accessibility"></label>
+          <img src="../../assets/accessibility_figure.svg" alt="">
+        </div>
+        <div class="certin-logo">
+          <img src="../../assets/certin.svg" alt="">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- acc-overlay: direct sibling of acc-toggle -->
+  <div class="acc-overlay">
+    <div class="acc-panel">
+      <div class="acc-panel-header">
+        <h2>Accessibility Options</h2>
+        <label for="acc-toggle" class="acc-close-btn" title="Close">
+          <i class="fa-solid fa-xmark"></i>
+        </label>
+      </div>
+      <div class="acc-language-row">
+        <div class="lang-left">
+          <div class="lang-icon-box"><i class="fa-solid fa-language"></i></div>
+          <span class="lang-label">Language</span>
+        </div>
+        <select class="lang-select" id="lang-select" title="Select Language">
+          <option>English</option>
+          <option>हिंदी</option>
+        </select>
+      </div>
+      <div class="acc-options">
+        <div class="acc-grid">
+          <div class="acc-option" onclick="accToggle(this,'speak')"><i class="fa-solid fa-volume-high"></i><span>Screen Reader</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s9')"><i class="fa-solid fa-text-height"></i><span>Bigger Text</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s12')"><i class="fa-solid fa-bars"></i><span>Line Height</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s13')"><i class="fa-solid fa-a"></i><span>Text Spacing</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s10')"><i class="fa-solid fa-link"></i><span>Highlight Links</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-df')"><i class="fa-solid fa-d"></i><span>Dyslexia Friendly</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-cursor')"><i class="fa-solid fa-brain"></i><span>ADHD Friendly</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s11')"><i class="fa-regular fa-image"></i><span>Hide Images</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-invert')"><i class="fa-solid fa-circle-half-stroke"></i><span>Invert Color</span></div>
+          <div class="acc-option" onclick="accToggle(this,'dark-btn')"><i class="fa-solid fa-moon"></i><span>Dark Mode</span></div>
+        </div>
+      </div>
+      <div class="acc-footer">
+        <label for="acc-toggle" class="acc-reset-btn" onclick="accResetAll()">
+          <i class="fa-solid fa-rotate-left"></i> Reset
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!--  nav-toggle MUST be BEFORE <nav> so ~ selector works -->
+  <input type="checkbox" id="search-toggle" hidden />
+  <input type="checkbox" id="nav-toggle" hidden />
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-inner">
+
+      <!-- ✅ HAMBURGER — label targets #nav-toggle -->
+      <label for="nav-toggle" class="hamburger" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+        <i class="fa-solid fa-xmark"></i>
+      </label>
+
+      <!-- NAV LINKS (slide-in panel on mobile) -->
+      <ul class="nav-links">
+
+        <!-- Close button inside panel -->
+        <li class="nav-close-item">
+          <label for="nav-toggle" class="nav-close-btn">
+            <i class="fa-solid fa-xmark"></i>
+          </label>
+        </li>
+
+        <li ><a href="../index.html">Home</a></li>
+        <li><a href="../about/index.html">About Us</a></li>
+        <li><a href="#">CERT-In</a></li>
+        <li><a href="../security-tools/index.html">Security Tools</a></li>
+        <li class="active"><a href="../alert/index.html">Alerts</a></li>
+
+        <li class="has-dropdown">
+          <button class="nav-btn">
+            Awareness <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="./guideline/index.html">Guidelines &amp; Advisories</a></li>
+            <li><a href="./Awareness/index.html">Our Campaigns</a></li>
+            <li><a href="./bestPraactice/index.html">Best Practices</a></li>
+            <li><a href="./ourReports/index.html">Our Reports</a></li>
+            <li><a href="./whiteBoard/index.html">White Papers</a></li>
+          </ul>
+        </li>
+
+        <li><a href="../FrequentQuestion/index.html">FAQ's</a></li>
+        <li><a href="../contactUs/index.html">Contact Us</a></li>
+
+      </ul>
+
+      <!-- ===== SEARCH BAR ===== -->
+      <div class="nav-search">
+        <div class="csk-search">
+
+          <input type="radio" name="se" id="s-google" checked>
+          <input type="radio" name="se" id="s-bing">
+          <input type="radio" name="se" id="s-duck">
+
+          <div class="search-box">
+
+            <!-- Dropdown (Left) -->
+            <div class="engine-picker">
+              <button type="button" class="engine-current" aria-label="Select search engine">
+                <span class="current-engine cur-g">
+                  <span class="dot g-dot">G</span>
+                  <span class="engine-label">&nbsp;Google</span>
+                </span>
+                <span class="current-engine cur-b">
+                  <span class="dot b-dot">b</span>
+                  <span class="engine-label">&nbsp;Bing</span>
+                </span>
+                <span class="current-engine cur-d">
+                  <span class="dot d-dot">D</span>
+                  <span class="engine-label">&nbsp;Duck</span>
+                </span>
+              </button>
+              <div class="engine-menu">
+                <label for="s-google" class="engine-opt"><span class="dot g-dot">G</span>Google.com</label>
+                <label for="s-bing"   class="engine-opt"><span class="dot b-dot">b</span>Bing.com</label>
+                <label for="s-duck"   class="engine-opt"><span class="dot d-dot">D</span>DuckDuckGo</label>
+              </div>
+            </div>
+
+            <!-- Input + Search Icon (Right) -->
+            <div class="form-wrap">
+
+              <!-- Google -->
+              <form class="sf" id="fg" action="https://www.google.com/search" method="GET" target="_blank">
+                <input class="si" type="text" name="q" placeholder="Search csk.gov.in" required>
+                <input type="hidden" name="as_sitesearch" value="csk.gov.in">
+                <button type="submit" class="sb" aria-label="Search">
+                  <svg viewBox="0 0 20 20"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17" y2="17"/></svg>
+                </button>
+              </form>
+
+              
+              <!-- Bing -->
+<form class="sf" id="fb" action="https://www.bing.com/search" method="GET" target="_blank"
+  onsubmit="this.querySelector('[name=q]').value = this.querySelector('.si').value + ' site:csk.gov.in'; return true;">
+  <input class="si" type="text" placeholder="Search csk.gov.in" required>
+  <input type="hidden" name="q" value="">
+  <button type="submit" class="sb" aria-label="Search">
+    <svg viewBox="0 0 20 20"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17" y2="17"/></svg>
+  </button>
+</form>
+              <!-- DuckDuckGo -->
+              <!-- DuckDuckGo -->
+<form class="sf" id="fd" action="https://duckduckgo.com/" method="GET" target="_blank"
+  onsubmit="this.querySelector('[name=q]').value = this.querySelector('.si').value + ' site:csk.gov.in'; return true;">
+  <input class="si" type="text" placeholder="Search csk.gov.in" required>
+  <input type="hidden" name="q" value="">
+  <button type="submit" class="sb" aria-label="Search">
+    <svg viewBox="0 0 20 20"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17" y2="17"/></svg>
+  </button>
+</form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ===== SEARCH BAR END ===== -->
+
+    </div>
+  </nav>
+
+    <!-- ✅ nav-overlay AFTER nav — direct sibling of nav-toggle -->
+    <!-- <div class="nav-overlay">
+      <label for="nav-toggle"></label>
+    </div> -->
+
+   <main id="main-content">
+    <div class="main-content-Locky">
+
+      <div class="social-content">
+            <div class="social-icons">
+              <a href="https://www.facebook.com/IndianCERT/" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+              <a href="https://www.instagram.com/cert_india/" title="Instagram"><i class="fa-brands fa-square-instagram"></i></a>
+              <a href="https://x.com/IndianCERT" title="X"><i class="fa-solid fa-x"></i></a>
+              <a href="https://www.linkedin.com/company/cert-in/" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="https://www.youtube.com/hashtag/certin" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>  
+          </div>
+
+          <label for="acc-toggle" class="icon">
+              <!-- <i class="fa-solid fa-universal-access"></i> -->
+              <img src="../assets/access_icon.svg" alt="">
+          </label>
+
+        <div class="container">
+
+          <div class="header">
+
+            <div class="left">
+              <a href="javascript:history.back()" class="back-btn">
+                <i class="fa-solid fa-angle-left"></i> BACK
+              </a>
+              <h1>RondoDox Botnet</h1>
+            </div>
+
+          <!-- Header -->
+            <div class="header-right">
+              
+                <div class="meta">
+                  <div class="border-left"></div>
+                  <div class="righ-content">
+                    <p><span class="gree">Original Issue Date:</span>  January 21, 2026</p>
+                    
+                    <p><span class="orr">Virus Type:</span> IoT Botnet / Web Application Malware</p>
+                    <p><span class="orr">Severity: </span>High</p>
+                    
+                  </div>
+                  
+                </div>
+            </div>
+
+          </div>
+
+          
+
+
+          <!-- Description -->
+          <div class="section">
+              <p>
+                It has been reported that a sophisticated botnet dubbed “RondoDox” is actively targeting IoT devices, network appliances, and vulnerable web applications, including Next.js Server Actions, routers, and CMS platforms. The malware has been observed weaponizing recently disclosed vulnerabilities to deploy botnet payloads, cryptominers, and remote access tools. RondoDox is capable of persistent compromise, botnet enrollment, cryptojacking, DDoS operations, and lateral movement across enterprise and cloud environments.
+              </p>
+          </div>
+
+          <!-- Infection Mechanism -->
+          <div class="section">
+              <h2>Infection Mechanism:</h2>
+              <p>
+                RondoDox botnet operates as a Linux-based, automated exploitation framework that compromises devices through exposed management interfaces and vulnerable web applications. The botnet has demonstrated a shift from early reconnaissance activity to coordinated, high-volume exploitation campaigns, and automated botnet deployment. The campaign has entered a more concerning phase, as reliable exploits are now observed in the wild, lowering the barrier to exploitation and increasing the likelihood of widespread compromise.
+              </p>
+              <p>
+               The botnet primarily targets:
+              </p>
+              <ul>
+                <li>
+                    Internet-facing IoT devices (routers, cameras, NAS)
+                </li>
+                <li>
+                    Web applications (Next.js, WordPress, Drupal, Struts2, WebLogic)
+                </li>
+                <li>
+                    Cloud and Linux servers
+                </li>
+              </ul>
+              <p>
+               Primary Infection Vectors
+              </p>
+              <ul>
+                <li>
+                    Exploitation of Next.js Server Actions remote code execution vulnerabilities (e.g., prototype pollution / deserialization flaws)
+                </li>
+                <li>
+                    Command injection via router and network appliance diagnostic interfaces
+                </li>
+                <li>
+                    Exploitation of CMS plugins and framework vulnerabilities
+                </li>
+                <li>
+                    Weak or default credentials on IoT devices and network devices
+                </li>
+                <li>
+                    Exploitation of critical infrastructure management vulnerabilities, including unauthenticated REST API endpoints enabling remote code execution (e.g., CVE-2025-37164 affecting HPE OneView)
+                </li>
+              </ul>
+            <p>
+                Once a system is compromised, RondoDox establishes persistence and creates a covert communication channel used for:
+            </p>
+            <ul>
+                <li>
+                    Command and Control: Remote execution of system commands and deployment of additional payloads.
+                </li>
+                <li>
+                   Cryptomining: Unauthorized use of system resources for cryptocurrency mining. 
+                </li>
+                <li>
+                    Botnet Operations: Enrolling compromised systems for DDoS attacks and further exploitation campaigns.
+                </li>
+                <li>
+                   Lateral Movement: Pivoting from compromised infrastructure management platforms to additional network segments. 
+                </li>
+            </ul>
+
+          </div>
+        
+
+          <!-- Indicator of Compromise -->
+          <div class="section">
+            <h2>Indicators of Compromise:</h2>
+                <p>
+                    IP addresses
+                </p>
+                <ul>
+                    <li>483[.]252[.]42[.]112
+                    </li>
+                    <li>38[.]59[.]219[.]27
+                    </li>
+                    <li>
+                       192[.]183[.]232[.]142
+                    </li>
+                    <li>
+                       74[.]194[.]191[.]52
+                    </li>
+                    <li>
+                        45[.]135[.]194[.]34
+                    </li>
+                    <li>
+                        83[.]150[.]218[.]93
+                    </li>
+                    <li>
+                        14[.]103[.]145[.]202
+                    </li>
+                    <li>
+                        14[.]103[.]145[.]211
+                    </li>
+                    <li>
+                        154[.]91[.]254[.]95
+                    </li>
+                    <li>
+                        78[.]153[.]149[.]90
+                    </li>
+                    <li>
+                        51[.]81[.]104[.]115
+                    </li>
+                    <li>
+                        89[.]144[.]31[.]18
+                    </li>
+                    <li>
+                        5[.]255[.]121[.]141
+                    </li>
+                    <li>
+                        41[.]231[.]37[.]153
+                    </li>
+                    <li>
+                        70[.]184[.]13[.]47
+                    </li>
+                    <li>
+                        192[.]159[.]99[.]95
+                    </li>
+                    
+                </ul>
+          </div>
+
+
+
+          <!-- References -->
+          <div class="section">
+            <h2>Malware SHA256 hashes:</h2>
+            <p>Name    SHA256</p>
+            <ul>
+                <li>
+                    rondo.arc700 – 2af74246497c671cc9976cd9919fdc4beaa459e9b4b30a42f561b45919da950b
+                </li>
+                <li>
+                    rondo.armeb – 5cbe0f93c03b04b6100545448fee6db2a032a7cb13be45421d4ab377d1f88bf6
+                </li>
+                <li>
+                    rondo.armebhf – 3852442d56b08eabb8060f6b72234ff0a5400b89dddf31560b2dc5d8b16c29fav
+                </li>
+                <li>
+                    rondo.armv4l – 032d7b946259add6db097d3ee4375caffe2c7dcf7da81e72c32eaa24b3bde164
+                </li>
+                <li>
+                    rondo.armv5l – 17be568b6b2acb3b237c6dc81b3692976bb83eea76a7a26fd405805d34901016
+                </li>
+                <li>
+                    rondo.armv6l – e683864f4016b24b164ebaa5d900963b730a1df45bcbf9fa947b644d673dbc21
+                </li>
+                <li>
+                    rondo.armv7l – 69a17194dba061f56ec3a23debfa1d3fdee7dd92789af17038387b294093aa5d
+                </li>
+                <li>
+                    rondo.i486 – 470a74b888617299820acbe2daf03001eca7dc64a7002cd00beb163b3663187e
+                </li>
+                <li>
+                    rondo.i586 – 81200976b8717c340041eee6ff051e1a87f8f73d86a9e17465b34be4c9488839
+                </li>
+                <li>
+                    rondo.i686 – cf7a5027a0e562b7749c8025c0394bc3c3208b7b5ce070dcd15787450332efa8
+                </li>
+                <li>
+                   rondo.m68k – 3a4afea2c16905816b922229dc5d03311d58c470fa4580dcd9248302bcdfbdc4 
+                </li>
+                <li>
+                    rondo.mips – f0a73797caa35d4d62a23358fa8102d6c434cfc5177623d5dfd2a3efaff66aae
+                </li>
+                <li>
+                    rondo.mipsel – a65e3438103d31ccb213083b2b6ef40b558580b4246251b558fc68e6a2a2ba92
+                </li>
+                <li>
+                    rondo.powerpc-440fp – c789f239a9cf039752e3926ee3b4387b3f6a1f6657531277caebf90685b018a2
+                </li>
+                <li>
+                    rondo.powerpc – c987e85b19c6462b06615a61998618c0e7d22ac5e38034e53ef0e34bd452464d
+                </li>
+                <li>
+                    rondo.sh4 – f11ede0c682e818357943a166239867a19b0c1d321e84213e28e21beb2c49c87
+                </li>
+                <li>
+                    rondo.sparc – df9f756f355d1122e46ce12bb84553c89cdab71c6402a257b78bc768578f51c7
+                </li>
+                <li>
+                    rondo.x86_64 – 8634f53097f511dd1b7c253a0fbc4bc468e3ee38abd0490a39dd92edaee905de
+                </li>
+            </ul>
+          
+          </div>
+
+          <div class="section">
+            <h2>Other IOCs</h2>
+            <ul>
+                <li>895f8dff9cd26424b691a401c92fa7745e693275c38caf6a6aff277eadf2a70b (Coinminer)</li>
+                <li>
+                    8e0bc23a87d349e5a5356252ce17576093b7858fdf6ea84919fbdcb2e117168e (healthcheck)
+                </li>
+                <li>
+                    50be5257678412f0810d46e0b0bc573eb65c6ce4617346c1527ff0dc9b7fc79e (persistence)
+                </li>
+                <li>
+                    858874057e3df990ccd7958a38936545938630410bde0c0c4b116f92733b1ddb (Mirai)
+                </li>
+            </ul>
+          </div>
+
+          <div class="section">
+            <h2>Best Practices for Docker Security:</h2>
+            <ul>
+                <li>
+                Update critical platforms immediately: Apply the latest security patches to all Node.js and Next.js servers. Temporarily disable high-risk features, such as Server Actions, on internet-facing applications until vendor patches are confirmed safe. Validate all serialized data and input handling to prevent injection attacks.
+                </li>
+                <li>
+                    Segment and harden IoT devices: Isolate routers, cameras, NAS, printers, and other IoT devices into dedicated network segments with strict access controls. Disable unnecessary remote management interfaces, enforce strong and unique credentials, and apply firmware updates from trusted sources.
+                </li>
+                <li>
+                    Strengthen web application defenses: Implement application-level protections, such as input validation, restricting unnecessary functionality, and deploying Web Application Firewalls (WAFs) to detect and block potential exploitation attempts.
+                </li>
+                <li>
+                    Monitor for suspicious activity: Track unusual processes, unexpected system changes, and abnormal network behavior. Ensure centralized logging and alerting are in place to support early detection and response.
+                </li>
+                <li>
+                    Enforce secure administration practices: Require VPN or jump host access for all device management interfaces. Implement multi-factor and certificate-based authentication where possible, and log administrative actions centrally for real-time monitoring.
+                </li>
+                <li>
+                    Institutionalize vulnerability management: Maintain an inventory of all assets and firmware versions. Establish patch management procedures requiring critical vulnerabilities in internet-facing applications to be remediated promptly. Subscribe to threat intelligence feeds, conduct regular penetration testing, and review security controls periodically.
+
+                </li>
+                
+            </ul>
+          </div>
+
+          <div class="section">
+            <h2>References:</h2>
+            <ul>
+                <li>
+                    <a href="https://blog.aquasec.com/threat-alert-kinsing-malware-container-vulnerability">
+                        https://blog.aquasec.com/threat-alert-kinsing-malware-container-vulnerability
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.cloudsek.com/blog/rondodox-botnet-weaponizes-react2shell">
+                        https://www.cloudsek.com/blog/rondodox-botnet-weaponizes-react2shell
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.fortinet.com/blog/threat-research/rondobox-unveiled-breaking-down-a-botnet-threat">
+                    https://www.fortinet.com/blog/threat-research/rondobox-unveiled-breaking-down-a-botnet-threat
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.f5.com/labs/articles/tracking-rondodox-malware-exploiting-many-iot-vulnerabilities">
+                        https://www.f5.com/labs/articles/tracking-rondodox-malware-exploiting-many-iot-vulnerabilities
+                    </a>
+                </li>
+                <li>
+                    <a href="https://blog.checkpoint.com/research/patch-now-active-exploitation-underway-for-critical-hpe-oneview-vulnerability">
+                       https://blog.checkpoint.com/research/patch-now-active-exploitation-underway-for-critical-hpe-oneview-vulnerability
+                    </a>
+                </li>
+            </ul>
+          </div>
+
+        </div>  
+    </div>
+    
+  </main>
+
+  <footer class="site-footer">
+ 
+      <!-- Layer 1: gradient (on .site-footer itself) -->
+      <!-- Layer 2: SVG circuit overlay -->
+      <div class="footer-bg-svg"></div>
+    
+      <!-- MAIN CONTENT -->
+      <div class="footer-main">
+    
+        <!-- LEFT: Postal Address -->
+        <div class="footer-address">
+          <h3 class="footer-section-title">Postal Address:</h3>
+          <div class="footer-title-line"></div>
+    
+          <address>
+            <p><strong>Indian Computer Emergency Response Team (CERT-In)</strong></p>
+            <p>Ministry of Electronics and Information Technology,</p>
+            <p>Government of India,</p>
+            <p>Electronics Niketan, 6 CGO Complex,</p>
+            <p>Lodhi Road, New Delhi - 110 003</p>
+          </address>
+    
+          <p class="footer-toll-free">
+            <strong>Toll Free Number:</strong> +91-1800-11-4949
+          </p>
+    
+          <div class="footer-logos">
+            <div class="footer-logo">
+              <a href="#" class="footer-logo-item">
+              <img src="../../assets/digital-india.svg" alt="Digital India - Power To Empower" />
+              </a>
+              <a href="#" class="footer-logo-item">
+                <img src="../../assets/footer-certin.svg" alt="CERT-In" />
+              </a>
+            </div>
+            <div class="footer-logo">
+              <a href="#" class="footer-logo-item">
+              <img src="../../assets/infosec.svg" alt="InfoSec Awareness" />
+              </a>
+              <a href="#" class="footer-logo-item">
+                <img src="../../assets/staysafe.svg" alt="Stay Safe Online" />
+              </a>
+            </div>
+          </div>
+        </div>
+    
+        <!-- RIGHT: Important Links -->
+        <div class="footer-links">
+          <h3 class="footer-section-title">Important Links</h3>
+          <div class="footer-title-line"></div>
+    
+          <div class="footer-links-grid">
+            <ul class="footer-link-col">
+              <li><a href="../homePage/index.html">Home</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">CERT-In</a></li>
+              <li><a href="#">MeiTY</a></li>
+              <li><a href="#">FAQ's</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+            <ul class="footer-link-col">
+              <li><a href="#">Website Policies</a></li>
+              <li><a href="#">Terms &amp; Conditions</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Help</a></li>
+              <li><a href="#">Archives</a></li>
+              <li><a href="#">Sitemap</a></li>
+            </ul>
+          </div>
+    
+          <div class="footer-social-row">
+            <div class="footer-follow">
+              <span class="follow-label">Follow Us</span>
+              <div class="footer-social-icons">
+                <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" title="X"><i class="fa-solid fa-x"></i></a>
+                <a href="#" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+              </div>
+            </div>
+            <p class="footer-last-updated">Last updated on: November 10, 2025</p>
+          </div>
+        </div>
+    
+      </div>
+    
+      <!-- BOTTOM BAR -->
+      <div class="footer-bottom">
+        <p class="footer-disclaimer">
+          Disclaimer :-The information provided herein is on "as is" basis, without warranty of any kind.
+        </p>
+        <p class="footer-copyright">
+          <i class="fa-regular fa-copyright"></i> Copyright 2025. All right reserved
+        </p>
+      </div>
+    
+    </footer>
+
+
+</body>
+</html>

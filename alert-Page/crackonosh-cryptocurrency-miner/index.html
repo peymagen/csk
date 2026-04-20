@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.ux4g.gov.in/tools/accessibility-widget.js" async></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- acc-toggle MUST be first -->
+  <input type="checkbox" id="acc-toggle" hidden />
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <div class="left-section">
+        <div class="national-emblem">
+          <img src="../../assets/header2.svg" alt="">
+        </div>
+      </div>
+      <div class="center-section">
+        <img src="../../assets/header.png" alt="">
+      </div>
+      <div class="right-section">
+        <div class="accessibility-icons">
+          <a href="#main-content" title="Skip to main content">
+            <img src="../../assets/Translate.svg" alt="">
+          </a>
+          <span class="icon-separator">|</span>
+          <div class="bhashini-plugin-container">
+            <img src="../../assets/Language.svg" alt="">
+          </div>
+          <span class="icon-separator">|</span>
+          <label for="acc-toggle" class="acc-open-btn" title="Accessibility"></label>
+          <img src="../../assets/accessibility_figure.svg" alt="">
+        </div>
+        <div class="certin-logo">
+          <img src="../../assets/certin.svg" alt="">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- acc-overlay: direct sibling of acc-toggle -->
+  <div class="acc-overlay">
+    <div class="acc-panel">
+      <div class="acc-panel-header">
+        <h2>Accessibility Options</h2>
+        <label for="acc-toggle" class="acc-close-btn" title="Close">
+          <i class="fa-solid fa-xmark"></i>
+        </label>
+      </div>
+      <div class="acc-language-row">
+        <div class="lang-left">
+          <div class="lang-icon-box"><i class="fa-solid fa-language"></i></div>
+          <span class="lang-label">Language</span>
+        </div>
+        <select class="lang-select" id="lang-select" title="Select Language">
+          <option>English</option>
+          <option>हिंदी</option>
+        </select>
+      </div>
+      <div class="acc-options">
+        <div class="acc-grid">
+          <div class="acc-option" onclick="accToggle(this,'speak')"><i class="fa-solid fa-volume-high"></i><span>Screen Reader</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s9')"><i class="fa-solid fa-text-height"></i><span>Bigger Text</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s12')"><i class="fa-solid fa-bars"></i><span>Line Height</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s13')"><i class="fa-solid fa-a"></i><span>Text Spacing</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s10')"><i class="fa-solid fa-link"></i><span>Highlight Links</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-df')"><i class="fa-solid fa-d"></i><span>Dyslexia Friendly</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-cursor')"><i class="fa-solid fa-brain"></i><span>ADHD Friendly</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s11')"><i class="fa-regular fa-image"></i><span>Hide Images</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-invert')"><i class="fa-solid fa-circle-half-stroke"></i><span>Invert Color</span></div>
+          <div class="acc-option" onclick="accToggle(this,'dark-btn')"><i class="fa-solid fa-moon"></i><span>Dark Mode</span></div>
+        </div>
+      </div>
+      <div class="acc-footer">
+        <label for="acc-toggle" class="acc-reset-btn" onclick="accResetAll()">
+          <i class="fa-solid fa-rotate-left"></i> Reset
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!--  nav-toggle MUST be BEFORE <nav> so ~ selector works -->
+  <input type="checkbox" id="search-toggle" hidden />
+  <input type="checkbox" id="nav-toggle" hidden />
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-inner">
+
+      <!-- ✅ HAMBURGER — label targets #nav-toggle -->
+      <label for="nav-toggle" class="hamburger" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+        <i class="fa-solid fa-xmark"></i>
+      </label>
+
+      <!-- NAV LINKS (slide-in panel on mobile) -->
+      <ul class="nav-links">
+
+        <!-- Close button inside panel -->
+        <li class="nav-close-item">
+          <label for="nav-toggle" class="nav-close-btn">
+            <i class="fa-solid fa-xmark"></i>
+          </label>
+        </li>
+
+        <li ><a href="../index.html">Home</a></li>
+        <li><a href="../about/index.html">About Us</a></li>
+        <li><a href="#">CERT-In</a></li>
+        <li><a href="../security-tools/index.html">Security Tools</a></li>
+        <li class="active"><a href="../alert/index.html">Alerts</a></li>
+
+        <li class="has-dropdown">
+          <button class="nav-btn">
+            Awareness <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="./guideline/index.html">Guidelines &amp; Advisories</a></li>
+            <li><a href="./Awareness/index.html">Our Campaigns</a></li>
+            <li><a href="./bestPraactice/index.html">Best Practices</a></li>
+            <li><a href="./ourReports/index.html">Our Reports</a></li>
+            <li><a href="./whiteBoard/index.html">White Papers</a></li>
+          </ul>
+        </li>
+
+        <li><a href="../FrequentQuestion/index.html">FAQ's</a></li>
+        <li><a href="../contactUs/index.html">Contact Us</a></li>
+
+      </ul>
+
+      <!-- ===== SEARCH BAR ===== -->
+      <div class="nav-search">
+        <div class="csk-search">
+
+          <input type="radio" name="se" id="s-google" checked>
+          <input type="radio" name="se" id="s-bing">
+          <input type="radio" name="se" id="s-duck">
+
+          <div class="search-box">
+
+            <!-- Dropdown (Left) -->
+            <div class="engine-picker">
+              <button type="button" class="engine-current" aria-label="Select search engine">
+                <span class="current-engine cur-g">
+                  <span class="dot g-dot">G</span>
+                  <span class="engine-label">&nbsp;Google</span>
+                </span>
+                <span class="current-engine cur-b">
+                  <span class="dot b-dot">b</span>
+                  <span class="engine-label">&nbsp;Bing</span>
+                </span>
+                <span class="current-engine cur-d">
+                  <span class="dot d-dot">D</span>
+                  <span class="engine-label">&nbsp;Duck</span>
+                </span>
+              </button>
+              <div class="engine-menu">
+                <label for="s-google" class="engine-opt"><span class="dot g-dot">G</span>Google.com</label>
+                <label for="s-bing"   class="engine-opt"><span class="dot b-dot">b</span>Bing.com</label>
+                <label for="s-duck"   class="engine-opt"><span class="dot d-dot">D</span>DuckDuckGo</label>
+              </div>
+            </div>
+
+            <!-- Input + Search Icon (Right) -->
+            <div class="form-wrap">
+
+              <!-- Google -->
+              <form class="sf" id="fg" action="https://www.google.com/search" method="GET" target="_blank">
+                <input class="si" type="text" name="q" placeholder="Search csk.gov.in" required>
+                <input type="hidden" name="as_sitesearch" value="csk.gov.in">
+                <button type="submit" class="sb" aria-label="Search">
+                  <svg viewBox="0 0 20 20"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17" y2="17"/></svg>
+                </button>
+              </form>
+
+              
+              <!-- Bing -->
+<form class="sf" id="fb" action="https://www.bing.com/search" method="GET" target="_blank"
+  onsubmit="this.querySelector('[name=q]').value = this.querySelector('.si').value + ' site:csk.gov.in'; return true;">
+  <input class="si" type="text" placeholder="Search csk.gov.in" required>
+  <input type="hidden" name="q" value="">
+  <button type="submit" class="sb" aria-label="Search">
+    <svg viewBox="0 0 20 20"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17" y2="17"/></svg>
+  </button>
+</form>
+              <!-- DuckDuckGo -->
+              <!-- DuckDuckGo -->
+<form class="sf" id="fd" action="https://duckduckgo.com/" method="GET" target="_blank"
+  onsubmit="this.querySelector('[name=q]').value = this.querySelector('.si').value + ' site:csk.gov.in'; return true;">
+  <input class="si" type="text" placeholder="Search csk.gov.in" required>
+  <input type="hidden" name="q" value="">
+  <button type="submit" class="sb" aria-label="Search">
+    <svg viewBox="0 0 20 20"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17" y2="17"/></svg>
+  </button>
+</form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ===== SEARCH BAR END ===== -->
+
+    </div>
+  </nav>
+
+    <!-- ✅ nav-overlay AFTER nav — direct sibling of nav-toggle -->
+    <!-- <div class="nav-overlay">
+      <label for="nav-toggle"></label>
+    </div> -->
+
+   <main id="main-content">
+    <div class="main-content-Locky">
+
+      <div class="social-content">
+            <div class="social-icons">
+              <a href="https://www.facebook.com/IndianCERT/" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+              <a href="https://www.instagram.com/cert_india/" title="Instagram"><i class="fa-brands fa-square-instagram"></i></a>
+              <a href="https://x.com/IndianCERT" title="X"><i class="fa-solid fa-x"></i></a>
+              <a href="https://www.linkedin.com/company/cert-in/" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="https://www.youtube.com/hashtag/certin" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>  
+          </div>
+
+          <label for="acc-toggle" class="icon">
+              <!-- <i class="fa-solid fa-universal-access"></i> -->
+              <img src="../assets/access_icon.svg" alt="">
+          </label>
+
+        <div class="container">
+
+          <div class="header">
+
+            <div class="left">
+              <a href="javascript:history.back()" class="back-btn">
+                <i class="fa-solid fa-angle-left"></i> BACK
+              </a>
+              <h1>“Crackonosh” Malware</h1>
+            </div>
+
+          <!-- Header -->
+            <div class="header-right">
+              
+                <div class="meta">
+                  <div class="border-left"></div>
+                  <div class="righ-content">
+                    <p><span class="gree">Original Issue Date:</span> July 01, 2021</p>
+                    
+                    <p><span class="orr">Virus Type:</span>  cryptocurrency miner</p>
+                    <p><span class="orr">Severity: </span>High</p>
+                  </div>
+                  
+                </div>
+            </div>
+
+          </div>
+
+          
+
+
+          <!-- Description -->
+          <div class="section">
+              <p>
+                It is reported that a new strain of cryptocurrency miner dubbed as Crackonosh is spreading through abusing windows Safe mode in its attack and escape detection. The malware is distributed through illegal and cracked copies of popular software. Crackonosh has been circulating since at least June 2018.
+              </p>
+          </div>
+
+          <!-- Infection Mechanism -->
+          <div class="section">
+              <h2>Infection Mechanism:</h2>
+              <p>
+                The infection chain starts with an installer and a script that is deployed along with pirated/cracked software and modifies Windows registry to allow critical malware executable to run in Safe mode. The infected system boot in Safe mode in next start up. The malware encase itself in password protected archive and unpack during installation process. While system is in Safe mode, AV software doesn’t work and this can enable the malicious Serviceinstaller.exe to disable/delete Windows defender. It also uses WQL to query all antivirus software installed. Command listed below:
+              </p>
+              <p>
+                SELECT * FROM AntiVirusProduct
+              </p>
+              <p>
+                The malware also able to disable the anti-virus software from other popular companies including Avast, Kaspersky, Norton, McAfee's scanner and Bitdefender etc. with the following command:
+              </p>
+              <p>
+                "rd < AV directory > /s /q" (here < AV directory > is the default directory name that a specific antivirus software uses.)
+              </p>
+               <div class="img-caption">
+                <img src="../../assets//alert/crackonosh.jpeg" alt="">
+                <p><strong>Fig.1 “Crackonosh” installation process. (source:avast)</strong></p>
+              </div>
+              <p>
+                It also deletes registry entries to turn off automatic updates and replace Windows Security with a fake green tick tray icon. Log system files are then wiped to avoid detection. The final step of infection chain is the deployment of XMRig cryptocurrency miner that utilizes the system resources and power to mine the Monero (XMR) cryptocurrency. This miner has proved itself to be very profitable for its authors and in total 30 variants of this malware have been identified.
+              </p>
+          </div>
+          
+
+          <div class="section">
+            <h2>IoC:</h2>
+            <p>Common file names:
+            </p>
+            <ul>
+                <li>C:\Windows\System32\7B296FC0-376B-497d-B013-58F4D9633A22-5P-1.B5841A4C-A289-439d-8115-50AB69CD450
+                </li>
+                <li>
+                    C:\Windows\System32\7B296FC0-376B-497d-B013-58F4D9633A22-5P-1.B5841A4C-A289-439d-8115-50AB69CD450B
+                </li>
+                <li>
+                    C:\Windows\System32\StartupCheckLibrarry.dll
+                </li>
+                <li>
+                    UserAccountControlSettingsDevice.dat
+                </li>
+                <li>
+                    C:\Windows\System32\diskdriver.exe
+                </li>
+                <li>
+                    C:\Windows\System32\install.vbs
+                </li>
+                <li>
+                    C:\Windows\System32\maintenance.vbs
+                </li>
+                <li>
+                    C:\Windows\System32\serviceinstaller.exe
+                </li>
+                <li>
+                    C:\Windows\System32\serviceinstaller.msi
+                </li>
+                <li>
+                    C:\Windows\System32\startupcheck.vbs
+                </li>
+                <li>
+                    C:\Windows\System32\windfn.exe
+                </li>
+                <li>
+                    C:\Windows\System32\winrmsrv.exe
+                </li>
+                <li>
+                    C:\Windows\System32\winscomrssrv.dll
+                </li>
+                <li>
+                    C:\Windows\System32\wksprtcli.dll
+                </li>
+            </ul>
+            <p>
+                For the list of URLs obtaining TXT DNS records, kindly refer the following URL:
+                
+            </p>
+                <ul class="ioc-list">
+                    <li><a href="https://github.com/avast/ioc/blob/master/Crackonosh/network.txt">https://github.com/avast/ioc/blob/master/Crackonosh/network.txt</a></li>
+                </ul>
+            <p>
+                For the complete list of IoC including Hashes, Network indicators, file names, registry key, Mutexes and Monero Wallet addresses, kindly refer the following URL:
+                
+            </p>
+            <ul class="ioc-list">
+                    <li>
+                        <a href="https://github.com/avast/ioc/tree/master/Crackonosh">
+                            https://github.com/avast/ioc/tree/master/Crackonosh
+                        </a>
+                    </li>
+                </ul>
+          </div>
+        
+
+          <!-- Indicator of Compromise -->
+          <div class="section">
+            <h2>Countermeasures:</h2>
+                <ol>
+                    <li>
+                        Following Scheduled Tasks (Task Schedulers) should be deleted:
+                        <ul>
+                            <li>
+                                Microsoft\Windows\Maintenance\InstallWinSAT
+                            </li>
+                            <li>
+                                Microsoft\Windows\Application Experience\StartupCheckLibrary
+                            </li>
+                            <li>
+                                Microsoft\Windows\WDI\SrvHost\
+                            </li>
+                            <li>
+                                Microsoft\Windows\Wininet\Winlogui\
+                            </li>
+                            <li>
+                                Microsoft\Windows\Windows Error Reporting\winrmsrv\
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Delete the following file from C:\Documents and Settings\All Users\Local Settings\Application Data\Programs\Common (%localappdata%\Programs\Common)
+                        <ul>
+                            <li>
+                                UserAccountControlSettingsDevice.dat
+                            </li>
+                            <li>
+                                For the detailed steps to be taken for the fully removal of Crackonosh malware kindly refer the first URL listed in "References" tab below.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                       Use only genuine and authentic software from reputed service providers/ companies.
+                    </li>
+                    <li>
+                        Keep updated Antivirus/Antimalware software to detect any threat before it infects the system/network. Always scan the external drives/removable devices before use. Leverage anti-phishing solutions that help protect credentials and against malicious file downloads.
+
+                    </li>
+                    <li>
+                       Use limited privilege user on the computer or allow administrative access to systems with special administrative accounts for administrators.
+                    </li>
+                    <li>
+                         Network administrators should continuously monitor systems and guide their employees to recognize any above-normal sustained CPU loading activity on computer workstations, mobile devices, and network servers. Network activity should continuously be monitored for any unusual activity.
+
+                    </li>
+                    <li>
+                        Maintain browser extensions as some attackers are using malicious browser extensions or poisoning legitimate extensions to execute cryptomining scripts.
+                    </li>
+                    <li>
+                         Disable Autorun and Autoplay policies.
+                    </li>
+                    <li>
+                        Consider using application whitelists to prevent unknown executables from launching autonomously.
+
+                    </li>
+                    <li>
+                        Delete the system changes made by the malware such as files created/ registry entries /services etc.
+                    </li>
+                    <li>
+                        Monitor traffic generated from client machines to the domains and IP address mentioned in Installation section.
+                    </li>
+                    <li>
+                        Disable unnecessary services on agency workstations and servers.
+                    </li>
+                </ol>
+          </div>
+
+
+
+          <!-- References -->
+          <div class="section">
+            <h2>References:</h2>
+
+            <ul class="links">
+                <li>
+                    <a href="https://decoded.avast.io/danielbenes/crackonosh-a-new-malware-distributed-in-cracked-software/">https://decoded.avast.io/danielbenes/crackonosh-a-new-malware-distributed-in-cracked-software/
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://securityaffairs.co/wordpress/119450/malware/crackonosh-monero-miner.html">https://securityaffairs.co/wordpress/119450/malware/crackonosh-monero-miner.html
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.zdnet.com/article/crackonosh-malware-abuses-windows-safe-mode-to-quietly-mine-for-cryptocurrency/">https://www.zdnet.com/article/crackonosh-malware-abuses-windows-safe-mode-to-quietly-mine-for-cryptocurrency/
+                    </a>
+                </li>
+               
+            </ul>
+          
+          </div>
+
+        </div>  
+    </div>
+    
+  </main>
+
+  <footer class="site-footer">
+ 
+      <!-- Layer 1: gradient (on .site-footer itself) -->
+      <!-- Layer 2: SVG circuit overlay -->
+      <div class="footer-bg-svg"></div>
+    
+      <!-- MAIN CONTENT -->
+      <div class="footer-main">
+    
+        <!-- LEFT: Postal Address -->
+        <div class="footer-address">
+          <h3 class="footer-section-title">Postal Address:</h3>
+          <div class="footer-title-line"></div>
+    
+          <address>
+            <p><strong>Indian Computer Emergency Response Team (CERT-In)</strong></p>
+            <p>Ministry of Electronics and Information Technology,</p>
+            <p>Government of India,</p>
+            <p>Electronics Niketan, 6 CGO Complex,</p>
+            <p>Lodhi Road, New Delhi - 110 003</p>
+          </address>
+    
+          <p class="footer-toll-free">
+            <strong>Toll Free Number:</strong> +91-1800-11-4949
+          </p>
+    
+          <div class="footer-logos">
+            <div class="footer-logo">
+              <a href="#" class="footer-logo-item">
+              <img src="../../assets/digital-india.svg" alt="Digital India - Power To Empower" />
+              </a>
+              <a href="#" class="footer-logo-item">
+                <img src="../../assets/footer-certin.svg" alt="CERT-In" />
+              </a>
+            </div>
+            <div class="footer-logo">
+              <a href="#" class="footer-logo-item">
+              <img src="../../assets/infosec.svg" alt="InfoSec Awareness" />
+              </a>
+              <a href="#" class="footer-logo-item">
+                <img src="../../assets/staysafe.svg" alt="Stay Safe Online" />
+              </a>
+            </div>
+          </div>
+        </div>
+    
+        <!-- RIGHT: Important Links -->
+        <div class="footer-links">
+          <h3 class="footer-section-title">Important Links</h3>
+          <div class="footer-title-line"></div>
+    
+          <div class="footer-links-grid">
+            <ul class="footer-link-col">
+              <li><a href="../homePage/index.html">Home</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">CERT-In</a></li>
+              <li><a href="#">MeiTY</a></li>
+              <li><a href="#">FAQ's</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+            <ul class="footer-link-col">
+              <li><a href="#">Website Policies</a></li>
+              <li><a href="#">Terms &amp; Conditions</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Help</a></li>
+              <li><a href="#">Archives</a></li>
+              <li><a href="#">Sitemap</a></li>
+            </ul>
+          </div>
+    
+          <div class="footer-social-row">
+            <div class="footer-follow">
+              <span class="follow-label">Follow Us</span>
+              <div class="footer-social-icons">
+                <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" title="X"><i class="fa-solid fa-x"></i></a>
+                <a href="#" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+              </div>
+            </div>
+            <p class="footer-last-updated">Last updated on: November 10, 2025</p>
+          </div>
+        </div>
+    
+      </div>
+    
+      <!-- BOTTOM BAR -->
+      <div class="footer-bottom">
+        <p class="footer-disclaimer">
+          Disclaimer :-The information provided herein is on "as is" basis, without warranty of any kind.
+        </p>
+        <p class="footer-copyright">
+          <i class="fa-regular fa-copyright"></i> Copyright 2025. All right reserved
+        </p>
+      </div>
+    
+    </footer>
+
+
+</body>
+</html>

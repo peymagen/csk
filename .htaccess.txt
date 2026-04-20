@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# Redirect /about/index.html to /about
+RewriteCond %{THE_REQUEST} /index\.html [NC]
+RewriteRule ^(.*/)?index\.html$ /$1 [R=301,L]
+
+# Allow clean URLs to load index.html automatically
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/]+)/?$ $1/index.html [L]
