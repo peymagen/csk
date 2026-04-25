@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <script src="https://cdn.ux4g.gov.in/tools/accessibility-widget.js" async></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.ux4g.gov.in/tools/accessibility-widget.js" async></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
   <!-- acc-toggle MUST be first -->
@@ -66,16 +68,26 @@
       </div>
       <div class="acc-options">
         <div class="acc-grid">
-          <div class="acc-option" onclick="accToggle(this,'speak')"><i class="fa-solid fa-volume-high"></i><span>Screen Reader</span></div>
-          <div class="acc-option" onclick="accToggle(this,'btn-s9')"><i class="fa-solid fa-text-height"></i><span>Bigger Text</span></div>
-          <div class="acc-option" onclick="accToggle(this,'btn-s12')"><i class="fa-solid fa-bars"></i><span>Line Height</span></div>
-          <div class="acc-option" onclick="accToggle(this,'btn-s13')"><i class="fa-solid fa-a"></i><span>Text Spacing</span></div>
-          <div class="acc-option" onclick="accToggle(this,'btn-s10')"><i class="fa-solid fa-link"></i><span>Highlight Links</span></div>
-          <div class="acc-option" onclick="accToggle(this,'btn-df')"><i class="fa-solid fa-d"></i><span>Dyslexia Friendly</span></div>
-          <div class="acc-option" onclick="accToggle(this,'btn-cursor')"><i class="fa-solid fa-brain"></i><span>ADHD Friendly</span></div>
-          <div class="acc-option" onclick="accToggle(this,'btn-s11')"><i class="fa-regular fa-image"></i><span>Hide Images</span></div>
-          <div class="acc-option" onclick="accToggle(this,'btn-invert')"><i class="fa-solid fa-circle-half-stroke"></i><span>Invert Color</span></div>
-          <div class="acc-option" onclick="accToggle(this,'dark-btn')"><i class="fa-solid fa-moon"></i><span>Dark Mode</span></div>
+          <div class="acc-option" onclick="accToggle(this,'speak')"><i class="fa-solid fa-volume-high"></i><span>Screen
+              Reader</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s9')"><i class="fa-solid fa-text-height"></i><span>Bigger
+              Text</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s12')"><i class="fa-solid fa-bars"></i><span>Line
+              Height</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s13')"><i class="fa-solid fa-a"></i><span>Text
+              Spacing</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s10')"><i class="fa-solid fa-link"></i><span>Highlight
+              Links</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-df')"><i class="fa-solid fa-d"></i><span>Dyslexia
+              Friendly</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-cursor')"><i class="fa-solid fa-brain"></i><span>ADHD
+              Friendly</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s11')"><i class="fa-regular fa-image"></i><span>Hide
+              Images</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-invert')"><i
+              class="fa-solid fa-circle-half-stroke"></i><span>Invert Color</span></div>
+          <div class="acc-option" onclick="accToggle(this,'dark-btn')"><i class="fa-solid fa-moon"></i><span>Dark
+              Mode</span></div>
         </div>
       </div>
       <div class="acc-footer">
@@ -109,7 +121,7 @@
         <li><a href="../about/index.html">About Us</a></li>
         <li><a href="https://www.cert-in.org.in/" target="_blank" rel="noopener noreferrer">CERT-In</a></li>
         <li><a href="../security-tools/index.html">Security Tools</a></li>
-        <li ><a href="../alert/index.html">Alerts</a></li>
+        <li><a href="../alert/index.html">Alerts</a></li>
         <li class="has-dropdown active">
           <button class="nav-btn">
             Awareness <i class="fa-solid fa-chevron-down"></i>
@@ -150,8 +162,8 @@
               </button>
               <div class="engine-menu">
                 <label for="s-google" class="engine-opt"><span class="dot g-dot">G</span>Google.com</label>
-                <label for="s-bing"   class="engine-opt"><span class="dot b-dot">b</span>Bing.com</label>
-                <label for="s-duck"   class="engine-opt"><span class="dot d-dot">D</span>DuckDuckGo</label>
+                <label for="s-bing" class="engine-opt"><span class="dot b-dot">b</span>Bing.com</label>
+                <label for="s-duck" class="engine-opt"><span class="dot d-dot">D</span>DuckDuckGo</label>
               </div>
             </div>
             <div class="form-wrap">
@@ -160,7 +172,10 @@
                 <input class="si" type="text" name="q" placeholder="Search csk.gov.in" required>
                 <input type="hidden" name="as_sitesearch" value="csk.gov.in">
                 <button type="submit" class="sb" aria-label="Search">
-                  <svg viewBox="0 0 20 20"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17" y2="17"/></svg>
+                  <svg viewBox="0 0 20 20">
+                    <circle cx="8.5" cy="8.5" r="5.5" />
+                    <line x1="12.5" y1="12.5" x2="17" y2="17" />
+                  </svg>
                 </button>
               </form>
               <!-- Bing -->
@@ -169,7 +184,10 @@
                 <input class="si" type="text" placeholder="Search csk.gov.in" required>
                 <input type="hidden" name="q" value="">
                 <button type="submit" class="sb" aria-label="Search">
-                  <svg viewBox="0 0 20 20"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17" y2="17"/></svg>
+                  <svg viewBox="0 0 20 20">
+                    <circle cx="8.5" cy="8.5" r="5.5" />
+                    <line x1="12.5" y1="12.5" x2="17" y2="17" />
+                  </svg>
                 </button>
               </form>
               <!-- DuckDuckGo -->
@@ -178,7 +196,10 @@
                 <input class="si" type="text" placeholder="Search csk.gov.in" required>
                 <input type="hidden" name="q" value="">
                 <button type="submit" class="sb" aria-label="Search">
-                  <svg viewBox="0 0 20 20"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17" y2="17"/></svg>
+                  <svg viewBox="0 0 20 20">
+                    <circle cx="8.5" cy="8.5" r="5.5" />
+                    <line x1="12.5" y1="12.5" x2="17" y2="17" />
+                  </svg>
                 </button>
               </form>
             </div>
@@ -190,7 +211,7 @@
     </div>
   </nav>
 
-   <main id="main-content">
+  <main id="main-content">
     <div class="main-content-campaign">
 
 
@@ -201,316 +222,350 @@
           <p>Awareness</p>
         </div>
       </div>
-        
-      
 
-        <div class="awareness-content">
-                <a href="../guidlines/index.html" >Guidelines & Advisories</a>
-                <a href="../campaign/index.html" class="active-aware">Our Campaigns</a>
-                <a href="../best-practice/index.html" >Best Practices</a>
-                <a href="../our-report/index.html">Our Reports</a>
-                <a href="../white-board/index.html">White Papers</a>
-            </div>
+
+
+      <div class="awareness-content">
+        <a href="../guidlines/index.html">Guidelines & Advisories</a>
+        <a href="../campaign/index.html" class="active-aware">Our Campaigns</a>
+        <a href="../best-practice/index.html">Best Practices</a>
+        <a href="../our-report/index.html">Our Reports</a>
+        <a href="../white-board/index.html">White Papers</a>
+      </div>
 
       <div class="social-content">
-            <div class="social-icons">
-              <a href="https://www.facebook.com/IndianCERT/" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
-              <a href="https://www.instagram.com/cert_india/" title="Instagram"><i class="fa-brands fa-square-instagram"></i></a>
-              <a href="https://x.com/IndianCERT" title="X"><i class="fa-solid fa-x"></i></a>
-              <a href="https://www.linkedin.com/company/cert-in/" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-              <a href="https://www.youtube.com/hashtag/certin" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
-            </div>  
-          </div>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/IndianCERT/" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://www.instagram.com/cert_india/" title="Instagram"><i
+              class="fa-brands fa-square-instagram"></i></a>
+          <a href="https://x.com/IndianCERT" title="X"><i class="fa-solid fa-x"></i></a>
+          <a href="https://www.linkedin.com/company/cert-in/" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://www.youtube.com/hashtag/certin" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
 
-          <label for="acc-toggle" class="icon">
-              <!-- <i class="fa-solid fa-universal-access"></i> -->
-              <img src="../assets/access_icon.svg" alt="">
-          </label>
+      <label for="acc-toggle" class="icon">
+        <!-- <i class="fa-solid fa-universal-access"></i> -->
+        <img src="../assets/access_icon.svg" alt="">
+      </label>
 
-        <div class="container">
-            <h1>Our Campaigns</h1>
-          
-            <a href="./ncsa/index.html">
-                <div class="campaign-card image-left">
-                    <div class="campaign-top">
-                
-                    <div class="campaign-img">
-                        <img src="../assets//compaign/NCSA.svg" alt="Cyber Swachhta Pakhwada"/>
-                    </div>
-                
-                    <div class="campaign-content">
-                        <h2 class="campaign-title">
-                        <span >NATIONAL</span>
-                        <span class="word-cyber"> CYBER  </span>
-                        <span class="word-middle">SECURITY</span>
-                        <span class="word-last">AWARENESS</span>
-                        <span >MONTH</span>
-                        </h2>
-                
-                        <p class="campaign-hashtags">
-                        @GoI_MeitY @_DigitalIndia @IndianCERT #DigitalIndia #NCSAM #CyberSecurityAwareness <br> #IndianCERT #CyberSwachhtaKendra #CSK #phishing #SecureOurWorld
-                        </p>
-                
-                        <p class="campaign-desc">
-                        As part of services of CERT-In, for creation of awareness in the area of cyber security as well as training / upgrading the technical knowhow of various stakeholders, CERT-In observes   <span>NATIONAL CYBER SECURITY AWARENESS Month</span> during the month of October each year.
-                        </p>
-                    </div>
-            
-                </div>
-            
-            
-            
-                <div class="campaign-dates">
-                  <a href="./ncsa/2022">
-                    <button class="date-btn">
-                      October 2022
-                      <span class="btn-icons">
-                      <i class="fa-solid fa-eye"></i>
-                      <i class="fa-solid fa-view"></i> VIEW
-                      </span>
-                  </button>
-                  </a>
-                  <a href="./ncsa/2023">
-                    <button class="date-btn">
-                      October 2023
-                      <span class="btn-icons">
-                      <i class="fa-solid fa-eye"></i>
-                      <i class="fa-solid fa-view"></i> VIEW
-                      </span>
-                  </button>
-                  </a>
-                  <a href="./ncsa/2024">
-                    <button class="date-btn">
-                      October 2024
-                      <span class="btn-icons">
-                      <i class="fa-solid fa-eye"></i>
-                      <i class="fa-solid fa-view"></i> VIEW
-                      </span>
-                  </button>
-                  </a>
-                  <a href="./ncsa/2025">
-                    <button class="date-btn">
-                      October 2025
-                      <span class="btn-icons">
-                      <i class="fa-solid fa-eye"></i>
-                      <i class="fa-solid fa-view"></i> VIEW
-                      </span>
-                  </button>
-                  </a>
-                  <a href="./ncsa">
-                    <button class="date-btn">
-                      View all
-                      <span class="btn-icons">
-                      <i class="fa-solid fa-eye"></i>
-                      </span>
-                  </button>
-                  </a>
-                </div>
-            </div>
-            
-         </a>   
+      <div class="container">
+        <h1>Our Campaigns</h1>
 
+        <a href="./ncsa/index.html">
+          <div class="campaign-card image-left">
+            <div class="campaign-top">
 
-         <a href="./sid/index.html">
-            
-            <!-- ── Card 2: Cyber Jagrookta Diwas (image right) ── -->
-            <div class="campaign-card image-right">
-                <div class="campaign-top">
-            
-                <div class="campaign-img">
-                    <img src="../assets/compaign/SID.svg" alt="Cyber Jagrookta Diwas"/>
-                </div>
-            
-                <div class="campaign-content">
-                    <h2 class="campaign-title">
-                    <span class="word-cyber">SAFER</span>
-                    <span class="word-middle"> INTERNER </span>
-                    <span class="word-last">DAY</span>
-                    </h2>
-            
-                    <p class="campaign-hashtags">
-                    #IndianCERT #SaferInternetDay #SID #CyberSecurityAwareness #CSK <br> #CyberSwachhtaKendra
-                    </p>
-            
-                    <p class="campaign-desc">
-                    CERT-In observes "Safer Internet Day" in the month of February to sensitize internet users regarding online safety.
-                    </p>
-                </div>
-            
-                </div>
-            
-                <div class="campaign-dates">
-                <button class="date-btn">
-                    11th Feburary 2025
-                    <span class="btn-icons">
-                    <i class="fa-solid fa-eye"></i> VIEW
-                    </span>
-                </button>
-                <button class="date-btn">
-                    06th Feburary 2024
-                    <span class="btn-icons">
-                    <i class="fa-solid fa-eye"></i> VIEW
-                    </span>
-                </button>
-                <button class="date-btn">
-                    07th Feburary 2023
-                    <span class="btn-icons">
-                    <i class="fa-solid fa-eye"></i> VIEW
-                    </span>
-                </button>
-                <button class="date-btn">
-                    08th Feburary 2022
-                    <span class="btn-icons">
-                    <i class="fa-solid fa-eye"></i> VIEW
-                    </span>
-                </button>
-                <button class="date-btn view-all">
-                    View All
-                    <span class="btn-icons">
-                    <i class="fa-solid fa-eye"></i> VIEW
-                    </span>
-                </button>
-                </div>
+              <div class="campaign-img">
+                <img src="../assets//compaign/NCSA.svg" alt="Cyber Swachhta Pakhwada" />
+              </div>
+
+              <div class="campaign-content">
+                <h2 class="campaign-title">
+                  <span>NATIONAL</span>
+                  <span class="word-cyber"> CYBER  </span>
+                  <span class="word-middle">SECURITY</span>
+                  <span class="word-last">AWARENESS</span>
+                  <span>MONTH</span>
+                </h2>
+
+                <p class="campaign-hashtags">
+                  @GoI_MeitY @_DigitalIndia @IndianCERT #DigitalIndia #NCSAM #CyberSecurityAwareness <br> #IndianCERT
+                  #CyberSwachhtaKendra #CSK #phishing #SecureOurWorld
+                </p>
+
+                <p class="campaign-desc">
+                  As part of services of CERT-In, for creation of awareness in the area of cyber security as well as
+                  training / upgrading the technical knowhow of various stakeholders, CERT-In observes 
+                  <span>NATIONAL CYBER SECURITY AWARENESS Month</span> during the month of October each year.
+                </p>
+              </div>
+
             </div>
 
-        </a>
-          
-        <a href="./swap/index.html">
-            <div class="campaign-card image-left">
-                <div class="campaign-top">
-            
-                <div class="campaign-img">
-                    <img src="../assets/compaign/SWP.svg" alt="Cyber Swachhta Pakhwada"/>
-                </div>
-            
-                <div class="campaign-content">
-                    <h2 class="campaign-title">
-                    <span class="word-cyber">CYBER</span>
-                    <span class="word-middle"> SWACHHTA </span>
-                    <span class="word-last">PAKHWADA</span>
-                    </h2>
-            
-                    <p class="campaign-hashtags">
-                    @GoI_MeitY @_DigitalIndia @IndianCERT #DigitalIndia #NCSAM #CyberSecurityAwareness<br/>
-                    #IndianCERT #CyberSwachhataKendra #CSK #phishing #SecureOurWorld
-                    </p>
-            
-                    <p class="campaign-desc">
-                    CERT-In observes "Cyber Swachhta Pakhwada" from 1–15 February every year to promote
-                    digital hygiene and safe cyber practices, encouraging citizens to stay secure online.
-                    </p>
-                </div>
-            
-                </div>
-            
-                <div class="campaign-dates">
+
+
+            <div class="campaign-dates">
+              <a href="./ncsa/2022">
                 <button class="date-btn">
-                    February 2025
-                    <span class="btn-icons">
+                  October 2022
+                  <span class="btn-icons">
                     <i class="fa-solid fa-eye"></i>
                     <i class="fa-solid fa-view"></i> VIEW
-                    </span>
+                  </span>
                 </button>
+              </a>
+              <a href="./ncsa/2023">
                 <button class="date-btn">
-                    February 2024
-                    <span class="btn-icons">
-                    <i class="fa-solid fa-eye"></i> VIEW
-                    </span>
+                  October 2023
+                  <span class="btn-icons">
+                    <i class="fa-solid fa-eye"></i>
+                    <i class="fa-solid fa-view"></i> VIEW
+                  </span>
                 </button>
+              </a>
+              <a href="./ncsa/2024">
                 <button class="date-btn">
-                    February 2023
-                    <span class="btn-icons">
-                    <i class="fa-solid fa-eye"></i> VIEW
-                    </span>
+                  October 2024
+                  <span class="btn-icons">
+                    <i class="fa-solid fa-eye"></i>
+                    <i class="fa-solid fa-view"></i> VIEW
+                  </span>
                 </button>
+              </a>
+              <a href="./ncsa/2025">
                 <button class="date-btn">
-                    February 2022
-                    <span class="btn-icons">
-                    <i class="fa-solid fa-eye"></i> VIEW
-                    </span>
+                  October 2025
+                  <span class="btn-icons">
+                    <i class="fa-solid fa-eye"></i>
+                    <i class="fa-solid fa-view"></i> VIEW
+                  </span>
                 </button>
-                <button class="date-btn view-all">
-                    View All
-                    <span class="btn-icons">
-                    <i class="fa-solid fa-eye"></i> VIEW
-                    </span>
+              </a>
+              <a href="./ncsa">
+                <button class="date-btn">
+                  View all
+                  <span class="btn-icons">
+                    <i class="fa-solid fa-eye"></i>
+                  </span>
                 </button>
-                </div>
+              </a>
             </div>
+          </div>
+
         </a>
-            
+
+
+        <a href="./sid/index.html">
+
+          <!-- ── Card 2: Cyber Jagrookta Diwas (image right) ── -->
+          <div class="campaign-card image-right">
+            <div class="campaign-top">
+
+              <div class="campaign-img">
+                <img src="../assets/compaign/SID.svg" alt="Cyber Jagrookta Diwas" />
+              </div>
+
+              <div class="campaign-content">
+                <h2 class="campaign-title">
+                  <span class="word-cyber">SAFER</span>
+                  <span class="word-middle"> INTERNER </span>
+                  <span class="word-last">DAY</span>
+                </h2>
+
+                <p class="campaign-hashtags">
+                  #IndianCERT #SaferInternetDay #SID #CyberSecurityAwareness #CSK <br> #CyberSwachhtaKendra
+                </p>
+
+                <p class="campaign-desc">
+                  CERT-In observes "Safer Internet Day" in the month of February to sensitize internet users regarding
+                  online safety.
+                </p>
+              </div>
+
+            </div>
+
+            <div class="campaign-dates">
+              <a href="./sid/2023">
+                <button class="date-btn">
+                  Feburary 2023
+                  <span class="btn-icons">
+                    <i class="fa-solid fa-view"></i> VIEW
+                  </span>
+                </button>
+              </a>
+              <a href="./sid/2024">
+                <button class="date-btn">
+                  Feburary 2024
+                  <span class="btn-icons">
+                    <i class="fa-solid fa-eye"></i> VIEW
+                  </span>
+                </button>
+              </a>
+              <a href="./sid/2025">
+                <button class="date-btn">
+                  Feburary 2025
+                  <span class="btn-icons">
+                    <i class="fa-solid fa-eye"></i> VIEW
+                  </span>
+                </button>
+              </a>
+              <a href="./sid/2026">
+                <button class="date-btn">
+                  Feburary 2026
+                  <span class="btn-icons">
+                    <i class="fa-solid fa-eye"></i> VIEW
+                  </span>
+                </button>
+              </a>
+              <a href="./sid">
+                <button class="date-btn">
+                  View all
+                  <span class="btn-icons">
+                    <i class="fa-solid fa-eye"></i>
+                  </span>
+                </button>
+              </a>
+            </div>
+          </div>
+
+        </a>
+
+        <a href="./swap/index.html">
+          <div class="campaign-card image-left">
+            <div class="campaign-top">
+
+              <div class="campaign-img">
+                <img src="../assets/compaign/SWP.svg" alt="Cyber Swachhta Pakhwada" />
+              </div>
+
+              <div class="campaign-content">
+                <h2 class="campaign-title">
+                  <span class="word-cyber">CYBER</span>
+                  <span class="word-middle"> SWACHHTA </span>
+                  <span class="word-last">PAKHWADA</span>
+                </h2>
+
+                <p class="campaign-hashtags">
+                  @GoI_MeitY @_DigitalIndia @IndianCERT #DigitalIndia #NCSAM #CyberSecurityAwareness<br />
+                  #IndianCERT #CyberSwachhataKendra #CSK #phishing #SecureOurWorld
+                </p>
+
+                <p class="campaign-desc">
+                  CERT-In observes "Cyber Swachhta Pakhwada" from 1–15 February every year to promote
+                  digital hygiene and safe cyber practices, encouraging citizens to stay secure online.
+                </p>
+              </div>
+
+            </div>
+
+            <div class="campaign-dates">
+               <a href="./sid/2022">
+                <button class="date-btn">
+                  Feburary 2022
+                  <span class="btn-icons">
+                    <i class="fa-solid fa-eye"></i> VIEW
+                  </span>
+                </button>
+              </a>
+              <a href="./swap/2024">
+                <button class="date-btn">
+                  Feburary 2024
+                  <span class="btn-icons">
+                    <i class="fa-solid fa-eye"></i> VIEW
+                  </span>
+                </button>
+              </a>
+              <a href="./swap/2025">
+                <button class="date-btn">
+                  Feburary 2025
+                  <span class="btn-icons">
+                    <i class="fa-solid fa-eye"></i> VIEW
+                  </span>
+                </button>
+              </a>
+               <a href="./swap/2026">
+                <button class="date-btn">
+                  Feburary 2026
+                  <span class="btn-icons">
+                    <i class="fa-solid fa-eye"></i> VIEW
+                  </span>
+                </button>
+              </a>
+              <a href="./swap">
+                <button class="date-btn">
+                  View all
+                  <span class="btn-icons">
+                    <i class="fa-solid fa-eye"></i>
+                  </span>
+                </button>
+              </a>
+            </div>
+          </div>
+        </a>
+
         <a href="./sjd/index.html">
-            <!-- ── Card 2: Cyber Jagrookta Diwas (image right) ── -->
-            <div class="campaign-card image-right">
-                <div class="campaign-top">
-            
-                <div class="campaign-img">
-                    <img src="../assets/compaign/CJD.svg" alt="Cyber Jagrookta Diwas"/>
-                </div>
-            
-                <div class="campaign-content">
-                    <h2 class="campaign-title">
-                    <span class="word-cyber">CYBER</span>
-                    <span class="word-middle"> JAGROOKTA </span>
-                    <span class="word-last">DIWAS</span>
-                    </h2>
-            
-                    <p class="campaign-hashtags">
-                    #IndianCERT #SaferInternetDay #SID #CyberSecurityAwareness #CSK<br/>
-                    #CyberSwachhataKendra
-                    </p>
-            
-                    <p class="campaign-desc">
-                    Cyber Jaagrookta Diwas is observed every month to spread awareness about safe and responsible
-                    use of the internet. It encourages individuals to follow good cyber hygiene, stay alert against
-                    online threats, and contribute to a secure digital environment.
-                    </p>
-                </div>
-            
-                </div>
-            
-                <div class="campaign-dates">
+          <!-- ── Card 2: Cyber Jagrookta Diwas (image right) ── -->
+          <div class="campaign-card image-right">
+            <div class="campaign-top">
+
+              <div class="campaign-img">
+                <img src="../assets/compaign/CJD.svg" alt="Cyber Jagrookta Diwas" />
+              </div>
+
+              <div class="campaign-content">
+                <h2 class="campaign-title">
+                  <span class="word-cyber">CYBER</span>
+                  <span class="word-middle"> JAGROOKTA </span>
+                  <span class="word-last">DIWAS</span>
+                </h2>
+
+                <p class="campaign-hashtags">
+                  #IndianCERT #SaferInternetDay #SID #CyberSecurityAwareness #CSK<br />
+                  #CyberSwachhataKendra
+                </p>
+
+                <p class="campaign-desc">
+                  Cyber Jaagrookta Diwas is observed every month to spread awareness about safe and responsible
+                  use of the internet. It encourages individuals to follow good cyber hygiene, stay alert against
+                  online threats, and contribute to a secure digital environment.
+                </p>
+              </div>
+
+            </div>
+
+            <div class="campaign-dates">
+              <a href="./sid/12-2025">
                 <button class="date-btn">
-                    03rd December 2025
-                    <span class="btn-icons">
+                  December 2025
+                  <span class="btn-icons">
                     <i class="fa-solid fa-eye"></i> VIEW
-                    </span>
+                  </span>
                 </button>
+              </a>
+              <a href="./sid/01-2026">
                 <button class="date-btn">
-                    01st October 2025
-                    <span class="btn-icons">
+                  January 2026
+                  <span class="btn-icons">
                     <i class="fa-solid fa-eye"></i> VIEW
-                    </span>
+                  </span>
                 </button>
+              </a>
+              <a href="./sid/02-2026">
                 <button class="date-btn">
-                    03rd September 2025
-                    <span class="btn-icons">
+                  Feburary 2026
+                  <span class="btn-icons">
                     <i class="fa-solid fa-eye"></i> VIEW
-                    </span>
+                  </span>
                 </button>
+              </a>
+              <a href="./sid/04-2026">
                 <button class="date-btn">
-                    06th August 2025
-                    <span class="btn-icons">
+                  April 2026
+                  <span class="btn-icons">
                     <i class="fa-solid fa-eye"></i> VIEW
-                    </span>
+                  </span>
                 </button>
-                <button class="date-btn view-all">
-                    View All
-                    <span class="btn-icons">
-                    <i class="fa-solid fa-eye"></i> VIEW
-                    </span>
+              </a>
+              <a href="./sjd">
+                <button class="date-btn">
+                  View all
+                  <span class="btn-icons">
+                    <i class="fa-solid fa-eye"></i>
+                  </span>
                 </button>
-                </div>
-            </div> 
-            </a> 
-         
-          
-        </div>  
+              </a>
+            </div>
+          </div>
+        </a>
+
+
+      </div>
     </div>
-    
+
   </main>
 
- <!-- Footer -->
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="footer-bg-svg"></div>
     <div class="footer-main">
@@ -560,9 +615,12 @@
           <div class="footer-follow">
             <span class="follow-label">Follow Us</span>
             <div class="footer-social-icons">
-              <a href="https://www.linkedin.com/company/cert-in/" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-              <a href="https://www.instagram.com/cert_india/" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-              <a href="https://www.facebook.com/IndianCERT/" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="https://www.linkedin.com/company/cert-in/" title="LinkedIn"><i
+                  class="fa-brands fa-linkedin-in"></i></a>
+              <a href="https://www.instagram.com/cert_india/" title="Instagram"><i
+                  class="fa-brands fa-instagram"></i></a>
+              <a href="https://www.facebook.com/IndianCERT/" title="Facebook"><i
+                  class="fa-brands fa-facebook-f"></i></a>
               <a href="https://x.com/IndianCERT" title="X"><i class="fa-solid fa-x"></i></a>
               <a href="https://www.youtube.com/hashtag/certin" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
             </div>
@@ -572,9 +630,10 @@
       </div>
     </div>
     <div class="footer-bottom">
-      
+
       <img src="../assets/Line 1.svg" alt="">
-      <p class="footer-disclaimer">Disclaimer :-The information provided herein is on "as is" basis, without warranty of any kind.</p>
+      <p class="footer-disclaimer">Disclaimer :-The information provided herein is on "as is" basis, without warranty of
+        any kind.</p>
       <p class="footer-copyright"><i class="fa-regular fa-copyright"></i> Copyright 2025. All right reserved</p>
     </div>
   </footer>
@@ -591,7 +650,7 @@
       tryClick();
     }
     function accResetAll() {
-      document.querySelectorAll('.acc-option--active').forEach(function(el) {
+      document.querySelectorAll('.acc-option--active').forEach(function (el) {
         el.classList.remove('acc-option--active');
       });
       var resetBtn = document.querySelector('.uwaw-reset') || document.querySelector('[onclick="resetAll()"]');
@@ -602,4 +661,5 @@
   <script src="https://translationplugin.bhashini.co.in/v3/website_translation_utility.js"></script>
 
 </body>
+
 </html>
