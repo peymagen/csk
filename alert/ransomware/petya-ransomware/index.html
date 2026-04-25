@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.ux4g.gov.in/tools/accessibility-widget.js" async></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- acc-toggle MUST be first -->
+    <input type="checkbox" id="acc-toggle" hidden />
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-inner">
+            <div class="left-section">
+                <div class="national-emblem">
+                    <img src="../../../assets/header2.svg" alt="">
+                </div>
+            </div>
+            <div class="center-section">
+                <img src="../../../assets/header.png" alt="">
+            </div>
+            <div class="right-section">
+                <div class="accessibility-icons">
+                    <a href="#main-content" title="Skip to main content">
+                        <img src="../../../assets/Translate.svg" alt="">
+                    </a>
+                    <span class="icon-separator">|</span>
+                    <div class="bhashini-plugin-container">
+                        <img src="../../../assets/Language.svg" alt="">
+                    </div>
+                    <span class="icon-separator">|</span>
+                    <label for="acc-toggle" class="acc-open-btn" title="Accessibility"></label>
+                    <img src="../../../assets/accessibility_figure.svg" alt="">
+                </div>
+                <div class="certin-logo">
+                    <img src="../../../assets/certin.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- acc-overlay: direct sibling of acc-toggle -->
+    <div class="acc-overlay">
+        <div class="acc-panel">
+            <div class="acc-panel-header">
+                <h2>Accessibility Options</h2>
+                <label for="acc-toggle" class="acc-close-btn" title="Close">
+                    <i class="fa-solid fa-xmark"></i>
+                </label>
+            </div>
+            <div class="acc-language-row">
+                <div class="lang-left">
+                    <div class="lang-icon-box"><i class="fa-solid fa-language"></i></div>
+                    <span class="lang-label">Language</span>
+                </div>
+                <select class="lang-select" id="lang-select" title="Select Language">
+                    <option>English</option>
+                    <option>हिंदी</option>
+                </select>
+            </div>
+            <div class="acc-options">
+                <div class="acc-grid">
+                    <div class="acc-option" onclick="accToggle(this,'speak')"><i
+                            class="fa-solid fa-volume-high"></i><span>Screen
+                            Reader</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-s9')"><i
+                            class="fa-solid fa-text-height"></i><span>Bigger
+                            Text</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-s12')"><i
+                            class="fa-solid fa-bars"></i><span>Line
+                            Height</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-s13')"><i class="fa-solid fa-a"></i><span>Text
+                            Spacing</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-s10')"><i
+                            class="fa-solid fa-link"></i><span>Highlight
+                            Links</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-df')"><i
+                            class="fa-solid fa-d"></i><span>Dyslexia
+                            Friendly</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-cursor')"><i
+                            class="fa-solid fa-brain"></i><span>ADHD
+                            Friendly</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-s11')"><i
+                            class="fa-regular fa-image"></i><span>Hide
+                            Images</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-invert')"><i
+                            class="fa-solid fa-circle-half-stroke"></i><span>Invert Color</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'dark-btn')"><i
+                            class="fa-solid fa-moon"></i><span>Dark
+                            Mode</span></div>
+                </div>
+            </div>
+            <div class="acc-footer">
+                <label for="acc-toggle" class="acc-reset-btn" onclick="accResetAll()">
+                    <i class="fa-solid fa-rotate-left"></i> Reset
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!--  nav-toggle MUST be BEFORE <nav> so ~ selector works -->
+    <input type="checkbox" id="search-toggle" hidden />
+    <input type="checkbox" id="nav-toggle" hidden />
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="nav-inner">
+
+            <!-- ✅ HAMBURGER — label targets #nav-toggle -->
+            <label for="nav-toggle" class="hamburger" aria-label="Open menu">
+                <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+
+            <!-- NAV LINKS (slide-in panel on mobile) -->
+            <ul class="nav-links">
+
+                <!-- Close button inside panel -->
+                <li class="nav-close-item">
+                    <label for="nav-toggle" class="nav-close-btn">
+                        <i class="fa-solid fa-xmark"></i>
+                    </label>
+                </li>
+
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../about/index.html">About Us</a></li>
+                <li><a href="#">CERT-In</a></li>
+                <li><a href="../security-tools/index.html">Security Tools</a></li>
+                <li class="active"><a href="../alert/index.html">Alerts</a></li>
+
+                <li class="has-dropdown">
+                    <button class="nav-btn">
+                        Awareness <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="./guideline/index.html">Guidelines &amp; Advisories</a></li>
+                        <li><a href="./Awareness/index.html">Our Campaigns</a></li>
+                        <li><a href="./bestPraactice/index.html">Best Practices</a></li>
+                        <li><a href="./ourReports/index.html">Our Reports</a></li>
+                        <li><a href="./whiteBoard/index.html">White Papers</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="../FrequentQuestion/index.html">FAQ's</a></li>
+                <li><a href="../contactUs/index.html">Contact Us</a></li>
+
+            </ul>
+
+            <!-- ===== SEARCH BAR ===== -->
+            <div class="nav-search">
+                <div class="csk-search">
+
+                    <input type="radio" name="se" id="s-google" checked>
+                    <input type="radio" name="se" id="s-bing">
+                    <input type="radio" name="se" id="s-duck">
+
+                    <div class="search-box">
+
+                        <!-- Dropdown (Left) -->
+                        <div class="engine-picker">
+                            <button type="button" class="engine-current" aria-label="Select search engine">
+                                <span class="current-engine cur-g">
+                                    <span class="dot g-dot">G</span>
+                                    <span class="engine-label">&nbsp;Google</span>
+                                </span>
+                                <span class="current-engine cur-b">
+                                    <span class="dot b-dot">b</span>
+                                    <span class="engine-label">&nbsp;Bing</span>
+                                </span>
+                                <span class="current-engine cur-d">
+                                    <span class="dot d-dot">D</span>
+                                    <span class="engine-label">&nbsp;Duck</span>
+                                </span>
+                            </button>
+                            <div class="engine-menu">
+                                <label for="s-google" class="engine-opt"><span
+                                        class="dot g-dot">G</span>Google.com</label>
+                                <label for="s-bing" class="engine-opt"><span class="dot b-dot">b</span>Bing.com</label>
+                                <label for="s-duck" class="engine-opt"><span
+                                        class="dot d-dot">D</span>DuckDuckGo</label>
+                            </div>
+                        </div>
+
+                        <!-- Input + Search Icon (Right) -->
+                        <div class="form-wrap">
+
+                            <!-- Google -->
+                            <form class="sf" id="fg" action="https://www.google.com/search" method="GET"
+                                target="_blank">
+                                <input class="si" type="text" name="q" placeholder="Search csk.gov.in" required>
+                                <input type="hidden" name="as_sitesearch" value="csk.gov.in">
+                                <button type="submit" class="sb" aria-label="Search">
+                                    <svg viewBox="0 0 20 20">
+                                        <circle cx="8.5" cy="8.5" r="5.5" />
+                                        <line x1="12.5" y1="12.5" x2="17" y2="17" />
+                                    </svg>
+                                </button>
+                            </form>
+
+
+                            <!-- Bing -->
+                            <form class="sf" id="fb" action="https://www.bing.com/search" method="GET" target="_blank"
+                                onsubmit="this.querySelector('[name=q]').value = this.querySelector('.si').value + ' site:csk.gov.in'; return true;">
+                                <input class="si" type="text" placeholder="Search csk.gov.in" required>
+                                <input type="hidden" name="q" value="">
+                                <button type="submit" class="sb" aria-label="Search">
+                                    <svg viewBox="0 0 20 20">
+                                        <circle cx="8.5" cy="8.5" r="5.5" />
+                                        <line x1="12.5" y1="12.5" x2="17" y2="17" />
+                                    </svg>
+                                </button>
+                            </form>
+                            <!-- DuckDuckGo -->
+                            <!-- DuckDuckGo -->
+                            <form class="sf" id="fd" action="https://duckduckgo.com/" method="GET" target="_blank"
+                                onsubmit="this.querySelector('[name=q]').value = this.querySelector('.si').value + ' site:csk.gov.in'; return true;">
+                                <input class="si" type="text" placeholder="Search csk.gov.in" required>
+                                <input type="hidden" name="q" value="">
+                                <button type="submit" class="sb" aria-label="Search">
+                                    <svg viewBox="0 0 20 20">
+                                        <circle cx="8.5" cy="8.5" r="5.5" />
+                                        <line x1="12.5" y1="12.5" x2="17" y2="17" />
+                                    </svg>
+                                </button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ===== SEARCH BAR END ===== -->
+
+        </div>
+    </nav>
+
+    <!-- ✅ nav-overlay AFTER nav — direct sibling of nav-toggle -->
+    <!-- <div class="nav-overlay">
+      <label for="nav-toggle"></label>
+    </div> -->
+
+    <main id="main-content">
+        <div class="main-content-Locky">
+
+            <div class="social-content">
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/IndianCERT/" title="Facebook"><i
+                            class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/cert_india/" title="Instagram"><i
+                            class="fa-brands fa-square-instagram"></i></a>
+                    <a href="https://x.com/IndianCERT" title="X"><i class="fa-solid fa-x"></i></a>
+                    <a href="https://www.linkedin.com/company/cert-in/" title="LinkedIn"><i
+                            class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.youtube.com/hashtag/certin" title="YouTube"><i
+                            class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <label for="acc-toggle" class="icon">
+                <!-- <i class="fa-solid fa-universal-access"></i> -->
+                <img src="../assets/access_icon.svg" alt="">
+            </label>
+
+            <div class="container">
+
+                <div class="header">
+
+                    <div class="left">
+                        <a href="javascript:history.back()" class="back-btn">
+                            <i class="fa-solid fa-angle-left"></i> BACK
+                        </a>
+                        <h1>Variants of Petya Ransomware Spreading with EternalBlue</h1>
+                    </div>
+
+                    <div class="header-right">
+                        <div class="meta">
+                            <div class="border-left"></div>
+                            <div class="righ-content">
+
+                                <p>
+                                    <span class="gree">Original Issue Date:</span>
+                                    June 27, 2017
+                                </p>
+
+                                <p>
+                                    <span class="gree">Updated on:</span>
+                                    June 28, 2017
+                                </p>
+
+                                <p>
+                                    <span class="orr">Type:</span>
+                                    Ransomware
+                                </p>
+
+                                <p>
+                                    <span class="orr">Severity:</span>
+                                    High
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+                <div class="section">
+
+                    <p>
+                        It has been reported that variants of Petya ransomware with worm-like capabilities is spreading.
+                        The ransomware leverages etenalblue exploit, genuine psexec or wmic with appropriate credentials
+                        for a quick spread.
+                    </p>
+
+                    <p>
+                        These mechanisms are used to attempt installation and execution of the dropped file
+                        "C:\Windows\perfc.dat" on other devices to spread laterally. The dropped file, if managed to get
+                        the Administrator privileges, will encrypt the Master File Tree (MFT) tables for NTFS partitions
+                        and overrides the Master Boot Record (MBR) with a custom bootloader making the system unusable.
+                        Further the malware creates a scheduled task via schtasks /at to reboot the system one hour
+                        after infection. After the system is reloaded the malware downloads its code from MBR and
+                        encrypts data on the hard drive.
+                    </p>
+
+                    <p>
+                        In case the fail to get the privileges rewrite MBR, the files are encrypted without a system
+                        reload. The list of file types that are encrypted:
+                    </p>
+
+                    <p>
+                        3ds, 7z, accdb, ai, asp, aspx, avhd, back, bak, c, cfg, conf, cpp, cs, ctl, dbf, disk, djvu,
+                        doc, docx, dwg, eml, fdb, gz, h, hdd, kdbx, mail, mdb, msg, nrg, ora, ost, ova, ovf, pdf, php,
+                        pmf, ppt, pptx, pst, pvi, py, pyc, rar, rtf, sln, sql, tar, vbox, vbs, vcb, vdi, vfd, vmc, vmdk,
+                        vmsd, vmx, vsdx, vsv, work, xls, xlsx, xvd, zip.
+                    </p>
+
+                    <p>
+                        The spreading mechanism thus far is by;
+                    </p>
+
+                    <ul>
+
+                        <li>
+                            EternalBlue - the same exploit used by WannaCry.
+                        </li>
+
+                        <li>
+                            Psexec - a legitimate Windows administration tool.
+                            C:\WINDOWS\dllhost.dat \\w.x.y.z -accepteula -s -d C:\Windows\System32\rundll32.exe
+                            C:\Windows\perfc.dat,#1 [dllhost.dat is psexec.exe]
+                        </li>
+
+                        <li>
+                            WMI - Windows Management Instrumentation, a legitimate Windows component.
+                            Wbem\wmic.exe /node:"w.x.y.z" /user:"username" /password:"password" "process call create
+                            "C:\Windows\System32\rundll32.exe \"C:\Windows\perfc.dat\" #1" [ there are unconfirmed
+                            reports about the usage of mimikaz /lsadump to get the system credentials]
+                        </li>
+
+                    </ul>
+
+                    <p>
+                        There are open source reports about the usage of Microsoft Office HTA handler vulnerability
+                        [CVE-2017-0199] as one of the infection vector.
+                    </p>
+                    <img src="/assets/alert/petya-ransomware/petya.jpg" alt="Screenshot" />
+
+                    <p>
+                        The malware clears system logs using the following command:
+                    </p>
+
+                    <p>
+                        "wevtutil cl Setup & wevtutil cl System & wevtutil cl Security & wevtutil cl Application &
+                        fsutil usn deletejournal /D %c:" to make further analysis more difficult.
+                    </p>
+
+                </div>
+
+
+
+                <div class="section">
+
+                    <h2>Potential Indicators of compromises</h2>
+
+                    <ul>
+
+                        <li>ip: 95.141.115.108</li>
+                        <li>ip-dst: 185.165.29.78</li>
+                        <li>ip-dst: 84.200.16.242</li>
+                        <li>ip-dst: 111.90.139.247</li>
+
+                        <li>domain: coffeinoffice.xyz</li>
+                        <li>domain: french-cooking.com</li>
+                        <li>domain: sundanders.online</li>
+
+                        <li>url: http[:]//french-cooking[.]com/myguy[.]exe</li>
+                        <li>url: http[:]//84[.]200[.]16[.]242/myguy[.]xls</li>
+                        <li>url: http[:]//84[.]200[.]16[.]242/Profoma[.]xls</li>
+                        <li>url: http[:]//84[.]200[.]16[.]242/Lucky[.]exe</li>
+                        <li>url: http[:]//185.165.29.78/~alex/svchost.exe</li>
+
+                        <li>sha256: 02ef73bd2458627ed7b397ec26ee2de2e92c71a0e7588f78734761d8edbdcd9f</li>
+                        <li>sha256: eae9771e2eeb7ea3c6059485da39e77b8c0c369232f01334954fbac1c186c998</li>
+                        <li>sha256: 64b0b58a2c030c77fdb2b537b2fcc4af432bc55ffb36599a31d418c7c69e94b1</li>
+                        <li>sha256: 027cc450ef5f8c5f653329641ec1fed91f694e0d229928963b30f6b0d7d3a745</li>
+                        <li>sha256: fe2e5d0543b4c8769e401ec216d78a5a3547dfd426fd47e097df04a5f7d6d206</li>
+                        <li>sha256: ee29b9c01318a1e23836b949942db14d4811246fdae2f41df9f0dcd922c63bc6</li>
+
+                        <li>md5: 9B853B8FE232B8DED38355513CFD4F30</li>
+                        <li>md5: CBB9927813FA027AC12D7388720D4771</li>
+                        <li>md5: a809a63bc5e31670ff117d838522dec433f74bee</li>
+                        <li>md5: bec678164cedea578a7aff4589018fa41551c27f</li>
+                        <li>md5: d5bf3f100e7dbcc434d7c58ebf64052329a60fc2</li>
+                        <li>md5: aba7aa41057c8a6b184ba5776c20f7e8fc97c657</li>
+                        <li>md5: 0ff07caedad54c9b65e5873ac2d81b3126754aac</li>
+                        <li>md5: 51eafbb626103765d3aedfd098b94d0e77de1196</li>
+
+                        <li>md5: 078de2dc59ce59f503c63bd61f1ef8353dc7cf5f</li>
+                        <li>md5: 7ca37b86f4acc702f108449c391dd2485b5ca18c</li>
+                        <li>md5: 2bc182f04b935c7e358ed9c9e6df09ae6af47168</li>
+                        <li>md5: 1b83c00143a1bb2bf16b46c01f36d53fb66f82b5</li>
+                        <li>md5: 82920a2ad0138a2a8efc744ae5849c6dde6b435d</li>
+
+                        <li>sha256: 22053C34DCD54A5E3C2C9344AB47349A702B8CFDB5796F876AEE1B075A670926</li>
+                        <li>sha256: 1FE78C7159DBCB3F59FF8D410BD9191868DEA1B01EE3ECCD82BCC34A416895B5</li>
+                        <li>sha256: EEF090314FBEC77B20E2470A8318FC288B2DE19A23D069FE049F0D519D901B95</li>
+
+                        <li>filename: C:\0487382a4daf8eb9660f1c67e30f8b25.hta</li>
+                        <li>filename: petrwrap.exe</li>
+                        <li>filename: C:\027cc450ef5f8c5f653329641ec1fed91f694e0d229928963b30f6b0d7d3a745.bin.dll</li>
+                        <li>filename: Order-20062017.doc</li>
+                        <li>filename: myguy[1].hta</li>
+                        <li>filename: myguy.xls</li>
+                        <li>filename: dllhost.dat</li>
+
+                        <li>named pipe: {df458642-df8b-4131-b02d-32064a2f4c19}</li>
+
+                        <li>emails: wowsmith123456@posteo.net</li>
+                        <li>emails: wowsmith123456@posteo.net</li>
+                        <li>emails: iva76y3pr@outlook.com</li>
+                        <li>emails: carmellar4hegp@outlook.com</li>
+                        <li>emails: amanda4li8sq@outlook.com</li>
+
+
+                    </ul>
+
+                </div>
+
+                <div class="section">
+
+                    <h2>Recommendations</h2>
+
+                    <ul>
+                        <li>In order to prevent infection, users and organizations are advised to apply patches to
+                            Windows systems as mentioned in Microsoft Security Bulletin MS17-010.<br>
+                            <a href="https://technet.microsoft.com/library/security/MS17-010"
+                                target="_blank">https://technet.microsoft.com/library/security/MS17-010</a>
+                        </li>
+                        <li>Perform regular backups of all critical information to limit the impact of data or system
+                            loss and to help expedite the recovery process. Ideally, this data should be kept on a
+                            separate device, and backups should be stored offline.</li>
+                        <li>Block SMB ports on Enterprise Edge/perimeter network devices [UDP 137, 138 and TCP 139, 445]
+                            or Disable SMBv1. <br>
+                            <a href="https://support.microsoft.com/en-us/help/2696547"
+                                target="_blank">https://support.microsoft.com/en-us/help/2696547</a>
+                        </li>
+                        <li>Applocker policies to block execution of files having name perfc.dat as well as psexec.exe
+                            utility from sysinternals.</li>
+                        <li>A quick fix to prevent by creating the files (perfc, perfc.dll, and perfc.dat) to already
+                            exist on the Windows machine, under C:\Windows, with READONLY permissions. A brief
+                            description is here:<br>
+                            <a href="https://www.bleepingcomputer.com/news/security/vaccine-not-killswitch-found-for-petya-notpetya-ransomware-outbreak/"
+                                target="_blank">https://www.bleepingcomputer.com/news/security/vaccine-not-killswitch-found-for-petya-notpetya-ransomware-outbreak/</a>
+                        </li>
+                        </li>
+                        <li>Yara Rules for Petya detections can be seen here [<a
+                                href="/assets/documents/kaspersky.yara.txt" target="_blank">kaspersky.yara</a>] and here
+                            [<a href="/assets/documents/florian.yara.txt" target="_blank">florian.yara</a>]</li>
+                        <li>Don't open attachments in unsolicited e-mails, even if they come from people in your contact
+                            list, and never click on a URL contained in an unsolicited e-mail, even if the link seems
+                            benign. In cases of genuine URLs close out the e-mail and go to the organization's website
+                            directly through browser.</li>
+                        <li>Restrict execution of powershell /WSCRIPT/ PSEXEC / WMIC in enterprise environment Ensure
+                            installation and use of the latest version (currently v5.0) of PowerShell, with enhanced
+                            logging enabled. script block logging, and transcription enabled. Send the associated logs
+                            to a centralized log repository for monitoring and analysis.</li>
+                        <li>Establish a Sender Policy Framework (SPF),Domain Message Authentication Reporting and
+                            Conformance (DMARC), and DomainKeys Identified Mail (DKIM) for your domain, which is an
+                            email validation system designed to prevent spam by detecting email spoofing by which most
+                            of the ransomware samples successfully reaches the corporate email boxes.</li>
+                        <li>Application whitelisting/Strict implementation of Software Restriction Policies (SRP) to
+                            block binaries running from %APPDATA%, %PROGRAMDATA% and %TEMP% paths. Ransomware sample
+                            drops and executes generally from these locations. Enforce application whitelisting on all
+                            endpoint workstations.</li>
+                        <li>Deploy web and email filters on the network. Configure these devices to scan for known bad
+                            domains, sources, and addresses; block these before receiving and downloading messages. Scan
+                            all emails, attachments, and downloads both on the host and at the mail gateway with a
+                            reputable antivirus solution.</li>
+                        <li>Disable macros in Microsoft Office products. Some Office products allow for the disabling of
+                            macros that originate from outside of an organization and can provide a hybrid approach when
+                            the organization depends on the legitimate use of macros. For Windows, specific settings can
+                            block macros originating from the Internet from running.</li>
+                        <li>Configure access controls including file, directory, and network share permissions with
+                            least privilege in mind. If a user only needs to read specific files, they should not have
+                            write access to those files, directories, or shares.</li>
+                        <li>Maintain updated Antivirus software on all systems.</li>
+                        <li>Consider installing Enhanced Mitigation Experience Toolkit, or similar host-level
+                            anti-exploitation tools.</li>
+                        <li>Block the attachments of file types, <br>
+                            exe|pif|tmp|url|vb|vbe|scr|reg|cer|pst|cmd|com|bat|dll|dat|hlp|hta|js|wsf</li>
+                        <li>Regularly check the contents of backup files of databases for any unauthorized encrypted
+                            contents of data records or external elements, (backdoors /malicious scripts.)</li>
+                        <li>Keep the operating system third party applications (MS office, browsers, browser Plugins)
+                            up-to-date with the latest patches.</li>
+                        <li>Follow safe practices when browsing the web. Ensure the web browsers are secured enough with
+                            appropriate content controls.</li>
+                        <li>Network segmentation and segregation into security zones - help protect sensitive
+                            information and critical services. Separate administrative network from business processes
+                            with physical controls and Virtual Local Area Networks.</li>
+                        <li>Disable remote Desktop Connections, employ least-privileged accounts.</li>
+                        <li>Ensure integrity of the codes /scripts being used in database, authentication and sensitive
+                            systems, Check regularly for the integrity of the information stored in the databases.</li>
+                        <li>Restrict users' abilities (permissions) to install and run unwanted software applications.
+                        </li>
+                        <li>Employ data-at-rest and data-in-transit encryption.</li>
+
+                    </ul>
+
+                </div>
+
+                <div class="section">
+
+                    <h2>Removal Tools:</h2>
+
+                    <p>
+                        <a href="#" target="_blank">
+                            Download Free Bot Removal Tool
+                        </a>
+                    </p>
+
+                </div>
+
+                <div class="section">
+
+                    <h2>References</h2>
+
+                    <ul class="links">
+
+                        <li>
+                            <a href="https://isc.sans.edu/forums/diary/Checking+out+the+new+Petya+variant/22562/"
+                                target="_blank">
+                                https://isc.sans.edu/forums/diary/Checking+out+the+new+Petya+variant/22562/
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.symantec.com/connect/blogs/petya-ransomware-outbreak-here-s-what-you-need-know"
+                                target="_blank">
+                                https://www.symantec.com/connect/blogs/petya-ransomware-outbreak-here-s-what-you-need-know
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://securelist.com/petrwrap-the-new-petya-based-ransomware-used-in-targeted-attacks/77762/"
+                                target="_blank">
+                                https://securelist.com/petrwrap-the-new-petya-based-ransomware-used-in-targeted-attacks/77762/
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="http://blog.talosintelligence.com/2017/06/worldwide-ransomware-variant.html"
+                                target="_blank">
+                                http://blog.talosintelligence.com/2017/06/worldwide-ransomware-variant.html
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="http://blogs.seqrite.com/petya-ransomware-is-affecting-users-globally-here-are-things-you-can-do/"
+                                target="_blank">
+                                http://blogs.seqrite.com/petya-ransomware-is-affecting-users-globally-here-are-things-you-can-do/
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="http://www.cyberswachhtakendra.gov.in/alerts/ransomware.html" target="_blank">
+                                http://www.cyberswachhtakendra.gov.in/alerts/ransomware.html
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="site-footer">
+
+        <!-- Layer 1: gradient (on .site-footer itself) -->
+        <!-- Layer 2: SVG circuit overlay -->
+        <div class="footer-bg-svg"></div>
+
+        <!-- MAIN CONTENT -->
+        <div class="footer-main">
+
+            <!-- LEFT: Postal Address -->
+            <div class="footer-address">
+                <h3 class="footer-section-title">Postal Address:</h3>
+                <div class="footer-title-line"></div>
+
+                <address>
+                    <p><strong>Indian Computer Emergency Response Team (CERT-In)</strong></p>
+                    <p>Ministry of Electronics and Information Technology,</p>
+                    <p>Government of India,</p>
+                    <p>Electronics Niketan, 6 CGO Complex,</p>
+                    <p>Lodhi Road, New Delhi - 110 003</p>
+                </address>
+
+                <p class="footer-toll-free">
+                    <strong>Toll Free Number:</strong> +91-1800-11-4949
+                </p>
+
+                <div class="footer-logos">
+                    <div class="footer-logo">
+                        <a href="#" class="footer-logo-item">
+                            <img src="../../../assets/digital-india.svg" alt="Digital India - Power To Empower" />
+                        </a>
+                        <a href="#" class="footer-logo-item">
+                            <img src="../../../assets/footer-certin.svg" alt="CERT-In" />
+                        </a>
+                    </div>
+                    <div class="footer-logo">
+                        <a href="#" class="footer-logo-item">
+                            <img src="../../../assets/infosec.svg" alt="InfoSec Awareness" />
+                        </a>
+                        <a href="#" class="footer-logo-item">
+                            <img src="../../../assets/staysafe.svg" alt="Stay Safe Online" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: Important Links -->
+            <div class="footer-links">
+                <h3 class="footer-section-title">Important Links</h3>
+                <div class="footer-title-line"></div>
+
+                <div class="footer-links-grid">
+                    <ul class="footer-link-col">
+                        <li><a href="../homePage/index.html">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">CERT-In</a></li>
+                        <li><a href="#">MeiTY</a></li>
+                        <li><a href="#">FAQ's</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                    <ul class="footer-link-col">
+                        <li><a href="#">Website Policies</a></li>
+                        <li><a href="#">Terms &amp; Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Archives</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-social-row">
+                    <div class="footer-follow">
+                        <span class="follow-label">Follow Us</span>
+                        <div class="footer-social-icons">
+                            <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" title="X"><i class="fa-solid fa-x"></i></a>
+                            <a href="#" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    <p class="footer-last-updated">Last updated on: November 10, 2025</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- BOTTOM BAR -->
+        <div class="footer-bottom">
+            <p class="footer-disclaimer">
+                Disclaimer :-The information provided herein is on "as is" basis, without warranty of any kind.
+            </p>
+            <p class="footer-copyright">
+                <i class="fa-regular fa-copyright"></i> Copyright 2025. All right reserved
+            </p>
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>

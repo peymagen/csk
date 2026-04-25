@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.ux4g.gov.in/tools/accessibility-widget.js" async></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- acc-toggle MUST be first -->
+    <input type="checkbox" id="acc-toggle" hidden />
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-inner">
+            <div class="left-section">
+                <div class="national-emblem">
+                    <img src="../../../assets/header2.svg" alt="">
+                </div>
+            </div>
+            <div class="center-section">
+                <img src="../../../assets/header.png" alt="">
+            </div>
+            <div class="right-section">
+                <div class="accessibility-icons">
+                    <a href="#main-content" title="Skip to main content">
+                        <img src="../../../assets/Translate.svg" alt="">
+                    </a>
+                    <span class="icon-separator">|</span>
+                    <div class="bhashini-plugin-container">
+                        <img src="../../../assets/Language.svg" alt="">
+                    </div>
+                    <span class="icon-separator">|</span>
+                    <label for="acc-toggle" class="acc-open-btn" title="Accessibility"></label>
+                    <img src="../../../assets/accessibility_figure.svg" alt="">
+                </div>
+                <div class="certin-logo">
+                    <img src="../../../assets/certin.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- acc-overlay: direct sibling of acc-toggle -->
+    <div class="acc-overlay">
+        <div class="acc-panel">
+            <div class="acc-panel-header">
+                <h2>Accessibility Options</h2>
+                <label for="acc-toggle" class="acc-close-btn" title="Close">
+                    <i class="fa-solid fa-xmark"></i>
+                </label>
+            </div>
+            <div class="acc-language-row">
+                <div class="lang-left">
+                    <div class="lang-icon-box"><i class="fa-solid fa-language"></i></div>
+                    <span class="lang-label">Language</span>
+                </div>
+                <select class="lang-select" id="lang-select" title="Select Language">
+                    <option>English</option>
+                    <option>हिंदी</option>
+                </select>
+            </div>
+            <div class="acc-options">
+                <div class="acc-grid">
+                    <div class="acc-option" onclick="accToggle(this,'speak')"><i
+                            class="fa-solid fa-volume-high"></i><span>Screen
+                            Reader</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-s9')"><i
+                            class="fa-solid fa-text-height"></i><span>Bigger
+                            Text</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-s12')"><i
+                            class="fa-solid fa-bars"></i><span>Line
+                            Height</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-s13')"><i class="fa-solid fa-a"></i><span>Text
+                            Spacing</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-s10')"><i
+                            class="fa-solid fa-link"></i><span>Highlight
+                            Links</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-df')"><i
+                            class="fa-solid fa-d"></i><span>Dyslexia
+                            Friendly</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-cursor')"><i
+                            class="fa-solid fa-brain"></i><span>ADHD
+                            Friendly</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-s11')"><i
+                            class="fa-regular fa-image"></i><span>Hide
+                            Images</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-invert')"><i
+                            class="fa-solid fa-circle-half-stroke"></i><span>Invert Color</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'dark-btn')"><i
+                            class="fa-solid fa-moon"></i><span>Dark
+                            Mode</span></div>
+                </div>
+            </div>
+            <div class="acc-footer">
+                <label for="acc-toggle" class="acc-reset-btn" onclick="accResetAll()">
+                    <i class="fa-solid fa-rotate-left"></i> Reset
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!--  nav-toggle MUST be BEFORE <nav> so ~ selector works -->
+    <input type="checkbox" id="search-toggle" hidden />
+    <input type="checkbox" id="nav-toggle" hidden />
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="nav-inner">
+
+            <!-- ✅ HAMBURGER — label targets #nav-toggle -->
+            <label for="nav-toggle" class="hamburger" aria-label="Open menu">
+                <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+
+            <!-- NAV LINKS (slide-in panel on mobile) -->
+            <ul class="nav-links">
+
+                <!-- Close button inside panel -->
+                <li class="nav-close-item">
+                    <label for="nav-toggle" class="nav-close-btn">
+                        <i class="fa-solid fa-xmark"></i>
+                    </label>
+                </li>
+
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../about/index.html">About Us</a></li>
+                <li><a href="#">CERT-In</a></li>
+                <li><a href="../security-tools/index.html">Security Tools</a></li>
+                <li class="active"><a href="../alert/index.html">Alerts</a></li>
+
+                <li class="has-dropdown">
+                    <button class="nav-btn">
+                        Awareness <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="./guideline/index.html">Guidelines &amp; Advisories</a></li>
+                        <li><a href="./Awareness/index.html">Our Campaigns</a></li>
+                        <li><a href="./bestPraactice/index.html">Best Practices</a></li>
+                        <li><a href="./ourReports/index.html">Our Reports</a></li>
+                        <li><a href="./whiteBoard/index.html">White Papers</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="../FrequentQuestion/index.html">FAQ's</a></li>
+                <li><a href="../contactUs/index.html">Contact Us</a></li>
+
+            </ul>
+
+            <!-- ===== SEARCH BAR ===== -->
+            <div class="nav-search">
+                <div class="csk-search">
+
+                    <input type="radio" name="se" id="s-google" checked>
+                    <input type="radio" name="se" id="s-bing">
+                    <input type="radio" name="se" id="s-duck">
+
+                    <div class="search-box">
+
+                        <!-- Dropdown (Left) -->
+                        <div class="engine-picker">
+                            <button type="button" class="engine-current" aria-label="Select search engine">
+                                <span class="current-engine cur-g">
+                                    <span class="dot g-dot">G</span>
+                                    <span class="engine-label">&nbsp;Google</span>
+                                </span>
+                                <span class="current-engine cur-b">
+                                    <span class="dot b-dot">b</span>
+                                    <span class="engine-label">&nbsp;Bing</span>
+                                </span>
+                                <span class="current-engine cur-d">
+                                    <span class="dot d-dot">D</span>
+                                    <span class="engine-label">&nbsp;Duck</span>
+                                </span>
+                            </button>
+                            <div class="engine-menu">
+                                <label for="s-google" class="engine-opt"><span
+                                        class="dot g-dot">G</span>Google.com</label>
+                                <label for="s-bing" class="engine-opt"><span class="dot b-dot">b</span>Bing.com</label>
+                                <label for="s-duck" class="engine-opt"><span
+                                        class="dot d-dot">D</span>DuckDuckGo</label>
+                            </div>
+                        </div>
+
+                        <!-- Input + Search Icon (Right) -->
+                        <div class="form-wrap">
+
+                            <!-- Google -->
+                            <form class="sf" id="fg" action="https://www.google.com/search" method="GET"
+                                target="_blank">
+                                <input class="si" type="text" name="q" placeholder="Search csk.gov.in" required>
+                                <input type="hidden" name="as_sitesearch" value="csk.gov.in">
+                                <button type="submit" class="sb" aria-label="Search">
+                                    <svg viewBox="0 0 20 20">
+                                        <circle cx="8.5" cy="8.5" r="5.5" />
+                                        <line x1="12.5" y1="12.5" x2="17" y2="17" />
+                                    </svg>
+                                </button>
+                            </form>
+
+
+                            <!-- Bing -->
+                            <form class="sf" id="fb" action="https://www.bing.com/search" method="GET" target="_blank"
+                                onsubmit="this.querySelector('[name=q]').value = this.querySelector('.si').value + ' site:csk.gov.in'; return true;">
+                                <input class="si" type="text" placeholder="Search csk.gov.in" required>
+                                <input type="hidden" name="q" value="">
+                                <button type="submit" class="sb" aria-label="Search">
+                                    <svg viewBox="0 0 20 20">
+                                        <circle cx="8.5" cy="8.5" r="5.5" />
+                                        <line x1="12.5" y1="12.5" x2="17" y2="17" />
+                                    </svg>
+                                </button>
+                            </form>
+                            <!-- DuckDuckGo -->
+                            <!-- DuckDuckGo -->
+                            <form class="sf" id="fd" action="https://duckduckgo.com/" method="GET" target="_blank"
+                                onsubmit="this.querySelector('[name=q]').value = this.querySelector('.si').value + ' site:csk.gov.in'; return true;">
+                                <input class="si" type="text" placeholder="Search csk.gov.in" required>
+                                <input type="hidden" name="q" value="">
+                                <button type="submit" class="sb" aria-label="Search">
+                                    <svg viewBox="0 0 20 20">
+                                        <circle cx="8.5" cy="8.5" r="5.5" />
+                                        <line x1="12.5" y1="12.5" x2="17" y2="17" />
+                                    </svg>
+                                </button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ===== SEARCH BAR END ===== -->
+
+        </div>
+    </nav>
+
+    <!-- ✅ nav-overlay AFTER nav — direct sibling of nav-toggle -->
+    <!-- <div class="nav-overlay">
+      <label for="nav-toggle"></label>
+    </div> -->
+
+    <main id="main-content">
+        <div class="main-content-Locky">
+
+            <div class="social-content">
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/IndianCERT/" title="Facebook"><i
+                            class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/cert_india/" title="Instagram"><i
+                            class="fa-brands fa-square-instagram"></i></a>
+                    <a href="https://x.com/IndianCERT" title="X"><i class="fa-solid fa-x"></i></a>
+                    <a href="https://www.linkedin.com/company/cert-in/" title="LinkedIn"><i
+                            class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.youtube.com/hashtag/certin" title="YouTube"><i
+                            class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <label for="acc-toggle" class="icon">
+                <!-- <i class="fa-solid fa-universal-access"></i> -->
+                <img src="../assets/access_icon.svg" alt="">
+            </label>
+
+            <div class="container">
+
+                <div class="header">
+
+                    <div class="left">
+                        <a href="javascript:history.back()" class="back-btn">
+                            <i class="fa-solid fa-angle-left"></i> BACK
+                        </a>
+                        <h1>Necurs Botnet</h1>
+                    </div>
+
+                    <!-- Header -->
+                    <div class="header-right">
+
+                        <div class="meta">
+                            <div class="border-left"></div>
+                            <div class="righ-content">
+                                <p><span class="gree">Original Issue Date:</span> September 24, 2019</p>
+
+                                <p><span class="orr">Virus Type:</span> Banking Trojan</p>
+                                <p><span class="orr">Severity:</span>High</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+                <!-- Description -->
+                <div class="section">
+                    <p>
+                        It has been reported that the variants of the malware named as Necurs are spreading. The malware mainly targets the windows operating systems and is well known for its spamming and malware distribution functionalities. The malware mainly spread by means of spear phishing emails containing phishing URLs or malicious attachments and also through dating sites.
+                    </p>
+
+                <div class="section">
+                    <p><b>It has the following functionalities:</b></p>
+                    <ul>
+                        <li>Anti-detection capabilities to hide itself by disabling Antivirus driver components or other security features.</li>
+                        <li>Spread banking Trojans, ransomwares, RATs, infostealers or cryptocurrency miners</li>
+                        <li>Stop its activities for a period of time and then reinitiate with new commands for the infected hosts.</li>
+                        <li>Machines infected with necurs botnet make network connections to remote command and control server to receive commands and operate accordingly.</li>
+                        <li>Make use of victims email IDs to send spam mails.</li>
+                        <li>Spreads malware that are capable of launching DDoS attacks.</li>
+                    </ul>
+
+                    <p>
+                        Necurs has kernel mode rootkit capabilities, comprising of kernel mode driver and user mode component, thereby giving the highest level of privileges to the attacker. Along with this, it also has modular architecture making it suitable to spread different malwares and perform different functions when required.
+                    </p>
+                </div>
+
+                    <h2>Network Connections:</h2>
+                    <p>
+                        It uses DGA(domain generation algorithm) to hide its activities and avoid detection.Every time a new domain is registered, its corresponding C2 server IP address is remain obfuscated which is then decrypted by the Bot to establish connection with remote C2 server. This encryption makes difficult to sinkhole these DGA domains.
+                    </p>
+
+                    <ul>
+                        <li><b>DGA1:</b> Detects sandbox environment and generates only 4 domains at a time.</li>
+                        <li><b>DGA2:</b> generates 2048 domains covering 43 different TLDs(top level domains) and expires every fourth day.</li>
+                    </ul>
+
+                    <p>
+                        Along with this, it also has some hardcoded domains to be used as fallback domains to call the C2 server.
+                    </p>
+
+                    <h2>IOC:</h2>
+                    <p><b>Malware Hashes:</b></p>
+                    <ul>
+                        <li>03c770882e87585fea0272a8e6a7b7e37085e193475884b1316e14fb193e992d</li>
+                        <li>b0c173e0fc28e0f1bc8debfe49de01f306d372a0516d88201b87e441f3de303e</li>
+                        <li>b87e0dd9b0e032c6d2d5f0bf46f00243a2a866bf1d3d22f8b72737b4aa1148eb</li>
+                        <li>00ca7e9e61a3ceaa4b9250866aface8af63e5ae71435d4fd6c770a8c9a167f22</li>
+                    </ul>
+
+                    <p>For a list of complete file hashes, visit here.</p>
+
+                    <h2>Best Practices:</h2>
+                    <ul>
+                        <li>
+                            <b>Microsoft Safety Scanner</b>
+                        </li>
+                        <p>Make use of "Microsoft Safety Scanner", this scan tool is designed to find and remove identified threats & malware from Windows computers.</p>
+                        <br/>
+                        <p><b>Download Microsoft Safety Scanner (32-bit)</b></p>
+                        <a href="https://go.microsoft.com/fwlink/?LinkId=212733">https://go.microsoft.com/fwlink/?LinkId=212733</a>
+                        <br/>
+                        <p><b>Download Microsoft Safety Scanner (64-bit)</b></p>
+                        <a href="https://go.microsoft.com/fwlink/?LinkId=212732">https://go.microsoft.com/fwlink/?LinkId=212732</a>
+                        <br/>
+                        <p>For more information, please refer "Microsoft Safety Scanner"</p>
+                        <li>Delete the system changes made by the malware such as files created/ registry entries /services etc.</li>
+                        <li>Monitor traffic generated from client machines to the domains and IP address mentioned in Installation section.</li>
+                        <li>Avoid downloading pirated software.</li>
+                        <li>Protect against social engineering attacks.</li>
+                        <li>Scan infected system with updated versions of Antivirus solution</li>
+                        <li>Disable Autorun and Autoplay policies.</li>
+                        <li>Use limited privilege user on the computer or allow administrative access to systems with special administrative accounts for administrators.</li>
+                        <li>Do not visit untrusted websites.</li>
+                        <li>Do not download or open attachment in emails received from untrusted sources or unexpectedly received from trusted users.</li>
+                        <li>Enforce a strong password policy and implement regular password changes.</li>
+                        <li>Enable a personal firewall on workstation.</li>
+                        <li>Disable unnecessary services on agency workstations and servers.</li>
+                        <li>Always change Default login credentials before deployment in production.</li>
+                    </ul>
+
+                    <h2>References:</h2>
+                    <ul>
+                        <li><a href="https://docs.microsoft.com/en-us/windows/security/threat-protection/intelligence/safety-scanner-download">https://docs.microsoft.com/en-us/windows/security/threat-protection/intelligence/safety-scanner-download</a></li>
+                        <li><a href="https://threatpost.com/necurs-botnet-hide-payloads/142334/">https://threatpost.com/necurs-botnet-hide-payloads/142334/</a></li>
+                        <li><a href="https://securityintelligence.com/the-necurs-botnet-a-pandoras-box-of-malicious-spam/">https://securityintelligence.com/the-necurs-botnet-a-pandoras-box-of-malicious-spam/</a></li>
+                        <li><a href="https://securityintelligence.com/the-many-faces-of-necurs-how-the-botnet-spewed-millions-of-spam-emails-for-cyber-extortion/">https://securityintelligence.com/the-many-faces-of-necurs-how-the-botnet-spewed-millions-of-spam-emails-for-cyber-extortion/</a></li>
+                        <li><a href="https://www.zdnet.com/article/necurs-botnet-launches-fresh-assault-against-banks/">https://www.zdnet.com/article/necurs-botnet-launches-fresh-assault-against-banks/</a></li>
+                        <li><a href="https://securingtomorrow.mcafee.com/other-blogs/mcafee-labs/necurs-botnet-leads-the-world-in-sending-spam-traffic/">https://securingtomorrow.mcafee.com/other-blogs/mcafee-labs/necurs-botnet-leads-the-world-in-sending-spam-traffic/</a></li>
+                        <li><a href="https://blog.trendmicro.com/trendlabs-security-intelligence/necurs-evolves-to-evade-spam-detection-via-internet-shortcut-file/">https://blog.trendmicro.com/trendlabs-security-intelligence/necurs-evolves-to-evade-spam-detection-via-internet-shortcut-file/</a></li>
+                        <li><a href="https://securityaffairs.co/wordpress/81912/malware/necurs-botnet-evolution.html">https://securityaffairs.co/wordpress/81912/malware/necurs-botnet-evolution.html</a></li>
+                    </ul>
+
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="site-footer">
+
+        <!-- Layer 1: gradient (on .site-footer itself) -->
+        <!-- Layer 2: SVG circuit overlay -->
+        <div class="footer-bg-svg"></div>
+
+        <!-- MAIN CONTENT -->
+        <div class="footer-main">
+
+            <!-- LEFT: Postal Address -->
+            <div class="footer-address">
+                <h3 class="footer-section-title">Postal Address:</h3>
+                <div class="footer-title-line"></div>
+
+                <address>
+                    <p><strong>Indian Computer Emergency Response Team (CERT-In)</strong></p>
+                    <p>Ministry of Electronics and Information Technology,</p>
+                    <p>Government of India,</p>
+                    <p>Electronics Niketan, 6 CGO Complex,</p>
+                    <p>Lodhi Road, New Delhi - 110 003</p>
+                </address>
+
+                <p class="footer-toll-free">
+                    <strong>Toll Free Number:</strong> +91-1800-11-4949
+                </p>
+
+                <div class="footer-logos">
+                    <div class="footer-logo">
+                        <a href="#" class="footer-logo-item">
+                            <img src="../../../assets/digital-india.svg" alt="Digital India - Power To Empower" />
+                        </a>
+                        <a href="#" class="footer-logo-item">
+                            <img src="../../../assets/footer-certin.svg" alt="CERT-In" />
+                        </a>
+                    </div>
+                    <div class="footer-logo">
+                        <a href="#" class="footer-logo-item">
+                            <img src="../../../assets/infosec.svg" alt="InfoSec Awareness" />
+                        </a>
+                        <a href="#" class="footer-logo-item">
+                            <img src="../../../assets/staysafe.svg" alt="Stay Safe Online" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: Important Links -->
+            <div class="footer-links">
+                <h3 class="footer-section-title">Important Links</h3>
+                <div class="footer-title-line"></div>
+
+                <div class="footer-links-grid">
+                    <ul class="footer-link-col">
+                        <li><a href="../homePage/index.html">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">CERT-In</a></li>
+                        <li><a href="#">MeiTY</a></li>
+                        <li><a href="#">FAQ's</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                    <ul class="footer-link-col">
+                        <li><a href="#">Website Policies</a></li>
+                        <li><a href="#">Terms &amp; Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Archives</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-social-row">
+                    <div class="footer-follow">
+                        <span class="follow-label">Follow Us</span>
+                        <div class="footer-social-icons">
+                            <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" title="X"><i class="fa-solid fa-x"></i></a>
+                            <a href="#" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    <p class="footer-last-updated">Last updated on: November 10, 2025</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- BOTTOM BAR -->
+        <div class="footer-bottom">
+            <p class="footer-disclaimer">
+                Disclaimer :-The information provided herein is on "as is" basis, without warranty of any kind.
+            </p>
+            <p class="footer-copyright">
+                <i class="fa-regular fa-copyright"></i> Copyright 2025. All right reserved
+            </p>
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>

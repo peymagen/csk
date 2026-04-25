@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.ux4g.gov.in/tools/accessibility-widget.js" async></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- acc-toggle MUST be first -->
+    <input type="checkbox" id="acc-toggle" hidden />
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-inner">
+            <div class="left-section">
+                <div class="national-emblem">
+                    <img src="../../../assets/header2.svg" alt="">
+                </div>
+            </div>
+            <div class="center-section">
+                <img src="../../../assets/header.png" alt="">
+            </div>
+            <div class="right-section">
+                <div class="accessibility-icons">
+                    <a href="#main-content" title="Skip to main content">
+                        <img src="../../../assets/Translate.svg" alt="">
+                    </a>
+                    <span class="icon-separator">|</span>
+                    <div class="bhashini-plugin-container">
+                        <img src="../../../assets/Language.svg" alt="">
+                    </div>
+                    <span class="icon-separator">|</span>
+                    <label for="acc-toggle" class="acc-open-btn" title="Accessibility"></label>
+                    <img src="../../../assets/accessibility_figure.svg" alt="">
+                </div>
+                <div class="certin-logo">
+                    <img src="../../../assets/certin.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- acc-overlay: direct sibling of acc-toggle -->
+    <div class="acc-overlay">
+        <div class="acc-panel">
+            <div class="acc-panel-header">
+                <h2>Accessibility Options</h2>
+                <label for="acc-toggle" class="acc-close-btn" title="Close">
+                    <i class="fa-solid fa-xmark"></i>
+                </label>
+            </div>
+            <div class="acc-language-row">
+                <div class="lang-left">
+                    <div class="lang-icon-box"><i class="fa-solid fa-language"></i></div>
+                    <span class="lang-label">Language</span>
+                </div>
+                <select class="lang-select" id="lang-select" title="Select Language">
+                    <option>English</option>
+                    <option>हिंदी</option>
+                </select>
+            </div>
+            <div class="acc-options">
+                <div class="acc-grid">
+                    <div class="acc-option" onclick="accToggle(this,'speak')"><i
+                            class="fa-solid fa-volume-high"></i><span>Screen
+                            Reader</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-s9')"><i
+                            class="fa-solid fa-text-height"></i><span>Bigger
+                            Text</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-s12')"><i
+                            class="fa-solid fa-bars"></i><span>Line
+                            Height</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-s13')"><i class="fa-solid fa-a"></i><span>Text
+                            Spacing</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-s10')"><i
+                            class="fa-solid fa-link"></i><span>Highlight
+                            Links</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-df')"><i
+                            class="fa-solid fa-d"></i><span>Dyslexia
+                            Friendly</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-cursor')"><i
+                            class="fa-solid fa-brain"></i><span>ADHD
+                            Friendly</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-s11')"><i
+                            class="fa-regular fa-image"></i><span>Hide
+                            Images</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-invert')"><i
+                            class="fa-solid fa-circle-half-stroke"></i><span>Invert Color</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'dark-btn')"><i
+                            class="fa-solid fa-moon"></i><span>Dark
+                            Mode</span></div>
+                </div>
+            </div>
+            <div class="acc-footer">
+                <label for="acc-toggle" class="acc-reset-btn" onclick="accResetAll()">
+                    <i class="fa-solid fa-rotate-left"></i> Reset
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!--  nav-toggle MUST be BEFORE <nav> so ~ selector works -->
+    <input type="checkbox" id="search-toggle" hidden />
+    <input type="checkbox" id="nav-toggle" hidden />
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="nav-inner">
+
+            <!-- ✅ HAMBURGER — label targets #nav-toggle -->
+            <label for="nav-toggle" class="hamburger" aria-label="Open menu">
+                <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+
+            <!-- NAV LINKS (slide-in panel on mobile) -->
+            <ul class="nav-links">
+
+                <!-- Close button inside panel -->
+                <li class="nav-close-item">
+                    <label for="nav-toggle" class="nav-close-btn">
+                        <i class="fa-solid fa-xmark"></i>
+                    </label>
+                </li>
+
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../about/index.html">About Us</a></li>
+                <li><a href="#">CERT-In</a></li>
+                <li><a href="../security-tools/index.html">Security Tools</a></li>
+                <li class="active"><a href="../alert/index.html">Alerts</a></li>
+
+                <li class="has-dropdown">
+                    <button class="nav-btn">
+                        Awareness <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="./guideline/index.html">Guidelines &amp; Advisories</a></li>
+                        <li><a href="./Awareness/index.html">Our Campaigns</a></li>
+                        <li><a href="./bestPraactice/index.html">Best Practices</a></li>
+                        <li><a href="./ourReports/index.html">Our Reports</a></li>
+                        <li><a href="./whiteBoard/index.html">White Papers</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="../FrequentQuestion/index.html">FAQ's</a></li>
+                <li><a href="../contactUs/index.html">Contact Us</a></li>
+
+            </ul>
+
+            <!-- ===== SEARCH BAR ===== -->
+            <div class="nav-search">
+                <div class="csk-search">
+
+                    <input type="radio" name="se" id="s-google" checked>
+                    <input type="radio" name="se" id="s-bing">
+                    <input type="radio" name="se" id="s-duck">
+
+                    <div class="search-box">
+
+                        <!-- Dropdown (Left) -->
+                        <div class="engine-picker">
+                            <button type="button" class="engine-current" aria-label="Select search engine">
+                                <span class="current-engine cur-g">
+                                    <span class="dot g-dot">G</span>
+                                    <span class="engine-label">&nbsp;Google</span>
+                                </span>
+                                <span class="current-engine cur-b">
+                                    <span class="dot b-dot">b</span>
+                                    <span class="engine-label">&nbsp;Bing</span>
+                                </span>
+                                <span class="current-engine cur-d">
+                                    <span class="dot d-dot">D</span>
+                                    <span class="engine-label">&nbsp;Duck</span>
+                                </span>
+                            </button>
+                            <div class="engine-menu">
+                                <label for="s-google" class="engine-opt"><span
+                                        class="dot g-dot">G</span>Google.com</label>
+                                <label for="s-bing" class="engine-opt"><span class="dot b-dot">b</span>Bing.com</label>
+                                <label for="s-duck" class="engine-opt"><span
+                                        class="dot d-dot">D</span>DuckDuckGo</label>
+                            </div>
+                        </div>
+
+                        <!-- Input + Search Icon (Right) -->
+                        <div class="form-wrap">
+
+                            <!-- Google -->
+                            <form class="sf" id="fg" action="https://www.google.com/search" method="GET"
+                                target="_blank">
+                                <input class="si" type="text" name="q" placeholder="Search csk.gov.in" required>
+                                <input type="hidden" name="as_sitesearch" value="csk.gov.in">
+                                <button type="submit" class="sb" aria-label="Search">
+                                    <svg viewBox="0 0 20 20">
+                                        <circle cx="8.5" cy="8.5" r="5.5" />
+                                        <line x1="12.5" y1="12.5" x2="17" y2="17" />
+                                    </svg>
+                                </button>
+                            </form>
+
+
+                            <!-- Bing -->
+                            <form class="sf" id="fb" action="https://www.bing.com/search" method="GET" target="_blank"
+                                onsubmit="this.querySelector('[name=q]').value = this.querySelector('.si').value + ' site:csk.gov.in'; return true;">
+                                <input class="si" type="text" placeholder="Search csk.gov.in" required>
+                                <input type="hidden" name="q" value="">
+                                <button type="submit" class="sb" aria-label="Search">
+                                    <svg viewBox="0 0 20 20">
+                                        <circle cx="8.5" cy="8.5" r="5.5" />
+                                        <line x1="12.5" y1="12.5" x2="17" y2="17" />
+                                    </svg>
+                                </button>
+                            </form>
+                            <!-- DuckDuckGo -->
+                            <!-- DuckDuckGo -->
+                            <form class="sf" id="fd" action="https://duckduckgo.com/" method="GET" target="_blank"
+                                onsubmit="this.querySelector('[name=q]').value = this.querySelector('.si').value + ' site:csk.gov.in'; return true;">
+                                <input class="si" type="text" placeholder="Search csk.gov.in" required>
+                                <input type="hidden" name="q" value="">
+                                <button type="submit" class="sb" aria-label="Search">
+                                    <svg viewBox="0 0 20 20">
+                                        <circle cx="8.5" cy="8.5" r="5.5" />
+                                        <line x1="12.5" y1="12.5" x2="17" y2="17" />
+                                    </svg>
+                                </button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ===== SEARCH BAR END ===== -->
+
+        </div>
+    </nav>
+
+    <!-- ✅ nav-overlay AFTER nav — direct sibling of nav-toggle -->
+    <!-- <div class="nav-overlay">
+      <label for="nav-toggle"></label>
+    </div> -->
+
+    <main id="main-content">
+        <div class="main-content-Locky">
+
+            <div class="social-content">
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/IndianCERT/" title="Facebook"><i
+                            class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/cert_india/" title="Instagram"><i
+                            class="fa-brands fa-square-instagram"></i></a>
+                    <a href="https://x.com/IndianCERT" title="X"><i class="fa-solid fa-x"></i></a>
+                    <a href="https://www.linkedin.com/company/cert-in/" title="LinkedIn"><i
+                            class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.youtube.com/hashtag/certin" title="YouTube"><i
+                            class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <label for="acc-toggle" class="icon">
+                <!-- <i class="fa-solid fa-universal-access"></i> -->
+                <img src="../assets/access_icon.svg" alt="">
+            </label>
+
+            <div class="container">
+			
+			
+			<div class="header">
+
+    <div class="left">
+        <a href="javascript:history.back()" class="back-btn">
+            <i class="fa-solid fa-angle-left"></i> BACK
+        </a>
+        <h1>Prevention of Ransomware Infections</h1>
+    </div>
+
+    <div class="header-right">
+        <div class="meta">
+            <div class="border-left"></div>
+            <div class="righ-content">
+
+                <p>
+                    <span class="gree">Original Issue Date:</span>
+                    November 17, 2016
+                </p>
+
+                <p>
+                    <span class="orr">Type:</span>
+                    Ransomware
+                </p>
+
+                <p>
+                    <span class="orr">Severity:</span>
+                    High
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<div class="section">
+
+    <p>
+        It has been observed that "Ransomware malware" attacks are on rise affecting financial institutions, businesses and academic institutions in the country. Ransomware are type of malicious software (malware) that scramble the contents of a computer or server (associated network shares and removable media) and demands payment/ransom to unlock it, usually in the form of anonymous decentralized virtual currency "BITCOINS".
+    </p>
+
+    <p>
+        Ransomware causes temporary or permanent loss of sensitive or proprietary information, financial losses, and disruption to regular operations and potential harm to an organization's reputation. This Advisory is intended to provide further information about Ransomware, its main characteristics, the proliferation mechanisms and to provide prevention or mitigation measures against ransomware.
+    </p>
+
+</div>
+
+
+
+<div class="section">
+
+    <h2>Modus Operandi of Ransomware Attacks</h2>
+
+    <b>
+        Infection/Propagation
+    </b>
+
+    <p>
+        Ransomware is typically spread through spear phishing emails that contain malicious attachments in the form of archived content (zip/rar) containing a JavaScript file.
+        Other possible infection vectors includes drive-by-download attacks, specially crafted web links in emails. Upon visiting such infected/compromised websites or web links, a piece of malware is dropped on victim's machine, which executes itself without user's knowledge.
+
+        It has also been reported that the ransomware propagates through insecure Remote Desktop connections (RDP).
+
+        Ransomware attempts to extort money from victims by displaying an extortion alert indicating that their computer has been locked or all files have been encrypted, and demand that a ransom is paid to restore access.
+    </p>
+
+</div>
+
+
+
+<div class="section">
+
+    <h2>Impact</h2>
+
+    <p>
+        Ransomware variants are capable of performing following activities:
+    </p>
+
+				<ul>
+     <li>Encrypt the specific files present on the infected system, the encryption and the targeted file types varies by ransomware versions, hence make files unusable.</li>
+     <li>Capable of infecting or encrypting the files present on network share drives and USB drives.</li>
+     <li>Extensions of the unusable /encrypted files depends upon the type of the ransomware, such as ".cerber", ".crypt", ".zepto", ".locky" , ".xtbl", ".vault", "xrtn", "crySIS", ".lock", ".R5A". ".lock", etc.</li>
+     <li>Make use of native Windows utilities such as WMIC and/or VSSAdmin to delete backups and shadow copies.</li>
+     <li>Demands ransom amount of money for providing the decryption key for the encrypted files.</li>
+     <li>Some versions of the ransomware are capable of targeting the databases also by identifying the current running processes and if found any, they kill those processes and thereafter encrypts the database.</li>
+     <li>Capable of detecting the virtual machine environments by checking the VM specific file names , paths, hooked modules, known sandbox volume serial numbers, and VM specific DLLs.</li>
+     <li>Make network connections to the call back server to send uniquely identifiable system information.</li>
+     <li>Make file system and registry changes such as installation of specific windows themes representing ransomware encryption.</li>
+     <li>Capable of keeping persistence by creating command processor, screensaver, startup.run and Run Once registry entries.</li>
+                </ul>
+                     <p> Paying the ransom does not guarantee that the encrypted files will be released. In addition, decrypting files does not mean the malware infection itself has been removed. It has also been reported that attackers have gone one level deeper by typically targeting the backend databases / backup which stores critical financial data. In contrast with the conventional ransomware methodology, wherein "IN-ONE-GO" encryption of the files /documents is carried out, in the latest attacks, attacker tampers specific fields /records of databases which are sensitive in nature and subsequently demand ransom, an indication of persistent access to the critical assets of an enterprise network. </p>
+  
+
+</div>
+
+<div class="section">
+
+    <h2>Variants</h2>
+
+    <p>
+        Some of the well-known ransomwares that are spreading widely are:
+    </p>
+
+    <p>
+        Black Basta, Hive, Diavol, Egregor, ProLock, Cryptolocker, locky, cerber, zepto, .CryptoHasYou, 7ev3n, Alpha Ransomware, AutoLocky,
+        BandarChor, BitCrypt, Booyah, Brazillian, Chimera, Crybola, Cryptear, CryptFile2, CryptInfinite, CryptoDefense, CryptoHost,
+        CryptoJoker, CryptoMix, CryptoTorLocker, CryptoWall, CryptoXXXC2.0, CTB-Locker, CTB-Locker WEB, DeCryptProtect,
+        DMALocker, Gopher, HydraCrypt, Jigsaw, KeRanger, KEYBTC, KEYHolder, KryptoLocker, Linux.Encoder, Locker, Lortok,
+        NanoLocker, Nemucod, Offline Ransomware, OMG!Ransomware, Operation Global3, PClock, Petya, PornoLocker, PowerWare,
+        Radamant, Rakhni, Ranmonh, Ransom32, Rector, EmindMe, Rokku, scraper, SkidLocker /Pompous, SynoLocker, TeslaCrypt,
+        TorrentLocker, Troldesh, TrueCrypter, UmbreCrypt, VaultCrypt, Virus-Encoder.
+    </p>
+
+    <p>
+        Cyber security companies are working on <b>decryption tools for such encrypted files</b>, but, till date decryption for only some of the ransomwares are possible.
+    </p>
+
+    <p>
+        For those files for which the decryption tools are not available, there is no way to retrieve the private key that can be used to decrypt those files. Brute forcing the decryption key is not realistic due to the length of time required to break this type of cryptography. Restoring to earlier operating system state may fail as the malware may delete the volume shadow copies (restore points in windows) as the first step immediately after infection.
+    </p>
+
+    <p>
+        Some of the prevalent ransomware variants observed in Indian cyberspace are CryptoLocker, Reveton, CTB-Locker, Cryptowall, Cerber, TeslaCrypt.
+    </p>
+
+    <p>
+        CERT-In has issued alerts on ransomware such as Black Basta, Hive, Diavol, Cryptolocker, Locky, Cerberetc etc. The same may be seen on CERT-In website
+        <a href="https://www.cert-in.org.in" target="_blank">www.cert-in.org.in</a>
+    </p>
+
+</div>
+
+<div class="section">
+
+    <h2>Best Practices and remedial measures</h2>
+
+    <p>
+        Users and administrators are advised to take the following preventive measures to protect their computer networks from ransomware infection/ attacks:
+    </p>
+
+    <ul>
+
+        <li>
+            Perform regular backups of all critical information to limit the impact of data or system loss and to help expedite the recovery process. Ideally, this data should be kept on a separate device, and backups should be stored offline.
+        </li>
+
+        <li>
+            Check regularly for the integrity of the information stored in the databases.
+        </li>
+
+        <li>
+            Regularly check the contents of backup files of databases for any unauthorized encrypted contents of data records or external elements, (backdoors /malicious scripts.)
+        </li>
+
+        <li>
+            Ensure integrity of the codes /scripts being used in database, authentication and sensitive systems
+        </li>
+
+        <li>
+            Establish a Sender Policy Framework (SPF) for your domain, which is an email validation system designed to prevent spam by detecting email spoofing by which most of the ransomware samples successfully reaches the corporate email boxes.
+        </li>
+
+        <li>
+            Keep the operating system third party applications (MS office, browsers, browser Plugins) up-to-date with the latest patches.
+        </li>
+
+        <li>
+            Application white listing/Strict implementation of Software Restriction Policies (SRP) to block binaries running from %APPDATA% and %TEMP% paths. Ransomware sample drops and executes generally from these locations.
+        </li>
+
+        <li>
+            Maintain updated Antivirus software on all systems
+        </li>
+
+        <li>
+            Don't open attachments in unsolicited e-mails, even if they come from people in your contact list, and never click on a URL contained in an unsolicited e-mail, even if the link seems benign. In cases of genuine URLs close out the e-mail and go to the organization's website directly through browser
+        </li>
+
+        <li>
+            Follow safe practices when browsing the web. Ensure the web browsers are secured enough with appropriate content controls.
+        </li>
+
+        <li>
+            Network segmentation and segregation into security zones - help protect sensitive information and critical services. Separate administrative network from business processes with physical controls and Virtual Local Area Networks.
+        </li>
+
+        <li>
+            Disable ActiveX content in Microsoft Office applications such as Word, Excel, etc.
+        </li>
+
+        <li>
+            Disable remote Desktop Connections, employ least-privileged accounts. Limit users who can log in using Remote Desktop, set an account lockout policy. Ensure proper RDP logging and configuration.
+        </li>
+
+        <li>
+            Restrict access using firewalls and allow only to selected remote endpoints, VPN may also be used with dedicated pool for RDP access
+        </li>
+
+        <li>
+            Use strong authentication protocol, such as Network Level Authentication (NLA) in Windows.
+        </li>
+
+        <li>
+            Additional Security measures that may be considered are
+        </li>
+
+        <ul>
+
+            <li>Use RDP Gateways for better management</li>
+            <li>Change the listening port for Remote Desktop</li>
+            <li>Tunnel Remote Desktop connections through IPSec or SSH</li>
+            <li>Two-factor authentication may also be considered for highly critical systems</li>
+
+        </ul>
+
+        <li>
+            If not required consider disabling, PowerShell / windows script hosting.
+        </li>
+
+        <li>
+            Restrict users' abilities (permissions) to install and run unwanted software applications.
+        </li>
+
+        <li>
+            Enable personal firewalls on workstations.
+        </li>
+
+        <li>
+            Implement strict External Device (USB drive) usage policy.
+        </li>
+
+        <li>
+            Employ data-at-rest and data-in-transit encryption.
+        </li>
+
+        <li>
+            Consider installing Enhanced Mitigation Experience Toolkit, or similar host-level anti-exploitation tools.
+        </li>
+
+        <li>
+            Block the attachments of file types,
+            exe|pif|tmp|url|vb|vbe|scr|reg|cer|pst|cmd|com|bat|dll|dat|hlp|hta|js|wsf
+        </li>
+
+        <li>
+            Carry out vulnerability Assessment and Penetration Testing (VAPT) and information security audit of critical networks/systems, especially database servers from CERT-IN empanelled auditors. Repeat audits at regular intervals.
+        </li>
+
+        <li>
+            Individuals or organizations are not encouraged to pay the ransom, as this does not guarantee files will be released. Report such instances of fraud to CERT-In and Law Enforcement agencies
+        </li>
+
+    </ul>
+
+</div>
+
+<div class="section">
+
+    <h2>Prevention Tools:</h2>
+
+    <ul>
+
+        <li>
+            Tool (NoMoreCry) to prevent Wannacry Ransomware by CCN-CERT:
+            <br>
+            <a href="https://loreto.ccn-cert.cni.es/index.php/s/tyxMah1T7x7FhND?path=CCN-CERT%20NoMoreCry%20Tool" target="_blank">
+                https://loreto.ccn-cert.cni.es/index.php/s/tyxMah1T7x7FhND?path=CCN-CERT%20NoMoreCry%20Tool
+            </a>
+        </li>
+
+        <li>
+            Sophos: Hitman.Pro
+            <br>
+            <a href="https://www.hitmanpro.com/en-us/content/ransomware-remover" target="_blank">
+                https://www.hitmanpro.com/en-us/content/ransomware-remover
+            </a>
+        </li>
+
+        <li>
+            Bitdefender Anti-Crypto Vaccine and Anti-Ransomware (discontinued)
+            <br>
+            <a href="https://labs.bitdefender.com/2016/03/combination-crypto-ransomware-vaccine-released/" target="_blank">
+                https://labs.bitdefender.com/2016/03/combination-crypto-ransomware-vaccine-released/
+            </a>
+        </li>
+
+        <li>
+            Malwarebytes Anti-Ransomware(formally Crypto Monitor)
+            <br>
+            <a href="https://blog.malwarebytes.com/malwarebytes-news/2016/01/introducing-the-malwarebytes-anti-ransomware-beta/" target="_blank">
+                https://blog.malwarebytes.com/malwarebytes-news/2016/01/introducing-the-malwarebytes-anti-ransomware-beta/
+            </a>
+        </li>
+
+        <li>
+            Trendmicro Ransomware Screen Unlocker tool:
+            <br>
+            <a href="https://esupport.trendmicro.com/en-us/home/pages/technical-support/1105975.aspx" target="_blank">
+                https://esupport.trendmicro.com/en-us/home/pages/technical-support/1105975.aspx
+            </a>
+        </li>
+
+    </ul>
+
+</div>
+<div class="section">
+
+    <h2>Removal Tools:</h2>
+
+    <p>
+        <a href="#" target="_blank">
+            Download Free Bot Removal Tool
+        </a>
+    </p>
+
+</div>
+<div class="section">
+
+    <h2>Decryption Methodology and Tools:</h2>
+
+    <p>
+        Decryption tools for some of the ransomware are available which allows users to decrypt their unusable/encrypted files without paying ransom. Not all tools are capable to decrypt the files, instead users are advised to try the below mentioned decryption tools.
+    </p>
+
+    <p>
+        List of decryption tools are mentioned below:
+    </p>
+
+    <ul>
+
+        <li>
+            <a href="http://www.avg.com/in-en/ransomware-decryption-tools" target="_blank">
+                http://www.avg.com/in-en/ransomware-decryption-tools
+            </a>
+        </li>
+
+        <li>
+            <a href="https://noransom.kaspersky.com/" target="_blank">
+                https://noransom.kaspersky.com/
+            </a>
+        </li>
+
+        <li>
+            <a href="https://success.trendmicro.com/solution/1114221-downloading-and-using-the-trend-micro-ransomware-file-decryptor" target="_blank">
+                https://success.trendmicro.com/solution/1114221-downloading-and-using-the-trend-micro-ransomware-file-decryptor
+            </a>
+        </li>
+
+        <li>
+            <a href="https://decrypter.emsisoft.com/" target="_blank">
+                https://decrypter.emsisoft.com/
+            </a>
+        </li>
+
+    </ul>
+
+</div>
+
+<div class="section">
+
+    <h2>References</h2>
+
+    <ul class="links">
+
+        <li><a href="https://www.europol.europa.eu/newsroom/news/just-released-fourth-decryption-tool-neutralises-latest-version-of-gandcrab-ransomware" target="_blank">https://www.europol.europa.eu/newsroom/news/just-released-fourth-decryption-tool-neutralises-latest-version-of-gandcrab-ransomware</a></li>
+
+        <li><a href="http://www.kaspersky.com/au/about/news/virus/2014/Kaspersky-Lab-detects-mobile-Trojan-Svpeng-Financial-malware-with-ransomware-capabilities-now-targeting-US-users" target="_blank">http://www.kaspersky.com/au/about/news/virus/2014/Kaspersky-Lab-detects-mobile-Trojan-Svpeng-Financial-malware-with-ransomware-capabilities-now-targeting-US-users</a></li>
+
+        <li><a href="https://www.symantec.com/connect/blogs/cryptodefense-cryptolocker-imitator-makes-over-34000-one-month" target="_blank">https://www.symantec.com/connect/blogs/cryptodefense-cryptolocker-imitator-makes-over-34000-one-month</a></li>
+
+        <li><a href="https://success.trendmicro.com/solution/1099423-best-practices-in-preventing-ransomware-infection-using-officescan-osce-and-worry-free-business-security" target="_blank">https://success.trendmicro.com/solution/1099423-best-practices-in-preventing-ransomware-infection-using-officescan-osce-and-worry-free-business-security</a></li>
+
+        <li><a href="https://nakedsecurity.sophos.com/2014/06/18/whats-next-for-ransomware-cryptowall-picks-up-where-cryptolocker-left-off/" target="_blank">https://nakedsecurity.sophos.com/2014/06/18/whats-next-for-ransomware-cryptowall-picks-up-where-cryptolocker-left-off/</a></li>
+
+        <li><a href="https://www.symantec.com/connect/blogs/international-takedown-wounds-gameover-zeus-cybercrime-network" target="_blank">https://www.symantec.com/connect/blogs/international-takedown-wounds-gameover-zeus-cybercrime-network</a></li>
+
+        <li><a href="https://kc.mcafee.com/resources/sites/MCAFEE/content/live/PRODUCT_DOCUMENTATION/26000/PD26383/en_US/McAfee_Labs_Threat_Advisory-Ransomware-Locky.pdf" target="_blank">https://kc.mcafee.com/resources/sites/MCAFEE/content/live/PRODUCT_DOCUMENTATION/26000/PD26383/en_US/McAfee_Labs_Threat_Advisory-Ransomware-Locky.pdf</a></li>
+
+        <li><a href="https://securingtomorrow.mcafee.com/mcafee-labs/cerber-ransomware-updates-configuration-file/" target="_blank">https://securingtomorrow.mcafee.com/mcafee-labs/cerber-ransomware-updates-configuration-file/</a></li>
+
+        <li><a href="https://securingtomorrow.mcafee.com/mcafee-labs/cerber-ransomware-now-hunts-databases/" target="_blank">https://securingtomorrow.mcafee.com/mcafee-labs/cerber-ransomware-now-hunts-databases/</a></li>
+
+        <li><a href="https://www.microsoft.com/en-us/security/portal/mmpc/shared/ransomware.aspx" target="_blank">https://www.microsoft.com/en-us/security/portal/mmpc/shared/ransomware.aspx</a></li>
+
+        <li><a href="http://www.csk.gov.in/alerts/wannacry_ransomware.html" target="_blank">http://www.csk.gov.in/alerts/wannacry_ransomware.html</a></li>
+
+        <li><a href="http://www.csk.gov.in/alerts/petya_ransomware.html" target="_blank">http://www.csk.gov.in/alerts/petya_ransomware.html</a></li>
+
+    </ul>
+
+</div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="site-footer">
+
+        <!-- Layer 1: gradient (on .site-footer itself) -->
+        <!-- Layer 2: SVG circuit overlay -->
+        <div class="footer-bg-svg"></div>
+
+        <!-- MAIN CONTENT -->
+        <div class="footer-main">
+
+            <!-- LEFT: Postal Address -->
+            <div class="footer-address">
+                <h3 class="footer-section-title">Postal Address:</h3>
+                <div class="footer-title-line"></div>
+
+                <address>
+                    <p><strong>Indian Computer Emergency Response Team (CERT-In)</strong></p>
+                    <p>Ministry of Electronics and Information Technology,</p>
+                    <p>Government of India,</p>
+                    <p>Electronics Niketan, 6 CGO Complex,</p>
+                    <p>Lodhi Road, New Delhi - 110 003</p>
+                </address>
+
+                <p class="footer-toll-free">
+                    <strong>Toll Free Number:</strong> +91-1800-11-4949
+                </p>
+
+                <div class="footer-logos">
+                    <div class="footer-logo">
+                        <a href="#" class="footer-logo-item">
+                            <img src="../../../assets/digital-india.svg" alt="Digital India - Power To Empower" />
+                        </a>
+                        <a href="#" class="footer-logo-item">
+                            <img src="../../../assets/footer-certin.svg" alt="CERT-In" />
+                        </a>
+                    </div>
+                    <div class="footer-logo">
+                        <a href="#" class="footer-logo-item">
+                            <img src="../../../assets/infosec.svg" alt="InfoSec Awareness" />
+                        </a>
+                        <a href="#" class="footer-logo-item">
+                            <img src="../../../assets/staysafe.svg" alt="Stay Safe Online" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: Important Links -->
+            <div class="footer-links">
+                <h3 class="footer-section-title">Important Links</h3>
+                <div class="footer-title-line"></div>
+
+                <div class="footer-links-grid">
+                    <ul class="footer-link-col">
+                        <li><a href="../homePage/index.html">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">CERT-In</a></li>
+                        <li><a href="#">MeiTY</a></li>
+                        <li><a href="#">FAQ's</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                    <ul class="footer-link-col">
+                        <li><a href="#">Website Policies</a></li>
+                        <li><a href="#">Terms &amp; Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Archives</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-social-row">
+                    <div class="footer-follow">
+                        <span class="follow-label">Follow Us</span>
+                        <div class="footer-social-icons">
+                            <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" title="X"><i class="fa-solid fa-x"></i></a>
+                            <a href="#" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    <p class="footer-last-updated">Last updated on: November 10, 2025</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- BOTTOM BAR -->
+        <div class="footer-bottom">
+            <p class="footer-disclaimer">
+                Disclaimer :-The information provided herein is on "as is" basis, without warranty of any kind.
+            </p>
+            <p class="footer-copyright">
+                <i class="fa-regular fa-copyright"></i> Copyright 2025. All right reserved
+            </p>
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>

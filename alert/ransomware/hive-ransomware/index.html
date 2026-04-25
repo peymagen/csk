@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.ux4g.gov.in/tools/accessibility-widget.js" async></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- acc-toggle MUST be first -->
+    <input type="checkbox" id="acc-toggle" hidden />
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-inner">
+            <div class="left-section">
+                <div class="national-emblem">
+                    <img src="../../../assets/header2.svg" alt="">
+                </div>
+            </div>
+            <div class="center-section">
+                <img src="../../../assets/header.png" alt="">
+            </div>
+            <div class="right-section">
+                <div class="accessibility-icons">
+                    <a href="#main-content" title="Skip to main content">
+                        <img src="../../../assets/Translate.svg" alt="">
+                    </a>
+                    <span class="icon-separator">|</span>
+                    <div class="bhashini-plugin-container">
+                        <img src="../../../assets/Language.svg" alt="">
+                    </div>
+                    <span class="icon-separator">|</span>
+                    <label for="acc-toggle" class="acc-open-btn" title="Accessibility"></label>
+                    <img src="../../../assets/accessibility_figure.svg" alt="">
+                </div>
+                <div class="certin-logo">
+                    <img src="../../../assets/certin.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- acc-overlay: direct sibling of acc-toggle -->
+    <div class="acc-overlay">
+        <div class="acc-panel">
+            <div class="acc-panel-header">
+                <h2>Accessibility Options</h2>
+                <label for="acc-toggle" class="acc-close-btn" title="Close">
+                    <i class="fa-solid fa-xmark"></i>
+                </label>
+            </div>
+            <div class="acc-language-row">
+                <div class="lang-left">
+                    <div class="lang-icon-box"><i class="fa-solid fa-language"></i></div>
+                    <span class="lang-label">Language</span>
+                </div>
+                <select class="lang-select" id="lang-select" title="Select Language">
+                    <option>English</option>
+                    <option>हिंदी</option>
+                </select>
+            </div>
+            <div class="acc-options">
+                <div class="acc-grid">
+                    <div class="acc-option" onclick="accToggle(this,'speak')"><i
+                            class="fa-solid fa-volume-high"></i><span>Screen
+                            Reader</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-s9')"><i
+                            class="fa-solid fa-text-height"></i><span>Bigger
+                            Text</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-s12')"><i
+                            class="fa-solid fa-bars"></i><span>Line
+                            Height</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-s13')"><i class="fa-solid fa-a"></i><span>Text
+                            Spacing</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-s10')"><i
+                            class="fa-solid fa-link"></i><span>Highlight
+                            Links</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-df')"><i
+                            class="fa-solid fa-d"></i><span>Dyslexia
+                            Friendly</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-cursor')"><i
+                            class="fa-solid fa-brain"></i><span>ADHD
+                            Friendly</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-s11')"><i
+                            class="fa-regular fa-image"></i><span>Hide
+                            Images</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-invert')"><i
+                            class="fa-solid fa-circle-half-stroke"></i><span>Invert Color</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'dark-btn')"><i
+                            class="fa-solid fa-moon"></i><span>Dark
+                            Mode</span></div>
+                </div>
+            </div>
+            <div class="acc-footer">
+                <label for="acc-toggle" class="acc-reset-btn" onclick="accResetAll()">
+                    <i class="fa-solid fa-rotate-left"></i> Reset
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!--  nav-toggle MUST be BEFORE <nav> so ~ selector works -->
+    <input type="checkbox" id="search-toggle" hidden />
+    <input type="checkbox" id="nav-toggle" hidden />
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="nav-inner">
+
+            <!-- ✅ HAMBURGER — label targets #nav-toggle -->
+            <label for="nav-toggle" class="hamburger" aria-label="Open menu">
+                <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+
+            <!-- NAV LINKS (slide-in panel on mobile) -->
+            <ul class="nav-links">
+
+                <!-- Close button inside panel -->
+                <li class="nav-close-item">
+                    <label for="nav-toggle" class="nav-close-btn">
+                        <i class="fa-solid fa-xmark"></i>
+                    </label>
+                </li>
+
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../about/index.html">About Us</a></li>
+                <li><a href="#">CERT-In</a></li>
+                <li><a href="../security-tools/index.html">Security Tools</a></li>
+                <li class="active"><a href="../alert/index.html">Alerts</a></li>
+
+                <li class="has-dropdown">
+                    <button class="nav-btn">
+                        Awareness <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="./guideline/index.html">Guidelines &amp; Advisories</a></li>
+                        <li><a href="./Awareness/index.html">Our Campaigns</a></li>
+                        <li><a href="./bestPraactice/index.html">Best Practices</a></li>
+                        <li><a href="./ourReports/index.html">Our Reports</a></li>
+                        <li><a href="./whiteBoard/index.html">White Papers</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="../FrequentQuestion/index.html">FAQ's</a></li>
+                <li><a href="../contactUs/index.html">Contact Us</a></li>
+
+            </ul>
+
+            <!-- ===== SEARCH BAR ===== -->
+            <div class="nav-search">
+                <div class="csk-search">
+
+                    <input type="radio" name="se" id="s-google" checked>
+                    <input type="radio" name="se" id="s-bing">
+                    <input type="radio" name="se" id="s-duck">
+
+                    <div class="search-box">
+
+                        <!-- Dropdown (Left) -->
+                        <div class="engine-picker">
+                            <button type="button" class="engine-current" aria-label="Select search engine">
+                                <span class="current-engine cur-g">
+                                    <span class="dot g-dot">G</span>
+                                    <span class="engine-label">&nbsp;Google</span>
+                                </span>
+                                <span class="current-engine cur-b">
+                                    <span class="dot b-dot">b</span>
+                                    <span class="engine-label">&nbsp;Bing</span>
+                                </span>
+                                <span class="current-engine cur-d">
+                                    <span class="dot d-dot">D</span>
+                                    <span class="engine-label">&nbsp;Duck</span>
+                                </span>
+                            </button>
+                            <div class="engine-menu">
+                                <label for="s-google" class="engine-opt"><span
+                                        class="dot g-dot">G</span>Google.com</label>
+                                <label for="s-bing" class="engine-opt"><span class="dot b-dot">b</span>Bing.com</label>
+                                <label for="s-duck" class="engine-opt"><span
+                                        class="dot d-dot">D</span>DuckDuckGo</label>
+                            </div>
+                        </div>
+
+                        <!-- Input + Search Icon (Right) -->
+                        <div class="form-wrap">
+
+                            <!-- Google -->
+                            <form class="sf" id="fg" action="https://www.google.com/search" method="GET"
+                                target="_blank">
+                                <input class="si" type="text" name="q" placeholder="Search csk.gov.in" required>
+                                <input type="hidden" name="as_sitesearch" value="csk.gov.in">
+                                <button type="submit" class="sb" aria-label="Search">
+                                    <svg viewBox="0 0 20 20">
+                                        <circle cx="8.5" cy="8.5" r="5.5" />
+                                        <line x1="12.5" y1="12.5" x2="17" y2="17" />
+                                    </svg>
+                                </button>
+                            </form>
+
+
+                            <!-- Bing -->
+                            <form class="sf" id="fb" action="https://www.bing.com/search" method="GET" target="_blank"
+                                onsubmit="this.querySelector('[name=q]').value = this.querySelector('.si').value + ' site:csk.gov.in'; return true;">
+                                <input class="si" type="text" placeholder="Search csk.gov.in" required>
+                                <input type="hidden" name="q" value="">
+                                <button type="submit" class="sb" aria-label="Search">
+                                    <svg viewBox="0 0 20 20">
+                                        <circle cx="8.5" cy="8.5" r="5.5" />
+                                        <line x1="12.5" y1="12.5" x2="17" y2="17" />
+                                    </svg>
+                                </button>
+                            </form>
+                            <!-- DuckDuckGo -->
+                            <!-- DuckDuckGo -->
+                            <form class="sf" id="fd" action="https://duckduckgo.com/" method="GET" target="_blank"
+                                onsubmit="this.querySelector('[name=q]').value = this.querySelector('.si').value + ' site:csk.gov.in'; return true;">
+                                <input class="si" type="text" placeholder="Search csk.gov.in" required>
+                                <input type="hidden" name="q" value="">
+                                <button type="submit" class="sb" aria-label="Search">
+                                    <svg viewBox="0 0 20 20">
+                                        <circle cx="8.5" cy="8.5" r="5.5" />
+                                        <line x1="12.5" y1="12.5" x2="17" y2="17" />
+                                    </svg>
+                                </button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ===== SEARCH BAR END ===== -->
+
+        </div>
+    </nav>
+
+    <!-- ✅ nav-overlay AFTER nav — direct sibling of nav-toggle -->
+    <!-- <div class="nav-overlay">
+      <label for="nav-toggle"></label>
+    </div> -->
+
+    <main id="main-content">
+        <div class="main-content-Locky">
+
+            <div class="social-content">
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/IndianCERT/" title="Facebook"><i
+                            class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/cert_india/" title="Instagram"><i
+                            class="fa-brands fa-square-instagram"></i></a>
+                    <a href="https://x.com/IndianCERT" title="X"><i class="fa-solid fa-x"></i></a>
+                    <a href="https://www.linkedin.com/company/cert-in/" title="LinkedIn"><i
+                            class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.youtube.com/hashtag/certin" title="YouTube"><i
+                            class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <label for="acc-toggle" class="icon">
+                <!-- <i class="fa-solid fa-universal-access"></i> -->
+                <img src="../assets/access_icon.svg" alt="">
+            </label>
+
+            <div class="container">
+
+                <div class="header">
+
+                    <div class="left">
+                        <a href="javascript:history.back()" class="back-btn">
+                            <i class="fa-solid fa-angle-left"></i> BACK
+                        </a>
+                        <h1>Hive Ransomware</h1>
+                    </div>
+
+                    <div class="header-right">
+                        <div class="meta">
+                            <div class="border-left"></div>
+                            <div class="righ-content">
+
+                                <p>
+                                    <span class="gree">Original Issue Date:-</span>
+                                    March 28, 2022
+                                </p>
+
+                                <p>
+                                    <span class="orr">Virus Type:-</span>
+                                    Ransomware
+                                </p>
+
+                                <p>
+                                    <span class="orr">Severity:-</span>
+                                    Critical
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+                <div class="section">
+
+                    <p>
+                        It has been reported that Hive ransomware is employing a wide variety of tactics, techniques,
+                        and procedures (TTPs) to compromise business networks. Hive RaaS owners build personalized
+                        ransomware kit, customized for various operating systems.
+                    </p>
+
+                </div>
+
+
+
+                <div class="section">
+
+                    <h2>Infection Mechanism</h2>
+
+                    <p>
+                        Hive affiliates resort to various initial compromise methods, such as vulnerable RDP servers,
+                        compromised VPN credentials, as well as phishing emails with malicious attachments.
+                    </p>
+
+                    <p>
+                        Hive generally uses applications like Cobalt Strike, ConnectWise, ADrecon during the attack.
+                        Hive ransomware attempts to dump credentials, cache clear text credential data and use tools
+                        like ADrecon to “map, traverse, and enumerate” the Active Directory (AD) environment.
+                    </p>
+
+                    <p>
+                        It seeks processes related to backups, anti-virus/anti-spyware, and file copying and terminates
+                        them to facilitate file encryption.
+                    </p>
+
+                    <p>
+                        The encrypted files commonly end with a .hive extension.
+                    </p>
+
+                    <p>
+                        The Hive ransomware then drops a hive.bat script into the directory, which enforces an execution
+                        timeout delay of one second in order to perform cleanup after the encryption is finished by
+                        deleting the Hive executable and the hive.bat script.
+                    </p>
+
+                    <p>
+                        A second file, shadow.bat, is dropped into the directory to delete shadow copies, including disc
+                        backup copies or snapshots, without notifying the victim and then deletes the shadow.bat file.
+                    </p>
+
+                    <p>
+                        During the encryption process, encrypted files are renamed with the double final extension of
+                        *.key.hive or *.key.*.
+                    </p>
+
+                    <p>
+                        The ransom note, “HOW_TO_DECRYPT.txt” is dropped into each affected directory and states the
+                        key.* file cannot be modified, renamed, or deleted, otherwise the encrypted files cannot be
+                        recovered.
+                    </p>
+
+                    <p>
+                        The note contains a “sales department” link, accessible through a TOR browser, enabling victims
+                        to contact the actors through a live chat.
+                    </p>
+
+                    <p>
+                        The ransom note also contains URL of the public disclosure / leak site, which is accessible on a
+                        TOR browser.
+                    </p>
+                    <img src="/assets/alert/hive-ransomware/hive1.jpg" alt="Fig.1 Ransom note by Hive Ransomware" />
+                    <p class="self-center">Fig.1 Ransom note by Hive Ransomware</p>
+
+                </div>
+
+
+
+                <div class="section">
+
+                    <h2>Indicator of Compromise:</h2>
+
+                    <p>Winlo.exe</p>
+
+                    <ul>
+
+                        <li>MD5: b5045d802394f4560280a7404af69263</li>
+                        <li>SHA256: 321d0c4f1bbb44c53cd02186107a18b7a44c840a9a5f0a78bdac06868136b72c</li>
+                        <li>File Path Observed C:\Windows\SysWOW64\winlo.exe</li>
+                        <li>Drops 7zG.exe</li>
+
+                    </ul>
+
+
+
+                    <p>7zG.exe</p>
+
+                    <ul>
+
+                        <li>MD5: 04FB3AE7F05C8BC333125972BA907398</li>
+                        <li>This is a legitimate 7zip, version 19.0.0</li>
+                        <li>Drops Winlo_dump_64_SCY.exe</li>
+
+                    </ul>
+
+
+
+                    <p>Winlo_dump_64_SCY.exe</p>
+
+                    <ul>
+
+                        <li>MD5: BEE9BA70F36FF250B31A6FDF7FA8AFEB</li>
+                        <li>Encrypts files with *.key.* extension</li>
+                        <li>Drops HOW_TO_DECRYPT.txt</li>
+
+                    </ul>
+
+
+
+                    <p>Other IOCs:</p>
+
+                    <ul>
+
+                        <li>*.key.hive</li>
+                        <li>*.key.*</li>
+                        <li>HOW_TO_DECRYPT.txt</li>
+                        <li>hive.bat</li>
+                        <li>shadow.bat</li>
+                        <li>vssadmin.exe delete shadows /all /quiet</li>
+                        <li>wmic.exe SHADOWCOPY /nointeractive</li>
+                        <li>wmic.exe shadowcopy delete</li>
+                        <li>wevtutil.exe cl system</li>
+                        <li>wevtutil.exe cl security</li>
+                        <li>wevtutil.exe cl application</li>
+                        <li>bcdedit.exe /set {default} bootstatuspolicy ignoreallfailures</li>
+                        <li>bcdedit.exe /set {default} recoveryenabled no</li>
+
+                    </ul>
+
+
+
+                    <p>Anonymous File Sharing Links:</p>
+
+                    <ul>
+
+                        <li>hxxps://anonfiles[.]com</li>
+                        <li>hxxps://mega[.]nz</li>
+                        <li>hxxps://send[.]exploit[.]in</li>
+                        <li>hxxps://ufile[.]io</li>
+                        <li>hxxps://www[.]sendspace[.]com</li>
+
+                    </ul>
+
+                </div>
+
+
+
+                <div class="section">
+
+                    <h2>Best Practices and Recommendations:</h2>
+
+                    <ul>
+                        <li><b>Maintain offline backups of data</b>, and regularly maintain backup and restoration. This
+                            practice will ensure the organization will not be severely interrupted, have irretrievable
+                            data.</li>
+                        <li><b>Ensure all backup data is encrypted, immutable</b> (i.e., cannot be altered or deleted)
+                            and covers the entire organization’s data infrastructure</li>
+                        <li>Implement all accounts with password logins (e.g., service account, admin accounts, and
+                            domain admin accounts) to have strong, unique passwords.</li>
+                        <li>Implement multi-factor authentication for all services to the extent possible, particularly
+                            for webmail, virtual private networks, and accounts that access critical systems.</li>
+                        <li>Remove unnecessary access to administrative shares</li>
+                        <li>Use a host-based firewall to only allow connections to administrative shares via server
+                            message block (SMB) from a limited set of administrator machines</li>
+                        <li>Enable protected files in the Windows Operating System to prevent unauthorized changes to
+                            critical files</li>
+                        <li>Disable remote Desktop Connections, employ least-privileged accounts. Limit users who can
+                            log in using Remote Desktop, set an account lockout policy. Ensure proper RDP logging and
+                            configuration</li>
+                        <li>Check regularly for the integrity of the information stored in the databases</li>
+                        <li>Ensure integrity of the codes /scripts being used in database, authentication and sensitive
+                            system</li>
+                        <li>Establish Domain-based Message Authentication, Reporting, and Conformance (DMARC), Domain
+                            Keys Identified Mail (DKIM) and Sender Policy Framework (SPF) for your domain, which is an
+                            email validation system designed to prevent spam by detecting email spoofing by which most
+                            of the ransomware samples successfully reaches the corporate email boxes.</li>
+                        <li>Keep the operating system third party applications (MS office, browsers, browser Plugins)
+                            up-to-date with the latest patches</li>
+                        <li>Application white listing/Strict implementation of Software Restriction Policies (SRP)to
+                            block binaries running from %APPDATA% and %TEMP% paths. Ransomware sample drops and executes
+                            generally from these locations.</li>
+                        <li>Maintain updated Antivirus software on all systems</li>
+                        <li>Don't open attachments in unsolicited e-mails, even if they come from people in your contact
+                            list, and never click on a URL contained in an unsolicited e-mail, even if the link seems
+                            benign. In cases of genuine URLs close out the e-mail and go to the organization's website
+                            directly through browser</li>
+                        <li>Follow safe practices when browsing the web. Ensure the web browsers are secured enough with
+                            appropriate content controls.</li>
+                        <li>Network segmentation and segregation into security zones - help protect sensitive
+                            information and critical services. Separate administrative network from business processes
+                            with physical controls and Virtual Local Area Networks.</li>
+                        <li>Disable ActiveX content in Microsoft Office applications such as Word, Excel, etc.</li>
+                        <li>Restrict access using firewalls and allow only to selected remote endpoints, VPN may also be
+                            used with dedicated pool for RDP access</li>
+                        <li>Use strong authentication protocol, such as Network Level Authentication (NLA) in Windows.
+                        </li>
+                        <li>Additional Security measures that may be considered are</li>
+                        <ul>
+                            <li>Use RDP Gateways for better management</li>
+                            <li>Change the listening port for Remote Desktop</li>
+                            <li>Tunnel Remote Desktop connections through IPSec or SSH</li>
+                            <li>Two-factor authentication may also be considered for highly critical systems</li>
+                        </ul>
+                        <li>If not required consider disabling, PowerShell / windows script hosting.</li>
+                        <li>Restrict users' abilities (permissions) to install and run unwanted software applications.
+                        </li>
+                        <li>Enable personal firewalls on workstations.</li>
+                        <li>Implement strict External Device (USB drive) usage policy.</li>
+                        <li>Employ data-at-rest and data-in-transit encryption.</li>
+                        <li>Consider installing Enhanced Mitigation Experience Toolkit, or similar host-level
+                            anti-exploitation tools.</li>
+                        <li>Block the attachments of file types,
+                            exe|pif|tmp|url|vb|vbe|scr|reg|cer|pst|cmd|com|bat|dll|dat|hlp|hta|js|wsf</li>
+                        <li>Carry out vulnerability Assessment and Penetration Testing (VAPT) and information security
+                            audit of critical networks/systems, especially database servers from CERT-IN empanelled
+                            auditors. Repeat audits at regular intervals.</li>
+                        <li>Individuals or organizations are not encouraged to pay the ransom, as this does not
+                            guarantee files will be released. Report such instances of fraud to CERT-In and Law
+                            Enforcement agencies</li>
+                    </ul>
+
+                </div>
+
+
+
+                <div class="section">
+
+                    <h2>References</h2>
+
+                    <ul class="links">
+
+                        <li>
+                            <a href="https://www.cisa.gov/uscert/ncas/current-activity/2021/08/27/fbi-releases-indicators-compromise-associated-hive-ransomware"
+                                target="_blank">
+                                https://www.cisa.gov/uscert/ncas/current-activity/2021/08/27/fbi-releases-indicators-compromise-associated-hive-ransomware
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://blog.group-ib.com/hive" target="_blank">
+                                https://blog.group-ib.com/hive
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>

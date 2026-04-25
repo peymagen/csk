@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.ux4g.gov.in/tools/accessibility-widget.js" async></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- acc-toggle MUST be first -->
+    <input type="checkbox" id="acc-toggle" hidden />
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-inner">
+            <div class="left-section">
+                <div class="national-emblem">
+                    <img src="../../../assets/header2.svg" alt="">
+                </div>
+            </div>
+            <div class="center-section">
+                <img src="../../../assets/header.png" alt="">
+            </div>
+            <div class="right-section">
+                <div class="accessibility-icons">
+                    <a href="#main-content" title="Skip to main content">
+                        <img src="../../../assets/Translate.svg" alt="">
+                    </a>
+                    <span class="icon-separator">|</span>
+                    <div class="bhashini-plugin-container">
+                        <img src="../../../assets/Language.svg" alt="">
+                    </div>
+                    <span class="icon-separator">|</span>
+                    <label for="acc-toggle" class="acc-open-btn" title="Accessibility"></label>
+                    <img src="../../../assets/accessibility_figure.svg" alt="">
+                </div>
+                <div class="certin-logo">
+                    <img src="../../../assets/certin.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- acc-overlay: direct sibling of acc-toggle -->
+    <div class="acc-overlay">
+        <div class="acc-panel">
+            <div class="acc-panel-header">
+                <h2>Accessibility Options</h2>
+                <label for="acc-toggle" class="acc-close-btn" title="Close">
+                    <i class="fa-solid fa-xmark"></i>
+                </label>
+            </div>
+            <div class="acc-language-row">
+                <div class="lang-left">
+                    <div class="lang-icon-box"><i class="fa-solid fa-language"></i></div>
+                    <span class="lang-label">Language</span>
+                </div>
+                <select class="lang-select" id="lang-select" title="Select Language">
+                    <option>English</option>
+                    <option>हिंदी</option>
+                </select>
+            </div>
+            <div class="acc-options">
+                <div class="acc-grid">
+                    <div class="acc-option" onclick="accToggle(this,'speak')"><i
+                            class="fa-solid fa-volume-high"></i><span>Screen
+                            Reader</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-s9')"><i
+                            class="fa-solid fa-text-height"></i><span>Bigger
+                            Text</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-s12')"><i
+                            class="fa-solid fa-bars"></i><span>Line
+                            Height</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-s13')"><i class="fa-solid fa-a"></i><span>Text
+                            Spacing</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-s10')"><i
+                            class="fa-solid fa-link"></i><span>Highlight
+                            Links</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-df')"><i
+                            class="fa-solid fa-d"></i><span>Dyslexia
+                            Friendly</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-cursor')"><i
+                            class="fa-solid fa-brain"></i><span>ADHD
+                            Friendly</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-s11')"><i
+                            class="fa-regular fa-image"></i><span>Hide
+                            Images</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-invert')"><i
+                            class="fa-solid fa-circle-half-stroke"></i><span>Invert Color</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'dark-btn')"><i
+                            class="fa-solid fa-moon"></i><span>Dark
+                            Mode</span></div>
+                </div>
+            </div>
+            <div class="acc-footer">
+                <label for="acc-toggle" class="acc-reset-btn" onclick="accResetAll()">
+                    <i class="fa-solid fa-rotate-left"></i> Reset
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!--  nav-toggle MUST be BEFORE <nav> so ~ selector works -->
+    <input type="checkbox" id="search-toggle" hidden />
+    <input type="checkbox" id="nav-toggle" hidden />
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="nav-inner">
+
+            <!-- ✅ HAMBURGER — label targets #nav-toggle -->
+            <label for="nav-toggle" class="hamburger" aria-label="Open menu">
+                <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+
+            <!-- NAV LINKS (slide-in panel on mobile) -->
+            <ul class="nav-links">
+
+                <!-- Close button inside panel -->
+                <li class="nav-close-item">
+                    <label for="nav-toggle" class="nav-close-btn">
+                        <i class="fa-solid fa-xmark"></i>
+                    </label>
+                </li>
+
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../about/index.html">About Us</a></li>
+                <li><a href="#">CERT-In</a></li>
+                <li><a href="../security-tools/index.html">Security Tools</a></li>
+                <li class="active"><a href="../alert/index.html">Alerts</a></li>
+
+                <li class="has-dropdown">
+                    <button class="nav-btn">
+                        Awareness <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="./guideline/index.html">Guidelines &amp; Advisories</a></li>
+                        <li><a href="./Awareness/index.html">Our Campaigns</a></li>
+                        <li><a href="./bestPraactice/index.html">Best Practices</a></li>
+                        <li><a href="./ourReports/index.html">Our Reports</a></li>
+                        <li><a href="./whiteBoard/index.html">White Papers</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="../FrequentQuestion/index.html">FAQ's</a></li>
+                <li><a href="../contactUs/index.html">Contact Us</a></li>
+
+            </ul>
+
+            <!-- ===== SEARCH BAR ===== -->
+            <div class="nav-search">
+                <div class="csk-search">
+
+                    <input type="radio" name="se" id="s-google" checked>
+                    <input type="radio" name="se" id="s-bing">
+                    <input type="radio" name="se" id="s-duck">
+
+                    <div class="search-box">
+
+                        <!-- Dropdown (Left) -->
+                        <div class="engine-picker">
+                            <button type="button" class="engine-current" aria-label="Select search engine">
+                                <span class="current-engine cur-g">
+                                    <span class="dot g-dot">G</span>
+                                    <span class="engine-label">&nbsp;Google</span>
+                                </span>
+                                <span class="current-engine cur-b">
+                                    <span class="dot b-dot">b</span>
+                                    <span class="engine-label">&nbsp;Bing</span>
+                                </span>
+                                <span class="current-engine cur-d">
+                                    <span class="dot d-dot">D</span>
+                                    <span class="engine-label">&nbsp;Duck</span>
+                                </span>
+                            </button>
+                            <div class="engine-menu">
+                                <label for="s-google" class="engine-opt"><span
+                                        class="dot g-dot">G</span>Google.com</label>
+                                <label for="s-bing" class="engine-opt"><span class="dot b-dot">b</span>Bing.com</label>
+                                <label for="s-duck" class="engine-opt"><span
+                                        class="dot d-dot">D</span>DuckDuckGo</label>
+                            </div>
+                        </div>
+
+                        <!-- Input + Search Icon (Right) -->
+                        <div class="form-wrap">
+
+                            <!-- Google -->
+                            <form class="sf" id="fg" action="https://www.google.com/search" method="GET"
+                                target="_blank">
+                                <input class="si" type="text" name="q" placeholder="Search csk.gov.in" required>
+                                <input type="hidden" name="as_sitesearch" value="csk.gov.in">
+                                <button type="submit" class="sb" aria-label="Search">
+                                    <svg viewBox="0 0 20 20">
+                                        <circle cx="8.5" cy="8.5" r="5.5" />
+                                        <line x1="12.5" y1="12.5" x2="17" y2="17" />
+                                    </svg>
+                                </button>
+                            </form>
+
+
+                            <!-- Bing -->
+                            <form class="sf" id="fb" action="https://www.bing.com/search" method="GET" target="_blank"
+                                onsubmit="this.querySelector('[name=q]').value = this.querySelector('.si').value + ' site:csk.gov.in'; return true;">
+                                <input class="si" type="text" placeholder="Search csk.gov.in" required>
+                                <input type="hidden" name="q" value="">
+                                <button type="submit" class="sb" aria-label="Search">
+                                    <svg viewBox="0 0 20 20">
+                                        <circle cx="8.5" cy="8.5" r="5.5" />
+                                        <line x1="12.5" y1="12.5" x2="17" y2="17" />
+                                    </svg>
+                                </button>
+                            </form>
+                            <!-- DuckDuckGo -->
+                            <!-- DuckDuckGo -->
+                            <form class="sf" id="fd" action="https://duckduckgo.com/" method="GET" target="_blank"
+                                onsubmit="this.querySelector('[name=q]').value = this.querySelector('.si').value + ' site:csk.gov.in'; return true;">
+                                <input class="si" type="text" placeholder="Search csk.gov.in" required>
+                                <input type="hidden" name="q" value="">
+                                <button type="submit" class="sb" aria-label="Search">
+                                    <svg viewBox="0 0 20 20">
+                                        <circle cx="8.5" cy="8.5" r="5.5" />
+                                        <line x1="12.5" y1="12.5" x2="17" y2="17" />
+                                    </svg>
+                                </button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ===== SEARCH BAR END ===== -->
+
+        </div>
+    </nav>
+
+    <!-- ✅ nav-overlay AFTER nav — direct sibling of nav-toggle -->
+    <!-- <div class="nav-overlay">
+      <label for="nav-toggle"></label>
+    </div> -->
+
+    <main id="main-content">
+        <div class="main-content-Locky">
+
+            <div class="social-content">
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/IndianCERT/" title="Facebook"><i
+                            class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/cert_india/" title="Instagram"><i
+                            class="fa-brands fa-square-instagram"></i></a>
+                    <a href="https://x.com/IndianCERT" title="X"><i class="fa-solid fa-x"></i></a>
+                    <a href="https://www.linkedin.com/company/cert-in/" title="LinkedIn"><i
+                            class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.youtube.com/hashtag/certin" title="YouTube"><i
+                            class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <label for="acc-toggle" class="icon">
+                <!-- <i class="fa-solid fa-universal-access"></i> -->
+                <img src="../assets/access_icon.svg" alt="">
+            </label>
+
+            <div class="container">
+
+                <div class="header">
+
+                    <div class="left">
+                        <a href="javascript:history.back()" class="back-btn">
+                            <i class="fa-solid fa-angle-left"></i> BACK
+                        </a>
+                        <h1>LockBit 2.0 Ransomware</h1>
+                    </div>
+
+                    <div class="header-right">
+                        <div class="meta">
+                            <div class="border-left"></div>
+                            <div class="righ-content">
+
+                                <p>
+                                    <span class="gree">Original Issue Date:-</span>
+                                    February 22, 2022
+                                </p>
+
+                                <p>
+                                    <span class="orr">Virus Type:-</span>
+                                    Ransomware
+                                </p>
+
+                                <p>
+                                    <span class="orr">Severity:-</span>
+                                    Critical
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+                <div class="section">
+
+                    <p>
+                        It has been reported that the LockBit 2.0 ransomware, which operates as an affiliate-based
+                        Ransomware-as-a-Service (RaaS) ramped up its targeted attacks.
+                    </p>
+
+                </div>
+
+
+
+                <div class="section">
+
+                    <h2>Infection Mechanism</h2>
+
+                    <p>
+                        LockBit 2.0 is spreading through a variety of techniques, including, but not limited to,
+                        purchased access, unpatched vulnerabilities, insider access, and zero day exploits.
+                        LockBit 2.0 also developed a Linux-based malware that takes advantage of vulnerabilities within
+                        VMWare ESXi virtual machines.
+                    </p>
+
+                    <p>
+                        It is also reported that LockBit threat actors are actively exploiting existing vulnerabilities
+                        in the Fortinet FortiOS and FortiProxy products, identified as CVE-2018-13379, in order to gain
+                        initial access to specific victim networks.
+                        After compromising a victim network, LockBit 2.0 actors use publicly available tools such as
+                        Mimikatz to escalate privileges.
+                        LockBit 2.0 also abuses legitimate tools such as Process Hacker and PC Hunter to terminate
+                        processes and services in the victim system.
+                    </p>
+
+                    <p>
+                        Prior to encryption, LockBit affiliates primarily use the Stealbit application obtained directly
+                        from the LockBit panel to exfiltrate specific file types.
+                        LockBit 2.0 features automatic encryption of devices across windows domains by abusing Active
+                        Directory group policies.
+                        The actor leaves a ransom note in each affected directory within victim systems, which provides
+                        instructions on how to obtain the decryption software.
+                    </p>
+                    <img src="/assets/alert/lockbit-2-ransomware/lockbit.jpg" alt="Fig.1 Ransom Note" />
+                    <p class="self-center">Fig.1 Ransom Note</p>
+
+                </div>
+
+                <div class="section">
+
+                    <p>
+                        The following are the tools and components that ensure LockBit’s smooth execution:
+                    </p>
+
+                    <ul>
+
+                        <li>
+                            delsvc.bat ensures that crucial processes, such as MySQL and QuickBooks, are unavailable.
+                            It also stops Microsoft Exchange and disables other related services.
+                        </li>
+
+                        <li>
+                            AV.bat uninstalls the antivirus program ESET.
+                        </li>
+
+                        <li>
+                            LogDelete.bat clears Windows Event Logs.
+                        </li>
+
+                        <li>
+                            Defoff.bat disables Windows Defender features such as real-time monitoring.
+                        </li>
+
+                    </ul>
+
+                    <p>
+                        The malware comes with a hidden debug window that can be activated during the infection process
+                        using the SHIFT + F1 keyboard shortcut.
+                    </p>
+                    <img src="/assets/alert/lockbit-2-ransomware/lockbit2.jpg"
+                        alt="Fig.2 Screen Capture of Hidden Window" />
+                    <p class="self-center">Fig.2 Screen Capture of Hidden Window</p>
+
+                </div>
+
+
+
+                <div class="section">
+
+                    <h2>Indicator of Compromise:</h2>
+
+                    <p>IP Addresses</p>
+
+                    <ul>
+
+                        <li>139.60.160.200</li>
+                        <li>93.190.139.223</li>
+                        <li>45.227.255.190</li>
+                        <li>193.162.143.218</li>
+                        <li>168.100.11.72</li>
+                        <li>93.190.143.101</li>
+                        <li>88.80.147.102</li>
+                        <li>193.38.235.234</li>
+                        <li>174.138.62.35</li>
+                        <li>185.215.113.39</li>
+                        <li>185.182.193.120</li>
+
+                    </ul>
+
+
+
+                    <p>Hashes (SHA 256)</p>
+
+                    <ul>
+
+                        <li>0545f842ca2eb77bcac0fd17d6d0a8c607d7dbc8669709f3096e5c1828e1c049</li>
+                        <li>0906a0b27f59b6db2a2451a0e0aabf292818e32ddd5404d08bf49c601a466744</li>
+                        <li>21879b5a8a84c5fe5e009c85744caf74b817c57203020bf919037d7ccb6b6a58</li>
+                        <li>255f8465962bedaf7a373da5f721aecbc1d6027ca2e4256c6c4352f2de179ca0</li>
+                        <li>4db47caf8d93e855b8364def67d3d3282fc964dc4684df6bbe172ea6e902e6fe</li>
+                        <li>7b64ca8fe1cace0744a28f43961f17f8ea51910a54d6629502bfb9f3f3e5f831</li>
+                        <li>8c0e4a6fd28f94fa17a96f6e424b122f5d1216b230a33c6dff5dbf6654d0721c</li>
+                        <li>a05ed65787b390ba33b04b4b99c3810cbaf684b37f8839e57db8316e6f01af31</li>
+                        <li>a26250b8d2431b497400c8a754285a6259a81a31ae629ee25331f6030b34e543</li>
+                        <li>b09a92dedbcb8d5faed6fcc2194ebaa24da601376b47e1edf705519a7860964e</li>
+                        <li>bea7aed0dfbf7ce7491d7c8cfed35a2e626fbd345bb7425a34dae6f5894629b1</li>
+                        <li>cb29c6fbd085407e0e8a58e7cd6512c8c5dfa06f88fdeeb9a66d025fdfc6dd32</li>
+                        <li>f03584ecdee29e63dee1b7bf2347f605d1e1d6379a8f55e9a85c6a329bf3967b</li>
+                        <li>28042dd4a92a0033b8f1d419b9e989c5b8e32d1d2d881f5c8251d58ce35b9063</li>
+                        <li>3407f26b3d69f1dfce76782fee1256274cf92f744c65aa1ff2d3eaaaf61b0b1d</li>
+                        <li>4bb152c96ba9e25f293bbc03c607918a4452231087053a8cb1a8accb1acc92fd</li>
+                        <li>4edbf2358a9820e030136dc76126c20cc38159df0d8d7b13d30b1c9351e8b277</li>
+                        <li>bcbb1e388759eea5c1fbb4f35c29b6f66f3f4ca4c715bab35c8fc56dcf3fa621</li>
+                        <li>dd8fe3966ab4d2d6215c63b3ac7abf4673d9c19f2d9f35a6bf247922c642ec2d</li>
+                        <li>4db7eeed852946803c16373a085c1bb5f79b60d2122d6fc9a2703714cdd9dac0</li>
+                        <li>6876eef67648a3797987745617b9fdfb31a703b7809e7f12bb52c6386e185917</li>
+                        <li>717585e9605ac2a971b7c7537e6e311bab9db02ecc6451e0efada9b2ff38b474</li>
+                        <li>73406e0e7882addf0f810d3bc0e386fd5fd2dd441c895095f4125bb236ae7345</li>
+                        <li>7b5db447f6c29c939f5e0aae1b16431a132db5a2ab4420ba9818af2bf4496d21</li>
+                        <li>aae5e59d6424515c157f3c4a54e4feeb09759d028290ab0271f730e82f58f10f</li>
+                        <li>94e6b969c100483970fc3985bf2b173f2f24d796a079114f584f42484840be28</li>
+                        <li>a398c70a2b3bf8ae8b5ceddf53fcf6daa2b68af2fadb76a8ea6e33b8bbe06f65</li>
+                        <li>98e4c248377b5b62121c7b9ef20fc03df3473cbd886a059998f4210e8df07f15</li>
+                        <li>a7591e4a248c04547579f014c94d7d30aa16a01bb2a25b77df36e30a198df108</li>
+                        <li>acad2d9b291b5a9662aa1469f96995dc547a45e391af9c7fa24f5921b0128b2c</li>
+                        <li>b3faf5d8cbc3c75d4c3897851fdaf8d7a4bd774966b4c25e0e4617546109aed5</li>
+                        <li>bd14872dd9fdead89fc074fdc5832caea4ceac02983ec41f814278130b3f943e</li>
+                        <li>d089d57b8b2b32ee9816338e96680127babc5d08a03150740a8459c29ab3ba78</li>
+                        <li>f32e9fb8b1ea73f0a71f3edaebb7f2b242e72d2a4826d6b2744ad3d830671202</li>
+                        <li>f3a1576837ed56bcf79ff486aadf36e78d624853e9409ec1823a6f46fd0143ea</li>
+                        <li>67df6effa1d1d0690c0a7580598f6d05057c99014fcbfe9c225faae59b9a3224</li>
+                        <li>ee3e03f4510a1a325a06a17060a89da7ae5f9b805e4fe3a8c78327b9ecae84df</li>
+
+                    </ul>
+
+                </div>
+
+                <div class="section">
+
+                    <h2>
+                        Best Practices and Recommendations to protect users against the threat of ransomware:
+                    </h2>
+
+                    <p>
+                        Users and administrators are advised to take the following preventive measures to protect their
+                        computer networks from ransomware infection/ attacks:
+                    </p>
+
+                    <ul>
+
+                        <li>
+                            Maintain offline backups of data, and regularly maintain backup and restoration.
+                            This practice will ensure the organization will not be severely interrupted, have
+                            irretrievable data.
+                        </li>
+
+                        <li>
+                            Ensure all backup data is encrypted, immutable (i.e., cannot be altered or deleted)
+                            and covers the entire organization’s data infrastructure
+                        </li>
+
+                        <li>
+                            Implement all accounts with password logins (e.g., service account, admin accounts, and
+                            domain admin accounts)
+                            to have strong, unique passwords.
+                        </li>
+
+                        <li>
+                            Implement multi-factor authentication for all services to the extent possible, particularly
+                            for webmail,
+                            virtual private networks, and accounts that access critical systems.
+                        </li>
+
+                        <li>
+                            Remove unnecessary access to administrative shares
+                        </li>
+
+                        <li>
+                            Use a host-based firewall to only allow connections to administrative shares via server
+                            message block (SMB)
+                            from a limited set of administrator machines
+                        </li>
+
+                        <li>
+                            Enable protected files in the Windows Operating System to prevent unauthorized changes to
+                            critical files
+                        </li>
+
+                        <li>
+                            Disable remote Desktop Connections, employ least-privileged accounts.
+                            Limit users who can log in using Remote Desktop, set an account lockout policy.
+                            Ensure proper RDP logging and configuration
+                        </li>
+
+                        <li>
+                            Check regularly for the integrity of the information stored in the databases
+                        </li>
+
+                        <li>
+                            Ensure integrity of the codes /scripts being used in database, authentication and sensitive
+                            system
+                        </li>
+
+                        <li>
+                            Establish Domain-based Message Authentication, Reporting, and Conformance (DMARC),
+                            Domain Keys Identified Mail (DKIM) and Sender Policy Framework (SPF) for your domain,
+                            which is an email validation system designed to prevent spam by detecting email spoofing
+                            by which most of the ransomware samples successfully reaches the corporate email boxes.
+                        </li>
+
+                        <li>
+                            Keep the operating system third party applications (MS office, browsers, browser Plugins)
+                            up-to-date with the latest patches
+                        </li>
+
+                        <li>
+                            Application white listing/Strict implementation of Software Restriction Policies (SRP)
+                            to block binaries running from %APPDATA% and %TEMP% paths.
+                            Ransomware sample drops and executes generally from these locations.
+                        </li>
+
+                        <li>
+                            Maintain updated Antivirus software on all systems
+                        </li>
+
+                        <li>
+                            Don't open attachments in unsolicited e-mails, even if they come from people in your contact
+                            list,
+                            and never click on a URL contained in an unsolicited e-mail, even if the link seems benign.
+                            In cases of genuine URLs close out the e-mail and go to the organization's website directly
+                            through browser
+                        </li>
+
+                        <li>
+                            Follow safe practices when browsing the web.
+                            Ensure the web browsers are secured enough with appropriate content controls.
+                        </li>
+
+                        <li>
+                            Network segmentation and segregation into security zones - help protect sensitive
+                            information
+                            and critical services. Separate administrative network from business processes with physical
+                            controls
+                            and Virtual Local Area Networks.
+                        </li>
+
+                        <li>
+                            Disable ActiveX content in Microsoft Office applications such as Word, Excel, etc.
+                        </li>
+
+                        <li>
+                            Restrict access using firewalls and allow only to selected remote endpoints,
+                            VPN may also be used with dedicated pool for RDP access
+                        </li>
+
+                        <li>
+                            Use strong authentication protocol, such as Network Level Authentication (NLA) in Windows.
+                        </li>
+
+                        <li>
+                            Additional Security measures that may be considered are
+
+                            <ul>
+
+                                <li>Use RDP Gateways for better management</li>
+                                <li>Change the listening port for Remote Desktop</li>
+                                <li>Tunnel Remote Desktop connections through IPSec or SSH</li>
+                                <li>Two-factor authentication may also be considered for highly critical systems</li>
+
+                            </ul>
+
+                        </li>
+
+                        <li>
+                            If not required consider disabling, PowerShell / windows script hosting.
+                        </li>
+
+                        <li>
+                            Restrict users' abilities (permissions) to install and run unwanted software applications.
+                        </li>
+
+                        <li>
+                            Enable personal firewalls on workstations.
+                        </li>
+
+                        <li>
+                            Implement strict External Device (USB drive) usage policy.
+                        </li>
+
+                        <li>
+                            Employ data-at-rest and data-in-transit encryption.
+                        </li>
+
+                        <li>
+                            Consider installing Enhanced Mitigation Experience Toolkit, or similar host-level
+                            anti-exploitation tools.
+                        </li>
+
+                        <li>
+                            Block the attachments of file types,
+                            exe|pif|tmp|url|vb|vbe|scr|reg|cer|pst|cmd|com|bat|dll|dat|hlp|hta|js|wsf
+                        </li>
+
+                        <li>
+                            Carry out vulnerability Assessment and Penetration Testing (VAPT) and information security
+                            audit of critical networks/systems,
+                            especially database servers from CERT-IN empanelled auditors. Repeat audits at regular
+                            intervals.
+                        </li>
+
+                        <li>
+                            Individuals or organizations are not encouraged to pay the ransom, as this does not
+                            guarantee files will be released.
+                            Report such instances of fraud to CERT-In and Law Enforcement agencies
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+
+                <div class="section">
+
+                    <h2>References:</h2>
+
+                    <ul>
+
+                        <li>
+                            <a href="https://www.cisa.gov/uscert/ncas/current-activity/2022/02/07/fbi-releases-indicators-compromise-associated-LockBit-20"
+                                target="_blank">
+                                https://www.cisa.gov/uscert/ncas/current-activity/2022/02/07/fbi-releases-indicators-compromise-associated-LockBit-20
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.trendmicro.com/en_us/research/21/h/lockbit-resurfaces-with-version-2-0-ransomware-detections-in-chi.html"
+                                target="_blank">
+                                https://www.trendmicro.com/en_us/research/21/h/lockbit-resurfaces-with-version-2-0-ransomware-detections-in-chi.html
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="site-footer">
+
+        <!-- Layer 1: gradient (on .site-footer itself) -->
+        <!-- Layer 2: SVG circuit overlay -->
+        <div class="footer-bg-svg"></div>
+
+        <!-- MAIN CONTENT -->
+        <div class="footer-main">
+
+            <!-- LEFT: Postal Address -->
+            <div class="footer-address">
+                <h3 class="footer-section-title">Postal Address:</h3>
+                <div class="footer-title-line"></div>
+
+                <address>
+                    <p><strong>Indian Computer Emergency Response Team (CERT-In)</strong></p>
+                    <p>Ministry of Electronics and Information Technology,</p>
+                    <p>Government of India,</p>
+                    <p>Electronics Niketan, 6 CGO Complex,</p>
+                    <p>Lodhi Road, New Delhi - 110 003</p>
+                </address>
+
+                <p class="footer-toll-free">
+                    <strong>Toll Free Number:</strong> +91-1800-11-4949
+                </p>
+
+                <div class="footer-logos">
+                    <div class="footer-logo">
+                        <a href="#" class="footer-logo-item">
+                            <img src="../../../assets/digital-india.svg" alt="Digital India - Power To Empower" />
+                        </a>
+                        <a href="#" class="footer-logo-item">
+                            <img src="../../../assets/footer-certin.svg" alt="CERT-In" />
+                        </a>
+                    </div>
+                    <div class="footer-logo">
+                        <a href="#" class="footer-logo-item">
+                            <img src="../../../assets/infosec.svg" alt="InfoSec Awareness" />
+                        </a>
+                        <a href="#" class="footer-logo-item">
+                            <img src="../../../assets/staysafe.svg" alt="Stay Safe Online" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: Important Links -->
+            <div class="footer-links">
+                <h3 class="footer-section-title">Important Links</h3>
+                <div class="footer-title-line"></div>
+
+                <div class="footer-links-grid">
+                    <ul class="footer-link-col">
+                        <li><a href="../homePage/index.html">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">CERT-In</a></li>
+                        <li><a href="#">MeiTY</a></li>
+                        <li><a href="#">FAQ's</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                    <ul class="footer-link-col">
+                        <li><a href="#">Website Policies</a></li>
+                        <li><a href="#">Terms &amp; Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Archives</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-social-row">
+                    <div class="footer-follow">
+                        <span class="follow-label">Follow Us</span>
+                        <div class="footer-social-icons">
+                            <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" title="X"><i class="fa-solid fa-x"></i></a>
+                            <a href="#" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    <p class="footer-last-updated">Last updated on: November 10, 2025</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- BOTTOM BAR -->
+        <div class="footer-bottom">
+            <p class="footer-disclaimer">
+                Disclaimer :-The information provided herein is on "as is" basis, without warranty of any kind.
+            </p>
+            <p class="footer-copyright">
+                <i class="fa-regular fa-copyright"></i> Copyright 2025. All right reserved
+            </p>
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>

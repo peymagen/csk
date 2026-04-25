@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.ux4g.gov.in/tools/accessibility-widget.js" async></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- acc-toggle MUST be first -->
+    <input type="checkbox" id="acc-toggle" hidden />
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-inner">
+            <div class="left-section">
+                <div class="national-emblem">
+                    <img src="../../../assets/header2.svg" alt="">
+                </div>
+            </div>
+            <div class="center-section">
+                <img src="../../../assets/header.png" alt="">
+            </div>
+            <div class="right-section">
+                <div class="accessibility-icons">
+                    <a href="#main-content" title="Skip to main content">
+                        <img src="../../../assets/Translate.svg" alt="">
+                    </a>
+                    <span class="icon-separator">|</span>
+                    <div class="bhashini-plugin-container">
+                        <img src="../../../assets/Language.svg" alt="">
+                    </div>
+                    <span class="icon-separator">|</span>
+                    <label for="acc-toggle" class="acc-open-btn" title="Accessibility"></label>
+                    <img src="../../../assets/accessibility_figure.svg" alt="">
+                </div>
+                <div class="certin-logo">
+                    <img src="../../../assets/certin.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- acc-overlay: direct sibling of acc-toggle -->
+    <div class="acc-overlay">
+        <div class="acc-panel">
+            <div class="acc-panel-header">
+                <h2>Accessibility Options</h2>
+                <label for="acc-toggle" class="acc-close-btn" title="Close">
+                    <i class="fa-solid fa-xmark"></i>
+                </label>
+            </div>
+            <div class="acc-language-row">
+                <div class="lang-left">
+                    <div class="lang-icon-box"><i class="fa-solid fa-language"></i></div>
+                    <span class="lang-label">Language</span>
+                </div>
+                <select class="lang-select" id="lang-select" title="Select Language">
+                    <option>English</option>
+                    <option>हिंदी</option>
+                </select>
+            </div>
+            <div class="acc-options">
+                <div class="acc-grid">
+                    <div class="acc-option" onclick="accToggle(this,'speak')"><i
+                            class="fa-solid fa-volume-high"></i><span>Screen
+                            Reader</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-s9')"><i
+                            class="fa-solid fa-text-height"></i><span>Bigger
+                            Text</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-s12')"><i
+                            class="fa-solid fa-bars"></i><span>Line
+                            Height</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-s13')"><i class="fa-solid fa-a"></i><span>Text
+                            Spacing</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-s10')"><i
+                            class="fa-solid fa-link"></i><span>Highlight
+                            Links</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-df')"><i
+                            class="fa-solid fa-d"></i><span>Dyslexia
+                            Friendly</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-cursor')"><i
+                            class="fa-solid fa-brain"></i><span>ADHD
+                            Friendly</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-s11')"><i
+                            class="fa-regular fa-image"></i><span>Hide
+                            Images</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-invert')"><i
+                            class="fa-solid fa-circle-half-stroke"></i><span>Invert Color</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'dark-btn')"><i
+                            class="fa-solid fa-moon"></i><span>Dark
+                            Mode</span></div>
+                </div>
+            </div>
+            <div class="acc-footer">
+                <label for="acc-toggle" class="acc-reset-btn" onclick="accResetAll()">
+                    <i class="fa-solid fa-rotate-left"></i> Reset
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!--  nav-toggle MUST be BEFORE <nav> so ~ selector works -->
+    <input type="checkbox" id="search-toggle" hidden />
+    <input type="checkbox" id="nav-toggle" hidden />
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="nav-inner">
+
+            <!-- ✅ HAMBURGER — label targets #nav-toggle -->
+            <label for="nav-toggle" class="hamburger" aria-label="Open menu">
+                <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+
+            <!-- NAV LINKS (slide-in panel on mobile) -->
+            <ul class="nav-links">
+
+                <!-- Close button inside panel -->
+                <li class="nav-close-item">
+                    <label for="nav-toggle" class="nav-close-btn">
+                        <i class="fa-solid fa-xmark"></i>
+                    </label>
+                </li>
+
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../about/index.html">About Us</a></li>
+                <li><a href="#">CERT-In</a></li>
+                <li><a href="../security-tools/index.html">Security Tools</a></li>
+                <li class="active"><a href="../alert/index.html">Alerts</a></li>
+
+                <li class="has-dropdown">
+                    <button class="nav-btn">
+                        Awareness <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="./guideline/index.html">Guidelines &amp; Advisories</a></li>
+                        <li><a href="./Awareness/index.html">Our Campaigns</a></li>
+                        <li><a href="./bestPraactice/index.html">Best Practices</a></li>
+                        <li><a href="./ourReports/index.html">Our Reports</a></li>
+                        <li><a href="./whiteBoard/index.html">White Papers</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="../FrequentQuestion/index.html">FAQ's</a></li>
+                <li><a href="../contactUs/index.html">Contact Us</a></li>
+
+            </ul>
+
+            <!-- ===== SEARCH BAR ===== -->
+            <div class="nav-search">
+                <div class="csk-search">
+
+                    <input type="radio" name="se" id="s-google" checked>
+                    <input type="radio" name="se" id="s-bing">
+                    <input type="radio" name="se" id="s-duck">
+
+                    <div class="search-box">
+
+                        <!-- Dropdown (Left) -->
+                        <div class="engine-picker">
+                            <button type="button" class="engine-current" aria-label="Select search engine">
+                                <span class="current-engine cur-g">
+                                    <span class="dot g-dot">G</span>
+                                    <span class="engine-label">&nbsp;Google</span>
+                                </span>
+                                <span class="current-engine cur-b">
+                                    <span class="dot b-dot">b</span>
+                                    <span class="engine-label">&nbsp;Bing</span>
+                                </span>
+                                <span class="current-engine cur-d">
+                                    <span class="dot d-dot">D</span>
+                                    <span class="engine-label">&nbsp;Duck</span>
+                                </span>
+                            </button>
+                            <div class="engine-menu">
+                                <label for="s-google" class="engine-opt"><span
+                                        class="dot g-dot">G</span>Google.com</label>
+                                <label for="s-bing" class="engine-opt"><span class="dot b-dot">b</span>Bing.com</label>
+                                <label for="s-duck" class="engine-opt"><span
+                                        class="dot d-dot">D</span>DuckDuckGo</label>
+                            </div>
+                        </div>
+
+                        <!-- Input + Search Icon (Right) -->
+                        <div class="form-wrap">
+
+                            <!-- Google -->
+                            <form class="sf" id="fg" action="https://www.google.com/search" method="GET"
+                                target="_blank">
+                                <input class="si" type="text" name="q" placeholder="Search csk.gov.in" required>
+                                <input type="hidden" name="as_sitesearch" value="csk.gov.in">
+                                <button type="submit" class="sb" aria-label="Search">
+                                    <svg viewBox="0 0 20 20">
+                                        <circle cx="8.5" cy="8.5" r="5.5" />
+                                        <line x1="12.5" y1="12.5" x2="17" y2="17" />
+                                    </svg>
+                                </button>
+                            </form>
+
+
+                            <!-- Bing -->
+                            <form class="sf" id="fb" action="https://www.bing.com/search" method="GET" target="_blank"
+                                onsubmit="this.querySelector('[name=q]').value = this.querySelector('.si').value + ' site:csk.gov.in'; return true;">
+                                <input class="si" type="text" placeholder="Search csk.gov.in" required>
+                                <input type="hidden" name="q" value="">
+                                <button type="submit" class="sb" aria-label="Search">
+                                    <svg viewBox="0 0 20 20">
+                                        <circle cx="8.5" cy="8.5" r="5.5" />
+                                        <line x1="12.5" y1="12.5" x2="17" y2="17" />
+                                    </svg>
+                                </button>
+                            </form>
+                            <!-- DuckDuckGo -->
+                            <!-- DuckDuckGo -->
+                            <form class="sf" id="fd" action="https://duckduckgo.com/" method="GET" target="_blank"
+                                onsubmit="this.querySelector('[name=q]').value = this.querySelector('.si').value + ' site:csk.gov.in'; return true;">
+                                <input class="si" type="text" placeholder="Search csk.gov.in" required>
+                                <input type="hidden" name="q" value="">
+                                <button type="submit" class="sb" aria-label="Search">
+                                    <svg viewBox="0 0 20 20">
+                                        <circle cx="8.5" cy="8.5" r="5.5" />
+                                        <line x1="12.5" y1="12.5" x2="17" y2="17" />
+                                    </svg>
+                                </button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ===== SEARCH BAR END ===== -->
+
+        </div>
+    </nav>
+
+    <!-- ✅ nav-overlay AFTER nav — direct sibling of nav-toggle -->
+    <!-- <div class="nav-overlay">
+      <label for="nav-toggle"></label>
+    </div> -->
+
+    <main id="main-content">
+        <div class="main-content-Locky">
+
+            <div class="social-content">
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/IndianCERT/" title="Facebook"><i
+                            class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/cert_india/" title="Instagram"><i
+                            class="fa-brands fa-square-instagram"></i></a>
+                    <a href="https://x.com/IndianCERT" title="X"><i class="fa-solid fa-x"></i></a>
+                    <a href="https://www.linkedin.com/company/cert-in/" title="LinkedIn"><i
+                            class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.youtube.com/hashtag/certin" title="YouTube"><i
+                            class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <label for="acc-toggle" class="icon">
+                <!-- <i class="fa-solid fa-universal-access"></i> -->
+                <img src="../assets/access_icon.svg" alt="">
+            </label>
+
+            <div class="container">
+
+                <div class="header">
+
+                    <div class="left">
+                        <a href="javascript:history.back()" class="back-btn">
+                            <i class="fa-solid fa-angle-left"></i> BACK
+                        </a>
+                        <h1>ProLock Ransomware</h1>
+                    </div>
+
+                    <div class="header-right">
+                        <div class="meta">
+                            <div class="border-left"></div>
+                            <div class="righ-content">
+
+                                <p>
+                                    <span class="gree">Original Issue Date:-</span>
+                                    August 03, 2020
+                                </p>
+
+                                <p>
+                                    <span class="orr">Virus Type:-</span>
+                                    Ransomware
+                                </p>
+
+                                <p>
+                                    <span class="orr">Severity:-</span>
+                                    Medium
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+                <div class="section">
+
+                    <p>
+                        It has been reported that a new ransomware, dubbed, “ProLock” is spreading. This is a successor
+                        of PwndLocker ransomware strain that emerged in the late 2019. The ransomware affects
+                        organizations of various sectors including government, financial, retail and heath care
+                        organizations.
+                    </p>
+
+                </div>
+
+
+
+                <div class="section">
+
+                    <h2>Initial access and infection mechanism:</h2>
+
+                    <p>
+                        ProLock obtains the access of victim’s network in several ways but the main vectors of initial
+                        access are: improperly configured RDP servers with weak credentials and QakBot (Qbot) Trojan.
+                        While the earlier vector is common among various malware attacks, the QakBot Trojan is one to
+                        note which is affiliated with MegaCortex ransomware and loaded via Emotet malware in erstwhile
+                        campaigns. The use of QakBot by the ProLock operators may be seen as a collaboration among
+                        threat actors to utilize the skill-set of multiple teams.
+                    </p>
+                    <p>
+                        QakBot is typically distributed via phishing emails which may contain attachments of weaponized
+                        Microsoft Office documents or just links to such documents that are located on cloud storage –
+                        Microsoft OneDrive, for example. When the weaponized document is downloaded and opened,
+                        malicious macros enabled. Then, PowerShell is launched; and download and run the QakBot payload
+                        from the command-and-control (C2) server. ProLock payload is extracted from a BMP or JPG file,
+                        and is loaded into memory with PowerShell. Sometimes a scheduled task is used to run PowerShell.
+                    </p>
+                    <img src="/assets/alert/prolock-ransomware/plr01.jpg" alt="Fig.1 Batch Script (Source: Group-IB)" />
+                    <p class="self-center">Fig.1 Batch Script (Source: Group-IB)</p>
+
+                    <img src="/assets/alert/prolock-ransomware/plr02.jpg"
+                        alt="Fig.2 A screenshot of WinMgr.bmp, the “graphics file” that carries the barely-concealed ProLock malware payload (source: Sophos)(Note the “noise” of steganography in the upper right hand corner.)" />
+                    <p class="self-center">Fig.2 A screenshot of WinMgr.bmp, the “graphics file” that carries the
+                        barely-concealed ProLock malware payload (source: Sophos)(Note the “noise” of steganography in
+                        the upper right hand corner.)</p>
+
+                    <p>
+                        QakBot trojan armed the ransomware with increased capability such as keylogging and also able to
+                        download and run additional scripts like “Invoke-Mimikatz” (a PowerShell version of Mimikatz)
+                        for credential dumping. Through this tactic, the malware operators can siphon off privileged
+                        credentials and then use these for network discovery activities such as port scanning and Active
+                        Directory reconnaissance. Attackers also use “AdFind” to query Active Directory.
+                    </p>
+                    <p>
+                        ProLock then uses RDP to move laterally across network and collect data for exfiltration by
+                        using a command-line tool “Rclone” that is capable of synching files to and from different cloud
+                        storage providers (such as OneDrive, Google Drive, Mega, etc.). The ransomware tries to shut
+                        down more than 150 services linked to enterprise applications, security software, and backups by
+                        using net.exe. (For the full list of targeted services and processes, please visit the URLs
+                        given in “IOC” below.) ProLock deletes the shadow copies of local files using vssadmin.exe to
+                        prevent recovery.
+                    </p>
+                    <p>
+                        While making the guarding factors out of the way, the ransomware starts encrypting the files
+                        which are more than 8192 bytes and append extension .proLock, .pr0Lock or .proL0ck extension to
+                        each encrypted file and drops a text file named [HOW TO RECOVER FILES].TXT to each folder
+                        containing ransom note and other instructions.
+                    </p>
+
+                    <img src="/assets/alert/prolock-ransomware/plr03.jpg"
+                        alt="Fig.3 ProLock ransom note (source: Sophos)" />
+                    <p class="self-center">Fig.3 ProLock ransom note (source: Sophos)
+                    </p>
+
+                    <p>
+                        Ransom note mentions for a TOR browser downloading and use victim’s user ID to pay ransom.
+                        However, as seen, the decryption key or decryptor received after paying ransom also has bug. The
+                        decryptor can potentially corrupt files that are larger than 64MB and may result in file
+                        integrity loss of approximately 1 byte per 1KB over 100MB.
+                    </p>
+
+                    <p>
+                        QakBot also employs tactics to avoid detection. It checks for newer version of itself and
+                        replaces if found. Executables are signed with a fake or stolen signature. PowerShell downloads
+                        the initial payloads and stores it on the server with a PNG extension and it's replaced with the
+                        legitimate file calc.exe after execution. As observed, ProLock operators have not setup any
+                        website for publishing exfiltrated data in case of ransom failure.
+                    </p>
+
+                </div>
+
+
+
+                <div class="section">
+
+                    <h2>Indicators of compromise:</h2>
+
+                    <p>Files:</p>
+
+                    <ul>
+
+                        <li>C:\ProgramData\WinMgr.bmp</li>
+                        <li>C:\ProgramData\WinMgr.xml</li>
+                        <li>C:\ProgramData\clean.bat</li>
+                        <li>C:\ProgramData\run.bat</li>
+
+                    </ul>
+
+                    <p>
+                        For complete list, please refer
+                    </p>
+
+                    <ul>
+
+                        <li>
+                            <a href="https://github.com/sophoslabs/IoCs/blob/master/Ransomware-ProLock.csv"
+                                target="_blank">
+                                https://github.com/sophoslabs/IoCs/blob/master/Ransomware-ProLock.csv
+                            </a>
+                        </li>
+
+                    </ul>
+
+
+
+                    <p>BTC Wallet Address:</p>
+
+                    <ul>
+
+                        <li>1LVLHAs4Vq9Yt9nHvvrgw9djtA7BiR8sKM (for incident response only, do not pay ransom)</li>
+
+                    </ul>
+
+
+
+                    <p>Email Contact:</p>
+
+                    <ul>
+
+                        <li>support981723721[AT]protonmail.com</li>
+
+                    </ul>
+
+
+
+                    <p>Detection:</p>
+
+                    <ul>
+
+                        <li>Win32:Evo-gen [Susp]</li>
+                        <li>Trojan.Peed.Gen</li>
+                        <li>Trojan:Win32/Wacatac.D!ml</li>
+
+                    </ul>
+
+
+
+                    <p>
+                        For full list, please refer:
+                    </p>
+
+                    <ul>
+
+                        <li>
+                            <a href="https://www.virustotal.com/gui/file/dfbd62a3d1b239601e17a5533e5cef53036647901f3fb72be76d92063e279178/detection"
+                                target="_blank">
+                                https://www.virustotal.com/gui/file/dfbd62a3d1b239601e17a5533e5cef53036647901f3fb72be76d92063e279178/detection
+                            </a>
+                        </li>
+
+                    </ul>
+
+
+
+                    <p>
+                        Refer list of the processes and services targeted by the ransomware at:
+                    </p>
+
+                    <ul>
+
+                        <li>
+                            <a href="https://github.com/sophoslabs/IoCs/blob/master/Ransomware_Prolock_services_stopped.csv"
+                                target="_blank">
+                                https://github.com/sophoslabs/IoCs/blob/master/Ransomware_Prolock_services_stopped.csv
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://github.com/sophoslabs/IoCs/blob/master/Ransomware_prolock_processes_stopped.csv"
+                                target="_blank">
+                                https://github.com/sophoslabs/IoCs/blob/master/Ransomware_prolock_processes_stopped.csv
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+
+                <div class="section">
+
+                    <h2>Countermeasures and Best practices for prevention:</h2>
+
+                    <ul>
+                        <li>Users are advised to disable their RDP if not in use, if required, it should be placed
+                            behind the firewall and users are to bind with proper policies while using the RDP.</li>
+                        <li>Install ad blockers to combat exploit kits such as Fallout that are distributed via
+                            malicious advertising.</li>
+                        <li>All operating systems and applications should be kept updated on a regular basis. Virtual
+                            patching can be considered for protecting legacy systems and networks. This measure hinders
+                            cybercriminals from gaining easy access to any system through vulnerabilities in outdated
+                            applications and software. Avoid applying updates / patches available in any unofficial
+                            channel.</li>
+                        <li>Restrict execution of Power shell /WSCRIPT in an enterprise environment. Ensure installation
+                            and use of the latest version of PowerShell, with enhanced logging enabled. Script block
+                            logging and transcription enabled. Send the associated logs to a centralized log repository
+                            for monitoring and analysis.<br>
+                            <a href="https://www.fireeye.com/blog/threat-research/2016/02/greater_visibilityt.html"
+                                target="_blank">https://www.fireeye.com/blog/threat-research/2016/02/greater_visibilityt.html</a>
+                        </li>
+                        <li>Establish a Sender Policy Framework (SPF) for your domain, which is an email validation
+                            system designed to prevent spam by detecting email spoofing by which most of the ransomware
+                            samples successfully reaches the corporate email boxes.</li>
+                        <li>Application whitelisting/Strict implementation of Software Restriction Policies (SRP) to
+                            block binaries running from %APPDATA% and %TEMP% paths. Ransomware sample drops and executes
+                            generally from these locations.</li>
+                        <li>Don't open attachments in unsolicited e-mails, even if they come from people in your contact
+                            list, and never click on a URL contained in an unsolicited e-mail, even if the link seems
+                            benign. In cases of genuine URLs close out the e-mail and go to the organization’s website
+                            directly through browser.</li>
+                        <li>Block the attachments of file types,
+                            exe|pif|tmp|url|vb|vbe|scr|reg|cer|pst|cmd|com|bat|dll|dat|hlp|hta|js|wsf</li>
+                        <li>Consider encrypting the confidential data as the ransomware generally targets common file
+                            types.</li>
+                        <li>Perform regular backups of all critical information to limit the impact of data or system
+                            loss and to help expedite the recovery process. Ideally, this data should be kept on a
+                            separate device, and backups should be stored offline.</li>
+                        <li>Network segmentation and segregation into security zones - help protect sensitive
+                            information and critical services. Separate administrative network from business processes
+                            with physical controls and Virtual Local Area Networks.</li>
+                    </ul>
+
+                </div>
+
+
+
+                <div class="section">
+
+                    <h2>References:</h2>
+
+                    <ul>
+
+                        <li>
+                            <a href="https://www.group-ib.com/blog/prolock" target="_blank">
+                                https://www.group-ib.com/blog/prolock
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://news.sophos.com/en-us/2020/07/27/prolock-ransomware-gives-you-the-first-8-kilobytes-of-decryption-for-free/"
+                                target="_blank">
+                                https://news.sophos.com/en-us/2020/07/27/prolock-ransomware-gives-you-the-first-8-kilobytes-of-decryption-for-free/
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://threatpost.com/prolock-ransomware-qakbot-trojan/155828/" target="_blank">
+                                https://threatpost.com/prolock-ransomware-qakbot-trojan/155828/
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.pcrisk.com/removal-guides/17366-prolock-ransomware" target="_blank">
+                                https://www.pcrisk.com/removal-guides/17366-prolock-ransomware
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.zdnet.com/article/fbi-prolock-ransomware-gains-access-to-victim-networks-via-qakbot-infections/"
+                                target="_blank">
+                                https://www.zdnet.com/article/fbi-prolock-ransomware-gains-access-to-victim-networks-via-qakbot-infections/
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="site-footer">
+
+        <!-- Layer 1: gradient (on .site-footer itself) -->
+        <!-- Layer 2: SVG circuit overlay -->
+        <div class="footer-bg-svg"></div>
+
+        <!-- MAIN CONTENT -->
+        <div class="footer-main">
+
+            <!-- LEFT: Postal Address -->
+            <div class="footer-address">
+                <h3 class="footer-section-title">Postal Address:</h3>
+                <div class="footer-title-line"></div>
+
+                <address>
+                    <p><strong>Indian Computer Emergency Response Team (CERT-In)</strong></p>
+                    <p>Ministry of Electronics and Information Technology,</p>
+                    <p>Government of India,</p>
+                    <p>Electronics Niketan, 6 CGO Complex,</p>
+                    <p>Lodhi Road, New Delhi - 110 003</p>
+                </address>
+
+                <p class="footer-toll-free">
+                    <strong>Toll Free Number:</strong> +91-1800-11-4949
+                </p>
+
+                <div class="footer-logos">
+                    <div class="footer-logo">
+                        <a href="#" class="footer-logo-item">
+                            <img src="../../../assets/digital-india.svg" alt="Digital India - Power To Empower" />
+                        </a>
+                        <a href="#" class="footer-logo-item">
+                            <img src="../../../assets/footer-certin.svg" alt="CERT-In" />
+                        </a>
+                    </div>
+                    <div class="footer-logo">
+                        <a href="#" class="footer-logo-item">
+                            <img src="../../../assets/infosec.svg" alt="InfoSec Awareness" />
+                        </a>
+                        <a href="#" class="footer-logo-item">
+                            <img src="../../../assets/staysafe.svg" alt="Stay Safe Online" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: Important Links -->
+            <div class="footer-links">
+                <h3 class="footer-section-title">Important Links</h3>
+                <div class="footer-title-line"></div>
+
+                <div class="footer-links-grid">
+                    <ul class="footer-link-col">
+                        <li><a href="../homePage/index.html">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">CERT-In</a></li>
+                        <li><a href="#">MeiTY</a></li>
+                        <li><a href="#">FAQ's</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                    <ul class="footer-link-col">
+                        <li><a href="#">Website Policies</a></li>
+                        <li><a href="#">Terms &amp; Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Archives</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-social-row">
+                    <div class="footer-follow">
+                        <span class="follow-label">Follow Us</span>
+                        <div class="footer-social-icons">
+                            <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" title="X"><i class="fa-solid fa-x"></i></a>
+                            <a href="#" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    <p class="footer-last-updated">Last updated on: November 10, 2025</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- BOTTOM BAR -->
+        <div class="footer-bottom">
+            <p class="footer-disclaimer">
+                Disclaimer :-The information provided herein is on "as is" basis, without warranty of any kind.
+            </p>
+            <p class="footer-copyright">
+                <i class="fa-regular fa-copyright"></i> Copyright 2025. All right reserved
+            </p>
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>

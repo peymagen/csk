@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.ux4g.gov.in/tools/accessibility-widget.js" async></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- acc-toggle MUST be first -->
+    <input type="checkbox" id="acc-toggle" hidden />
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-inner">
+            <div class="left-section">
+                <div class="national-emblem">
+                    <img src="../../../assets/header2.svg" alt="">
+                </div>
+            </div>
+            <div class="center-section">
+                <img src="../../../assets/header.png" alt="">
+            </div>
+            <div class="right-section">
+                <div class="accessibility-icons">
+                    <a href="#main-content" title="Skip to main content">
+                        <img src="../../../assets/Translate.svg" alt="">
+                    </a>
+                    <span class="icon-separator">|</span>
+                    <div class="bhashini-plugin-container">
+                        <img src="../../../assets/Language.svg" alt="">
+                    </div>
+                    <span class="icon-separator">|</span>
+                    <label for="acc-toggle" class="acc-open-btn" title="Accessibility"></label>
+                    <img src="../../../assets/accessibility_figure.svg" alt="">
+                </div>
+                <div class="certin-logo">
+                    <img src="../../../assets/certin.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- acc-overlay: direct sibling of acc-toggle -->
+    <div class="acc-overlay">
+        <div class="acc-panel">
+            <div class="acc-panel-header">
+                <h2>Accessibility Options</h2>
+                <label for="acc-toggle" class="acc-close-btn" title="Close">
+                    <i class="fa-solid fa-xmark"></i>
+                </label>
+            </div>
+            <div class="acc-language-row">
+                <div class="lang-left">
+                    <div class="lang-icon-box"><i class="fa-solid fa-language"></i></div>
+                    <span class="lang-label">Language</span>
+                </div>
+                <select class="lang-select" id="lang-select" title="Select Language">
+                    <option>English</option>
+                    <option>हिंदी</option>
+                </select>
+            </div>
+            <div class="acc-options">
+                <div class="acc-grid">
+                    <div class="acc-option" onclick="accToggle(this,'speak')"><i
+                            class="fa-solid fa-volume-high"></i><span>Screen
+                            Reader</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-s9')"><i
+                            class="fa-solid fa-text-height"></i><span>Bigger
+                            Text</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-s12')"><i
+                            class="fa-solid fa-bars"></i><span>Line
+                            Height</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-s13')"><i class="fa-solid fa-a"></i><span>Text
+                            Spacing</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-s10')"><i
+                            class="fa-solid fa-link"></i><span>Highlight
+                            Links</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-df')"><i
+                            class="fa-solid fa-d"></i><span>Dyslexia
+                            Friendly</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-cursor')"><i
+                            class="fa-solid fa-brain"></i><span>ADHD
+                            Friendly</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-s11')"><i
+                            class="fa-regular fa-image"></i><span>Hide
+                            Images</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-invert')"><i
+                            class="fa-solid fa-circle-half-stroke"></i><span>Invert Color</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'dark-btn')"><i
+                            class="fa-solid fa-moon"></i><span>Dark
+                            Mode</span></div>
+                </div>
+            </div>
+            <div class="acc-footer">
+                <label for="acc-toggle" class="acc-reset-btn" onclick="accResetAll()">
+                    <i class="fa-solid fa-rotate-left"></i> Reset
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!--  nav-toggle MUST be BEFORE <nav> so ~ selector works -->
+    <input type="checkbox" id="search-toggle" hidden />
+    <input type="checkbox" id="nav-toggle" hidden />
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="nav-inner">
+
+            <!-- ✅ HAMBURGER — label targets #nav-toggle -->
+            <label for="nav-toggle" class="hamburger" aria-label="Open menu">
+                <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+
+            <!-- NAV LINKS (slide-in panel on mobile) -->
+            <ul class="nav-links">
+
+                <!-- Close button inside panel -->
+                <li class="nav-close-item">
+                    <label for="nav-toggle" class="nav-close-btn">
+                        <i class="fa-solid fa-xmark"></i>
+                    </label>
+                </li>
+
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../about/index.html">About Us</a></li>
+                <li><a href="#">CERT-In</a></li>
+                <li><a href="../security-tools/index.html">Security Tools</a></li>
+                <li class="active"><a href="../alert/index.html">Alerts</a></li>
+
+                <li class="has-dropdown">
+                    <button class="nav-btn">
+                        Awareness <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="./guideline/index.html">Guidelines &amp; Advisories</a></li>
+                        <li><a href="./Awareness/index.html">Our Campaigns</a></li>
+                        <li><a href="./bestPraactice/index.html">Best Practices</a></li>
+                        <li><a href="./ourReports/index.html">Our Reports</a></li>
+                        <li><a href="./whiteBoard/index.html">White Papers</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="../FrequentQuestion/index.html">FAQ's</a></li>
+                <li><a href="../contactUs/index.html">Contact Us</a></li>
+
+            </ul>
+
+            <!-- ===== SEARCH BAR ===== -->
+            <div class="nav-search">
+                <div class="csk-search">
+
+                    <input type="radio" name="se" id="s-google" checked>
+                    <input type="radio" name="se" id="s-bing">
+                    <input type="radio" name="se" id="s-duck">
+
+                    <div class="search-box">
+
+                        <!-- Dropdown (Left) -->
+                        <div class="engine-picker">
+                            <button type="button" class="engine-current" aria-label="Select search engine">
+                                <span class="current-engine cur-g">
+                                    <span class="dot g-dot">G</span>
+                                    <span class="engine-label">&nbsp;Google</span>
+                                </span>
+                                <span class="current-engine cur-b">
+                                    <span class="dot b-dot">b</span>
+                                    <span class="engine-label">&nbsp;Bing</span>
+                                </span>
+                                <span class="current-engine cur-d">
+                                    <span class="dot d-dot">D</span>
+                                    <span class="engine-label">&nbsp;Duck</span>
+                                </span>
+                            </button>
+                            <div class="engine-menu">
+                                <label for="s-google" class="engine-opt"><span
+                                        class="dot g-dot">G</span>Google.com</label>
+                                <label for="s-bing" class="engine-opt"><span class="dot b-dot">b</span>Bing.com</label>
+                                <label for="s-duck" class="engine-opt"><span
+                                        class="dot d-dot">D</span>DuckDuckGo</label>
+                            </div>
+                        </div>
+
+                        <!-- Input + Search Icon (Right) -->
+                        <div class="form-wrap">
+
+                            <!-- Google -->
+                            <form class="sf" id="fg" action="https://www.google.com/search" method="GET"
+                                target="_blank">
+                                <input class="si" type="text" name="q" placeholder="Search csk.gov.in" required>
+                                <input type="hidden" name="as_sitesearch" value="csk.gov.in">
+                                <button type="submit" class="sb" aria-label="Search">
+                                    <svg viewBox="0 0 20 20">
+                                        <circle cx="8.5" cy="8.5" r="5.5" />
+                                        <line x1="12.5" y1="12.5" x2="17" y2="17" />
+                                    </svg>
+                                </button>
+                            </form>
+
+
+                            <!-- Bing -->
+                            <form class="sf" id="fb" action="https://www.bing.com/search" method="GET" target="_blank"
+                                onsubmit="this.querySelector('[name=q]').value = this.querySelector('.si').value + ' site:csk.gov.in'; return true;">
+                                <input class="si" type="text" placeholder="Search csk.gov.in" required>
+                                <input type="hidden" name="q" value="">
+                                <button type="submit" class="sb" aria-label="Search">
+                                    <svg viewBox="0 0 20 20">
+                                        <circle cx="8.5" cy="8.5" r="5.5" />
+                                        <line x1="12.5" y1="12.5" x2="17" y2="17" />
+                                    </svg>
+                                </button>
+                            </form>
+                            <!-- DuckDuckGo -->
+                            <!-- DuckDuckGo -->
+                            <form class="sf" id="fd" action="https://duckduckgo.com/" method="GET" target="_blank"
+                                onsubmit="this.querySelector('[name=q]').value = this.querySelector('.si').value + ' site:csk.gov.in'; return true;">
+                                <input class="si" type="text" placeholder="Search csk.gov.in" required>
+                                <input type="hidden" name="q" value="">
+                                <button type="submit" class="sb" aria-label="Search">
+                                    <svg viewBox="0 0 20 20">
+                                        <circle cx="8.5" cy="8.5" r="5.5" />
+                                        <line x1="12.5" y1="12.5" x2="17" y2="17" />
+                                    </svg>
+                                </button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ===== SEARCH BAR END ===== -->
+
+        </div>
+    </nav>
+
+    <!-- ✅ nav-overlay AFTER nav — direct sibling of nav-toggle -->
+    <!-- <div class="nav-overlay">
+      <label for="nav-toggle"></label>
+    </div> -->
+
+    <main id="main-content">
+        <div class="main-content-Locky">
+
+            <div class="social-content">
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/IndianCERT/" title="Facebook"><i
+                            class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/cert_india/" title="Instagram"><i
+                            class="fa-brands fa-square-instagram"></i></a>
+                    <a href="https://x.com/IndianCERT" title="X"><i class="fa-solid fa-x"></i></a>
+                    <a href="https://www.linkedin.com/company/cert-in/" title="LinkedIn"><i
+                            class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.youtube.com/hashtag/certin" title="YouTube"><i
+                            class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <label for="acc-toggle" class="icon">
+                <!-- <i class="fa-solid fa-universal-access"></i> -->
+                <img src="../assets/access_icon.svg" alt="">
+            </label>
+
+            <div class="container">
+
+
+                <div class="header">
+
+                    <div class="left">
+                        <a href="javascript:history.back()" class="back-btn">
+                            <i class="fa-solid fa-angle-left"></i> BACK
+                        </a>
+                        <h1>Android Rootnik Malware</h1>
+                    </div>
+
+                    <div class="header-right">
+                        <div class="meta">
+                            <div class="border-left"></div>
+                            <div class="righ-content">
+
+                                <p>
+                                    <span class="gree">Original Issue Date:-</span>
+                                    July 17, 2019
+                                </p>
+
+                                <p>
+                                    <span class="orr">Virus Type:-</span>
+                                    Android Malware
+                                </p>
+
+                                <p>
+                                    <span class="orr">Severity:-</span>
+                                    Medium
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+                <div class="section">
+
+                    <p>
+                        Rootnik is an android malware toolkit which distributes itself by injecting malicious code into
+                        legitimate apps and, after successfully compromising Android device, it launches a fresh thread
+                        to gain root privileges. It also begins the process of promoting other apps while downloading
+                        encrypted payloads from a remote server to try to gain root access. If successful, it writes
+                        four APK files to the system partition and reboots the device.
+                    </p>
+
+                    <p>
+                        These four APK files serve as system apps after rebooting and feature static file names:
+                        AndroidSettings.apk (responsible for promoting apps), BluetoothProviders.apk and
+                        WifiProviders.apk (both acting as remote control components for installing other applications
+                        and downloading code), and VirusSecurityHunter.apk (exclusively intended to harvest private
+                        data).
+                    </p>
+
+                </div>
+
+
+
+                <div class="section">
+
+                    <h2>The malicious app is capable of performing the following actions:</h2>
+
+                    <ul>
+
+                        <li>
+                            Abuse a customized version of “Root Assistant” to exploit Android vulnerabilities including
+                            CVE-2012-4221, CVE-2012-6422, CVE-2013-2596, CVE-2013-2597, and CVE-2013-6282.
+                        </li>
+
+                        <li>
+                            Rooting Android devices
+                        </li>
+
+                        <li>
+                            Install several APK files on the system partition of the compromised machine to maintain
+                            persistence after successful gaining root access.
+                        </li>
+
+                        <li>
+                            Injecting malicious code into legitimate apps
+                        </li>
+
+                        <li>
+                            Subscribing to premium services and sending premium messages
+                        </li>
+
+                        <li>
+                            Harvest victims’ private information, including their location, phone MAC address, and
+                            device ID.
+                        </li>
+
+                        <li>
+                            Steal WiFi information, including passwords and keys as well as SSID and BSSID identifiers.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+
+                <div class="section">
+
+                    <h2>Permissions</h2>
+
+                    <ul>
+
+                        <li>Open network connections</li>
+                        <li>Start once the device has finished booting</li>
+                        <li>Access location information, such as Cell-ID or Wi-Fi</li>
+                        <li>Access external storage devices</li>
+                        <li>Write to external storage devices</li>
+                        <li>Access information about networks</li>
+                        <li>Allow access to low-level system logs</li>
+                        <li>Check the phone's current state</li>
+
+                    </ul>
+                     <img src="/assets/alert/AndroidRootnik.jpg" class="self-img-center" alt="Structure of Android: Rootnik" />
+                   
+                </div>
+
+
+
+                <div class="section">
+
+                    <h2>Indicators of Infection:</h2>
+
+                    <p>
+                        List of Hashes of Malware Binaries
+                    </p>
+
+                    <ul>
+
+                        <li>c1775e5fe89a0c8b1254e4d8a95686c56554b47f13e36d4f5cb551cb340f7021</li>
+                        <li>0d612eb6d3ca2bbbc2aa33493065d8b4c3237f3cb262d48602181887ccea1afb</li>
+                        <li>17a00e9e8a50a4e2ae0a2a5c88be0769a16c3fc90903dd1cf4f5b0b9b0aa1139</li>
+                        <li>f6b7b22bbe572c1ac1d7ac7135e076da87491eb78a37f17654a4aa92d88ded24</li>
+                        <li>cee6584cd2e01fab5f075f94af2a0ce024ed5e4f2d52e3dc39f7655c736a7232</li>
+                        <li>e2bdcfe5796cd377d41f3da3838865ab062ea7af9e1e4424b1e34eb084abec4a</li>
+                        <li>e5e22b357893bc15a50dc35b702dd5fcdfeafc6ffec7daa0d313c724d72ec854</li>
+
+                    </ul>
+
+
+
+                    <p>
+                        File system Changes: Files written to system partition by Rootnik.
+                    </p>
+
+                    <ul>
+
+                        <li>3bab02ec7ab2480c65b824350b387b00fc7fd9359ebca34fb42dda340ccbf5b6</li>
+                        <li>dc76856ff79cfdda7b227635f204ff3341e01ea537022497f5c6a70dc46b0cea</li>
+                        <li>ae4be03204419fd96c4e5085b6e3ddd542f39c53f9c9d0fed4eecaf823a1b26e</li>
+
+                    </ul>
+
+
+
+                    <p>
+                        Network Communications:
+                    </p>
+
+                    <p>
+                        Rootnik may attempt to make connections to following C2 domains
+                    </p>
+
+                    <ul>
+
+                        <li>grs.gowdsy[.]com</li>
+                        <li>grs.rogsob[.]com</li>
+                        <li>gt.rogsob[.]com</li>
+                        <li>gt.yepodjr[.]com</li>
+                        <li>qj.hoyebs[.]com</li>
+                        <li>qj.hoyow[.]com</li>
+                        <li>applight[.]mobi</li>
+                        <li>jaxfire[.]mobi</li>
+                        <li>superflashlight[.]mobi</li>
+                        <li>shenmeapp[.]info</li>
+
+                    </ul>
+
+                </div>
+
+
+
+                <div class="section">
+
+                    <h2>Countermeasures:</h2>
+
+                    <ul>
+
+                        <li>
+                            Do not download and install applications from untrusted sources [offered via unknown
+                            websites/ links on unscrupulous messages]. Install applications downloaded from reputed
+                            application market only.
+                        </li>
+
+                        <li>
+                            Install and maintain updated antivirus solution on android devices. Scan the suspected
+                            device with antivirus solutions to detect and clean infections.
+                        </li>
+
+                        <li>
+                            Prior to downloading / installing apps on android devices (even from Google Play Store),
+                            Always review the app details, number of downloads, user reviews, comments and "ADDITIONAL
+                            INFORMATION" section.
+                        </li>
+
+                        <li>
+                            Verify app permissions and grant only those permissions which have relevant context for the
+                            app's purpose.
+                        </li>
+
+                        <li>
+                            In settings, do not enable installation of apps from "Untrusted Sources".
+                        </li>
+
+                        <li>
+                            Exercise caution while visiting trusted/untrusted sites for clicking links.
+                        </li>
+
+                        <li>
+                            Install Android updates and patches as and when available from Android device vendors.
+                        </li>
+
+                        <li>
+                            Users are advised to use device encryption or encrypting external SD card feature available
+                            with most of the android OS.
+                        </li>
+
+                        <li>
+                            Do not download or open attachment in emails received from untrusted sources or unexpectedly
+                            received from trusted users.
+                        </li>
+
+                        <li>
+                            Avoid using unsecured, unknown Wi-Fi networks. There may be rogue Wi-Fi access points at
+                            public places used for distributing malicious applications.
+                        </li>
+
+                        <li>
+                            Confirm that the banking app you’re using is the official, verified version.
+                        </li>
+
+                        <li>
+                            If anything looks awry or suddenly unfamiliar, check in with your bank’s customer service
+                            team.
+                        </li>
+
+                        <li>
+                            Use two-factor authentication if it’s available.
+                        </li>
+
+                        <li>
+                            Make sure you have a strong AI-powered mobile antivirus installed to detect and block this
+                            kind of tricky malware if it ever makes its way onto your system.
+                        </li>
+
+                        <li>
+                            Refer to security best practices for mobile Phone users:
+                        </li>
+
+
+                    </ul>
+
+                </div>
+
+                <div class="section">
+
+                    <h2>References:</h2>
+
+                    <ul class="links">
+                        <li><a href="https://www.symantec.com/security-center/writeup/2016-062710-0328-99"
+                                target="_blank">https://www.symantec.com/security-center/writeup/2016-062710-0328-99</a>
+                        </li>
+                        <li><a href="https://prescientsecurity.com/news/ootnik-trojan-can-gain-deeper-access-to-android-devices"
+                                target="_blank">https://prescientsecurity.com/news/ootnik-trojan-can-gain-deeper-access-to-android-devices</a>
+                        </li>
+                        <li><a href="https://www.fortinet.com/blog/threat-research/deep-analysis-of-android-rootnik-malware-using-advanced-anti-debug-and-anti-hook-part-i-debugging-in-the-scope-of-native-layer.html"
+                                target="_blank">https://www.fortinet.com/blog/threat-research/deep-analysis-of-android-rootnik-malware-using-advanced-anti-debug-and-anti-hook-part-i-debugging-in-the-scope-of-native-layer.html</a>
+                        </li>
+                        <li><a href="https://www.scmagazine.com/home/security-news/cybercrime/sc-media-exclusive-rootnik-android-malware-variant-designed-to-frustrate-researchers/"
+                                target="_blank">https://www.scmagazine.com/home/security-news/cybercrime/sc-media-exclusive-rootnik-android-malware-variant-designed-to-frustrate-researchers/</a>
+                        </li>
+                        <li><a href="https://unit42.paloaltonetworks.com/rootnik-android-trojan-abuses-commercial-rooting-tool-and-steals-private-information/"
+                                target="_blank">https://unit42.paloaltonetworks.com/rootnik-android-trojan-abuses-commercial-rooting-tool-and-steals-private-information/</a>
+                        </li>
+                        <li><a href="https://nvd.nist.gov/vuln/detail/CVE-2012-4221"
+                                target="_blank">https://nvd.nist.gov/vuln/detail/CVE-2012-4221</a></li>
+                        <li><a href="https://nvd.nist.gov/vuln/detail/CVE-2012-6422"
+                                target="_blank">https://nvd.nist.gov/vuln/detail/CVE-2012-6422</a></li>
+                        <li><a href="https://nvd.nist.gov/vuln/detail/CVE-2013-2596"
+                                target="_blank">https://nvd.nist.gov/vuln/detail/CVE-2013-2596</a></li>
+                        <li><a href="https://nvd.nist.gov/vuln/detail/CVE-2013-2597"
+                                target="_blank">https://nvd.nist.gov/vuln/detail/CVE-2013-2597</a></li>
+                        <li><a href="https://nvd.nist.gov/vuln/detail/CVE-2013-6282"
+                                target="_blank">https://nvd.nist.gov/vuln/detail/CVE-2013-6282</a></li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="site-footer">
+
+        <!-- Layer 1: gradient (on .site-footer itself) -->
+        <!-- Layer 2: SVG circuit overlay -->
+        <div class="footer-bg-svg"></div>
+
+        <!-- MAIN CONTENT -->
+        <div class="footer-main">
+
+            <!-- LEFT: Postal Address -->
+            <div class="footer-address">
+                <h3 class="footer-section-title">Postal Address:</h3>
+                <div class="footer-title-line"></div>
+
+                <address>
+                    <p><strong>Indian Computer Emergency Response Team (CERT-In)</strong></p>
+                    <p>Ministry of Electronics and Information Technology,</p>
+                    <p>Government of India,</p>
+                    <p>Electronics Niketan, 6 CGO Complex,</p>
+                    <p>Lodhi Road, New Delhi - 110 003</p>
+                </address>
+
+                <p class="footer-toll-free">
+                    <strong>Toll Free Number:</strong> +91-1800-11-4949
+                </p>
+
+                <div class="footer-logos">
+                    <div class="footer-logo">
+                        <a href="#" class="footer-logo-item">
+                            <img src="../../../assets/digital-india.svg" alt="Digital India - Power To Empower" />
+                        </a>
+                        <a href="#" class="footer-logo-item">
+                            <img src="../../../assets/footer-certin.svg" alt="CERT-In" />
+                        </a>
+                    </div>
+                    <div class="footer-logo">
+                        <a href="#" class="footer-logo-item">
+                            <img src="../../../assets/infosec.svg" alt="InfoSec Awareness" />
+                        </a>
+                        <a href="#" class="footer-logo-item">
+                            <img src="../../../assets/staysafe.svg" alt="Stay Safe Online" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: Important Links -->
+            <div class="footer-links">
+                <h3 class="footer-section-title">Important Links</h3>
+                <div class="footer-title-line"></div>
+
+                <div class="footer-links-grid">
+                    <ul class="footer-link-col">
+                        <li><a href="../homePage/index.html">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">CERT-In</a></li>
+                        <li><a href="#">MeiTY</a></li>
+                        <li><a href="#">FAQ's</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                    <ul class="footer-link-col">
+                        <li><a href="#">Website Policies</a></li>
+                        <li><a href="#">Terms &amp; Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Archives</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-social-row">
+                    <div class="footer-follow">
+                        <span class="follow-label">Follow Us</span>
+                        <div class="footer-social-icons">
+                            <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" title="X"><i class="fa-solid fa-x"></i></a>
+                            <a href="#" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    <p class="footer-last-updated">Last updated on: November 10, 2025</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- BOTTOM BAR -->
+        <div class="footer-bottom">
+            <p class="footer-disclaimer">
+                Disclaimer :-The information provided herein is on "as is" basis, without warranty of any kind.
+            </p>
+            <p class="footer-copyright">
+                <i class="fa-regular fa-copyright"></i> Copyright 2025. All right reserved
+            </p>
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>

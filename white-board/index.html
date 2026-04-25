@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.ux4g.gov.in/tools/accessibility-widget.js" async></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- acc-toggle MUST be first -->
+  <input type="checkbox" id="acc-toggle" hidden />
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <div class="left-section">
+        <div class="national-emblem">
+          <img src="../assets/header2.svg" alt="">
+        </div>
+      </div>
+      <div class="center-section">
+        <img src="../assets/header.png" alt="">
+      </div>
+      <div class="right-section">
+        <div class="accessibility-icons">
+          <a href="#main-content" title="Skip to main content">
+            <img src="../assets/Translate.svg" alt="">
+          </a>
+          <span class="icon-separator">|</span>
+          <div class="bhashini-plugin-container">
+            <img src="../assets/Language.svg" alt="">
+          </div>
+          <span class="icon-separator">|</span>
+          <label for="acc-toggle" class="acc-open-btn" title="Accessibility"></label>
+          <img src="../assets/accessibility_figure.svg" alt="">
+        </div>
+        <div class="certin-logo">
+          <img src="../assets/certin.svg" alt="">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- acc-overlay: direct sibling of acc-toggle -->
+  <div class="acc-overlay">
+    <div class="acc-panel">
+      <div class="acc-panel-header">
+        <h2>Accessibility Options</h2>
+        <label for="acc-toggle" class="acc-close-btn" title="Close">
+          <i class="fa-solid fa-xmark"></i>
+        </label>
+      </div>
+      <div class="acc-language-row">
+        <div class="lang-left">
+          <div class="lang-icon-box"><i class="fa-solid fa-language"></i></div>
+          <span class="lang-label">Language</span>
+        </div>
+        <select class="lang-select" id="lang-select" title="Select Language">
+          <option>English</option>
+          <option>हिंदी</option>
+        </select>
+      </div>
+      <div class="acc-options">
+        <div class="acc-grid">
+          <div class="acc-option" onclick="accToggle(this,'speak')"><i class="fa-solid fa-volume-high"></i><span>Screen Reader</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s9')"><i class="fa-solid fa-text-height"></i><span>Bigger Text</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s12')"><i class="fa-solid fa-bars"></i><span>Line Height</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s13')"><i class="fa-solid fa-a"></i><span>Text Spacing</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s10')"><i class="fa-solid fa-link"></i><span>Highlight Links</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-df')"><i class="fa-solid fa-d"></i><span>Dyslexia Friendly</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-cursor')"><i class="fa-solid fa-brain"></i><span>ADHD Friendly</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s11')"><i class="fa-regular fa-image"></i><span>Hide Images</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-invert')"><i class="fa-solid fa-circle-half-stroke"></i><span>Invert Color</span></div>
+          <div class="acc-option" onclick="accToggle(this,'dark-btn')"><i class="fa-solid fa-moon"></i><span>Dark Mode</span></div>
+        </div>
+      </div>
+      <div class="acc-footer">
+        <label for="acc-toggle" class="acc-reset-btn" onclick="accResetAll()">
+          <i class="fa-solid fa-rotate-left"></i> Reset
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!--  nav-toggle MUST be BEFORE <nav> so ~ selector works -->
+  <input type="checkbox" id="search-toggle" hidden />
+  <input type="checkbox" id="nav-toggle" hidden />
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-inner">
+
+      <!-- ✅ HAMBURGER — label targets #nav-toggle -->
+      <label for="nav-toggle" class="hamburger" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+        <i class="fa-solid fa-xmark"></i>
+      </label>
+
+      <!-- NAV LINKS (slide-in panel on mobile) -->
+      <ul class="nav-links">
+
+        <!-- Close button inside panel -->
+        <li class="nav-close-item">
+          <label for="nav-toggle" class="nav-close-btn">
+            <i class="fa-solid fa-xmark"></i>
+          </label>
+        </li>
+
+        <li ><a href="../index.html">Home</a></li>
+        <li><a href="../about/index.html">About Us</a></li>
+        <li><a href="https://www.cert-in.org.in/" target="_blank" rel="noopener noreferrer">CERT-In</a></li>
+        <li><a href="../security-tools/index.html">Security Tools</a></li>
+        <li><a href="../alert/index.html">Alerts</a></li>
+
+        <li class="has-dropdown">
+          <button class="nav-btn">
+            Awareness <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="../guidlines/index.html">Guidelines &amp; Advisories</a></li>
+            <li><a href="../campaign/index.html">Our Campaigns</a></li>
+            <li><a href="../best-practice/index.html">Best Practices</a></li>
+            <li><a href="../our-report/index.html">Our Reports</a></li>
+            <li><a href="../white-board/index.html">White Papers</a></li>
+          </ul>
+        </li>
+
+        <li><a href="../f&q/index.html">FAQ's</a></li>
+        <li><a href="../contact-us/index.html">Contact Us</a></li>
+
+      </ul>
+
+      <!-- ===== SEARCH BAR ===== -->
+      <div class="nav-search">
+        <div class="csk-search">
+
+          <input type="radio" name="se" id="s-google" checked>
+          <input type="radio" name="se" id="s-bing">
+          <input type="radio" name="se" id="s-duck">
+
+          <div class="search-box">
+
+            <!-- Dropdown (Left) -->
+            <div class="engine-picker">
+              <button type="button" class="engine-current" aria-label="Select search engine">
+                <span class="current-engine cur-g">
+                  <span class="dot g-dot">G</span>
+                  <span class="engine-label">&nbsp;Google</span>
+                </span>
+                <span class="current-engine cur-b">
+                  <span class="dot b-dot">b</span>
+                  <span class="engine-label">&nbsp;Bing</span>
+                </span>
+                <span class="current-engine cur-d">
+                  <span class="dot d-dot">D</span>
+                  <span class="engine-label">&nbsp;Duck</span>
+                </span>
+              </button>
+              <div class="engine-menu">
+                <label for="s-google" class="engine-opt"><span class="dot g-dot">G</span>Google.com</label>
+                <label for="s-bing"   class="engine-opt"><span class="dot b-dot">b</span>Bing.com</label>
+                <label for="s-duck"   class="engine-opt"><span class="dot d-dot">D</span>DuckDuckGo</label>
+              </div>
+            </div>
+
+            <!-- Input + Search Icon (Right) -->
+            <div class="form-wrap">
+
+              <!-- Google -->
+              <form class="sf" id="fg" action="https://www.google.com/search" method="GET" target="_blank">
+                <input class="si" type="text" name="q" placeholder="Search csk.gov.in" required>
+                <input type="hidden" name="as_sitesearch" value="csk.gov.in">
+                <button type="submit" class="sb" aria-label="Search">
+                  <svg viewBox="0 0 20 20"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17" y2="17"/></svg>
+                </button>
+              </form>
+
+              
+              <!-- Bing -->
+<form class="sf" id="fb" action="https://www.bing.com/search" method="GET" target="_blank"
+  onsubmit="this.querySelector('[name=q]').value = this.querySelector('.si').value + ' site:csk.gov.in'; return true;">
+  <input class="si" type="text" placeholder="Search csk.gov.in" required>
+  <input type="hidden" name="q" value="">
+  <button type="submit" class="sb" aria-label="Search">
+    <svg viewBox="0 0 20 20"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17" y2="17"/></svg>
+  </button>
+</form>
+              <!-- DuckDuckGo -->
+              <!-- DuckDuckGo -->
+<form class="sf" id="fd" action="https://duckduckgo.com/" method="GET" target="_blank"
+  onsubmit="this.querySelector('[name=q]').value = this.querySelector('.si').value + ' site:csk.gov.in'; return true;">
+  <input class="si" type="text" placeholder="Search csk.gov.in" required>
+  <input type="hidden" name="q" value="">
+  <button type="submit" class="sb" aria-label="Search">
+    <svg viewBox="0 0 20 20"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17" y2="17"/></svg>
+  </button>
+</form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ===== SEARCH BAR END ===== -->
+
+    </div>
+  </nav>
+
+    <!-- ✅ nav-overlay AFTER nav — direct sibling of nav-toggle -->
+    <!-- <div class="nav-overlay">
+      <label for="nav-toggle"></label>
+    </div> -->
+
+    <!-- nav end -->
+
+
+    <!-- main start -->
+    <main id="main-content">
+      <div class="main-content-best">
+
+        <!-- POSTER -->
+      <div class="poster">
+        <img src="../assets/Awareness/AwarenessPoster.svg" alt="">
+        <div class="poster-border"></div>
+        <div class="poster-content">
+          <p>White Pape</p>
+        </div>
+      </div>
+          <div class="awareness-content">
+                <a href="../guidlines/index.html" >Guidelines & Advisories</a>
+                <a href="../campaign/index.html" >Our Campaigns</a>
+                <a href="../best-practice/index.html">Best Practices</a>
+                <a href="../our-report/index.html">Our Reports</a>
+                <a href="../white-board/index.html" class="active-aware">White Papers</a>
+          </div>
+       <div class="social-content">
+          <div class="social-icons">
+            <a href="https://www.facebook.com/IndianCERT/" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/cert_india/" title="Instagram"><i class="fa-brands fa-square-instagram"></i></a>
+            <a href="https://x.com/IndianCERT" title="X"><i class="fa-solid fa-x"></i></a>
+            <a href="https://www.linkedin.com/company/cert-in/" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://www.youtube.com/hashtag/certin" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>  
+        </div>
+
+        <label for="acc-toggle" class="icon">
+            <!-- <i class="fa-solid fa-universal-access"></i> -->
+             <img src="../assets/access_icon.svg" alt="">
+        </label>
+
+
+	  
+       <div class="wrapper">
+	   
+		 <div class="section-header">
+			<h2>White Papers</h2>
+     	 </div>
+	  
+		<div class="Best-practice">
+            <div class="left"><div class="inline-header">
+				<p>API Security: Threats, Best Practices, Challenges, and Way forward using AI -- by CSIRT-Fin, CERT-In and Mastercard -> CIWP-2023-0001 </p>
+				<span class="card-pdf"><img src="../assets/pdf.png" width="20px" alt="pdf" /><span>401KB</span></span>
+				<span class="card-view">
+          <a href="../assets/white-paper/white-paper.pdf" target="_blank" rel="noopener noreferrer">
+                <button class="view-btn"><i class="fa-regular fa-eye"></i> VIEW</button>
+              </a>
+        </span>
+			</div>
+          <p>An Application Programming Interface (API) is a data connection allowing data to be shared with other applications. They can be viewed as digital middlemen between organisations / enterprises and platforms that need to access data for driving innovation, increasing reach, discover new business models, increase partner network, etc.</p>
+          </div>
+            </div>
+		        
+            <div class="viewALL-button">
+              <span>View All</span>
+              <a href="../assets/white-paper/white-paper.pdf" target="_blank" rel="noopener noreferrer">
+                <button class="view-btn"><i class="fa-regular fa-eye"></i> VIEW</button>
+              </a>
+            </div>
+		</div>
+
+
+      </div>
+
+    </main>
+
+     <!-- main end -->
+
+   
+
+<!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-bg-svg"></div>
+    <div class="footer-main">
+      <div class="footer-address">
+        <h3 class="footer-section-title">Postal Address:</h3>
+        <div class="footer-title-line"></div>
+        <address>
+          <p><strong>Indian Computer Emergency Response Team (CERT-In)</strong></p>
+          <p>Ministry of Electronics and Information Technology,</p>
+          <p>Government of India,</p>
+          <p>Electronics Niketan, 6 CGO Complex,</p>
+          <p>Lodhi Road, New Delhi - 110 003</p>
+        </address>
+        <p class="footer-toll-free"><strong>Toll Free Number:</strong> +91-1800-11-4949</p>
+        <div class="footer-logos">
+          <div class="footer-logo">
+            <a href="#" class="footer-logo-item"><img src="../assets/digital-india.svg" alt="Digital India" /></a>
+            <a href="#" class="footer-logo-item"><img src="../assets/footer-certin.svg" alt="CERT-In" /></a>
+          </div>
+          <div class="footer-logo">
+            <a href="#" class="footer-logo-item"><img src="../assets/infosec.svg" alt="InfoSec Awareness" /></a>
+            <a href="#" class="footer-logo-item"><img src="../assets/staysafe.svg" alt="Stay Safe Online" /></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h3 class="footer-section-title">Important Links</h3>
+        <div class="footer-title-line"></div>
+        <div class="footer-links-grid">
+          <ul class="footer-link-col">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about/index.html">About Us</a></li>
+            <li><a href="https://www.cert-in.org.in/" target="_blank">CERT-In</a></li>
+            <li><a href="#">MeiTY</a></li>
+            <li><a href="../f&q/index.html">FAQ's</a></li>
+            <li><a href="../contact-us/index.html">Contact Us</a></li>
+          </ul>
+          <ul class="footer-link-col">
+            <li><a href="../privacy-policy/index.html">Website Policies</a></li>
+            <li><a href="../term-of-use/index.html">Terms &amp; Conditions</a></li>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Archives</a></li>
+            <li><a href="#">Sitemap</a></li>
+          </ul>
+        </div>
+        <div class="footer-social-row">
+          <div class="footer-follow">
+            <span class="follow-label">Follow Us</span>
+            <div class="footer-social-icons">
+              <a href="https://www.linkedin.com/company/cert-in/" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="https://www.instagram.com/cert_india/" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://www.facebook.com/IndianCERT/" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="https://x.com/IndianCERT" title="X"><i class="fa-solid fa-x"></i></a>
+              <a href="https://www.youtube.com/hashtag/certin" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+          </div>
+          <p class="footer-last-updated">Last updated on: November 10, 2025</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      
+      <img src="../assets/Line 1.svg" alt="">
+      <p class="footer-disclaimer">Disclaimer :-The information provided herein is on "as is" basis, without warranty of any kind.</p>
+      <p class="footer-copyright"><i class="fa-regular fa-copyright"></i> Copyright 2025. All right reserved</p>
+    </div>
+  </footer>
+
+  <script>
+    function accToggle(el, ux4gId) {
+      el.classList.toggle('acc-option--active');
+      var attempts = 0;
+      function tryClick() {
+        var btn = document.getElementById(ux4gId);
+        if (btn) { btn.click(); }
+        else if (attempts < 20) { attempts++; setTimeout(tryClick, 100); }
+      }
+      tryClick();
+    }
+    function accResetAll() {
+      document.querySelectorAll('.acc-option--active').forEach(function(el) {
+        el.classList.remove('acc-option--active');
+      });
+      var resetBtn = document.querySelector('.uwaw-reset') || document.querySelector('[onclick="resetAll()"]');
+      if (resetBtn) { resetBtn.click(); }
+      else if (typeof resetAll === 'function') { resetAll(); }
+    }
+  </script>
+  <script src="https://translationplugin.bhashini.co.in/v3/website_translation_utility.js"></script>
+
+</body>
+</html>

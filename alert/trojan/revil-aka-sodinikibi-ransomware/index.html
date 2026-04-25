@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.ux4g.gov.in/tools/accessibility-widget.js" async></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- acc-toggle MUST be first -->
+    <input type="checkbox" id="acc-toggle" hidden />
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-inner">
+            <div class="left-section">
+                <div class="national-emblem">
+                    <img src="../../../assets/header2.svg" alt="">
+                </div>
+            </div>
+            <div class="center-section">
+                <img src="../../../assets/header.png" alt="">
+            </div>
+            <div class="right-section">
+                <div class="accessibility-icons">
+                    <a href="#main-content" title="Skip to main content">
+                        <img src="../../../assets/Translate.svg" alt="">
+                    </a>
+                    <span class="icon-separator">|</span>
+                    <div class="bhashini-plugin-container">
+                        <img src="../../../assets/Language.svg" alt="">
+                    </div>
+                    <span class="icon-separator">|</span>
+                    <label for="acc-toggle" class="acc-open-btn" title="Accessibility"></label>
+                    <img src="../../../assets/accessibility_figure.svg" alt="">
+                </div>
+                <div class="certin-logo">
+                    <img src="../../../assets/certin.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- acc-overlay: direct sibling of acc-toggle -->
+    <div class="acc-overlay">
+        <div class="acc-panel">
+            <div class="acc-panel-header">
+                <h2>Accessibility Options</h2>
+                <label for="acc-toggle" class="acc-close-btn" title="Close">
+                    <i class="fa-solid fa-xmark"></i>
+                </label>
+            </div>
+            <div class="acc-language-row">
+                <div class="lang-left">
+                    <div class="lang-icon-box"><i class="fa-solid fa-language"></i></div>
+                    <span class="lang-label">Language</span>
+                </div>
+                <select class="lang-select" id="lang-select" title="Select Language">
+                    <option>English</option>
+                    <option>हिंदी</option>
+                </select>
+            </div>
+            <div class="acc-options">
+                <div class="acc-grid">
+                    <div class="acc-option" onclick="accToggle(this,'speak')"><i
+                            class="fa-solid fa-volume-high"></i><span>Screen
+                            Reader</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-s9')"><i
+                            class="fa-solid fa-text-height"></i><span>Bigger
+                            Text</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-s12')"><i
+                            class="fa-solid fa-bars"></i><span>Line
+                            Height</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-s13')"><i class="fa-solid fa-a"></i><span>Text
+                            Spacing</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-s10')"><i
+                            class="fa-solid fa-link"></i><span>Highlight
+                            Links</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-df')"><i
+                            class="fa-solid fa-d"></i><span>Dyslexia
+                            Friendly</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-cursor')"><i
+                            class="fa-solid fa-brain"></i><span>ADHD
+                            Friendly</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-s11')"><i
+                            class="fa-regular fa-image"></i><span>Hide
+                            Images</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-invert')"><i
+                            class="fa-solid fa-circle-half-stroke"></i><span>Invert Color</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'dark-btn')"><i
+                            class="fa-solid fa-moon"></i><span>Dark
+                            Mode</span></div>
+                </div>
+            </div>
+            <div class="acc-footer">
+                <label for="acc-toggle" class="acc-reset-btn" onclick="accResetAll()">
+                    <i class="fa-solid fa-rotate-left"></i> Reset
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!--  nav-toggle MUST be BEFORE <nav> so ~ selector works -->
+    <input type="checkbox" id="search-toggle" hidden />
+    <input type="checkbox" id="nav-toggle" hidden />
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="nav-inner">
+
+            <!-- ✅ HAMBURGER — label targets #nav-toggle -->
+            <label for="nav-toggle" class="hamburger" aria-label="Open menu">
+                <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+
+            <!-- NAV LINKS (slide-in panel on mobile) -->
+            <ul class="nav-links">
+
+                <!-- Close button inside panel -->
+                <li class="nav-close-item">
+                    <label for="nav-toggle" class="nav-close-btn">
+                        <i class="fa-solid fa-xmark"></i>
+                    </label>
+                </li>
+
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../about/index.html">About Us</a></li>
+                <li><a href="#">CERT-In</a></li>
+                <li><a href="../security-tools/index.html">Security Tools</a></li>
+                <li class="active"><a href="../alert/index.html">Alerts</a></li>
+
+                <li class="has-dropdown">
+                    <button class="nav-btn">
+                        Awareness <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="./guideline/index.html">Guidelines &amp; Advisories</a></li>
+                        <li><a href="./Awareness/index.html">Our Campaigns</a></li>
+                        <li><a href="./bestPraactice/index.html">Best Practices</a></li>
+                        <li><a href="./ourReports/index.html">Our Reports</a></li>
+                        <li><a href="./whiteBoard/index.html">White Papers</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="../FrequentQuestion/index.html">FAQ's</a></li>
+                <li><a href="../contactUs/index.html">Contact Us</a></li>
+
+            </ul>
+
+            <!-- ===== SEARCH BAR ===== -->
+            <div class="nav-search">
+                <div class="csk-search">
+
+                    <input type="radio" name="se" id="s-google" checked>
+                    <input type="radio" name="se" id="s-bing">
+                    <input type="radio" name="se" id="s-duck">
+
+                    <div class="search-box">
+
+                        <!-- Dropdown (Left) -->
+                        <div class="engine-picker">
+                            <button type="button" class="engine-current" aria-label="Select search engine">
+                                <span class="current-engine cur-g">
+                                    <span class="dot g-dot">G</span>
+                                    <span class="engine-label">&nbsp;Google</span>
+                                </span>
+                                <span class="current-engine cur-b">
+                                    <span class="dot b-dot">b</span>
+                                    <span class="engine-label">&nbsp;Bing</span>
+                                </span>
+                                <span class="current-engine cur-d">
+                                    <span class="dot d-dot">D</span>
+                                    <span class="engine-label">&nbsp;Duck</span>
+                                </span>
+                            </button>
+                            <div class="engine-menu">
+                                <label for="s-google" class="engine-opt"><span
+                                        class="dot g-dot">G</span>Google.com</label>
+                                <label for="s-bing" class="engine-opt"><span class="dot b-dot">b</span>Bing.com</label>
+                                <label for="s-duck" class="engine-opt"><span
+                                        class="dot d-dot">D</span>DuckDuckGo</label>
+                            </div>
+                        </div>
+
+                        <!-- Input + Search Icon (Right) -->
+                        <div class="form-wrap">
+
+                            <!-- Google -->
+                            <form class="sf" id="fg" action="https://www.google.com/search" method="GET"
+                                target="_blank">
+                                <input class="si" type="text" name="q" placeholder="Search csk.gov.in" required>
+                                <input type="hidden" name="as_sitesearch" value="csk.gov.in">
+                                <button type="submit" class="sb" aria-label="Search">
+                                    <svg viewBox="0 0 20 20">
+                                        <circle cx="8.5" cy="8.5" r="5.5" />
+                                        <line x1="12.5" y1="12.5" x2="17" y2="17" />
+                                    </svg>
+                                </button>
+                            </form>
+
+
+                            <!-- Bing -->
+                            <form class="sf" id="fb" action="https://www.bing.com/search" method="GET" target="_blank"
+                                onsubmit="this.querySelector('[name=q]').value = this.querySelector('.si').value + ' site:csk.gov.in'; return true;">
+                                <input class="si" type="text" placeholder="Search csk.gov.in" required>
+                                <input type="hidden" name="q" value="">
+                                <button type="submit" class="sb" aria-label="Search">
+                                    <svg viewBox="0 0 20 20">
+                                        <circle cx="8.5" cy="8.5" r="5.5" />
+                                        <line x1="12.5" y1="12.5" x2="17" y2="17" />
+                                    </svg>
+                                </button>
+                            </form>
+                            <!-- DuckDuckGo -->
+                            <!-- DuckDuckGo -->
+                            <form class="sf" id="fd" action="https://duckduckgo.com/" method="GET" target="_blank"
+                                onsubmit="this.querySelector('[name=q]').value = this.querySelector('.si').value + ' site:csk.gov.in'; return true;">
+                                <input class="si" type="text" placeholder="Search csk.gov.in" required>
+                                <input type="hidden" name="q" value="">
+                                <button type="submit" class="sb" aria-label="Search">
+                                    <svg viewBox="0 0 20 20">
+                                        <circle cx="8.5" cy="8.5" r="5.5" />
+                                        <line x1="12.5" y1="12.5" x2="17" y2="17" />
+                                    </svg>
+                                </button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ===== SEARCH BAR END ===== -->
+
+        </div>
+    </nav>
+
+    <!-- ✅ nav-overlay AFTER nav — direct sibling of nav-toggle -->
+    <!-- <div class="nav-overlay">
+      <label for="nav-toggle"></label>
+    </div> -->
+
+    <main id="main-content">
+        <div class="main-content-Locky">
+
+            <div class="social-content">
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/IndianCERT/" title="Facebook"><i
+                            class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/cert_india/" title="Instagram"><i
+                            class="fa-brands fa-square-instagram"></i></a>
+                    <a href="https://x.com/IndianCERT" title="X"><i class="fa-solid fa-x"></i></a>
+                    <a href="https://www.linkedin.com/company/cert-in/" title="LinkedIn"><i
+                            class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.youtube.com/hashtag/certin" title="YouTube"><i
+                            class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <label for="acc-toggle" class="icon">
+                <!-- <i class="fa-solid fa-universal-access"></i> -->
+                <img src="../assets/access_icon.svg" alt="">
+            </label>
+
+            <div class="container">
+
+                <div class="header">
+
+                    <div class="left">
+                        <a href="javascript:history.back()" class="back-btn">
+                            <i class="fa-solid fa-angle-left"></i> BACK
+                        </a>
+                        <h1>REvil aka Sodinikibi Ransomware</h1>
+                    </div>
+
+                    <!-- Header -->
+                    <div class="header-right">
+
+                        <div class="meta">
+                            <div class="border-left"></div>
+                            <div class="righ-content">
+                                <p><span class="gree">Original Issue Date:</span> July 11, 2019</p>
+
+                                <p><span class="orr">Virus Type:</span> Ransomware</p>
+                                <p><span class="orr">Severity:</span>High</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="section">
+                    <h2>***Update Start***</h2>
+                    <p>
+                        It has been reported that the ransomware strain attributed to REvil is again highly active/ spreading. The attack vector includes Ransomware-as-a-service (RaaS) operation, operating since April 2019. In the recent supply-chain ransomware attack against Kaseya VSA and the multiple managed service providers (MSPs), VSA software (a software platform designed to help manage IT services remotely) used to deliver payload (REvil ransomware) via a Kaseya update and using the platform’s administrative privileges to infect systems. Once MSPs are infected, their systems may be used to attack clients that they provide remote IT services for (network management, system updates, backups and others). As per reports, the notorious REvil ransomware already linked to attacks on Acer and meat supplier JBS earlier this year.
+                    </p>
+                    <p>According to the current reports, the attack targeted six large MSPs and has encrypted data of over 200 companies.</p>
+                    <h2>KASEYA VSA advised their customers/users to IMMEDIATELY shutdown and SHOULD CONTINUE TO REMAIN DOWN UNTIL FURTHER INSTRUCTIONS FROM KASEYA ABOUT WHEN IT IS SAFE TO RESTORE OPERATIONS. KASEYA VSA UPDATED notice will be issued HERE.</h2>
+
+                    <h2>Indicator of Compromise:</h2>
+
+                    <p>Kindly refer IoC section for more details.</p>
+                    <h2>REvil attack spreads through auto-update</h2>
+                    <p>As reported, Kaseya VSA will drop an agent.crt file to the c:\, distributed as an update called 'Kaseya VSA Agent Hot-fix.'</p>
+                    <p>A PowerShell command is launched to decode the agent.crt file using the legitimate Windows certutil.exe command and extract an agent.exe file to the same folder.</p>
+                    <img src="/assets/alert/trojan/revil-aka-sodinikibi-ransomware/revil_01.png" alt="fig1">
+                    <p class="self-center">Source: Reddit</p>
+                    <p>The agent.exe is signed using a certificate from "PB03 TRANSPORT LTD" and includes an embedded 'MsMpEng.exe' and 'mpsvc.dll,' with the DLL being the REvil encryptor.</p>
+                    <img src="/assets/alert/trojan/revil-aka-sodinikibi-ransomware/revil_02.png" alt="fig2">
+                    <p>The MsMPEng.exe is an older version of the legitimate Microsoft Defender executable used as a LOLBin to launch the DLL and encrypt the device through a trusted executable.</p>
+                    <h2>***Update end***</h2>
+                    <p>It has been observed that the variants of ransomware named as Sodin aka Sodinokibi and REvil exploiting a recently discovered Windows zero day Vulnerability are spreading. The malware first observed in early 2019, exploiting Oracle Weblogic vulnerability and attacking MSP providers. Later, it has been discovered that the malware is capable of exploiting Microsoft Windows zero day vulnerability which is "CVE-2018-8453" for privilege escalation. The malware is capable of performing the following functions:</p>
+                    <ul>
+                        <li>Exploits Oracle Weblogic vulnerability and Microsoft Windows zero day vulnerability which is "CVE-2018-8453"</li>
+                        <li>Make network connections to remote Command and control server hardcoded in malware configuration file in encrypted format.</li>
+                        <li>Uses hybrid scheme of encryption which is “Salsa20 symmetric stream” algorithm for encrypting files and “elliptic curve asymmetric” algorithm for keys.</li>
+                        <li>Uses arbitrary extensions for encrypted files.</li>
+                        <li>Sends exfiltrated data to remote command and control server in an encrypted format using ECIES algorithm (Elliptical curve cryptography).</li>
+                        <li>Checks for the Victim’s machine CPU configurations and run shellcode accordingly.</li>
+                    </ul>
+
+                    <p>The malware exploits a vulnerability in Win32k.sys windows component to gain elevated privileges. Upon successful exploitation, the attacker gains highest privileges to deploy its malicious shellcode and execute commands. The malware code has an encrypted configuration block that contains all the settings and data required for the functioning of the malware. The decrypted configuration settings are shown as below:</p>
+                    <ul>
+                        <li>poly.ufxtools[.]com</li>
+                        <li>industriatempo.com[.]br</li>
+                        <li>robertholeon[.]com</li>
+                        <li>deluxesingles[.]com</li>
+                        <li>naijafacemodel[.]com</li>
+                        <li>www.quanttum[.]trade</li>
+                        <li>www.blinov-house[.]ru</li>
+                        <li>ssgoldtravel[.]com</li>
+                        <li>www.greenbrands[.]ir</li>
+                        <li>new.datance[.]com</li>
+                        <li>besttipsfor[.]com</li>
+                        <li>chila[.]store</li>
+                        <li>globaleventscrc[.]com</li>
+                        <li>ionix.co[.]id</li>
+                        <li>mahmya[.]com</li>
+                        <li>mohanchandran[.]com</li>
+                        <li>mutolarahsap[.]com</li>
+                        <li>northkabbadi[.]com</li>
+                        <li>poly.ufxtools[.]com</li>
+                        <li>raiz[.]ec</li>
+                        <li>rhsgroup[.]ma</li>
+                        <li>robinhurtnamibia[.]com</li>
+                        <li>sloneczna10tka[.]pl</li>
+                        <li>stepinwatchcenter[.]se</li>
+                        <li>topfinsignals[.]com</li>
+                        <li>tripindiabycar[.]com</li>
+                        <li>videotroisquart[.]net</li>
+                        <li>wbbministries[.]org</li>
+                    </ul>
+
+                    <img src="/assets/alert/trojan/revil-aka-sodinikibi-ransomware/SodinRansomware-1.jpg" alt="fig3">
+                    <p>The configuration block contains information such as public key, campaign ID, remote server configurations, ransom note, exploit, name of processes to be terminated, name of directories targeted for file creation and deletion, list of file types not to be encrypted etc.</p><br/>
+                    <h2>Network Communication</h2>
+                    <p>The malware is capable of making network connections and send victim machine information to remote command and control server based on a flag set in its configuration block. The information sent to remote server includes machine name, Operating system information, machine workgroup/domain, infection ID, username, trojan version, campaign ID, OS architecture, system drives information, encrypted files extension, keyboard layout and system language, etc.</p>
+                    <br/>
+                    <h2>Indicator of Compromise:</h2>
+                    <p>Malware Hash: 1ce1ca85bff4517a1ef7e8f9a7c22b16</p>
+                    <br/>
+                    <h2>Countermeasures:</h2>
+                    <ul>
+                        <li>KASEYA VSA advised their customers/users to IMMEDIATELY shutdown and SHOULD CONTINUE TO REMAIN DOWN UNTIL FURTHER INSTRUCTIONS FROM KASEYA ABOUT WHEN IT IS SAFE TO RESTORE OPERATIONS. KASEYA VSA UPDATED notice will be issued HERE</li>
+                        <li>Users are advised to disable their RDP if not in use, if required it should be placed behind the firewall and users are to bind with proper policies while using the RDP.</li>
+                        <li>Restrict execution of Power shell /WSCRIPT in enterprise environment Ensure installation and use of the latest version (currently v5.0) of PowerShell, with enhanced logging enabled. Script block logging, and transcription enabled. Send the associated logs to a centralized log repository for monitoring and analysis. Reference: https://www.fireeye.com/blog/threat-research/2016/02/greater_visibilityt.html</li>
+                        <li>Establish a Sender Policy Framework (SPF) for your domain, which is an email validation system designed to prevent spam by detecting email spoofing by which most of the ransomware samples successfully reaches the corporate email boxes.</li>
+                        <li>Application whitelisting/Strict implementation of Software Restriction Policies (SRP) to block binaries running from %APPDATA% and %TEMP% paths. Ransomware sample drops and executes generally from these locations.</li>
+                        <li>Don't open attachments in unsolicited e-mails, even if they come from people in your contact list, and never click on a URL contained in an unsolicited e-mail, even if the link seems benign. In cases of genuine URLs close out the e-mail and go to the organization's website directly through browser.</li>
+                        <li>Block the attachments of file types, exe|pif|tmp|url|vb|vbe|scr|reg|cer|pst|cmd|com|bat|dll|dat|hlp|hta|js|wsf.</li>
+                        <li>Consider encrypting the confidential data as the ransomware generally targets common file types.</li>
+                        <li>Perform regular backups of all critical information to limit the impact of data or system loss and to help expedite the recovery process. Ideally, this data should be kept on a separate device, and backups should be stored offline.</li>
+                        <li>Patch the Microsoft Windows vulnerability CVE-2018-8453 exploited in the attack. Reference: https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2018-8453</li>
+                    </ul>
+
+                    <h2>References:</h2>
+                    <ul>
+                        <li><a href="https://helpdesk.kaseya.com/hc/en-gb/articles/4403440684689-Important-Notice-July-2nd-2021">https://helpdesk.kaseya.com/hc/en-gb/articles/4403440684689-Important-Notice-July-2nd-2021</a></li>
+                        <li><a href="https://community.sophos.com/b/security-blog/posts/active-ransomware-attack-on-kaseya-customers">https://community.sophos.com/b/security-blog/posts/active-ransomware-attack-on-kaseya-customers</a></li>
+                        <li><a href="https://www.msspalert.com/cybersecurity-breaches-and-attacks/kaseya-rmm-cyberattack-warning/">https://www.msspalert.com/cybersecurity-breaches-and-attacks/kaseya-rmm-cyberattack-warning/</a></li>
+                        <li><a href="https://www.wsj.com/articles/technology-provider-kaseya-warns-of-cyberattack-11625266350?st=1f6dv1y5spnv6hi&reflink=article_imessage_share">https://www.wsj.com/articles/technology-provider-kaseya-warns-of-cyberattack-11625266350?st=1f6dv1y5spnv6hi&reflink=article_imessage_share</a></li>
+                        <li><a href="https://www.theguardian.com/technology/2021/jul/02/latest-ransomware-attack-american-businesses-kaseya">https://www.theguardian.com/technology/2021/jul/02/latest-ransomware-attack-american-businesses-kaseya</a></li>
+                        <li><a href="https://www.france24.com/en/americas/20210703-at-least-200-us-companies-hit-in-cyberattack">https://www.france24.com/en/americas/20210703-at-least-200-us-companies-hit-in-cyberattack</a></li>
+                        <li><a href="https://www.theverge.com/2021/7/2/22561252/revil-ransomware-attacks-systems-using-kaseyas-remote-it-management-software">https://www.theverge.com/2021/7/2/22561252/revil-ransomware-attacks-systems-using-kaseyas-remote-it-management-software</a></li>
+                        <li><a href="https://www.bleepingcomputer.com/news/security/revil-ransomware-hits-200-companies-in-msp-supply-chain-attack/">https://www.bleepingcomputer.com/news/security/revil-ransomware-hits-200-companies-in-msp-supply-chain-attack/</a></li>
+                        <li><a href="https://securelist.com/sodin-ransomware/91473/">https://securelist.com/sodin-ransomware/91473/</a></li>
+                        <li><a href="https://www.kaspersky.com/blog/sodin-msp-ransomware/27530/">https://www.kaspersky.com/blog/sodin-msp-ransomware/27530/</a></li>
+                        <li><a href="https://www.darkreading.com/perimeter/sodin-ransomware-exploits-windows-privilege-escalation-bug/d/d-id/1335145">https://www.darkreading.com/perimeter/sodin-ransomware-exploits-windows-privilege-escalation-bug/d/d-id/1335145</a></li>
+                        <li><a href="https://threatpost.com/new-sodinokibi-ransomware-exploits-critical-oracle-weblogic-flaw/144233/">https://threatpost.com/new-sodinokibi-ransomware-exploits-critical-oracle-weblogic-flaw/144233/</a></li>
+                        <li><a href="https://exchange.xforce.ibmcloud.com/collection/0354ae335c04904f429ee242b234ee01">https://exchange.xforce.ibmcloud.com/collection/0354ae335c04904f429ee242b234ee01</a></li>
+                        <li><a href="https://securityaffairs.co/wordpress/87944/malware/sodin-ransomware-cve-2018-8453.html">https://securityaffairs.co/wordpress/87944/malware/sodin-ransomware-cve-2018-8453.html</a></li>
+                        <li><a href="https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2018-8453">https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2018-8453</a></li>
+                        <li><a href="https://www.cyberark.com/threat-research-blog/sodin-ransomware/">https://www.cyberark.com/threat-research-blog/sodin-ransomware/</a></li>
+                        <li><a href="https://www.computerweekly.com/news/252466220/Sodin-ransomware-exploiting-Windows-zero-day-Kaspersky-warns">https://www.computerweekly.com/news/252466220/Sodin-ransomware-exploiting-Windows-zero-day-Kaspersky-warns</a></li>
+                        <li><a href="https://securityboulevard.com/2019/07/sodin-ransomware/">https://securityboulevard.com/2019/07/sodin-ransomware/</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="site-footer">
+
+        <!-- Layer 1: gradient (on .site-footer itself) -->
+        <!-- Layer 2: SVG circuit overlay -->
+        <div class="footer-bg-svg"></div>
+
+        <!-- MAIN CONTENT -->
+        <div class="footer-main">
+
+            <!-- LEFT: Postal Address -->
+            <div class="footer-address">
+                <h3 class="footer-section-title">Postal Address:</h3>
+                <div class="footer-title-line"></div>
+
+                <address>
+                    <p><strong>Indian Computer Emergency Response Team (CERT-In)</strong></p>
+                    <p>Ministry of Electronics and Information Technology,</p>
+                    <p>Government of India,</p>
+                    <p>Electronics Niketan, 6 CGO Complex,</p>
+                    <p>Lodhi Road, New Delhi - 110 003</p>
+                </address>
+
+                <p class="footer-toll-free">
+                    <strong>Toll Free Number:</strong> +91-1800-11-4949
+                </p>
+
+                <div class="footer-logos">
+                    <div class="footer-logo">
+                        <a href="#" class="footer-logo-item">
+                            <img src="../../../assets/digital-india.svg" alt="Digital India - Power To Empower" />
+                        </a>
+                        <a href="#" class="footer-logo-item">
+                            <img src="../../../assets/footer-certin.svg" alt="CERT-In" />
+                        </a>
+                    </div>
+                    <div class="footer-logo">
+                        <a href="#" class="footer-logo-item">
+                            <img src="../../../assets/infosec.svg" alt="InfoSec Awareness" />
+                        </a>
+                        <a href="#" class="footer-logo-item">
+                            <img src="../../../assets/staysafe.svg" alt="Stay Safe Online" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: Important Links -->
+            <div class="footer-links">
+                <h3 class="footer-section-title">Important Links</h3>
+                <div class="footer-title-line"></div>
+
+                <div class="footer-links-grid">
+                    <ul class="footer-link-col">
+                        <li><a href="../homePage/index.html">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">CERT-In</a></li>
+                        <li><a href="#">MeiTY</a></li>
+                        <li><a href="#">FAQ's</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                    <ul class="footer-link-col">
+                        <li><a href="#">Website Policies</a></li>
+                        <li><a href="#">Terms &amp; Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Archives</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-social-row">
+                    <div class="footer-follow">
+                        <span class="follow-label">Follow Us</span>
+                        <div class="footer-social-icons">
+                            <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" title="X"><i class="fa-solid fa-x"></i></a>
+                            <a href="#" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    <p class="footer-last-updated">Last updated on: November 10, 2025</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- BOTTOM BAR -->
+        <div class="footer-bottom">
+            <p class="footer-disclaimer">
+                Disclaimer :-The information provided herein is on "as is" basis, without warranty of any kind.
+            </p>
+            <p class="footer-copyright">
+                <i class="fa-regular fa-copyright"></i> Copyright 2025. All right reserved
+            </p>
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>

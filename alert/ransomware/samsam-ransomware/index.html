@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.ux4g.gov.in/tools/accessibility-widget.js" async></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- acc-toggle MUST be first -->
+    <input type="checkbox" id="acc-toggle" hidden />
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-inner">
+            <div class="left-section">
+                <div class="national-emblem">
+                    <img src="../../../assets/header2.svg" alt="">
+                </div>
+            </div>
+            <div class="center-section">
+                <img src="../../../assets/header.png" alt="">
+            </div>
+            <div class="right-section">
+                <div class="accessibility-icons">
+                    <a href="#main-content" title="Skip to main content">
+                        <img src="../../../assets/Translate.svg" alt="">
+                    </a>
+                    <span class="icon-separator">|</span>
+                    <div class="bhashini-plugin-container">
+                        <img src="../../../assets/Language.svg" alt="">
+                    </div>
+                    <span class="icon-separator">|</span>
+                    <label for="acc-toggle" class="acc-open-btn" title="Accessibility"></label>
+                    <img src="../../../assets/accessibility_figure.svg" alt="">
+                </div>
+                <div class="certin-logo">
+                    <img src="../../../assets/certin.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- acc-overlay: direct sibling of acc-toggle -->
+    <div class="acc-overlay">
+        <div class="acc-panel">
+            <div class="acc-panel-header">
+                <h2>Accessibility Options</h2>
+                <label for="acc-toggle" class="acc-close-btn" title="Close">
+                    <i class="fa-solid fa-xmark"></i>
+                </label>
+            </div>
+            <div class="acc-language-row">
+                <div class="lang-left">
+                    <div class="lang-icon-box"><i class="fa-solid fa-language"></i></div>
+                    <span class="lang-label">Language</span>
+                </div>
+                <select class="lang-select" id="lang-select" title="Select Language">
+                    <option>English</option>
+                    <option>हिंदी</option>
+                </select>
+            </div>
+            <div class="acc-options">
+                <div class="acc-grid">
+                    <div class="acc-option" onclick="accToggle(this,'speak')"><i
+                            class="fa-solid fa-volume-high"></i><span>Screen
+                            Reader</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-s9')"><i
+                            class="fa-solid fa-text-height"></i><span>Bigger
+                            Text</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-s12')"><i
+                            class="fa-solid fa-bars"></i><span>Line
+                            Height</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-s13')"><i class="fa-solid fa-a"></i><span>Text
+                            Spacing</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-s10')"><i
+                            class="fa-solid fa-link"></i><span>Highlight
+                            Links</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-df')"><i
+                            class="fa-solid fa-d"></i><span>Dyslexia
+                            Friendly</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-cursor')"><i
+                            class="fa-solid fa-brain"></i><span>ADHD
+                            Friendly</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-s11')"><i
+                            class="fa-regular fa-image"></i><span>Hide
+                            Images</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'btn-invert')"><i
+                            class="fa-solid fa-circle-half-stroke"></i><span>Invert Color</span></div>
+                    <div class="acc-option" onclick="accToggle(this,'dark-btn')"><i
+                            class="fa-solid fa-moon"></i><span>Dark
+                            Mode</span></div>
+                </div>
+            </div>
+            <div class="acc-footer">
+                <label for="acc-toggle" class="acc-reset-btn" onclick="accResetAll()">
+                    <i class="fa-solid fa-rotate-left"></i> Reset
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!--  nav-toggle MUST be BEFORE <nav> so ~ selector works -->
+    <input type="checkbox" id="search-toggle" hidden />
+    <input type="checkbox" id="nav-toggle" hidden />
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="nav-inner">
+
+            <!-- ✅ HAMBURGER — label targets #nav-toggle -->
+            <label for="nav-toggle" class="hamburger" aria-label="Open menu">
+                <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+
+            <!-- NAV LINKS (slide-in panel on mobile) -->
+            <ul class="nav-links">
+
+                <!-- Close button inside panel -->
+                <li class="nav-close-item">
+                    <label for="nav-toggle" class="nav-close-btn">
+                        <i class="fa-solid fa-xmark"></i>
+                    </label>
+                </li>
+
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../about/index.html">About Us</a></li>
+                <li><a href="#">CERT-In</a></li>
+                <li><a href="../security-tools/index.html">Security Tools</a></li>
+                <li class="active"><a href="../alert/index.html">Alerts</a></li>
+
+                <li class="has-dropdown">
+                    <button class="nav-btn">
+                        Awareness <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="./guideline/index.html">Guidelines &amp; Advisories</a></li>
+                        <li><a href="./Awareness/index.html">Our Campaigns</a></li>
+                        <li><a href="./bestPraactice/index.html">Best Practices</a></li>
+                        <li><a href="./ourReports/index.html">Our Reports</a></li>
+                        <li><a href="./whiteBoard/index.html">White Papers</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="../FrequentQuestion/index.html">FAQ's</a></li>
+                <li><a href="../contactUs/index.html">Contact Us</a></li>
+
+            </ul>
+
+            <!-- ===== SEARCH BAR ===== -->
+            <div class="nav-search">
+                <div class="csk-search">
+
+                    <input type="radio" name="se" id="s-google" checked>
+                    <input type="radio" name="se" id="s-bing">
+                    <input type="radio" name="se" id="s-duck">
+
+                    <div class="search-box">
+
+                        <!-- Dropdown (Left) -->
+                        <div class="engine-picker">
+                            <button type="button" class="engine-current" aria-label="Select search engine">
+                                <span class="current-engine cur-g">
+                                    <span class="dot g-dot">G</span>
+                                    <span class="engine-label">&nbsp;Google</span>
+                                </span>
+                                <span class="current-engine cur-b">
+                                    <span class="dot b-dot">b</span>
+                                    <span class="engine-label">&nbsp;Bing</span>
+                                </span>
+                                <span class="current-engine cur-d">
+                                    <span class="dot d-dot">D</span>
+                                    <span class="engine-label">&nbsp;Duck</span>
+                                </span>
+                            </button>
+                            <div class="engine-menu">
+                                <label for="s-google" class="engine-opt"><span
+                                        class="dot g-dot">G</span>Google.com</label>
+                                <label for="s-bing" class="engine-opt"><span class="dot b-dot">b</span>Bing.com</label>
+                                <label for="s-duck" class="engine-opt"><span
+                                        class="dot d-dot">D</span>DuckDuckGo</label>
+                            </div>
+                        </div>
+
+                        <!-- Input + Search Icon (Right) -->
+                        <div class="form-wrap">
+
+                            <!-- Google -->
+                            <form class="sf" id="fg" action="https://www.google.com/search" method="GET"
+                                target="_blank">
+                                <input class="si" type="text" name="q" placeholder="Search csk.gov.in" required>
+                                <input type="hidden" name="as_sitesearch" value="csk.gov.in">
+                                <button type="submit" class="sb" aria-label="Search">
+                                    <svg viewBox="0 0 20 20">
+                                        <circle cx="8.5" cy="8.5" r="5.5" />
+                                        <line x1="12.5" y1="12.5" x2="17" y2="17" />
+                                    </svg>
+                                </button>
+                            </form>
+
+
+                            <!-- Bing -->
+                            <form class="sf" id="fb" action="https://www.bing.com/search" method="GET" target="_blank"
+                                onsubmit="this.querySelector('[name=q]').value = this.querySelector('.si').value + ' site:csk.gov.in'; return true;">
+                                <input class="si" type="text" placeholder="Search csk.gov.in" required>
+                                <input type="hidden" name="q" value="">
+                                <button type="submit" class="sb" aria-label="Search">
+                                    <svg viewBox="0 0 20 20">
+                                        <circle cx="8.5" cy="8.5" r="5.5" />
+                                        <line x1="12.5" y1="12.5" x2="17" y2="17" />
+                                    </svg>
+                                </button>
+                            </form>
+                            <!-- DuckDuckGo -->
+                            <!-- DuckDuckGo -->
+                            <form class="sf" id="fd" action="https://duckduckgo.com/" method="GET" target="_blank"
+                                onsubmit="this.querySelector('[name=q]').value = this.querySelector('.si').value + ' site:csk.gov.in'; return true;">
+                                <input class="si" type="text" placeholder="Search csk.gov.in" required>
+                                <input type="hidden" name="q" value="">
+                                <button type="submit" class="sb" aria-label="Search">
+                                    <svg viewBox="0 0 20 20">
+                                        <circle cx="8.5" cy="8.5" r="5.5" />
+                                        <line x1="12.5" y1="12.5" x2="17" y2="17" />
+                                    </svg>
+                                </button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ===== SEARCH BAR END ===== -->
+
+        </div>
+    </nav>
+
+    <!-- ✅ nav-overlay AFTER nav — direct sibling of nav-toggle -->
+    <!-- <div class="nav-overlay">
+      <label for="nav-toggle"></label>
+    </div> -->
+
+    <main id="main-content">
+        <div class="main-content-Locky">
+
+            <div class="social-content">
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/IndianCERT/" title="Facebook"><i
+                            class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/cert_india/" title="Instagram"><i
+                            class="fa-brands fa-square-instagram"></i></a>
+                    <a href="https://x.com/IndianCERT" title="X"><i class="fa-solid fa-x"></i></a>
+                    <a href="https://www.linkedin.com/company/cert-in/" title="LinkedIn"><i
+                            class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.youtube.com/hashtag/certin" title="YouTube"><i
+                            class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <label for="acc-toggle" class="icon">
+                <!-- <i class="fa-solid fa-universal-access"></i> -->
+                <img src="../assets/access_icon.svg" alt="">
+            </label>
+
+            <div class="container">
+                <div class="header">
+
+                    <div class="left">
+                        <a href="javascript:history.back()" class="back-btn">
+                            <i class="fa-solid fa-angle-left"></i> BACK
+                        </a>
+                        <h1>SamSam Ransomware</h1>
+                    </div>
+
+                    <div class="header-right">
+                        <div class="meta">
+                            <div class="border-left"></div>
+                            <div class="righ-content">
+
+                                <p>
+                                    <span class="gree">Original Issue Date:</span>
+                                    December 10, 2018
+                                </p>
+
+                                <p>
+                                    <span class="orr">Virus Type:</span>
+                                    Ransomware
+                                </p>
+
+                                <p>
+                                    <span class="orr">Severity:</span>
+                                    Medium
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+                <div class="section">
+
+                    <p>
+                        It has been reported that new variants of ransomware named "SamSam" is spreading. The modes of
+                        spreading this malware is via malicious advertisements, spam emails etc. with crafted
+                        attachments.
+                    </p>
+
+                    <b>
+                        Malicious activity:
+                    </b>
+
+                    <ul>
+
+                        <li>
+                            The attacker's tries to access the victim machine either by exploiting the vulnerable server
+                            or through building the remote desktop connection on victim machine using brute force attack
+                            or credentials it purchase from dark Net.
+                        </li>
+
+                        <li>
+                            Once attacker successfully access the victim machine, it drops the SamSam Ransomware
+                            executable on the victim machine which encrypt all the files of the victim machine
+                            (excluding window file and Recycle bin folders) with dot stubbin extension. After encrypting
+                            all files of victim machine, attacker also drop a text file which contain message for paying
+                            ransom to decrypt the data.
+                        </li>
+
+                    </ul>
+
+                    <img src="/assets/alert/samsam-ramsomware/image.jpg" class="self-img-center"
+                        alt="Infection mechanism of SamSam Ransomware">
+
+                    <p class="self-center">
+                        Infection mechanism of SamSam Ransomware (Source : Sophos)
+                    </p>
+
+                </div>
+
+
+
+                <div class="section">
+
+                    <h2>Indicators of Compromise:</h2>
+
+                    <p><strong>Hashes</strong></p>
+
+                    <ul>
+
+                        <li>5d65ebdde1aef8f23114f95454287e7410965288f144d880ece2a2b8c3128645 (prelecturedexe.exe)</li>
+
+                        <li>d8d919d884b86e4d5977598bc9d637ed53e21d5964629d0427077e08ddbcba68 (proteusdlll.dll)</li>
+
+                        <li>2b06d2abc87f51aa7b8451da16270003ceba57184b0dd5f244670873409c75b9 (winnetuse.exe)</li>
+
+                        <li>427091e1888c2bf1f2e11a1010b3ab6c8634eda4ddc34d37202d401fbaa8989d (ss2.exe)</li>
+
+                        <li>594b9b42a2d7ae71ef08795fca19d027135d86e82bc0d354d18bfd766ec2424c (ss2.stubbin)</li>
+
+                        <li>a660cc6155b307c0957c4c6ea119a295a852d28097196d85f00f5517944a3dcb (SORRY-FOR-FILES.html)</li>
+
+                        <li>bc53f513df363dd999ac855b53831b3b31ac5516a4bf8f324489710cf06955f0 (g04inst.bat)</li>
+
+                        <li>da9c2ecc88e092e3b8c13c6d1a71b968aa6f705eb5966370f21e306c26cd4fb5 (sdgasfse.dll)</li>
+
+                        <li>036071786d7db553e2415ec2e71f3967baf51bdc31d0a640aa4afb87d3ce3050 (samsam.exe)</li>
+
+                        <li>0f2c5c39494f15b7ee637ad5b6b5d00a3e2f407b4f27d140cd5a821ff08acfac (samsam.exe)</li>
+
+                        <li>32445c921079aa3e26a376d70ef6550bafeb1f6b0b7037ef152553bb5dad116f (selfdel.exe)</li>
+
+                        <li>45e00fe90c8aa8578fce2b305840e368d62578c77e352974da6b8f8bc895d75b (samsam.exe)</li>
+
+                        <li>553967d05b83364c6954d2b55b8cfc2ea3808a17c268b2eee49090e71976ba29</li>
+
+                        <li>58ef87523184d5df3ed1568397cea65b3f44df06c73eadeb5d90faebe4390e3e (samsam.exe)</li>
+
+                        <li>6245a51e78526c25510d0aa0909576119fdf0244619f670036538063b88f1c21
+                            (HELP_DECRYPT_YOUR_FILES.html)</li>
+
+                        <li>6bc2aa391b8ef260e79b99409e44011874630c2631e4487e82b76e5cb0a49307 (samsam.exe)</li>
+
+                        <li>7aa585e6fd0a895c295c4bea2ddb071eed1e5775f437602b577a54eef7f61044 (samsam.exe)</li>
+
+                        <li>89b4abb78970cd524dd887053d5bcd982534558efdf25c83f96e13b56b4ee805 (samsam.exe)</li>
+
+                        <li>939efdc272e8636fd63c1b58c2eec94cf10299cd2de30c329bd5378b6bbbd1c8 (samsam.exe)</li>
+
+                        <li>946dd4c4f3c78e7e4819a712c7fd6497722a3d616d33e3306a556a9dc99656f4 (samsam.exe)</li>
+
+                        <li>979692a34201f9fc1e1c44654dc8074a82000946deedfdf6b8985827da992868 (samsam.exe)</li>
+
+                        <li>97d27e1225b472a63c88ac9cfb813019b72598b9dd2d70fe93f324f7d034fb95 (del.exe)</li>
+
+                        <li>a763ed678a52f77a7b75d55010124a8fccf1628eb4f7a815c6d635034227177e (samsam.exe)</li>
+
+                        <li>e682ac6b874e0a6cfc5ff88798315b2cb822d165a7e6f72a5eb74e6da451e155 (samsam.exe)</li>
+
+                        <li>ffef0f1c2df157e9c2ee65a12d5b7b0f1301c4da22e7e7f3eac6b03c6487a626 (samsam.exe)</li>
+
+                        <li>738c95f5bfe63a530b200a0d73f363d46c5671c1fcbb69c217e15a3516501a86 (mswinupdate.exe)</li>
+
+                        <li>9b23bfc35b18ed80104c496b2aa722b3e56ff9ceb9dae60d1aff7230321c1d12 (ClassLibrary1.dll)</li>
+
+                        <li>bbd4102fe25e73c0815d0c020d60d47dbbfbe79ef1e490e7b4f97640dd932b58 (g04inst.bat)</li>
+
+                    </ul>
+
+                    <p><strong>Domain</strong></p>
+
+                    <ul>
+
+                        <li>jcmi5n4c3mvgtyt5[.]onion</li>
+                        <li>anonyme[.]com</li>
+                        <li>evilsecure9.wordpress[.]com</li>
+                        <li>followsec7.wordpress[.]com</li>
+                        <li>key88secu7.wordpress[.]com</li>
+                        <li>keytwocode.wordpress[.]com</li>
+                        <li>lordsecure4u.wordpress[.]com</li>
+                        <li>payforsecure7.wordpress[.]com</li>
+                        <li>secangel7d.wordpress[.]com</li>
+                        <li>union83939k.wordpress[.]com</li>
+                        <li>zeushelpu.wordpress[.]com</li>
+
+                    </ul>
+
+                </div>
+
+
+
+                <div class="section">
+
+                    <h2>Countermeasures and Best practices for prevention:</h2>
+
+                    <ul>
+
+                        <li>
+                            Users are advised to disable their RDP if not in use, if required it should be placed behind
+                            the firewall and users are to bind with proper policies while using the RDP.
+                        </li>
+
+                        <li>
+                            Restrict execution of Power shell /WSCRIPT in enterprise environment Ensure installation and
+                            use of the latest version (currently v5.0) of PowerShell, with enhanced logging enabled.
+                            Script block logging, and transcription enabled. Send the associated logs to a centralized
+                            log repository for monitoring and analysis.
+                        </li>
+
+                        <li>
+                            Reference: https://www.fireeye.com/blog/threat-research/2016/02/greater_visibilityt.html
+                        </li>
+
+                        <li>
+                            Establish a Sender Policy Framework (SPF) for your domain, which is an email validation
+                            system designed to prevent spam by detecting email spoofing by which most of the ransomware
+                            samples successfully reaches the corporate email boxes.
+                        </li>
+
+                        <li>
+                            Application whitelisting/Strict implementation of Software Restriction Policies (SRP) to
+                            block binaries running from %APPDATA% and %TEMP% paths. Ransomware sample drops and executes
+                            generally from these locations.
+                        </li>
+
+                        <li>
+                            Don't open attachments in unsolicited e-mails, even if they come from people in your contact
+                            list, and never click on a URL contained in an unsolicited e-mail, even if the link seems
+                            benign. In cases of genuine URLs close out the e-mail and go to the organization's website
+                            directly through browser
+                        </li>
+
+                        <li>
+                            Block the attachments of file types,
+                            exe|pif|tmp|url|vb|vbe|scr|reg|cer|pst|cmd|com|bat|dll|dat|hlp|hta|js|wsf
+                        </li>
+
+                        <li>
+                            Consider encrypting the confidential data as the ransomware generally targets common file
+                            types.
+                        </li>
+
+                        <li>
+                            Perform regular backups of all critical information to limit the impact of data or system
+                            loss and to help expedite the recovery process. Ideally, this data should be kept on a
+                            separate device, and backups should be stored offline.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+
+                <div class="section">
+
+                    <h2>References:</h2>
+
+                    <ul class="links">
+
+                        <li>
+                            <a href="https://www.us-cert.gov/ncas/alerts/AA18-337A" target="_blank">
+                                https://www.us-cert.gov/ncas/alerts/AA18-337A
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.sophos.com/en-us/medialibrary/PDFs/technical-papers/SamSam-ransomware-chooses-Its-targets-carefully-wpna.pdf"
+                                target="_blank">
+                                https://www.sophos.com/en-us/medialibrary/PDFs/technical-papers/SamSam-ransomware-chooses-Its-targets-carefully-wpna.pdf
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="site-footer">
+
+        <!-- Layer 1: gradient (on .site-footer itself) -->
+        <!-- Layer 2: SVG circuit overlay -->
+        <div class="footer-bg-svg"></div>
+
+        <!-- MAIN CONTENT -->
+        <div class="footer-main">
+
+            <!-- LEFT: Postal Address -->
+            <div class="footer-address">
+                <h3 class="footer-section-title">Postal Address:</h3>
+                <div class="footer-title-line"></div>
+
+                <address>
+                    <p><strong>Indian Computer Emergency Response Team (CERT-In)</strong></p>
+                    <p>Ministry of Electronics and Information Technology,</p>
+                    <p>Government of India,</p>
+                    <p>Electronics Niketan, 6 CGO Complex,</p>
+                    <p>Lodhi Road, New Delhi - 110 003</p>
+                </address>
+
+                <p class="footer-toll-free">
+                    <strong>Toll Free Number:</strong> +91-1800-11-4949
+                </p>
+
+                <div class="footer-logos">
+                    <div class="footer-logo">
+                        <a href="#" class="footer-logo-item">
+                            <img src="../../../assets/digital-india.svg" alt="Digital India - Power To Empower" />
+                        </a>
+                        <a href="#" class="footer-logo-item">
+                            <img src="../../../assets/footer-certin.svg" alt="CERT-In" />
+                        </a>
+                    </div>
+                    <div class="footer-logo">
+                        <a href="#" class="footer-logo-item">
+                            <img src="../../../assets/infosec.svg" alt="InfoSec Awareness" />
+                        </a>
+                        <a href="#" class="footer-logo-item">
+                            <img src="../../../assets/staysafe.svg" alt="Stay Safe Online" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: Important Links -->
+            <div class="footer-links">
+                <h3 class="footer-section-title">Important Links</h3>
+                <div class="footer-title-line"></div>
+
+                <div class="footer-links-grid">
+                    <ul class="footer-link-col">
+                        <li><a href="../homePage/index.html">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">CERT-In</a></li>
+                        <li><a href="#">MeiTY</a></li>
+                        <li><a href="#">FAQ's</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                    <ul class="footer-link-col">
+                        <li><a href="#">Website Policies</a></li>
+                        <li><a href="#">Terms &amp; Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Archives</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-social-row">
+                    <div class="footer-follow">
+                        <span class="follow-label">Follow Us</span>
+                        <div class="footer-social-icons">
+                            <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" title="X"><i class="fa-solid fa-x"></i></a>
+                            <a href="#" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    <p class="footer-last-updated">Last updated on: November 10, 2025</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- BOTTOM BAR -->
+        <div class="footer-bottom">
+            <p class="footer-disclaimer">
+                Disclaimer :-The information provided herein is on "as is" basis, without warranty of any kind.
+            </p>
+            <p class="footer-copyright">
+                <i class="fa-regular fa-copyright"></i> Copyright 2025. All right reserved
+            </p>
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>
