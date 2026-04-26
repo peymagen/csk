@@ -6714,38 +6714,22 @@ ol > li::before {
 	grid-template-columns: 1fr !important;
     gap: 0rem !Important;
 }
+
+
 .video-card-inner {
+   width: 100%;
+    max-width: 1444px;
+    padding: 2rem;
+    background: #ebeaea;
+    border-radius: 2rem;
+}
+.video-card-inner video {
     width: 100%;
-    position: relative;
+    height: 100%;
+    max-height: 500px;
+    border-radius: 2rem;
+    object-fit: cover;
 }
-.video-card-inner img {
-    width: 92%;
-}
-.video-card-inner .play-btn-inner {
-  position: absolute;
-  z-index: 3;
-  width: 57px;
-  height: 57px;
-  background: #264D4B;           
-  color: #D9D9D9;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  cursor: pointer;
-  /* box-shadow: 0 2px 12px rgba(0,0,0,0.25); */
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: 12px solid #DCEBE3;  
-}
-
-.video-card-inner .play-btn-inner .p-btn-inner{
-    width: 17px;
-    height: 17px;
-}
-
 
 /* BUTTON */
 
