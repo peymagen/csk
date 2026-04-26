@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../../index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <script src="https://cdn.ux4g.gov.in/tools/accessibility-widget.js" async></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../../index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.ux4g.gov.in/tools/accessibility-widget.js" async></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
   <!-- acc-toggle MUST be first -->
@@ -66,16 +68,26 @@
       </div>
       <div class="acc-options">
         <div class="acc-grid">
-          <div class="acc-option" onclick="accToggle(this,'speak')"><i class="fa-solid fa-volume-high"></i><span>Screen Reader</span></div>
-          <div class="acc-option" onclick="accToggle(this,'btn-s9')"><i class="fa-solid fa-text-height"></i><span>Bigger Text</span></div>
-          <div class="acc-option" onclick="accToggle(this,'btn-s12')"><i class="fa-solid fa-bars"></i><span>Line Height</span></div>
-          <div class="acc-option" onclick="accToggle(this,'btn-s13')"><i class="fa-solid fa-a"></i><span>Text Spacing</span></div>
-          <div class="acc-option" onclick="accToggle(this,'btn-s10')"><i class="fa-solid fa-link"></i><span>Highlight Links</span></div>
-          <div class="acc-option" onclick="accToggle(this,'btn-df')"><i class="fa-solid fa-d"></i><span>Dyslexia Friendly</span></div>
-          <div class="acc-option" onclick="accToggle(this,'btn-cursor')"><i class="fa-solid fa-brain"></i><span>ADHD Friendly</span></div>
-          <div class="acc-option" onclick="accToggle(this,'btn-s11')"><i class="fa-regular fa-image"></i><span>Hide Images</span></div>
-          <div class="acc-option" onclick="accToggle(this,'btn-invert')"><i class="fa-solid fa-circle-half-stroke"></i><span>Invert Color</span></div>
-          <div class="acc-option" onclick="accToggle(this,'dark-btn')"><i class="fa-solid fa-moon"></i><span>Dark Mode</span></div>
+          <div class="acc-option" onclick="accToggle(this,'speak')"><i class="fa-solid fa-volume-high"></i><span>Screen
+              Reader</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s9')"><i class="fa-solid fa-text-height"></i><span>Bigger
+              Text</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s12')"><i class="fa-solid fa-bars"></i><span>Line
+              Height</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s13')"><i class="fa-solid fa-a"></i><span>Text
+              Spacing</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s10')"><i class="fa-solid fa-link"></i><span>Highlight
+              Links</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-df')"><i class="fa-solid fa-d"></i><span>Dyslexia
+              Friendly</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-cursor')"><i class="fa-solid fa-brain"></i><span>ADHD
+              Friendly</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s11')"><i class="fa-regular fa-image"></i><span>Hide
+              Images</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-invert')"><i
+              class="fa-solid fa-circle-half-stroke"></i><span>Invert Color</span></div>
+          <div class="acc-option" onclick="accToggle(this,'dark-btn')"><i class="fa-solid fa-moon"></i><span>Dark
+              Mode</span></div>
         </div>
       </div>
       <div class="acc-footer">
@@ -107,7 +119,7 @@
         </li>
         <li><a href="../index.html">Home</a></li>
         <li><a href="../about/index.html">About Us</a></li>
-        <li><a href="https://www.cert-in.org.in/" target="_blank" rel="noopener noreferrer">CERT-In</a></li>
+        <li><a href="https://www.cert-in.org.in/" rel="noopener noreferrer">CERT-In</a></li>
         <li><a href="../security-tools/index.html">Security Tools</a></li>
         <li class="active"><a href="../alert/index.html">Alerts</a></li>
         <li class="has-dropdown">
@@ -150,8 +162,8 @@
               </button>
               <div class="engine-menu">
                 <label for="s-google" class="engine-opt"><span class="dot g-dot">G</span>Google.com</label>
-                <label for="s-bing"   class="engine-opt"><span class="dot b-dot">b</span>Bing.com</label>
-                <label for="s-duck"   class="engine-opt"><span class="dot d-dot">D</span>DuckDuckGo</label>
+                <label for="s-bing" class="engine-opt"><span class="dot b-dot">b</span>Bing.com</label>
+                <label for="s-duck" class="engine-opt"><span class="dot d-dot">D</span>DuckDuckGo</label>
               </div>
             </div>
             <div class="form-wrap">
@@ -160,7 +172,10 @@
                 <input class="si" type="text" name="q" placeholder="Search csk.gov.in" required>
                 <input type="hidden" name="as_sitesearch" value="csk.gov.in">
                 <button type="submit" class="sb" aria-label="Search">
-                  <svg viewBox="0 0 20 20"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17" y2="17"/></svg>
+                  <svg viewBox="0 0 20 20">
+                    <circle cx="8.5" cy="8.5" r="5.5" />
+                    <line x1="12.5" y1="12.5" x2="17" y2="17" />
+                  </svg>
                 </button>
               </form>
               <!-- Bing -->
@@ -169,7 +184,10 @@
                 <input class="si" type="text" placeholder="Search csk.gov.in" required>
                 <input type="hidden" name="q" value="">
                 <button type="submit" class="sb" aria-label="Search">
-                  <svg viewBox="0 0 20 20"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17" y2="17"/></svg>
+                  <svg viewBox="0 0 20 20">
+                    <circle cx="8.5" cy="8.5" r="5.5" />
+                    <line x1="12.5" y1="12.5" x2="17" y2="17" />
+                  </svg>
                 </button>
               </form>
               <!-- DuckDuckGo -->
@@ -178,7 +196,10 @@
                 <input class="si" type="text" placeholder="Search csk.gov.in" required>
                 <input type="hidden" name="q" value="">
                 <button type="submit" class="sb" aria-label="Search">
-                  <svg viewBox="0 0 20 20"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17" y2="17"/></svg>
+                  <svg viewBox="0 0 20 20">
+                    <circle cx="8.5" cy="8.5" r="5.5" />
+                    <line x1="12.5" y1="12.5" x2="17" y2="17" />
+                  </svg>
                 </button>
               </form>
             </div>
@@ -190,11 +211,11 @@
     </div>
   </nav>
 
-   <main id="main-content">
+  <main id="main-content">
     <div class="main-content-campaign-inner">
 
 
-        <div class="poster">
+      <div class="poster">
         <img src="../../assets/Awareness/AwarenessPoster.svg" alt="">
         <div class="poster-border"></div>
         <div class="poster-content">
@@ -202,232 +223,238 @@
         </div>
       </div>
 
-        <div class="awareness-nav">
-            <div class="awareness-content">
-                <a href="../../guidlines/index.html" >Guidelines & Advisories</a>
-                <a href="../../campaign/index.html" class="active-aware">Our Campaigns</a>
-                <a href="../../best-practice/index.html" >Best Practices</a>
-                <a href="../../our-report/index.html">Our Reports</a>
-                <a href="../../white-board/index.html">White Papers</a>
-            </div>
+      <div class="awareness-nav">
+        <div class="awareness-content">
+          <a href="../../guidlines/index.html">Guidelines & Advisories</a>
+          <a href="../../campaign/index.html" class="active-aware">Our Campaigns</a>
+          <a href="../../best-practice/index.html">Best Practices</a>
+          <a href="../../our-report/index.html">Our Reports</a>
+          <a href="../../white-board/index.html">White Papers</a>
         </div>
+      </div>
 
       <div class="social-content">
-            <div class="social-icons">
-              <a href="https://www.facebook.com/IndianCERT/" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
-              <a href="https://www.instagram.com/cert_india/" title="Instagram"><i class="fa-brands fa-square-instagram"></i></a>
-              <a href="https://x.com/IndianCERT" title="X"><i class="fa-solid fa-x"></i></a>
-              <a href="https://www.linkedin.com/company/cert-in/" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-              <a href="https://www.youtube.com/hashtag/certin" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
-            </div>  
+        <div class="social-icons">
+          <a href="https://www.facebook.com/IndianCERT/" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://www.instagram.com/cert_india/" title="Instagram"><i
+              class="fa-brands fa-square-instagram"></i></a>
+          <a href="https://x.com/IndianCERT" title="X"><i class="fa-solid fa-x"></i></a>
+          <a href="https://www.linkedin.com/company/cert-in/" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://www.youtube.com/hashtag/certin" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <label for="acc-toggle" class="icon">
+        <!-- <i class="fa-solid fa-universal-access"></i> -->
+        <img src="../../assets/access_icon.svg" alt="">
+      </label>
+
+      <div class="container">
+        <h1>Our Campaigns</h1>
+
+        <!-- Radio inputs BEFORE the card (sibling selector requirement) -->
+        <input type="radio" name="page" id="p1" checked />
+        <input type="radio" name="page" id="p2" />
+        <input type="radio" name="page" id="p3" />
+        <input type="radio" name="page" id="p4" />
+
+        <div class="campaign-detail">
+
+          <!-- ── Fixed Top Section (never changes) ── -->
+          <div class="top">
+            <div class="img-block">
+              <img src="../../assets/compaign/CJD.svg" alt="cyber swachata pakwada" />
+            </div>
+
+            <div class="info">
+              <div class="title-row">
+                <a href="javascript:history.back()" class="back-btn">
+                  <i class="fa-solid fa-angle-left"></i> BACK
+                </a>
+                <h2>
+                  <span class="word-cyber">CYBER</span>
+                  <span class="word-middle"> JAGROOKTA </span>
+                  <span class="word-last">DIWAS</span>
+                </h2>
+              </div>
+
+              <p class="campaign-hashtags">
+                #IndianCERT #SaferInternetDay #SID #CyberSecurityAwareness #CSK #CyberSwachhataKendra
+              </p>
+
+              <p class="campaign-desc">
+                Cyber Jaagrookta Diwas is observed every month to spread awareness about safe and responsible
+                use of the internet. It encourages individuals to follow good cyber hygiene, stay alert against
+                online threats, and contribute to a secure digital environment.
+              </p>
+            </div>
           </div>
 
-          <label for="acc-toggle" class="icon">
-              <!-- <i class="fa-solid fa-universal-access"></i> -->
-              <img src="../../assets/access_icon.svg" alt="">
-          </label>
+          <hr />
 
-        <div class="container">
-            <h1>Our Campaigns</h1>
+          <!-- ── Pages Wrapper ── -->
+          <!-- ── Pages Wrapper ── -->
+          <div class="pages-wrapper">
 
-              <!-- Radio inputs BEFORE the card (sibling selector requirement) -->
-            <input type="radio" name="page" id="p1" checked/>
-            <input type="radio" name="page" id="p2"/>
-            <input type="radio" name="page" id="p3"/>
-            <input type="radio" name="page" id="p4"/>
+            <!-- Page 1 -->
+            <div class="page-content" data-page="1">
 
-            <div class="campaign-detail">
+              <div class="abt-page">
+                <a href="./04-2026" class="list-item">
+                  <span class="item-label">Cyber Jaagrookta Diwas - 01st April 2026</span>
+                  <span class="item-view">
+                    <i class="fa-solid fa-eye"></i> VIEW
+                  </span>
+                </a>
+              </div>
 
-                <!-- ── Fixed Top Section (never changes) ── -->
-                <div class="top">
-                    <div class="img-block">
-                        <img src="../../assets/compaign/CJD.svg" alt="cyber swachata pakwada"/>
-                    </div>
+              <div class="abt-page"><a href="./02-2026" class="list-item"><span class="item-label">Cyber Jaagrookta
+                    Diwas - 04th February 2026</span><span class="item-view"><i class="fa-solid fa-eye"></i>
+                    VIEW</span></a></div>
+              <div class="abt-page"><a href="./01-2026" class="list-item"><span class="item-label">Cyber Jaagrookta
+                    Diwas - 07th January 2026</span><span class="item-view"><i class="fa-solid fa-eye"></i>
+                    VIEW</span></a></div>
+              <div class="abt-page"><a href="./12-2025" class="list-item"><span class="item-label">Cyber Jaagrookta
+                    Diwas - 03rd December 2025</span><span class="item-view"><i class="fa-solid fa-eye"></i>
+                    VIEW</span></a></div>
+              <div class="abt-page"><a href="10-2025" class="list-item"><span class="item-label">Cyber Jaagrookta
+                    Diwas - 01st October 2025</span><span class="item-view"><i class="fa-solid fa-eye"></i>
+                    VIEW</span></a></div>
+              <div class="abt-page"><a href="./09-2025" class="list-item"><span class="item-label">Cyber Jaagrookta
+                    Diwas - 03rd September 2025</span><span class="item-view"><i class="fa-solid fa-eye"></i>
+                    VIEW</span></a></div>
+              <div class="abt-page"><a href="./08-2025" class="list-item"><span class="item-label">Cyber Jaagrookta
+                    Diwas - 06th August 2025</span><span class="item-view"><i class="fa-solid fa-eye"></i>
+                    VIEW</span></a></div>
+              <div class="abt-page"><a href="./07-2025" class="list-item"><span class="item-label">Cyber Jaagrookta
+                    Diwas - 02nd July 2025</span><span class="item-view"><i class="fa-solid fa-eye"></i> VIEW</span></a>
+              </div>
+              <div class="abt-page"><a href="./06-2025" class="list-item"><span class="item-label">Cyber Jaagrookta
+                    Diwas - 04th June 2025</span><span class="item-view"><i class="fa-solid fa-eye"></i> VIEW</span></a>
+              </div>
+              <div class="abt-page"><a href="./04-2025" class="list-item"><span class="item-label">Cyber Jaagrookta
+                    Diwas - 02nd April 2025</span><span class="item-view"><i class="fa-solid fa-eye"></i>
+                    VIEW</span></a></div>
+            </div>
 
-                    <div class="info">
-                        <div class="title-row">
-                            <a href="javascript:history.back()" class="back-btn">
-                                <i class="fa-solid fa-angle-left"></i> BACK
-                            </a>
-                            <h2>
-                                <span class="word-cyber">CYBER</span>
-                    <span class="word-middle"> SWACHHTA </span>
-                    <span class="word-last">PAKHWADA</span>
-                            </h2>
-                        </div>
+            <!-- Page 2 -->
+            <div class="page-content" data-page="2">
 
-                        <p class="campaign-hashtags">
-                            @GoI_MeitY @_DigitalIndia @IndianCERT #DigitalIndia #NCSAM #CyberSecurityAwareness<br/>
-                            #IndianCERT #CyberSwachhataKendra #CSK #phishing #SecureOurWorld
-                        </p>
-                    
-                        <p class="campaign-desc">
-                            CERT-In observes "Cyber Swachhta Pakhwada" from 1–15 February every year to promote
-                            digital hygiene and safe cyber practices, encouraging citizens to stay secure online.
-                        </p>
-                    </div>
-                </div>
 
-                <hr/>
+              <div class="abt-page"><a href="./03-2025" class="list-item"><span class="item-label">Cyber Jaagrookta
+                    Diwas - 05th March 2025</span><span class="item-view"><i class="fa-solid fa-eye"></i>
+                    VIEW</span></a></div>
+              <div class="abt-page"><a href="./01-2025" class="list-item"><span class="item-label">Cyber Jaagrookta
+                    Diwas - 01st January 2025</span><span class="item-view"><i class="fa-solid fa-eye"></i>
+                    VIEW</span></a></div>
+              <div class="abt-page"><a href="./12-2024" class="list-item"><span class="item-label">Cyber Jaagrookta
+                    Diwas - 04th December 2024</span><span class="item-view"><i class="fa-solid fa-eye"></i>
+                    VIEW</span></a></div>
+              <div class="abt-page"><a href="./11-2024" class="list-item"><span class="item-label">Cyber Jaagrookta
+                    Diwas - 06th November 2024</span><span class="item-view"><i class="fa-solid fa-eye"></i>
+                    VIEW</span></a></div>
+              <div class="abt-page"><a href="./09-2024" class="list-item"><span class="item-label">Cyber Jaagrookta
+                    Diwas - 04th September 2024</span><span class="item-view"><i class="fa-solid fa-eye"></i>
+                    VIEW</span></a></div>
+              <div class="abt-page"><a href="./08-2024" class="list-item"><span class="item-label">Cyber Jaagrookta
+                    Diwas - 07th August 2024</span><span class="item-view"><i class="fa-solid fa-eye"></i>
+                    VIEW</span></a></div>
+              <div class="abt-page"><a href="./07-2024" class="list-item"><span class="item-label">Cyber Jaagrookta
+                    Diwas - 03rd July 2024</span><span class="item-view"><i class="fa-solid fa-eye"></i> VIEW</span></a>
+              </div>
+              <div class="abt-page"><a href="./06-2024" class="list-item"><span class="item-label">Cyber Jaagrookta
+                    Diwas - 05th June 2024</span><span class="item-view"><i class="fa-solid fa-eye"></i> VIEW</span></a>
+              </div>
+              <div class="abt-page"><a href="./05-2024" class="list-item"><span class="item-label">Cyber Jaagrookta
+                    Diwas - 01st May 2024</span><span class="item-view"><i class="fa-solid fa-eye"></i> VIEW</span></a>
+              </div>
+              <div class="abt-page"><a href="./04-2024" class="list-item"><span class="item-label">Cyber Jaagrookta
+                    Diwas - 03rd April 2024</span><span class="item-view"><i class="fa-solid fa-eye"></i>
+                    VIEW</span></a></div>
+            </div>
 
-                <!-- ── Pages Wrapper ── -->
-                <div class="pages-wrapper">
+            <!-- Page 3 -->
+            <div class="page-content" data-page="3">
 
-                <!-- Page 1 -->
-                <div class="page-content" data-page="1">
-                    <div class="abt-page">
-                        <a href="#" class="list-item"><span class="item-label">Cyber Swachhta Pakhwada - 01st to 15th February 2025</span><span class="item-view"><i class="fa-solid fa-eye"></i> VIEW</span></a>
-                    </div>
-                    <div class="abt-page">
-                        <a href="#" class="list-item"><span class="item-label">Cyber Swachhta Pakhwada - 01st to 15th February 2025</span><span class="item-view"><i class="fa-solid fa-eye"></i> VIEW</span></a>
-                    </div>
-                    <div class="abt-page">
-                        <a href="#" class="list-item"><span class="item-label">Cyber Swachhta Pakhwada - 01st to 15th February 2025</span><span class="item-view"><i class="fa-solid fa-eye"></i> VIEW</span></a>
-                    </div>
-                    <div class="abt-page">
-                        <a href="#" class="list-item"><span class="item-label">Cyber Swachhta Pakhwada - 01st to 15th February 2025</span><span class="item-view"><i class="fa-solid fa-eye"></i> VIEW</span></a>
-                    </div>
-                    <div class="abt-page">
-                        <a href="#" class="list-item"><span class="item-label">Cyber Swachhta Pakhwada - 01st to 15th February 2025</span><span class="item-view"><i class="fa-solid fa-eye"></i> VIEW</span></a>
-                    </div>
-                    <div class="abt-page">
-                        <a href="#" class="list-item"><span class="item-label">Cyber Swachhta Pakhwada - 01st to 15th February 2025</span><span class="item-view"><i class="fa-solid fa-eye"></i> VIEW</span></a>
-                    </div>
-                   <div class="abt-page">
-                        <a href="#" class="list-item"><span class="item-label">Cyber Swachhta Pakhwada - 01st to 15th February 2025</span><span class="item-view"><i class="fa-solid fa-eye"></i> VIEW</span></a>
-                    </div>
-                    <div class="abt-page">
-                        <a href="#" class="list-item"><span class="item-label">Cyber Swachhta Pakhwada - 01st to 15th February 2025</span><span class="item-view"><i class="fa-solid fa-eye"></i> VIEW</span></a>
-                    </div>
-                    <div class="abt-page">
-                        <a href="#" class="list-item"><span class="item-label">Cyber Swachhta Pakhwada - 01st to 15th February 2025</span><span class="item-view"><i class="fa-solid fa-eye"></i> VIEW</span></a>
-                    </div>
-                    <div class="abt-page">
-                        <a href="#" class="list-item"><span class="item-label">Cyber Swachhta Pakhwada - 01st to 15th February 2025</span><span class="item-view"><i class="fa-solid fa-eye"></i> VIEW</span></a>
-                    </div>
-                </div>
 
-                <!-- Page 2 -->
-                <div class="page-content" data-page="2">
-                    <div class="abt-page">
-                        <a href="#" class="list-item"><span class="item-label">Cyber Swachhta Pakhwada - 01st to 15th February 2025</span><span class="item-view"><i class="fa-solid fa-eye"></i> VIEW</span></a>
-                    </div>
-                    <div class="abt-page">
-                        <a href="#" class="list-item"><span class="item-label">Cyber Swachhta Pakhwada - 01st to 15th February 2025</span><span class="item-view"><i class="fa-solid fa-eye"></i> VIEW</span></a>
-                    </div>
-                    <div class="abt-page">
-                        <a href="#" class="list-item"><span class="item-label">Cyber Swachhta Pakhwada - 01st to 15th February 2025</span><span class="item-view"><i class="fa-solid fa-eye"></i> VIEW</span></a>
-                    </div>
-                    <div class="abt-page">
-                        <a href="#" class="list-item"><span class="item-label">Cyber Swachhta Pakhwada - 01st to 15th February 2025</span><span class="item-view"><i class="fa-solid fa-eye"></i> VIEW</span></a>
-                    </div>
-                    <div class="abt-page">
-                        <a href="#" class="list-item"><span class="item-label">Cyber Swachhta Pakhwada - 01st to 15th February 2025</span><span class="item-view"><i class="fa-solid fa-eye"></i> VIEW</span></a>
-                    </div>
-                    <div class="abt-page">
-                        <a href="#" class="list-item"><span class="item-label">Cyber Swachhta Pakhwada - 01st to 15th February 2025</span><span class="item-view"><i class="fa-solid fa-eye"></i> VIEW</span></a>
-                    </div>
-                   <div class="abt-page">
-                        <a href="#" class="list-item"><span class="item-label">Cyber Swachhta Pakhwada - 01st to 15th February 2025</span><span class="item-view"><i class="fa-solid fa-eye"></i> VIEW</span></a>
-                    </div>
-                    <div class="abt-page">
-                        <a href="#" class="list-item"><span class="item-label">Cyber Swachhta Pakhwada - 01st to 15th February 2025</span><span class="item-view"><i class="fa-solid fa-eye"></i> VIEW</span></a>
-                    </div>
-                </div>
+              <div class="abt-page"><a href="./03-2024" class="list-item"><span class="item-label">Cyber Jaagrookta
+                    Diwas - 06th March 2024</span><span class="item-view"><i class="fa-solid fa-eye"></i>
+                    VIEW</span></a></div>
+              <div class="abt-page"><a href="./02-2024" class="list-item"><span class="item-label">Cyber Jaagrookta
+                    Diwas - 07th February 2024</span><span class="item-view"><i class="fa-solid fa-eye"></i>
+                    VIEW</span></a></div>
+              <div class="abt-page"><a href="./01-2024" class="list-item"><span class="item-label">Cyber Jaagrookta
+                    Diwas - 03rd January 2024</span><span class="item-view"><i class="fa-solid fa-eye"></i>
+                    VIEW</span></a></div>
+              <div class="abt-page"><a href="./12-2023" class="list-item"><span class="item-label">Cyber
+                    Jaagrookta Diwas - 06th December 2023</span><span class="item-view"><i class="fa-solid fa-eye"></i>
+                    VIEW</span></a></div>
+              <div class="abt-page"><a href="./11-2023" class="list-item"><span class="item-label">Cyber
+                    Jaagrookta Diwas - 01st November 2023</span><span class="item-view"><i class="fa-solid fa-eye"></i>
+                    VIEW</span></a></div>
+              <div class="abt-page"><a href="./10-2023" class="list-item"><span class="item-label">Cyber
+                    Jaagrookta Diwas - 04th October 2023</span><span class="item-view"><i class="fa-solid fa-eye"></i>
+                    VIEW</span></a></div>
+              <div class="abt-page"><a href="./09-2023" class="list-item"><span class="item-label">Cyber
+                    Jaagrookta Diwas - 06th September 2023</span><span class="item-view"><i class="fa-solid fa-eye"></i>
+                    VIEW</span></a></div>
+              <div class="abt-page"><a href="./08-2023" class="list-item"><span class="item-label">Cyber
+                    Jaagrookta Diwas - 02nd August 2023</span><span class="item-view"><i class="fa-solid fa-eye"></i>
+                    VIEW</span></a></div>
+              <div class="abt-page"><a href="./06-2023" class="list-item"><span class="item-label">Cyber
+                    Jaagrookta Diwas - 07th June 2023</span><span class="item-view"><i class="fa-solid fa-eye"></i>
+                    VIEW</span></a></div>
+              <div class="abt-page"><a href="./09-2022" class="list-item"><span class="item-label">Cyber
+                    Jaagrookta Diwas - 07th September 2022</span><span class="item-view"><i class="fa-solid fa-eye"></i>
+                    VIEW</span></a></div>
+            </div>
 
-                <!-- Page 3 -->
-                <div class="page-content" data-page="3">
-                    <div class="abt-page">
-                        <a href="#" class="list-item"><span class="item-label">Safer Internet Day - 11th February 2025</span><span class="item-view"><i class="fa-solid fa-eye"></i> VIEW</span></a>
-                    </div>
-                    <div class="abt-page">
-                        <a href="#" class="list-item"><span class="item-label">Cyber Swachhta Pakhwada - 01st to 15th February 2025</span><span class="item-view"><i class="fa-solid fa-eye"></i> VIEW</span></a>
-                    </div>
-                    <div class="abt-page">
-                        <a href="#" class="list-item"><span class="item-label">Cyber Swachhta Pakhwada - 01st to 15th February 2025</span><span class="item-view"><i class="fa-solid fa-eye"></i> VIEW</span></a>
-                    </div>
-                    <div class="abt-page">
-                        <a href="#" class="list-item"><span class="item-label">Cyber Swachhta Pakhwada - 01st to 15th February 2025</span><span class="item-view"><i class="fa-solid fa-eye"></i> VIEW</span></a>
-                    </div>
-                    <div class="abt-page">
-                        <a href="#" class="list-item"><span class="item-label">Cyber Swachhta Pakhwada - 01st to 15th February 2025</span><span class="item-view"><i class="fa-solid fa-eye"></i> VIEW</span></a>
-                    </div>
-                    <div class="abt-page">
-                        <a href="#" class="list-item"><span class="item-label">Cyber Swachhta Pakhwada - 01st to 15th February 2025</span><span class="item-view"><i class="fa-solid fa-eye"></i> VIEW</span></a>
-                    </div>
-                    <div class="abt-page">
-                        <a href="#" class="list-item"><span class="item-label">Cyber Swachhta Pakhwada - 01st to 15th February 2025</span><span class="item-view"><i class="fa-solid fa-eye"></i> VIEW</span></a>
-                    </div>
-                   <div class="abt-page">
-                        <a href="#" class="list-item"><span class="item-label">Cyber Swachhta Pakhwada - 01st to 15th February 2025</span><span class="item-view"><i class="fa-solid fa-eye"></i> VIEW</span></a>
-                    </div>
-                    <div class="abt-page">
-                        <a href="#" class="list-item"><span class="item-label">Cyber Swachhta Pakhwada - 01st to 15th February 2025</span><span class="item-view"><i class="fa-solid fa-eye"></i> VIEW</span></a>
-                    </div>
-                </div>
+            <!-- Page 4 -->
+            <div class="page-content" data-page="4">
 
-                <!-- Page 4 -->
-                <div class="page-content" data-page="4">
-                    <div class="abt-page">
-                        <a href="#" class="list-item"><span class="item-label">Cyber Swachhta Pakhwada - 01st to 15th February 2025</span><span class="item-view"><i class="fa-solid fa-eye"></i> VIEW</span></a>
-                    </div>
-                    <div class="abt-page">
-                        <a href="#" class="list-item"><span class="item-label">Cyber Swachhta Pakhwada - 01st to 15th February 2025</span><span class="item-view"><i class="fa-solid fa-eye"></i> VIEW</span></a>
-                    </div>
-                    <div class="abt-page">
-                        <a href="#" class="list-item"><span class="item-label">Cyber Swachhta Pakhwada - 01st to 15th February 2025</span><span class="item-view"><i class="fa-solid fa-eye"></i> VIEW</span></a>
-                    </div>
-                    <div class="abt-page">
-                        <a href="#" class="list-item"><span class="item-label">Cyber Swachhta Pakhwada - 01st to 15th February 2025</span><span class="item-view"><i class="fa-solid fa-eye"></i> VIEW</span></a>
-                    </div>
-                    <div class="abt-page">
-                        <a href="#" class="list-item"><span class="item-label">Cyber Swachhta Pakhwada - 01st to 15th February 2025</span><span class="item-view"><i class="fa-solid fa-eye"></i> VIEW</span></a>
-                    </div>
-                    <div class="abt-page">
-                        <a href="#" class="list-item"><span class="item-label">Cyber Swachhta Pakhwada - 01st to 15th February 2025</span><span class="item-view"><i class="fa-solid fa-eye"></i> VIEW</span></a>
-                    </div>
-                   <div class="abt-page">
-                        <a href="#" class="list-item"><span class="item-label">Cyber Swachhta Pakhwada - 01st to 15th February 2025</span><span class="item-view"><i class="fa-solid fa-eye"></i> VIEW</span></a>
-                    </div>
-                    <div class="abt-page">
-                        <a href="#" class="list-item"><span class="item-label">Cyber Swachhta Pakhwada - 01st to 15th February 2025</span><span class="item-view"><i class="fa-solid fa-eye"></i> VIEW</span></a>
-                    </div>
-                    
-                </div>
 
-                </div>
-
-                <!-- ── Pagination ── -->
-                <div class="pagination">
-                    <!-- Prev arrows (one per page) -->
-                    <label for="p1" class="arrow prev p1-prev"><i class="fa-solid fa-angle-left"></i></label>
-                    <label for="p1" class="arrow prev p2-prev"><i class="fa-solid fa-angle-left"></i></label>
-                    <label for="p2" class="arrow prev p3-prev"><i class="fa-solid fa-angle-left"></i></label>
-                    <label for="p3" class="arrow prev p4-prev"><i class="fa-solid fa-angle-left"></i></label>
-
-                    <!-- Page numbers -->
-                    <label for="p1">1</label>
-                    <label for="p2">2</label>
-                    <label for="p3">3</label>
-                    <label for="p4">4</label>
-
-                    <!-- Next arrows (one per page) -->
-                    <label for="p2" class="arrow next p1-next"><i class="fa-solid fa-angle-right"></i></label>
-                    <label for="p3" class="arrow next p2-next"><i class="fa-solid fa-angle-right"></i></label>
-                    <label for="p4" class="arrow next p3-next"><i class="fa-solid fa-angle-right"></i></label>
-                    <label for="p4" class="arrow next p4-next"><i class="fa-solid fa-angle-right"></i></label>
-                </div>
+              <div class="abt-page"><a href="./07-2022" class="list-item"><span class="item-label">Cyber
+                    Jaagrookta Diwas - 06th July 2022</span><span class="item-view"><i class="fa-solid fa-eye"></i>
+                    VIEW</span></a></div>
+              <div class="abt-page"><a href="./06-2022" class="list-item"><span class="item-label">Cyber
+                    Jaagrookta Diwas - 01st June 2022</span><span class="item-view"><i class="fa-solid fa-eye"></i>
+                    VIEW</span></a></div>
 
             </div>
 
-            
-        </div>  
+          </div>
+
+          <!-- ── Pagination ── -->
+          <div class="pagination">
+            <!-- Prev arrows (one per page) -->
+            <label for="p1" class="arrow prev p1-prev"><i class="fa-solid fa-angle-left"></i></label>
+            <label for="p1" class="arrow prev p2-prev"><i class="fa-solid fa-angle-left"></i></label>
+            <label for="p2" class="arrow prev p3-prev"><i class="fa-solid fa-angle-left"></i></label>
+            <label for="p3" class="arrow prev p4-prev"><i class="fa-solid fa-angle-left"></i></label>
+
+            <!-- Page numbers -->
+            <label for="p1">1</label>
+            <label for="p2">2</label>
+            <label for="p3">3</label>
+            <label for="p4">4</label>
+
+            <!-- Next arrows (one per page) -->
+            <label for="p2" class="arrow next p1-next"><i class="fa-solid fa-angle-right"></i></label>
+            <label for="p3" class="arrow next p2-next"><i class="fa-solid fa-angle-right"></i></label>
+            <label for="p4" class="arrow next p3-next"><i class="fa-solid fa-angle-right"></i></label>
+            <label for="p4" class="arrow next p4-next"><i class="fa-solid fa-angle-right"></i></label>
+          </div>
+
+        </div>
+
+
+      </div>
     </div>
-    
+
   </main>
 
 
-<!-- Footer -->
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="footer-bg-svg"></div>
     <div class="footer-main">
@@ -477,9 +504,12 @@
           <div class="footer-follow">
             <span class="follow-label">Follow Us</span>
             <div class="footer-social-icons">
-              <a href="https://www.linkedin.com/company/cert-in/" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-              <a href="https://www.instagram.com/cert_india/" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-              <a href="https://www.facebook.com/IndianCERT/" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="https://www.linkedin.com/company/cert-in/" title="LinkedIn"><i
+                  class="fa-brands fa-linkedin-in"></i></a>
+              <a href="https://www.instagram.com/cert_india/" title="Instagram"><i
+                  class="fa-brands fa-instagram"></i></a>
+              <a href="https://www.facebook.com/IndianCERT/" title="Facebook"><i
+                  class="fa-brands fa-facebook-f"></i></a>
               <a href="https://x.com/IndianCERT" title="X"><i class="fa-solid fa-x"></i></a>
               <a href="https://www.youtube.com/hashtag/certin" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
             </div>
@@ -489,9 +519,10 @@
       </div>
     </div>
     <div class="footer-bottom">
-      
+
       <img src="../../../assets/Line 1.svg" alt="">
-      <p class="footer-disclaimer">Disclaimer :-The information provided herein is on "as is" basis, without warranty of any kind.</p>
+      <p class="footer-disclaimer">Disclaimer :-The information provided herein is on "as is" basis, without warranty of
+        any kind.</p>
       <p class="footer-copyright"><i class="fa-regular fa-copyright"></i> Copyright 2025. All right reserved</p>
     </div>
   </footer>
@@ -508,7 +539,7 @@
       tryClick();
     }
     function accResetAll() {
-      document.querySelectorAll('.acc-option--active').forEach(function(el) {
+      document.querySelectorAll('.acc-option--active').forEach(function (el) {
         el.classList.remove('acc-option--active');
       });
       var resetBtn = document.querySelector('.uwaw-reset') || document.querySelector('[onclick="resetAll()"]');
@@ -519,4 +550,5 @@
   <script src="https://translationplugin.bhashini.co.in/v3/website_translation_utility.js"></script>
 
 </body>
+
 </html>

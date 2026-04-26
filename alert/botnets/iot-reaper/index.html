@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../../../index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <script src="https://cdn.ux4g.gov.in/tools/accessibility-widget.js" async></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../../../index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.ux4g.gov.in/tools/accessibility-widget.js" async></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
   <!-- acc-toggle MUST be first -->
@@ -66,16 +68,26 @@
       </div>
       <div class="acc-options">
         <div class="acc-grid">
-          <div class="acc-option" onclick="accToggle(this,'speak')"><i class="fa-solid fa-volume-high"></i><span>Screen Reader</span></div>
-          <div class="acc-option" onclick="accToggle(this,'btn-s9')"><i class="fa-solid fa-text-height"></i><span>Bigger Text</span></div>
-          <div class="acc-option" onclick="accToggle(this,'btn-s12')"><i class="fa-solid fa-bars"></i><span>Line Height</span></div>
-          <div class="acc-option" onclick="accToggle(this,'btn-s13')"><i class="fa-solid fa-a"></i><span>Text Spacing</span></div>
-          <div class="acc-option" onclick="accToggle(this,'btn-s10')"><i class="fa-solid fa-link"></i><span>Highlight Links</span></div>
-          <div class="acc-option" onclick="accToggle(this,'btn-df')"><i class="fa-solid fa-d"></i><span>Dyslexia Friendly</span></div>
-          <div class="acc-option" onclick="accToggle(this,'btn-cursor')"><i class="fa-solid fa-brain"></i><span>ADHD Friendly</span></div>
-          <div class="acc-option" onclick="accToggle(this,'btn-s11')"><i class="fa-regular fa-image"></i><span>Hide Images</span></div>
-          <div class="acc-option" onclick="accToggle(this,'btn-invert')"><i class="fa-solid fa-circle-half-stroke"></i><span>Invert Color</span></div>
-          <div class="acc-option" onclick="accToggle(this,'dark-btn')"><i class="fa-solid fa-moon"></i><span>Dark Mode</span></div>
+          <div class="acc-option" onclick="accToggle(this,'speak')"><i class="fa-solid fa-volume-high"></i><span>Screen
+              Reader</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s9')"><i class="fa-solid fa-text-height"></i><span>Bigger
+              Text</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s12')"><i class="fa-solid fa-bars"></i><span>Line
+              Height</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s13')"><i class="fa-solid fa-a"></i><span>Text
+              Spacing</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s10')"><i class="fa-solid fa-link"></i><span>Highlight
+              Links</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-df')"><i class="fa-solid fa-d"></i><span>Dyslexia
+              Friendly</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-cursor')"><i class="fa-solid fa-brain"></i><span>ADHD
+              Friendly</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s11')"><i class="fa-regular fa-image"></i><span>Hide
+              Images</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-invert')"><i
+              class="fa-solid fa-circle-half-stroke"></i><span>Invert Color</span></div>
+          <div class="acc-option" onclick="accToggle(this,'dark-btn')"><i class="fa-solid fa-moon"></i><span>Dark
+              Mode</span></div>
         </div>
       </div>
       <div class="acc-footer">
@@ -162,8 +174,8 @@
               </button>
               <div class="engine-menu">
                 <label for="s-google" class="engine-opt"><span class="dot g-dot">G</span>Google.com</label>
-                <label for="s-bing"   class="engine-opt"><span class="dot b-dot">b</span>Bing.com</label>
-                <label for="s-duck"   class="engine-opt"><span class="dot d-dot">D</span>DuckDuckGo</label>
+                <label for="s-bing" class="engine-opt"><span class="dot b-dot">b</span>Bing.com</label>
+                <label for="s-duck" class="engine-opt"><span class="dot d-dot">D</span>DuckDuckGo</label>
               </div>
             </div>
 
@@ -175,30 +187,39 @@
                 <input class="si" type="text" name="q" placeholder="Search csk.gov.in" required>
                 <input type="hidden" name="as_sitesearch" value="csk.gov.in">
                 <button type="submit" class="sb" aria-label="Search">
-                  <svg viewBox="0 0 20 20"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17" y2="17"/></svg>
+                  <svg viewBox="0 0 20 20">
+                    <circle cx="8.5" cy="8.5" r="5.5" />
+                    <line x1="12.5" y1="12.5" x2="17" y2="17" />
+                  </svg>
                 </button>
               </form>
 
-              
+
               <!-- Bing -->
-<form class="sf" id="fb" action="https://www.bing.com/search" method="GET" target="_blank"
-  onsubmit="this.querySelector('[name=q]').value = this.querySelector('.si').value + ' site:csk.gov.in'; return true;">
-  <input class="si" type="text" placeholder="Search csk.gov.in" required>
-  <input type="hidden" name="q" value="">
-  <button type="submit" class="sb" aria-label="Search">
-    <svg viewBox="0 0 20 20"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17" y2="17"/></svg>
-  </button>
-</form>
+              <form class="sf" id="fb" action="https://www.bing.com/search" method="GET" target="_blank"
+                onsubmit="this.querySelector('[name=q]').value = this.querySelector('.si').value + ' site:csk.gov.in'; return true;">
+                <input class="si" type="text" placeholder="Search csk.gov.in" required>
+                <input type="hidden" name="q" value="">
+                <button type="submit" class="sb" aria-label="Search">
+                  <svg viewBox="0 0 20 20">
+                    <circle cx="8.5" cy="8.5" r="5.5" />
+                    <line x1="12.5" y1="12.5" x2="17" y2="17" />
+                  </svg>
+                </button>
+              </form>
               <!-- DuckDuckGo -->
               <!-- DuckDuckGo -->
-<form class="sf" id="fd" action="https://duckduckgo.com/" method="GET" target="_blank"
-  onsubmit="this.querySelector('[name=q]').value = this.querySelector('.si').value + ' site:csk.gov.in'; return true;">
-  <input class="si" type="text" placeholder="Search csk.gov.in" required>
-  <input type="hidden" name="q" value="">
-  <button type="submit" class="sb" aria-label="Search">
-    <svg viewBox="0 0 20 20"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17" y2="17"/></svg>
-  </button>
-</form>
+              <form class="sf" id="fd" action="https://duckduckgo.com/" method="GET" target="_blank"
+                onsubmit="this.querySelector('[name=q]').value = this.querySelector('.si').value + ' site:csk.gov.in'; return true;">
+                <input class="si" type="text" placeholder="Search csk.gov.in" required>
+                <input type="hidden" name="q" value="">
+                <button type="submit" class="sb" aria-label="Search">
+                  <svg viewBox="0 0 20 20">
+                    <circle cx="8.5" cy="8.5" r="5.5" />
+                    <line x1="12.5" y1="12.5" x2="17" y2="17" />
+                  </svg>
+                </button>
+              </form>
 
             </div>
           </div>
@@ -209,213 +230,244 @@
     </div>
   </nav>
 
-    <!-- ✅ nav-overlay AFTER nav — direct sibling of nav-toggle -->
-    <div class="nav-overlay">
-      <label for="nav-toggle"></label>
-    </div>
+  <!-- ✅ nav-overlay AFTER nav — direct sibling of nav-toggle -->
+  <div class="nav-overlay">
+    <label for="nav-toggle"></label>
+  </div>
 
-   <main id="main-content">
+  <main id="main-content">
     <div class="main-content-Locky">
- 
+
       <div class="social-content">
-            <div class="social-icons">
-              <a href="https://www.facebook.com/IndianCERT/" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
-              <a href="https://www.instagram.com/cert_india/" title="Instagram"><i class="fa-brands fa-square-instagram"></i></a>
-              <a href="https://x.com/IndianCERT" title="X"><i class="fa-solid fa-x"></i></a>
-              <a href="https://www.linkedin.com/company/cert-in/" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-              <a href="https://www.youtube.com/hashtag/certin" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
-            </div>  
+        <div class="social-icons">
+          <a href="https://www.facebook.com/IndianCERT/" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://www.instagram.com/cert_india/" title="Instagram"><i
+              class="fa-brands fa-square-instagram"></i></a>
+          <a href="https://x.com/IndianCERT" title="X"><i class="fa-solid fa-x"></i></a>
+          <a href="https://www.linkedin.com/company/cert-in/" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://www.youtube.com/hashtag/certin" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <label for="acc-toggle" class="icon">
+        <img src="../assets/access_icon.svg" alt="">
+      </label>
+
+      <div class="container">
+
+        <div class="header">
+
+          <div class="left">
+            <a href="javascript:history.back()" class="back-btn">
+              <i class="fa-solid fa-angle-left"></i> BACK
+            </a>
+            <h1>IOT Reaper/IOTRoop Botnet</h1>
           </div>
- 
-          <label for="acc-toggle" class="icon">
-              <img src="../assets/access_icon.svg" alt="">
-          </label>
- 
-        <div class="container">
- 
-          <div class="header">
- 
-            <div class="left">
-              <a href="javascript:history.back()" class="back-btn">
-                <i class="fa-solid fa-angle-left"></i> BACK
-              </a>
-              <h1>IOT Reaper/IOTRoop Botnet</h1>
-            </div>
- 
-            <div class="header-right">
-              <div class="meta">
-                <div class="border-left"></div>
-                <div class="righ-content">
-                  <p><span class="gree">Original Issue Date:</span> October 24, 2017</p>
-                  <p><span class="orr">Type:</span> Botnet</p>
-                  <p><span class="orr">Severity:</span> High</p>
-                </div>
+
+          <div class="header-right">
+            <div class="meta">
+              <div class="border-left"></div>
+              <div class="righ-content">
+                <p><span class="gree">Original Issue Date:</span> October 24, 2017</p>
+                <p><span class="orr">Type:</span> Botnet</p>
+                <p><span class="orr">Severity:</span> High</p>
               </div>
             </div>
- 
           </div>
- 
-          <!-- Description -->
-          <div class="section">
-            <p>
-              An IOT botnet dubbed "IoTroop" or "Reaper" targeting vulnerable internet-connected devices, such as CCTV, IP cameras and Wi-Fi routers, are reported rampant spreading worldwide. The botnet targets reported vulnerabilities in the major IoT device vendors such as Dlink, Netgear, Linksys, AVTECH, Goahead, JAWS.
-            </p>
-            <p>
-              These compromised devices lets cyber criminals to intrude on private networks and gain access to other devices and information attached to these networks and can also be used for activities such as DDoS or other malicious activities leading to full loss of confidentiality, integrity and availability, depending on the actions of the attacker.
-            </p>
-           
-          </div>
- 
-          <!-- Vulnerable Systems -->
-          <div class="section">
-            <h2>Vulnerable Systems:</h2>
-            <p>The following systems are currently reported to be vulnerable to the Reaper malware:</p>
-            <ul>
-              <li>Dlink (router) <a href="https://blogs.securiteam.com/index.php/archives/3364">https://blogs.securiteam.com/index.php/archives/3364</a></li>
-              <li>Dlink (router) <a href="http://www.s3cur1ty.de/m1adv2013-003">http://www.s3cur1ty.de/m1adv2013-003</a></li>
-              <li>Netgear (router) <a href="https://blogs.securiteam.com/index.php/archives/3409">https://blogs.securiteam.com/index.php/archives/3409</a></li>
-              <li>Netgear (router) <a href="http://seclists.org/bugtraq/2013/Jun/8">http://seclists.org/bugtraq/2013/Jun/8</a></li>
-              <li>Linksys (router) <a href="http://www.s3cur1ty.de/m1adv2013-004">http://www.s3cur1ty.de/m1adv2013-004</a></li>
-              <li>AVTECH (IP camera) <a href="https://github.com/Trietptm-on-Security/AVTECH">https://github.com/Trietptm-on-Security/AVTECH</a></li>
-              <li>Goahead (IP camera) <a href="https://pierrekim.github.io/blog/2017-03-08-camera-goahead-0day.html">https://pierrekim.github.io/blog/2017-03-08-camera-goahead-0day.html</a></li>
-              <li>JAWS (IP camera) <a href="https://www.pentestpartners.com/blog/pwning-cctv-cameras/">https://www.pentestpartners.com/blog/pwning-cctv-cameras/</a></li>
-              <li>Vacron NVR (Network Video Recorder) <a href="https://blogs.securiteam.com/index.php/archives/3445">https://blogs.securiteam.com/index.php/archives/3445</a></li>
-            </ul>
-          </div>
- 
-          <!-- Recommendations -->
-          <div class="section">
-            <h2>Recommendations</h2>
-            <ul>
-              <li>Run updates and contact manufacturers to confirm devices are patched with the latest software and firmware.</li>
-              <li>Review IOT devices (home Internet routers, DVRs, IP cameras) to ensure they support the latest security protocols and standards and disable older insecure protocols. (check the vendors websites for updates &amp; patches).</li>
-              <li>Change the default OEM credentials and ensure that passwords meet the minimum complexity.</li>
-              <li>Disable Universal Plug and Play (UPnP) unless absolutely necessary.</li>
-              <li>Implement account lockout policies to reduce the risk of brute forcing attacks.</li>
-              <li>Telnet and SSH should be disabled on device if there is no requirement of remote management</li>
-              <li>Configure VPN and SSH to access device if remote access is required.</li>
-              <li>Configure certificate based authentication for telnet client for remote management of devices</li>
-              <li>Implement Egress and Ingress filtering at router level.</li>
-              <li>Unnecessary port and services should be stopped and closed.</li>
-              <li>Logging must be enabled on the device to log all the activities.</li>
-              <li>Enable and monitor perimeter device logs to detect scan attempts towards critical devices/systems.</li>
-            </ul>
-          </div>
- 
-          <!-- References -->
-          <div class="section">
-            <h2>References</h2>
-            <ul class="links">
-              <li><a href="http://blog.netlab.360.com/iot_reaper-a-rappid-spreading-new-iot-botnet-en/">http://blog.netlab.360.com/iot_reaper-a-rappid-spreading-new-iot-botnet-en/</a></li>
-              <li><a href="https://research.checkpoint.com/new-iot-botnet-storm-coming/">https://research.checkpoint.com/new-iot-botnet-storm-coming/</a></li>
-              <li><a href="https://www.csa.gov.sg/singcert/news/advisories-alerts/alert-on-botnet-iot-reaper">https://www.csa.gov.sg/singcert/news/advisories-alerts/alert-on-botnet-iot-reaper</a></li>
-            </ul>
-          </div>
- 
-        </div>  
+
+        </div>
+
+        <!-- Description -->
+        <div class="section">
+          <p>
+            An IOT botnet dubbed "IoTroop" or "Reaper" targeting vulnerable internet-connected devices, such as CCTV, IP
+            cameras and Wi-Fi routers, are reported rampant spreading worldwide. The botnet targets reported
+            vulnerabilities in the major IoT device vendors such as Dlink, Netgear, Linksys, AVTECH, Goahead, JAWS.
+          </p>
+          <p>
+            These compromised devices lets cyber criminals to intrude on private networks and gain access to other
+            devices and information attached to these networks and can also be used for activities such as DDoS or other
+            malicious activities leading to full loss of confidentiality, integrity and availability, depending on the
+            actions of the attacker.
+          </p>
+
+        </div>
+
+        <!-- Vulnerable Systems -->
+        <div class="section">
+          <h2>Vulnerable Systems:</h2>
+          <p>The following systems are currently reported to be vulnerable to the Reaper malware:</p>
+          <ul>
+            <li>Dlink (router) <a
+                href="https://blogs.securiteam.com/index.php/archives/3364">https://blogs.securiteam.com/index.php/archives/3364</a>
+            </li>
+            <li>Dlink (router) <a href="http://www.s3cur1ty.de/m1adv2013-003">http://www.s3cur1ty.de/m1adv2013-003</a>
+            </li>
+            <li>Netgear (router) <a
+                href="https://blogs.securiteam.com/index.php/archives/3409">https://blogs.securiteam.com/index.php/archives/3409</a>
+            </li>
+            <li>Netgear (router) <a
+                href="http://seclists.org/bugtraq/2013/Jun/8">http://seclists.org/bugtraq/2013/Jun/8</a></li>
+            <li>Linksys (router) <a href="http://www.s3cur1ty.de/m1adv2013-004">http://www.s3cur1ty.de/m1adv2013-004</a>
+            </li>
+            <li>AVTECH (IP camera) <a
+                href="https://github.com/Trietptm-on-Security/AVTECH">https://github.com/Trietptm-on-Security/AVTECH</a>
+            </li>
+            <li>Goahead (IP camera) <a
+                href="https://pierrekim.github.io/blog/2017-03-08-camera-goahead-0day.html">https://pierrekim.github.io/blog/2017-03-08-camera-goahead-0day.html</a>
+            </li>
+            <li>JAWS (IP camera) <a
+                href="https://www.pentestpartners.com/blog/pwning-cctv-cameras/">https://www.pentestpartners.com/blog/pwning-cctv-cameras/</a>
+            </li>
+            <li>Vacron NVR (Network Video Recorder) <a
+                href="https://blogs.securiteam.com/index.php/archives/3445">https://blogs.securiteam.com/index.php/archives/3445</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Recommendations -->
+        <div class="section">
+          <h2>Recommendations</h2>
+          <ul>
+            <li>Run updates and contact manufacturers to confirm devices are patched with the latest software and
+              firmware.</li>
+            <li>Review IOT devices (home Internet routers, DVRs, IP cameras) to ensure they support the latest security
+              protocols and standards and disable older insecure protocols. (check the vendors websites for updates
+              &amp; patches).</li>
+            <li>Change the default OEM credentials and ensure that passwords meet the minimum complexity.</li>
+            <li>Disable Universal Plug and Play (UPnP) unless absolutely necessary.</li>
+            <li>Implement account lockout policies to reduce the risk of brute forcing attacks.</li>
+            <li>Telnet and SSH should be disabled on device if there is no requirement of remote management</li>
+            <li>Configure VPN and SSH to access device if remote access is required.</li>
+            <li>Configure certificate based authentication for telnet client for remote management of devices</li>
+            <li>Implement Egress and Ingress filtering at router level.</li>
+            <li>Unnecessary port and services should be stopped and closed.</li>
+            <li>Logging must be enabled on the device to log all the activities.</li>
+            <li>Enable and monitor perimeter device logs to detect scan attempts towards critical devices/systems.</li>
+          </ul>
+        </div>
+
+        <!-- References -->
+        <div class="section">
+          <h2>References</h2>
+          <ul class="links">
+            <li><a
+                href="http://blog.netlab.360.com/iot_reaper-a-rappid-spreading-new-iot-botnet-en/">http://blog.netlab.360.com/iot_reaper-a-rappid-spreading-new-iot-botnet-en/</a>
+            </li>
+            <li><a
+                href="https://research.checkpoint.com/new-iot-botnet-storm-coming/">https://research.checkpoint.com/new-iot-botnet-storm-coming/</a>
+            </li>
+            <li><a
+                href="https://www.csa.gov.sg/singcert/news/advisories-alerts/alert-on-botnet-iot-reaper">https://www.csa.gov.sg/singcert/news/advisories-alerts/alert-on-botnet-iot-reaper</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
     </div>
-    
+
   </main>
 
   <footer class="site-footer">
- 
-      <!-- Layer 1: gradient (on .site-footer itself) -->
-      <!-- Layer 2: SVG circuit overlay -->
-      <div class="footer-bg-svg"></div>
-    
-      <!-- MAIN CONTENT -->
-      <div class="footer-main">
-    
-        <!-- LEFT: Postal Address -->
-        <div class="footer-address">
-          <h3 class="footer-section-title">Postal Address:</h3>
-          <div class="footer-title-line"></div>
-    
-          <address>
-            <p><strong>Indian Computer Emergency Response Team (CERT-In)</strong></p>
-            <p>Ministry of Electronics and Information Technology,</p>
-            <p>Government of India,</p>
-            <p>Electronics Niketan, 6 CGO Complex,</p>
-            <p>Lodhi Road, New Delhi - 110 003</p>
-          </address>
-    
-          <p class="footer-toll-free">
-            <strong>Toll Free Number:</strong> +91-1800-11-4949
-          </p>
-    
-          <div class="footer-logos">
-            <div class="footer-logo">
-              <a href="#" class="footer-logo-item">
+
+    <!-- Layer 1: gradient (on .site-footer itself) -->
+    <!-- Layer 2: SVG circuit overlay -->
+    <div class="footer-bg-svg"></div>
+
+    <!-- MAIN CONTENT -->
+    <div class="footer-main">
+
+      <!-- LEFT: Postal Address -->
+      <div class="footer-address">
+        <h3 class="footer-section-title">Postal Address:</h3>
+        <div class="footer-title-line"></div>
+
+        <address>
+          <p><strong>Indian Computer Emergency Response Team (CERT-In)</strong></p>
+          <p>Ministry of Electronics and Information Technology,</p>
+          <p>Government of India,</p>
+          <p>Electronics Niketan, 6 CGO Complex,</p>
+          <p>Lodhi Road, New Delhi - 110 003</p>
+        </address>
+
+        <p class="footer-toll-free">
+          <strong>Toll Free Number:</strong> +91-1800-11-4949
+        </p>
+
+        <div class="footer-logos">
+          <div class="footer-logo">
+            <a href="#" class="footer-logo-item">
               <img src="../../../assets/digital-india.svg" alt="Digital India - Power To Empower" />
-              </a>
-              <a href="#" class="footer-logo-item">
-                <img src="../../../assets/footer-certin.svg" alt="CERT-In" />
-              </a>
-            </div>
-            <div class="footer-logo">
-              <a href="#" class="footer-logo-item">
+            </a>
+            <a href="#" class="footer-logo-item">
+              <img src="../../../assets/footer-certin.svg" alt="CERT-In" />
+            </a>
+          </div>
+          <div class="footer-logo">
+            <a href="#" class="footer-logo-item">
               <img src="../../../assets/infosec.svg" alt="InfoSec Awareness" />
-              </a>
-              <a href="#" class="footer-logo-item">
-                <img src="../../../assets/staysafe.svg" alt="Stay Safe Online" />
-              </a>
-            </div>
+            </a>
+            <a href="#" class="footer-logo-item">
+              <img src="../../../assets/staysafe.svg" alt="Stay Safe Online" />
+            </a>
           </div>
         </div>
-    
-        <!-- RIGHT: Important Links -->
-        <div class="footer-links">
-          <h3 class="footer-section-title">Important Links</h3>
-          <div class="footer-title-line"></div>
-    
-          <div class="footer-links-grid">
-            <ul class="footer-link-col">
-              <li><a href="../homePage/index.html">Home</a></li>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">CERT-In</a></li>
-              <li><a href="#">MeiTY</a></li>
-              <li><a href="#">FAQ's</a></li>
-              <li><a href="#">Contact Us</a></li>
-            </ul>
-            <ul class="footer-link-col">
-              <li><a href="#">Website Policies</a></li>
-              <li><a href="#">Terms &amp; Conditions</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Help</a></li>
-              <li><a href="#">Archives</a></li>
-              <li><a href="#">Sitemap</a></li>
-            </ul>
-          </div>
-    
-          <div class="footer-social-row">
-            <div class="footer-follow">
-              <span class="follow-label">Follow Us</span>
-              <div class="footer-social-icons">
-                <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#" title="X"><i class="fa-solid fa-x"></i></a>
-                <a href="#" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
-              </div>
-            </div>
-            <p class="footer-last-updated">Last updated on: November 10, 2025</p>
-          </div>
+      </div>
+
+      <!-- RIGHT: Important Links -->
+      <div class="footer-links">
+        <h3 class="footer-section-title">Important Links</h3>
+        <div class="footer-title-line"></div>
+
+        <div class="footer-links-grid">
+          <ul class="footer-link-col">
+            <li><a href="../homePage/index.html">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">CERT-In</a></li>
+            <li><a href="#">MeiTY</a></li>
+            <li><a href="#">FAQ's</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+          <ul class="footer-link-col">
+            <li><a href="#">Website Policies</a></li>
+            <li><a href="#">Terms &amp; Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Archives</a></li>
+            <li><a href="#">Sitemap</a></li>
+          </ul>
         </div>
-    
+
+        <div class="footer-social-row">
+          <div class="footer-follow">
+            <span class="follow-label">Follow Us</span>
+            <div class="footer-social-icons">
+              <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" title="X"><i class="fa-solid fa-x"></i></a>
+              <a href="#" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+          </div>
+          <p class="footer-last-updated">Last updated on: November 10, 2025</p>
+        </div>
       </div>
-    
-      <!-- BOTTOM BAR -->
-      <div class="footer-bottom">
-        <p class="footer-disclaimer">
-          Disclaimer :-The information provided herein is on "as is" basis, without warranty of any kind.
-        </p>
-        <p class="footer-copyright">
-          <i class="fa-regular fa-copyright"></i> Copyright 2025. All right reserved
-        </p>
-      </div>
-    
-    </footer>
+
+    </div>
+
+    <!-- BOTTOM BAR -->
+    <div class="footer-bottom">
+      <p class="footer-disclaimer">
+        Disclaimer :-The information provided herein is on "as is" basis, without warranty of any kind.
+      </p>
+      <p class="footer-copyright">
+        <i class="fa-regular fa-copyright"></i> Copyright 2025. All right reserved
+      </p>
+    </div>
+
+  </footer>
 
 
 </body>
+
 </html>

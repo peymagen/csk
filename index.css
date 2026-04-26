@@ -2428,6 +2428,9 @@ nav {
   color: var(--color-black);
   font-weight: var(--fw-bold);
 }
+.row{
+  flex-direction: row !important;
+}
 .main-content-about .antivirus h2::after {
     content: "";
     position: absolute;
@@ -5210,18 +5213,20 @@ ol > li::before {
   color: var(--color-primary-800);
 }
 
-.main-content-campaign .container .campaign-card .campaign-title .word-cyber {
+.main-content-campaign .container .campaign-card .campaign-title .word-cyber, .word-cyber {
   color: var(--color-secondary-500);
 }
 
-.main-content-campaign .container .campaign-card .campaign-title .word-middle {
+.main-content-campaign .container .campaign-card .campaign-title .word-middle, .word-middle {
   color: var(--color-primary-800);
 }
 
-.main-content-campaign .container .campaign-card .campaign-title .word-last {
+.main-content-campaign .container .campaign-card .campaign-title .word-last, .word-last {
   color: var(--color-accent-700);
 }
-
+.row img{
+  object-fit: contain;
+}
 /* ── Hashtags ── */
 .main-content-campaign .container .campaign-card .campaign-hashtags {
   font-size: var(--text-lg);
