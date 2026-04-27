@@ -2430,6 +2430,7 @@ nav {
 }
 .row{
   flex-direction: row !important;
+  gap: 1rem;
 }
 .main-content-about .antivirus h2::after {
     content: "";
@@ -3814,11 +3815,11 @@ nav {
 }
 
 /* ── Sections ── */
-.main-content-ramcos .container .section {
+.main-content-ramcos .container .section, .sec {
   padding: 1rem 0;
 }
 
-.main-content-ramcos .container .section h2 {
+.main-content-ramcos .container .section h2, .sec h2 {
   font-size: var(--text-5xl);
   font-weight: var(--fw-bold);
   color: var(--color-primary-800);
@@ -3827,7 +3828,7 @@ nav {
   display: inline-block;
 }
 
-.main-content-ramcos .container .section h2::after {
+.main-content-ramcos .container .section h2::after, .sec h2::after {
   content: "";
   position: absolute;
   left: 0;
@@ -3837,7 +3838,7 @@ nav {
   background: linear-gradient(270deg, rgba(22, 47, 106, 0.3) 16.3%, #162F6A 97.2%);
 }
 
-.main-content-ramcos .container .section p {
+.main-content-ramcos .container .section p, .sec p {
   font-size: var(--text-xl);
   color: var(--color-black);
   line-height: 1.8;
@@ -4226,11 +4227,15 @@ nav {
   font-size: var(--text-xxl);
 }
 
-.main-content-Locky .container .section ul {
+.main-content-Locky .container .section ul, .sec ul {
   padding-left: 1.4rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+}
+.sec ul a{
+  color: var(--color-primary-800);
+  text-decoration: none;
 }
 .main-content-Locky .container .section ol {
   padding-left: 1.4rem;
@@ -6808,7 +6813,7 @@ ol > li::before {
 .tips-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  gap: 2rem;
   padding: 10px;
 }
 
@@ -6822,16 +6827,17 @@ ol > li::before {
   box-shadow: 0 2px 8px rgba(0,0,0,.10);
   border: 1px solid #dce3ef;
   transition: box-shadow .25s, transform .25s;
-  width: 85%;
   cursor: pointer;
+  height: fit-content;
 }
 .tip-card:hover {
   box-shadow: 0 6px 16px rgba(26,58,107,.18);
   transform: translateY(-2px);
 }
-.tip-card a {
+.tip-card a, .card-view a {
   display: block;
   text-decoration: none;
+  color: #1a3a6b;
 }
 
 /* ── COLOURED TOP STRIP ── */
@@ -6845,7 +6851,6 @@ ol > li::before {
 /* ── CARD IMAGE SLOT ── */
 .card-img-wrap {
   width: 100%;
-  aspect-ratio: 1 / 1.2;    /* portrait — exactly like your screenshot */
   overflow: hidden;
   position: relative;
 }
@@ -6875,7 +6880,7 @@ ol > li::before {
 @media (max-width: 768px) {
   .tips-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 8px;
+    gap: 1rem;
     padding: 8px;
   }
 }
@@ -6883,7 +6888,7 @@ ol > li::before {
 @media (max-width: 480px) {
   .tips-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 6px;
+    gap: 1rem;
     padding: 6px;
   }
   .card-label {
