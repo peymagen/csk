@@ -1,0 +1,807 @@
+* {
+	box-sizing: border-box;
+ 	overflow-wrap: normal  word-wrap: normal  -ms-word-break: break-all;
+	word-break: normal;
+}
+html, body {
+	padding: 0;
+	margin: 0;
+}
+body {
+	font-size: 14px;
+	font-family: "verdana", Arial, sans-serif;
+	font-weight: 500;
+	background: url(../image/bg/bg.gif) top center repeat-y;
+	background-size: 100%;
+}
+ul {
+	list-style: none;
+}
+ul li {
+	padding: 0;
+	margin: 0;
+}
+ul ul li {
+	list-style: circle !important;
+}
+/*********************** bg and text color css Start ****************************/
+.bg-orange {
+	background: #ff9c00;
+}
+.bg-white {
+	background: #efefef;
+}
+.bg-green {
+	background: #24c400;
+}
+.bg-black {
+	background: #000;
+}
+.bg-blue {
+	background: #1356a4
+}
+.txt-orange, orange, .txt-orange a {
+	color: #ff9c00;
+}
+.txt-white, a.txt-white, .txt-white small {
+	color: #efefef;
+}
+.txt-green, green, .txt-green a {
+	color: #24c400;
+}
+.txt-blue, blue {
+	color: #1356a4
+}
+.txt-black, black {
+	color: #000;
+}
+.txt-red, red {
+	color: #dd2400;
+}
+.bg-lightblue {
+	background: #e1eefd url(../image/bg/bg.jpg);
+}
+/*********************** bg and text color css end ****************************/
+/*********************** border start ************************************/
+.border {
+	float: left;
+	width: 100%;
+	position: relative;
+	margin: 10px 0px;
+}
+.border .border-blue {
+	width: 25%;
+	float: left;
+	position: absolute;
+	height: 2px;
+	left: 0;
+	top: 0;
+}
+.border .border-black, .border .border-white {
+	width: 100%;
+	position: relative;
+	float: left;
+	height: 2px;
+}
+.border-right {
+	border-right: 1px dotted #ccc;
+}
+.border-left {
+	border-left: 1px dotted #ccc;
+}
+.border-top {
+	border-top: 1px dotted #ccc;
+}
+.border-bottom {
+	border-bottom: 1px dotted #ccc;
+}
+/*********************** Border End ************************************/
+
+/************************* Comman Style Css ******************************/
+
+.mid-header, .header-top, footer {
+	width: 100%;
+	float: left;
+	position: relative;
+}
+.header-top, footer {
+	background: #292929;
+	color: #fff;
+}
+.f-left {
+	float: left;
+}
+.f-right {
+	float: right !important;
+}
+.img-responsive {
+	width: 100%;
+}
+.img-responsive-central {
+	width: 100%;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+.alignleft {
+	float: left;
+}
+.alignright {
+	float: right;
+}
+/********************** All Font Size Start ***************************************/
+.font-size-h2 {
+	font-size: 25px
+}
+/********************** All Font Size End ***************************************/
+
+/************************ Mid Header Start **********************************/
+.mid-header {
+	width: 100%;
+	float: left;
+	position: relative;
+	padding: 10px 0px;
+	background-image: url(../image/bg/bg-header.gif);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+.mid-header .logo {
+	padding: 24px 0px;
+	float: left;
+	width: 100%;
+}
+.mid-header .csk {
+}
+.mid-header a .emblem-india {
+	color: #000;
+}
+.mid-header .emblem-india h2 {
+	font-size: 16px;
+	line-height: 23px;
+	padding: 15px 0px 10px;
+	font-weight: bold;
+	margin-top: 0;
+	font-family: open_sanslight;
+}
+.mid-header .emblem-india img {
+	width: 60px;
+	float: left;
+	margin-right: 10px;
+}
+/************************ Mid Header End **********************************/
+
+/*******************************  Menu Css Start ****************************/
+.menu {
+	width: 100%;
+	float: left;
+	position: relative;
+	background: #1356a4;
+}
+.dropdown ul.topnav {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+.dropdown ul.topnav li {
+	float: left;
+	border-right: 1px solid #003f64;
+}
+.dropdown ul.topnav li a {
+	display: inline-block;
+	color: #f2f2f2;
+	text-align: left;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 15px;
+	width: 100%;
+}
+.dropdown ul.topnav li.active, .dropdown ul.topnav li a:hover  {
+	background: #ff9c00;
+}
+.dropdown ul.topnav li:nth-child(1) {
+	border-left: 1px solid #003F64;
+}
+.dropdown input[type=checkbox], .dropdown label {
+	display: none;
+}
+@media screen and (max-width:980px) {
+.menu {
+	background: #ff9c00;
+}
+.dropdown input[type=checkbox], .dropdown label {
+	display: block;
+}
+.dropdown input[type=checkbox] {
+	display: none;
+}
+.dropdown ul {
+	display: none;
+}
+.dropdown input[type=checkbox]:checked ~ ul {
+	display: block
+}
+.dropdown label{
+	margin: 5px 10px 5px;
+	width: 35px;
+	height: 35px;
+	float: right;
+}
+.topnav {
+	background: #1356a4;
+	float: left;
+	width: 100%;
+}
+.dropdown ul.topnav li {
+	float: none;
+	border-bottom: 1px dotted #ff9c00;
+	width:100%;
+}
+.dropdown ul.topnav li:last-child {
+	border-bottom: none;
+}
+.dropdown ul.topnav li a {
+	padding: 8px 20px;
+	font-size: 14px;
+}
+}
+/**************************************** banner slider ********************************/
+.banner {
+	background: url(../image/bg/text-slider-bg.jpg) center;
+	width: 100%;
+	height: 100px;
+	position: relative;
+	padding: 20px 0px;
+	background-size: 100%;
+}
+.banner #slider, .banner ul {
+	height: 120px;
+}
+.banner #slider {
+	margin: auto;
+	overflow: hidden;
+	padding: 20px;
+	border-radius: 10px;
+	position: relative;
+}
+.banner #slider li {
+	float: left;
+	position: relative;
+	width: 600px;
+	display: inline-block;
+	height: 200px;
+}
+.banner #slider ul {
+	list-style: none;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 9000px;
+	transition: left .3s linear;
+	-moz-transition: left .3s linear;
+	-o-transition: left .3s linear;
+	-webkit-transition: left .3s linear;
+	margin-left: -25px;
+	font-family: century gothic;
+	color: #fff;
+	font-weight: bold;
+}
+/*** Content ***/
+
+.banner .slider-container {
+	margin: 0 auto;
+	padding: 0;
+	width: 550px;
+}
+.banner .slider-container p {
+	margin: 10px 25px;
+	font-weight: semi-bold;
+	line-height: 150%;
+	text-align: justify;
+	font-size: 15px;
+}
+.banner #slider ul:hover {
+	-moz-animation-play-state: paused;
+	-webkit-animation-play-state: paused;
+}
+
+/*** target hooks ****/
+
+@-webkit-keyframes slide-animation {
+ 0% {
+opacity:0;
+}
+ 2% {
+opacity:1;
+}
+ 20% {
+left:0px;
+opacity:1;
+}
+ 22.5% {
+opacity:0.6;
+}
+ 25% {
+left:-600px;
+opacity:1;
+}
+ 45% {
+left:-600px;
+opacity:1;
+}
+ 47.5% {
+opacity:0.6;
+}
+ 50% {
+left:-1200px;
+opacity:1;
+}
+ 70% {
+left:-1200px;
+opacity:1;
+}
+ 72.5% {
+opacity:0.6;
+}
+ 75% {
+left:-1800px;
+opacity:1;
+}
+ 95% {
+opacity:1;
+}
+ 98% {
+left:-1800px;
+opacity:0;
+}
+ 100% {
+left:0px;
+opacity:0;
+}
+}
+.banner #slider ul {
+	-webkit-animation: slide-animation 25s infinite;
+}
+
+@media screen and (min-width:480px) and (max-width:640px) {
+.banner {
+	padding: 0;
+	height: 120px;
+}
+.banner #slider ul {
+	padding: 0;
+}
+.banner .slider-container p {
+	text-align: center;
+}
+.banner #slider li {
+	width: 350px;
+}
+.banner .slider-container {
+	width: 350px;
+}
+}
+
+@media screen and (max-width:480px) {
+.banner #slider li {
+	width: 305px;
+}
+.banner .slider-container {
+	width: 305px;
+}
+}
+/* use to paused the content on mouse over */
+
+
+
+/***************************************  Main Content Start ***************************/
+.main {
+	width: 100%;
+	float: left;
+	padding-bottom: 30px;
+	position: relative;
+}
+.main a {
+	color: #1356a4
+}
+.tag-line span {
+	font-size: 12px;
+	padding: 0px 10px 0px 0px;
+	line-height: 35px;
+	margin-top: 30px;
+}
+.main ul {
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	display: block;
+}
+.main li {
+	padding: 3px 0px;
+	list-style: disc;
+	float: left;
+	width: 100%
+}
+.main li i {
+	margin-right: 10px;
+}
+h3 img, h4 img {
+	width: 60px;
+	margin-left: 10px;
+}
+.tag-line {
+	display: inline-block;
+	margin: 10px 0px;
+}
+.tag-line h1 {
+	font-size: 22px;
+	padding: 0px 10px 0px 0px;
+	line-height: 35px;
+}
+.tag-line h1 span {
+	font-size: 24px;
+	font-weight: bold;
+}
+.main p {
+	line-height: 25px;
+}
+.text-info ul {
+	padding: 10px 0px 10px 70px;
+}
+.text-info li {
+	padding-bottom: 5px;
+}
+.text-info li i {
+	margin-right: -3px;
+	text-indent: -17px;
+}
+.go-back-btn {
+	background: #000;
+	display: inline-block;
+	line-height: 26px;
+}
+/***************************************  Main Content End ***************************/
+/************************************** Info box Css Start ***************************/
+.info {
+	dispaly: inline-block;
+	width: 100%;
+	position: relative;
+	padding: 10px 0px;
+}
+.info span {
+	padding: 10px 0px;
+	position: absolute;
+	right: 15px;
+	bottom: 10px;
+}
+.info span i, .info-box-3 span i {
+	font-size: 16px !important;
+	line-height: 20px;
+	margin-right: 5px
+}
+.info i {
+	font-size: 120px;
+	float: left;
+	margin-right: 20px;
+	line-height: 118px;
+}
+.info h3 {
+	font-size: 32px;
+	line-height: 38px;
+	margin: 0;
+	text-transform: capitalize;
+}
+h3 small {
+	font-size: 16px;
+}
+.info p {
+	margin: 10px 0px;
+}
+.info .info-box-1, .info .info-box-2, .info .info-box-3 {
+	padding: 10px 20px;
+	width: 100%;
+	display: inline-block;
+	margin: 20px 0px;
+	position: relative;
+	min-height: 100px;
+}
+.info .info-box-1 {
+	background: url(../image/bg/bg-orange.jpg) center;
+}
+.info .info-box-2 {
+	background: url(../image/bg/bg-white.jpg) top;
+}
+.info .info-box-3 {
+	background: url(../image/bg/bg-green.jpg) bottom;
+}
+.info .info-box-3 i {
+	font-size: 86px;
+}
+.shadow {
+	-webkit-box-shadow: 2px 2px 0px 1px rgba(0,0,0,0.75);
+	-moz-box-shadow: 2px 2px 0px 1px rgba(0,0,0,0.75);
+	box-shadow: 2px 2px 0px 1px rgba(0,0,0,0.75);
+}
+.right-info {
+	margin-top: 10px;
+	border-right: 2px solid;
+}
+.right-info h6 {
+	margin-bottom: 1px;
+	margin-top: 5px;
+}
+/************************************** Info box Css End ***************************/
+/*********************** Footer ************************************************/
+
+footer a {
+	color: #fff;
+	font-weight: normal;
+}
+.footer-box {
+	width: 100%;
+	float: left;
+	position: relative;
+	padding: 20px 0px;
+}
+.footer-logo {
+	position: relative;
+	display: inline-block;
+	marign: 10px 0px;
+	padding: 25px 0px;
+}
+footer .logo {
+	padding: 2px;
+	float: left;
+	width: 100%;
+	margin: 5px 0px 5px;
+	border: 4px double #fff;
+}
+footer .logo img {
+	width: 100%;
+}
+.footer-box h2 {
+	margin-top: 0;
+}
+footer li {
+	margin: 4px 0px;
+	padding: 0px 0px;
+}
+footer a i {
+	font-size: 14px;
+	text-indent: -14px;
+	margin-right: 26px;
+}
+/****************************** Social icon Css Start *********************************/
+.social-icon {
+	position: fixed;
+	right: 0;
+	float: left;
+	top: 35%;
+}
+.social-icon ul {
+	padding: 0;
+	margin: 0;
+}
+.social-icon li {
+	width: 35px;
+	margin-bottom: 2px;
+	text-align: center;
+	line-height: 10px;
+}
+.social-icon li a {
+	color: #fff;
+	padding: 8px 0px;
+}
+.social-icon .facebook {
+	background: #216389;
+}
+.social-icon .twitter {
+	background: #3fa1da;
+}
+.social-icon .insta {
+	background: #ffffff;
+}
+.social-icon .youtube {
+	background: #ffffff;
+}
+
+.social-icon .facebook:hover, .social-icon .twitter:hover, .social-icon .insta:hover .youtube:hover {
+	background: #000;
+}
+.footer-end {
+	background: #000;
+	position: relative;
+	width: 100%;
+	float: left;
+	padding: 10px 0px 10px;
+	color: #fff;
+}
+.footer-end p {
+	margin: 0;
+	font-size: 12px;
+}
+.footer-end ul {
+	flaot: right;
+}
+.footer-end ul li {
+	display: inline-block;
+}
+.footer-end ul li a {
+	border-right: 1px solid #ccc;
+	padding: 0px 10px;
+	font-size: 12px
+}
+.footer-end ul li:last-child a {
+	border-right: 0px;
+}
+.space-20 {
+	clear: both;
+	height: 20px;
+	width: 100%;
+	float: left
+}
+.space-30 {
+	clear: both;
+	height: 20px;
+	width: 100%;
+	float: left
+}
+.space-40 {
+	clear: both;
+	height: 20px;
+	width: 100%;
+	float: left
+}
+
+/******************************** Social icon css End *********************************/
+@media screen and (max-width:800px) {
+
+.text-info ul {
+	padding-left: 20px
+}
+.info-box-1, .info-box-2, .info-box-3 {
+	width: 340px;
+	margin: 0 auto;
+}
+.info .info-box-1, .info .info-box-2, .info .info-box-3 {
+	width: 220px;
+	margin: 10px auto;
+}
+.info h3 {
+	font-size: 18px;
+	line-height: 25px;
+}
+.info i, .info .info-box-3 i {
+	font-size: 50px;
+	line-height: 88px;
+}
+.info .info-box-3 span i {
+	line-height: 20px;
+}
+.footer-logo {
+	padding: 0;
+}
+.navbar {
+	background: #ff9c00;
+	border-bottom: 1px solid #f6f6f6;
+}
+}
+
+@media screen and (max-width:640px) {
+.tag-line h1 span {
+	font-size: 16px;
+}
+.header-top-left {
+	display: none;
+}
+.text-justify {
+	text-align: left
+}
+.header-top-right {
+	text-align: right !important;
+}
+.info i, .info .info-box-3 i {
+	font-size: 80px;
+}
+.social-icon {
+	position: relative;
+	background: #ccc;
+	width: 100%;
+	top: 0;
+}
+.social-icon li {
+	float: left;
+	width: 50%;
+	float: left;
+	padding: 12px 0px;
+	line-height: 15px;
+}
+.social-icon li a {
+	width: 100%;
+}
+.tag-line h1 {
+	font-size: 16px;
+}
+.tag-line h1 span {
+	line-height: 12px;
+}
+.footer-end {
+	text-align: center;
+}
+.text-right {
+	text-align: inherit;
+}
+.tag-line {
+	display: block
+}
+.right-info {
+	border-right: 0;
+	border-top: 2px solid;
+}
+
+.main li, .main li a, em
+{
+	word-wrap: break-word;
+}
+}
+
+@media screen and (max-width:460px) {
+.info .info-box-1, .info .info-box-2, .info .info-box-3 {
+	width: 100%;
+}
+.info h3 {
+	font-size: 25px;
+	line-height: 32px;
+}
+}
+/*************************************  Error page *****************************************/
+.error-page {
+	position: relative;
+	background: url(../image/bg/error-bg2.jpg) center;
+	width: 100%;
+	background-size: 100%;
+}
+.error-page-inner {
+	padding: 10px;
+	text-align: center;
+	background: rgba(255, 255, 255, 0.04);
+	color: #FFF;
+	margin-top: 30px;
+	border: 1px solid rgba(102, 102, 102, 0.31);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	float: left;
+	width: 100%;
+}
+.error-page-inner h1 {
+	font-size: 150px;
+	font-weight: bold;
+}
+.error-page-inner h3 {
+	font-size: 25px;
+}
+.error-page span {
+	font-size: 25px;
+}
+.error-page-inner a {
+	color: #fff;
+}
+.go-home {
+	padding: 5px 20px;
+	border: 4px double #fff;
+	font-size: 18px;
+	display: inline-block;
+	margin: 20px 0px;
+}
+
+figure figcaption {
+    text-align: center;
+}
+
+@media screen and (max-width:640px)
+{
+	.error-page-inner h1 
+	{
+		font-size:85px;
+	}
+}

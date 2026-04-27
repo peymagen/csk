@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../../../../index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-	
-	  <!-- UX4G Official Accessibility Widget -->
-	  <script src="https://cdn.ux4g.gov.in/tools/accessibility-widget.js" async></script>
-	  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../../../../index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- UX4G Official Accessibility Widget -->
+  <script src="https://cdn.ux4g.gov.in/tools/accessibility-widget.js" async></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-<!-- acc-toggle MUST be first -->
+  <!-- acc-toggle MUST be first -->
   <input type="checkbox" id="acc-toggle" hidden />
 
   <!-- HEADER -->
@@ -68,16 +70,26 @@
       </div>
       <div class="acc-options">
         <div class="acc-grid">
-          <div class="acc-option" onclick="accToggle(this,'speak')"><i class="fa-solid fa-volume-high"></i><span>Screen Reader</span></div>
-          <div class="acc-option" onclick="accToggle(this,'btn-s9')"><i class="fa-solid fa-text-height"></i><span>Bigger Text</span></div>
-          <div class="acc-option" onclick="accToggle(this,'btn-s12')"><i class="fa-solid fa-bars"></i><span>Line Height</span></div>
-          <div class="acc-option" onclick="accToggle(this,'btn-s13')"><i class="fa-solid fa-a"></i><span>Text Spacing</span></div>
-          <div class="acc-option" onclick="accToggle(this,'btn-s10')"><i class="fa-solid fa-link"></i><span>Highlight Links</span></div>
-          <div class="acc-option" onclick="accToggle(this,'btn-df')"><i class="fa-solid fa-d"></i><span>Dyslexia Friendly</span></div>
-          <div class="acc-option" onclick="accToggle(this,'btn-cursor')"><i class="fa-solid fa-brain"></i><span>ADHD Friendly</span></div>
-          <div class="acc-option" onclick="accToggle(this,'btn-s11')"><i class="fa-regular fa-image"></i><span>Hide Images</span></div>
-          <div class="acc-option" onclick="accToggle(this,'btn-invert')"><i class="fa-solid fa-circle-half-stroke"></i><span>Invert Color</span></div>
-          <div class="acc-option" onclick="accToggle(this,'dark-btn')"><i class="fa-solid fa-moon"></i><span>Dark Mode</span></div>
+          <div class="acc-option" onclick="accToggle(this,'speak')"><i class="fa-solid fa-volume-high"></i><span>Screen
+              Reader</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s9')"><i class="fa-solid fa-text-height"></i><span>Bigger
+              Text</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s12')"><i class="fa-solid fa-bars"></i><span>Line
+              Height</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s13')"><i class="fa-solid fa-a"></i><span>Text
+              Spacing</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s10')"><i class="fa-solid fa-link"></i><span>Highlight
+              Links</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-df')"><i class="fa-solid fa-d"></i><span>Dyslexia
+              Friendly</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-cursor')"><i class="fa-solid fa-brain"></i><span>ADHD
+              Friendly</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-s11')"><i class="fa-regular fa-image"></i><span>Hide
+              Images</span></div>
+          <div class="acc-option" onclick="accToggle(this,'btn-invert')"><i
+              class="fa-solid fa-circle-half-stroke"></i><span>Invert Color</span></div>
+          <div class="acc-option" onclick="accToggle(this,'dark-btn')"><i class="fa-solid fa-moon"></i><span>Dark
+              Mode</span></div>
         </div>
       </div>
       <div class="acc-footer">
@@ -112,7 +124,7 @@
         <li><a href="https://www.cert-in.org.in/" target="_blank">CERT-In</a></li>
         <li><a href="../../../../security-tools/index.html">Security Tools</a></li>
         <li><a href="../../../../alert/index.html">Alerts</a></li>
-        <li   class="active" class="has-dropdown">
+        <li class="active" class="has-dropdown">
           <button class="nav-btn">
             Awareness <i class="fa-solid fa-chevron-down"></i>
           </button>
@@ -152,8 +164,8 @@
               </button>
               <div class="engine-menu">
                 <label for="s-google" class="engine-opt"><span class="dot g-dot">G</span>Google.com</label>
-                <label for="s-bing"   class="engine-opt"><span class="dot b-dot">b</span>Bing.com</label>
-                <label for="s-duck"   class="engine-opt"><span class="dot d-dot">D</span>DuckDuckGo</label>
+                <label for="s-bing" class="engine-opt"><span class="dot b-dot">b</span>Bing.com</label>
+                <label for="s-duck" class="engine-opt"><span class="dot d-dot">D</span>DuckDuckGo</label>
               </div>
             </div>
             <div class="form-wrap">
@@ -162,7 +174,10 @@
                 <input class="si" type="text" name="q" placeholder="Search csk.gov.in" required>
                 <input type="hidden" name="as_sitesearch" value="csk.gov.in">
                 <button type="submit" class="sb" aria-label="Search">
-                  <svg viewBox="0 0 20 20"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17" y2="17"/></svg>
+                  <svg viewBox="0 0 20 20">
+                    <circle cx="8.5" cy="8.5" r="5.5" />
+                    <line x1="12.5" y1="12.5" x2="17" y2="17" />
+                  </svg>
                 </button>
               </form>
               <!-- Bing -->
@@ -171,7 +186,10 @@
                 <input class="si" type="text" placeholder="Search csk.gov.in" required>
                 <input type="hidden" name="q" value="">
                 <button type="submit" class="sb" aria-label="Search">
-                  <svg viewBox="0 0 20 20"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17" y2="17"/></svg>
+                  <svg viewBox="0 0 20 20">
+                    <circle cx="8.5" cy="8.5" r="5.5" />
+                    <line x1="12.5" y1="12.5" x2="17" y2="17" />
+                  </svg>
                 </button>
               </form>
               <!-- DuckDuckGo -->
@@ -180,7 +198,10 @@
                 <input class="si" type="text" placeholder="Search csk.gov.in" required>
                 <input type="hidden" name="q" value="">
                 <button type="submit" class="sb" aria-label="Search">
-                  <svg viewBox="0 0 20 20"><circle cx="8.5" cy="8.5" r="5.5"/><line x1="12.5" y1="12.5" x2="17" y2="17"/></svg>
+                  <svg viewBox="0 0 20 20">
+                    <circle cx="8.5" cy="8.5" r="5.5" />
+                    <line x1="12.5" y1="12.5" x2="17" y2="17" />
+                  </svg>
                 </button>
               </form>
             </div>
@@ -193,12 +214,12 @@
   </nav>
 
 
-    <!-- ✅ nav-overlay AFTER nav — direct sibling of nav-toggle -->
-    <div class="nav-overlay">
-      <label for="nav-toggle"></label>
-    </div>
+  <!-- ✅ nav-overlay AFTER nav — direct sibling of nav-toggle -->
+  <div class="nav-overlay">
+    <label for="nav-toggle"></label>
+  </div>
 
-   <main id="main-content">
+  <main id="main-content">
     <div class="main-content-campaign-inner">
 
 
@@ -209,231 +230,187 @@
           <p>Awareness</p>
         </div>
       </div>
-        
-     
 
-        <div class="awareness-content">
-                <a href="../../../../guidlines/index.html" >Guidelines & Advisories</a>
-                <a href="../../../../campaign/index.html" class="active-aware">Our Campaigns</a>
-                <a href="../../../../best-practice/index.html" >Best Practices</a>
-                <a href="../../../../our-report/index.html">Our Reports</a>
-                <a href="../../../../white-board/index.html">White Papers</a>
-            </div>
+
+
+      <div class="awareness-content">
+        <a href="../../../../guidlines/index.html">Guidelines & Advisories</a>
+        <a href="../../../../campaign/index.html" class="active-aware">Our Campaigns</a>
+        <a href="../../../../best-practice/index.html">Best Practices</a>
+        <a href="../../../../our-report/index.html">Our Reports</a>
+        <a href="../../../../white-board/index.html">White Papers</a>
+      </div>
 
       <div class="social-content">
-            <div class="social-icons">
-              <a href="https://www.facebook.com/IndianCERT/" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
-              <a href="https://www.instagram.com/cert_india/" title="Instagram"><i class="fa-brands fa-square-instagram"></i></a>
-              <a href="https://x.com/IndianCERT" title="X"><i class="fa-solid fa-x"></i></a>
-              <a href="https://www.linkedin.com/company/cert-in/" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-              <a href="https://www.youtube.com/hashtag/certin" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
-            </div>  
+        <div class="social-icons">
+          <a href="https://www.facebook.com/IndianCERT/" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://www.instagram.com/cert_india/" title="Instagram"><i
+              class="fa-brands fa-square-instagram"></i></a>
+          <a href="https://x.com/IndianCERT" title="X"><i class="fa-solid fa-x"></i></a>
+          <a href="https://www.linkedin.com/company/cert-in/" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://www.youtube.com/hashtag/certin" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <label for="acc-toggle" class="icon">
+        <!-- <i class="fa-solid fa-universal-access"></i> -->
+        <img src="../../../../assets/access_icon.svg" alt="">
+      </label>
+
+      <div class="container">
+
+        <input type="radio" name="page" id="p1" checked />
+        <input type="radio" name="page" id="p2" />
+        <input type="radio" name="page" id="p3" />
+        <input type="radio" name="page" id="p4" />
+
+        <div class="campaign-detail">
+
+          <!-- ── Fixed Top Section (never changes) ── -->
+          <div class="top">
+
+            <div class="info">
+              <h1>
+                <div>
+                  <div class="title-row">
+                    <a href="javascript:history.back()" class="back-btn">
+                      <i class="fa-solid fa-angle-left"></i> BACK
+                    </a>
+                    <h2 class="header">
+                      Day-24 Cyber Security Tips
+                    </h2>
+                  </div>
+                  <h3>
+                    <span class="word-cyber"> (Do Your Part,</span>
+                    <span class="word-middle"> #BeCyberSmart)</span>
+                  </h3>
+                  <p>
+                    "Beware of Skimmers and Social Engineering"
+                  </p>
+                </div>
+              </h1>
+            </div>
+
           </div>
 
-          <label for="acc-toggle" class="icon">
-              <!-- <i class="fa-solid fa-universal-access"></i> -->
-              <img src="../../../../assets/access_icon.svg" alt="">
-          </label>
+          <div class="tips-grid">
 
-        <div class="container">
-		
-            <input type="radio" name="page" id="p1" checked/>
-            <input type="radio" name="page" id="p2"/>
-            <input type="radio" name="page" id="p3"/>
-            <input type="radio" name="page" id="p4"/>
 
-            <div class="campaign-detail">
-
-                <!-- ── Fixed Top Section (never changes) ── -->
-                <div class="top">
-
-                  <div class="info">
-                    <h1>
-                      <div>
-                        <div class="title-row">
-                          <a href="javascript:history.back()" class="back-btn">
-                            <i class="fa-solid fa-angle-left"></i> BACK
-                          </a>
-                          <h2 class="header">
-                            NCSAM-2025 Day-24 Safety and Security Tips / साइबर सुरक्षा युक्तियाँ
-                          </h2>
-                        </div>
-                        <h3>
-                        (“ <span class="word-cyber"> Cyber </span> <span class="word-middle"> Jagrit </span> <span class="word-last"> Bharat </span> ”)
-                        </h3>
-                      </div>
-                    </h1>
-                  </div>
+            <div class="tip-card">
+              <div class="card-strip strip-red"></div>
+              <a href="/assets/ncsa/2021/24_1-1.jpeg" target="_blank">
+                <div class="card-img-wrap">
+                  <img src="/assets/ncsa/2021/24_1-1.jpeg" alt="Stick to Official Sources – Awareness Poster" />
 
                 </div>
+              </a>
+            </div>
 
-                <div class="video-card-inner">
-                  <video id="myVideo" class="video" controls>
-                    <source src="/assets/ncsa/2025/ncsam25_24.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                  </video>
+
+
+            <!-- Card 4 ── Hindi -->
+            <div class="tip-card">
+              <div class="card-strip strip-red"></div>
+              <a href="/assets/ncsa/2021/24_1-2.jpeg" target="_blank">
+                <div class="card-img-wrap">
+                  <img src="/assets/ncsa/2021/24_1-2.jpeg" alt="साइबर सुरक्षा त्वरित सुझाव – Hindi" />
+
                 </div>
+              </a>
+            </div>
 
-                <!-- <div class="video-card-inner">
-                  <img src="../../../../assets/compaign/campaign-inner-video.svg" alt="video">
+            <div class="tip-card">
+              <div class="card-strip strip-red"></div>
+              <a href="/assets/ncsa/2021/24_2-1.jpeg" target="_blank">
+                <div class="card-img-wrap">
+                  <img src="/assets/ncsa/2021/24_2-1.jpeg" alt="Stick to Official Sources – Awareness Poster" />
 
-                  <div class="play-btn-inner">
-                    <img src="../../../../assets/alert/pauseButton.svg" class="p-btn-inner" alt="">
-                  </div>
-                </div> -->
-				 <!-- ══ 2-COLUMN TIPS GRID ══ -->
-        <div class="tips-grid">
+                </div>
+              </a>
+            </div>
+
+
+
+            <!-- Card 4 ── Hindi -->
+            <div class="tip-card">
+              <div class="card-strip strip-red"></div>
+              <a href="/assets/ncsa/2021/24_2-2.jpeg" target="_blank">
+                <div class="card-img-wrap">
+                  <img src="/assets/ncsa/2021/24_2-2.jpeg" alt="साइबर सुरक्षा त्वरित सुझाव – Hindi" />
+
+                </div>
+              </a>
+            </div>
+
+            <!-- Card 5 ── Punjabi -->
+            <div class="tip-card">
+              <div class="card-strip strip-teal"></div>
+              <a href="/assets/ncsa/2021/24_3-1.jpeg" target="_blank">
+                <div class="card-img-wrap">
+                  <img src="/assets/ncsa/2021/24_3-1.jpeg" alt="Cybersecurity Quick Tip – Punjabi" />
+
+                </div>
+              </a>
+            </div>
+
+            <!-- Card 6 ── Punjabi (2) -->
+            <div class="tip-card">
+              <div class="card-strip strip-teal"></div>
+              <a href="/assets/ncsa/2021/24_3-2.jpeg" target="_blank">
+                <div class="card-img-wrap">
+                  <img src="/assets/ncsa/2021/24_3-2.jpeg" alt="Cybersecurity Quick Tip – Punjabi 2" />
+
+                </div>
+              </a>
+            </div>
+
+            <!-- Card 7 ── Kannada -->
+            <div class="tip-card">
+              <div class="card-strip strip-orange"></div>
+              <a href="/assets/ncsa/2021/24_4-1.jpeg" target="_blank">
+                <div class="card-img-wrap">
+                  <img src="/assets/ncsa/2021/24_4-1.jpeg" alt="Cybersecurity Quick Tip – Kannada" />
+
+                </div>
+              </a>
+            </div>
+
+            <!-- Card 8 ── Tamil -->
+            <div class="tip-card">
+              <div class="card-strip strip-orange"></div>
+              <a href="/assets/ncsa/2021/24_4-2.jpeg" target="_blank">
+                <div class="card-img-wrap">
+                  <img src="/assets/ncsa/2021/24_4-2.jpeg" alt="Cybersecurity Quick Tip – Tamil" />
+
+                </div>
+              </a>
+            </div>
+
+            <!-- Card 9 ── Odia -->
+            <div class="tip-card">
+              <div class="card-strip strip-teal" style="background:#2e7d32;"></div>
+              <a href="/assets/ncsa/2021/24_5-1.jpeg" target="_blank">
+                <div class="card-img-wrap">
+                  <img src="/assets/ncsa/2021/24_5-1.jpeg" alt="Cybersecurity Quick Tip – Odia" />
+
+                </div>
+              </a>
+            </div>
+
  
-            <!-- Card 1 ── English
-                When ready: set src="ncsam25_d31_1-1.png" -->
-            <!-- Card 1 -->
-          <div class="tip-card">
-            <div class="card-strip strip-blue"></div>
-            <a href="../../../../assets/ncsa/2025/ncsa-24-1.png" target="_blank">
-              <div class="card-img-wrap">
-                <img src="../../../../assets/ncsa/2025/ncsa-24-1.png" alt="never connect to unknown network"/>
-            
-              </div>
-            </a>
-            <div class="card-label">ncsam25_d25_1-1 – English</div>
-          </div>
+          </div><!-- /tips-grid -->
 
-          <!-- Card 2 – Awareness Poster -->
-          <div class="tip-card">
-            <div class="card-strip strip-red"></div>
-            <a href="../../../../assets/ncsa/2025/ncsa-24-2.png" target="_blank">
-              <div class="card-img-wrap">
-                <img src="../../../../assets/ncsa/2025/ncsa-24-2.png" alt="Stick to Official Sources – Awareness Poster"/>
-              
-              </div>
-            </a>
-            <div class="card-label">ncsam25_d25_1-2 – Awareness Poster</div>
-          </div>
-          <!-- Card 3 – Awareness Poster -->
-          <div class="tip-card">
-            <div class="card-strip strip-red"></div>
-            <a href="../../../../assets/ncsa/2025/ncsa-24-3.png" target="_blank">
-              <div class="card-img-wrap">
-                <img src="../../../../assets/ncsa/2025/ncsa-24-3.png" alt="cyber -security – Awareness Poster"/>
-              
-              </div>
-            </a>
-            <div class="card-label">ncsam25_d24_1-3 – Awareness Poster</div>
-          </div>
+        </div><!-- /container -->
+
+      </div>
 
 
 
-    <!-- Card 4 ── Hindi -->
-        <div class="tip-card">
-          <div class="card-strip strip-red"></div>
-          <a href="../../../../assets/ncsa/2025/ncsa-24-4.png" target="_blank">
-            <div class="card-img-wrap">
-              <img src="../../../../assets/ncsa/2025/ncsa-24-4.png" alt="साइबर सुरक्षा त्वरित सुझाव – Hindi"/>
-
-            </div>
-          </a>
-          <div class="card-label">ncsam25_d24_2-2 – Hindi</div>
-        </div>
-
-        <!-- Card 5 ── Punjabi -->
-        <div class="tip-card">
-          <div class="card-strip strip-teal"></div>
-          <a href="../../../../assets/ncsa/2025/ncsa-24-5.png" target="_blank">
-            <div class="card-img-wrap">
-              <img src="../../../../assets/ncsa/2025/ncsa-24-5.png" alt="Cybersecurity Quick Tip – Punjabi"/>
-          
-            </div>
-          </a>
-          <div class="card-label">ncsam25_d24_3-1 – Punjabi</div>
-        </div>
-
-        <!-- Card 6 ── Punjabi (2) -->
-        <div class="tip-card">
-          <div class="card-strip strip-teal"></div>
-          <a href="../../../../assets/ncsa/2025/ncsa-24-6.png" target="_blank">
-            <div class="card-img-wrap">
-              <img src="../../../../assets/ncsa/2025/ncsa-24-6.png" alt="Cybersecurity Quick Tip – Punjabi 2"/>
-          
-            </div>
-          </a>
-          <div class="card-label">ncsam25_d24_3-2 – Punjabi (2)</div>
-        </div>
-
-        <!-- Card 7 ── Kannada -->
-        <div class="tip-card">
-          <div class="card-strip strip-orange"></div>
-          <a href="../../../../assets/ncsa/2025/ncsa-24-7.png" target="_blank">
-            <div class="card-img-wrap">
-              <img src="../../../../assets/ncsa/2025/ncsa-24-7.png" alt="Cybersecurity Quick Tip – Kannada"/>
-
-            </div>
-          </a>
-          <div class="card-label">ncsam25_d24_4-1 – Kannada</div>
-        </div>
-
-        <!-- Card 8 ── Tamil -->
-        <div class="tip-card">
-          <div class="card-strip strip-orange"></div>
-          <a href="../../../../assets/ncsa/2025/ncsa-24-8.png" target="_blank">
-            <div class="card-img-wrap">
-              <img src="../../../../assets/ncsa/2025/ncsa-24-8.png" alt="Cybersecurity Quick Tip – Tamil"/>
-            
-            </div>
-          </a>
-          <div class="card-label">ncsam25_d24_4-2 – Malyalam</div>
-        </div>
-
-        <!-- Card 9 ── Odia -->
-        <div class="tip-card">
-          <div class="card-strip strip-teal" style="background:#2e7d32;"></div>
-          <a href="../../../../assets/ncsa/2025/ncsa-24-9.png" target="_blank">
-            <div class="card-img-wrap">
-              <img src="../../../../assets/ncsa/2025/ncsa-24-9.png" alt="Cybersecurity Quick Tip – Odia"/>
-        
-            </div>
-          </a>
-          <div class="card-label">ncsam25_d24_5-1 – Odia</div>
-        </div>
-
-        <!-- Card 10 ── Tamil (2) -->
-        <div class="tip-card">
-          <div class="card-strip strip-orange" style="background:#9c27b0;"></div>
-          <a href="../../../../assets/ncsa/2025/ncsa-24-10.png" target="_blank">
-            <div class="card-img-wrap">
-              <img src="../../../../assets/ncsa/2025/ncsa-24-10.png" alt="Cybersecurity Awareness – Tamil "/>
-
-            </div>
-          </a>
-          <div class="card-label">ncsam25_d24_5-2 – Tamil </div>
-        </div>
-
-        <!-- Card 11 ── Tamil (2) -->
-        <div class="tip-card">
-          <div class="card-strip strip-orange" style="background:#9c27b0;"></div>
-          <a href="../../../../assets/ncsa/2025/ncsa-24-11.png" target="_blank">
-            <div class="card-img-wrap">
-              <img src="../../../../assets/ncsa/2025/ncsa-24-11.png" alt="Cybersecurity Awareness – Tamil "/>
-
-            </div>
-          </a>
-          <div class="card-label">ncsam25_d24_5-2 – Telgu </div>
-        </div>
-
-        
-
-      </div><!-- /tips-grid -->
- 
-    </div><!-- /container -->
-
-            </div>
-
-            
-
-        </div>  
     </div>
-    
+    </div>
+
   </main>
-<!-- Footer -->
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="footer-bg-svg"></div>
     <div class="footer-main">
@@ -450,12 +427,15 @@
         <p class="footer-toll-free"><strong>Toll Free Number:</strong> +91-1800-11-4949</p>
         <div class="footer-logos">
           <div class="footer-logo">
-            <a href="#" class="footer-logo-item"><img src="../../../../assets/digital-india.svg" alt="Digital India" /></a>
+            <a href="#" class="footer-logo-item"><img src="../../../../assets/digital-india.svg"
+                alt="Digital India" /></a>
             <a href="#" class="footer-logo-item"><img src="../../../../assets/footer-certin.svg" alt="CERT-In" /></a>
           </div>
           <div class="footer-logo">
-            <a href="#" class="footer-logo-item"><img src="../../../../assets/infosec.svg" alt="InfoSec Awareness" /></a>
-            <a href="#" class="footer-logo-item"><img src="../../../../assets/staysafe.svg" alt="Stay Safe Online" /></a>
+            <a href="#" class="footer-logo-item"><img src="../../../../assets/infosec.svg"
+                alt="InfoSec Awareness" /></a>
+            <a href="#" class="footer-logo-item"><img src="../../../../assets/staysafe.svg"
+                alt="Stay Safe Online" /></a>
           </div>
         </div>
       </div>
@@ -483,9 +463,12 @@
           <div class="footer-follow">
             <span class="follow-label">Follow Us</span>
             <div class="footer-social-icons">
-              <a href="https://www.linkedin.com/company/cert-in/" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-              <a href="https://www.instagram.com/cert_india/" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-              <a href="https://www.facebook.com/IndianCERT/" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="https://www.linkedin.com/company/cert-in/" title="LinkedIn"><i
+                  class="fa-brands fa-linkedin-in"></i></a>
+              <a href="https://www.instagram.com/cert_india/" title="Instagram"><i
+                  class="fa-brands fa-instagram"></i></a>
+              <a href="https://www.facebook.com/IndianCERT/" title="Facebook"><i
+                  class="fa-brands fa-facebook-f"></i></a>
               <a href="https://x.com/IndianCERT" title="X"><i class="fa-solid fa-x"></i></a>
               <a href="https://www.youtube.com/hashtag/certin" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
             </div>
@@ -495,9 +478,10 @@
       </div>
     </div>
     <div class="footer-bottom">
-      
+
       <img src="../../../../assets/Line 1.svg" alt="">
-      <p class="footer-disclaimer">Disclaimer :-The information provided herein is on "as is" basis, without warranty of any kind.</p>
+      <p class="footer-disclaimer">Disclaimer :-The information provided herein is on "as is" basis, without warranty of
+        any kind.</p>
       <p class="footer-copyright"><i class="fa-regular fa-copyright"></i> Copyright 2025. All right reserved</p>
     </div>
   </footer>
@@ -514,7 +498,7 @@
       tryClick();
     }
     function accResetAll() {
-      document.querySelectorAll('.acc-option--active').forEach(function(el) {
+      document.querySelectorAll('.acc-option--active').forEach(function (el) {
         el.classList.remove('acc-option--active');
       });
       var resetBtn = document.querySelector('.uwaw-reset') || document.querySelector('[onclick="resetAll()"]');
@@ -525,4 +509,5 @@
   <script src="https://translationplugin.bhashini.co.in/v3/website_translation_utility.js"></script>
 
 </body>
+
 </html>
