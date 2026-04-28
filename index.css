@@ -6740,6 +6740,22 @@ ol > li::before {
     border-radius: 2rem;
     object-fit: cover;
 }
+.video-card-inner-long {
+    width: 100%;
+    max-width: 1444px;
+    padding: 2rem;
+    background: #ebeaea;
+    border-radius: 2rem;
+}
+
+.video-card-inner-long video {
+    width: 100%;
+    height: auto;          
+    max-height: 600px;     
+    border-radius: 2rem;
+    object-fit: contain;   
+    display: block;        
+}
 
 /* BUTTON */
 
