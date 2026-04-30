@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Cyber Swachhta Kendra : Guidelines</title>
+  <meta name="description" content="The 'Cyber Swachhta Kendra' (CSK) is operated by the Indian Computer Emergency Response Team (CERT-In) as part of the Government of India’s Digital India initiative under the Ministry of Electronics and Information Technology (MeitY).">
   <link rel="stylesheet" href="../index.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <script src="https://cdn.ux4g.gov.in/tools/accessibility-widget.js" async></script>
@@ -21,27 +22,28 @@
     <div class="header-inner">
       <div class="left-section">
         <div class="national-emblem">
-          <img src="../assets/header2.svg" alt="">
+          <img src="/assets/header2.svg" alt="">
         </div>
       </div>
       <div class="center-section">
-        <img src="../assets/header.png" alt="">
+        <img src="/assets/header.png" alt="">
       </div>
       <div class="right-section">
         <div class="accessibility-icons">
           <a href="#main-content" title="Skip to main content">
-            <img src="../../assets/Translate.svg" alt="">
+            <img src="/assets/Translate.svg" alt="" class="skip-to">
           </a>
           <span class="icon-separator">|</span>
           <div class="bhashini-plugin-container">
-            <img src="../assets/Language.svg" alt="">
+            <img src="/assets/Language.svg" alt="">
           </div>
           <span class="icon-separator">|</span>
-          <label for="acc-toggle" class="acc-open-btn" title="Accessibility"></label>
-          <img src="../assets/accessibility_figure.svg" alt="">
+          <label for="acc-toggle" class="acc-open-btn" title="Accessibility">
+            <img src="/assets/accessibility_figure.svg" alt="Accessibility" class="access-img">
+          </label>
         </div>
         <div class="certin-logo">
-          <img src="../assets/certin.svg" alt="">
+          <img src="/assets/certin.svg" alt="">
         </div>
       </div>
     </div>
@@ -118,24 +120,26 @@
           </label>
         </li>
         <li><a href="../index.html">Home</a></li>
-        <li><a href="../about/index.html">About Us</a></li>
-        <li><a href="#">CERT-In</a></li>
-        <li><a href="../security-tools/index.html">Security Tools</a></li>
-        <li><a href="../alert/index.html">Alerts</a></li>
-        <li class="has-dropdown active">
+        <li><a href="/about">About Us</a></li>
+        <li><a href="https://www.cert-in.org.in/" target="_blank" rel="noopener noreferrer">CERT-In</a></li>
+        <li><a href="/security-tools">Security Tools</a></li>
+        <li><a href="/alert">Alerts</a></li>
+
+        <li class="has-dropdown">
           <button class="nav-btn">
             Awareness <i class="fa-solid fa-chevron-down"></i>
           </button>
           <ul class="dropdown-menu">
-            <li><a href="../guidlines/index.html">Guidelines &amp; Advisories</a></li>
-            <li><a href="../campaign/index.html">Our Campaigns</a></li>
-            <li><a href="../best-practice/index.html">Best Practices</a></li>
-            <li><a href="../our-report/index.html">Our Reports</a></li>
-            <li><a href="../white-board/index.html">White Papers</a></li>
+            <li class="active"><a href="/guidlines">Guidelines &amp; Advisories</a></li>
+            <li><a href="/campaign">Our Campaigns</a></li>
+            <li><a href="/best-practice">Best Practices</a></li>
+            <li><a href="/our-report">Our Reports</a></li>
+            <li><a href="/white-board">White Papers</a></li>
           </ul>
         </li>
-        <li><a href="../f&q/index.html">FAQ's</a></li>
-        <li><a href="../contact-us/index.html">Contact Us</a></li>
+
+        <li><a href="/f&q">FAQ's</a></li>
+        <li><a href="/contact-us">Contact Us</a></li>
       </ul>
 
       <!-- SEARCH BAR -->
@@ -226,11 +230,11 @@
 
       <!-- AWARENESS TABS -->
       <div class="awareness-content">
-        <a href="../guidlines/index.html" class="active-aware">Guidelines &amp; Advisories</a>
-        <a href="../campaign/index.html">Our Campaigns</a>
-        <a href="../best-practice/index.html">Best Practices</a>
-        <a href="../our-report/index.html">Our Reports</a>
-        <a href="../white-board/index.html">White Papers</a>
+        <a href="/guidlines" class="active-aware">Guidelines &amp; Advisories</a>
+        <a href="/campaign">Our Campaigns</a>
+        <a href="/best-practice">Best Practices</a>
+        <a href="/our-report">Our Reports</a>
+        <a href="/white-board">White Papers</a>
       </div>
 
       <!-- SOCIAL ICONS -->
@@ -304,73 +308,75 @@
           <p class="card-head">Security Advisory(SA)</p>
           <ul>
             <li>
-              <span class="list-text">CSKSA-01: DDOS amplification attack vulnerability in exposed NTP mode 6</span>
+              <a href="../sa/cska/cska_01" target="_blank" class="list-text">
+                CSKSA-01: DDOS amplification attack vulnerability in exposed NTP mode 6
+              </a>
               <div class="url-tooltip">
-                <a href="../sa/cska/cska_01"
-                  target="_blank">https://www.csk.gov.in/sa/cska/cska_01</a>
+                https://www.csk.gov.in/sa/cska/cska_01
               </div>
             </li>
             <li>
-              <span class="list-text">CSKSA-02: Sensitive Data exposure by SSL 3.0 Protocol Vulnerability and POODLE
-                Attack</span>
+              <a href="../sa/cska/cska_02" target="_blank" class="list-text">
+                CSKSA-02: Sensitive Data exposure by SSL 3.0 Protocol Vulnerability and POODLE Attack
+              </a>
               <div class="url-tooltip">
-                <a href="../sa/cska/cska_02"
-                  target="_blank">https://www.csk.gov.in/sa/cska/cska_02</a>
+                https://www.csk.gov.in/sa/cska/cska_02
               </div>
             </li>
             <li>
-              <span class="list-text">CSKSA-03: DDOS vulnerability leading to DNS Amplification attack in open dns
-                resolver</span>
+              <a href="../sa/cska/cska_03" target="_blank" class="list-text">
+                CSKSA-03: DDOS vulnerability leading to DNS Amplification attack in open dns resolver
+              </a>
               <div class="url-tooltip">
-                <a href="../sa/cska/cska_03"
-                  target="_blank">https://www.csk.gov.in/sa/cska/cska_03</a>
+                https://www.csk.gov.in/sa/cska/cska_03
               </div>
             </li>
             <li>
-              <span class="list-text">CSKSA-04: DDOS vulnerability and UDP amplification attacks in open netbios
-                service</span>
+              <a href="../sa/cska/cska_04" target="_blank" class="list-text">
+                CSKSA-04: DDOS vulnerability and UDP amplification attacks in open netbios service
+              </a>
               <div class="url-tooltip">
-                <a href="../sa/cska/cska_04"
-                  target="_blank">https://www.csk.gov.in/sa/cska/cska_04</a>
+                https://www.csk.gov.in/sa/cska/cska_04
               </div>
             </li>
             <li>
-              <span class="list-text">CSKSA-05: Information disclosure vulnerability in misconfigured/open
-                NAT-PMP</span>
+              <a href="../sa/cska/cska_05" target="_blank" class="list-text">
+                CSKSA-05: Information disclosure vulnerability in misconfigured/open NAT-PMP
+              </a>
               <div class="url-tooltip">
-                <a href="../sa/cska/cska_05"
-                  target="_blank">https://www.csk.gov.in/sa/cska/cska_05</a>
+                https://www.csk.gov.in/sa/cska/cska_05
               </div>
             </li>
             <li>
-              <span class="list-text">CSKSA-06: DoS/DDoS attacks using Open SNMP Vulnerability</span>
+              <a href="../sa/cska/cska_06" target="_blank" class="list-text">
+                CSKSA-06: DoS/DDoS attacks using Open SNMP Vulnerability
+              </a>
               <div class="url-tooltip">
-                <a href="../sa/cska/cska_06"
-                  target="_blank">https://www.csk.gov.in/sa/cska/cska_06</a>
+                https://www.csk.gov.in/sa/cska/cska_06
               </div>
             </li>
             <li>
-              <span class="list-text">CSKSA-07: Unauthenticated access and UDP Amplification attack vulnerability in
-                open MSSQL</span>
+              <a href="../sa/cska/cska_07" target="_blank" class="list-text">
+                CSKSA-07: Unauthenticated access and UDP Amplification attack vulnerability in open MSSQL
+              </a>
               <div class="url-tooltip">
-                <a href="../sa/cska/cska_07"
-                  target="_blank">https://www.csk.gov.in/sa/cska/cska_07</a>
+                https://www.csk.gov.in/sa/cska/cska_07
               </div>
             </li>
             <li>
-              <span class="list-text">CSKSA-08: Sensitive Data exposure and DDoS attack vulnerability in misconfigured
-                Memcached</span>
+              <a href="../sa/cska/cska_08" target="_blank" class="list-text">
+                CSKSA-08: Sensitive Data exposure and DDoS attack vulnerability in misconfigured Memcached
+              </a>
               <div class="url-tooltip">
-                <a href="../sa/cska/cska_08"
-                  target="_blank">shttps://www.csk.gov.in/sa/cska/cska_08</a>
+                https://www.csk.gov.in/sa/cska/cska_08
               </div>
             </li>
             <li>
-              <span class="list-text">CSKSA-09: DDoS reflection attack vulnerability in exposed portmapper
-                service</span>
+              <a href="../sa/cska/cska_09" target="_blank" class="list-text">
+                CSKSA-09: DDoS reflection attack vulnerability in exposed portmapper service
+              </a>
               <div class="url-tooltip">
-                <a href="../sa/cska/cska_09"
-                  target="_blank">https://www.csk.gov.in/sa/cska/cska_09</a>
+                https://www.csk.gov.in/sa/cska/cska_09
               </div>
             </li>
           </ul>
@@ -428,7 +434,7 @@
             <li><a href="/privacy-policy">Website Policies</a></li>
             <li><a href="/term-of-use">Terms &amp; Conditions</a></li>
             <li><a href="/copy-right-policies">Copy Right Policy</a></li>
-            <li><a href="/cookie/">cookies policy</a></li>
+            <li><a href="/cookie/">Cookies Policy</a></li>
             <li><a href="/bhashni/">Bhasini Policiy</a></li>
           </ul>
         </div>
