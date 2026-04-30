@@ -393,17 +393,18 @@ width: 100%;
   width: 100%;
   img{
     width: 40px;
- gap: var(--space-5);
-  
-   
-    
+    /* gap: var(--space-5);  */
   }
 
 }
-
+.accessibility-icons .access-img{
+  height: 34px;
+}
 .accessibility-icons a {
   text-decoration: none;
-  
+  display: flex;
+  align-items: center;
+  line-height: 0;
 }
 
 .accessibility-icons i {
@@ -414,6 +415,10 @@ width: 100%;
   cursor: pointer;
   color: var(--color-neutral-800);
   font-weight: var(--fw-bold);
+}
+
+.right-section .accessibility-icons .skip-to {
+  margin-bottom: -0.5rem;
 }
 
 .accessibility-icons i:hover {
@@ -939,7 +944,25 @@ nav {
     transition: width var(--transition-normal), border-radius var(--transition-normal), padding var(--transition-normal);
     cursor: pointer;
   }
-  .nav-search input { display: none; width: 0; }
+  .nav-search input { display: none; width: 0; } 
+ 
+  /* .nav-links li a,
+  .nav-links li .nav-btn { 
+    font-size: var(--text-sm); 
+    padding: 0.85rem 0.6rem; 
+  } */
+
+  /* ✅ Just shrink it, don't hide or collapse it */
+  /* .nav-search {
+    min-width: unset;
+    width: auto;
+    padding: 0.3rem 0.5rem;
+  } */
+
+  /* .csk-search {
+    width: 200px; 
+  } */
+
   .nav-search i { font-size: var(--text-lg); flex-shrink: 0; }
 
   #search-toggle { display: none; }
@@ -988,9 +1011,7 @@ nav {
     transition: right var(--transition-normal);
     overflow-y: auto;
   }
-  nav{
-   
-  }
+ 
   #nav-toggle:checked ~ nav .nav-links {
     display: block;
     font-family: var(--font-nav);
@@ -1874,7 +1895,7 @@ nav {
 .footer-main {
   display: flex; flex-direction: row;
   gap: var(--section-gap);
-  padding: var(--footer-pad-y) var(--footer-pad-x) 2.2rem;
+  padding: 3rem 2.8rem 0.5rem 2.8rem;
   max-width: var(--container-max);
   margin: 0 auto;
 }
@@ -1970,7 +1991,7 @@ nav {
   /* padding: 0.8rem var(--footer-pad-x); */
   display: flex; align-items: center;
   justify-content: space-between;
-  gap: var(--space-5); flex-wrap: wrap;
+  gap: var(--space-4); flex-wrap: wrap;
   /* position: relative; */
   img{
     width: 100%;
@@ -1985,6 +2006,7 @@ nav {
 }
 
 .footer-disclaimer { 
+  padding: 0 0rem 0.8rem 1rem;
   font-size: var(--footer-small-size); 
   color: var(--color-white); 
   flex: 1; 
@@ -1996,6 +2018,7 @@ nav {
 }
 
 .footer-copyright {
+  padding: 0 1rem 0.8rem 0rem;
   font-size: var(--footer-small-size);
   color: var(--color-white);
   white-space: nowrap;
@@ -8012,87 +8035,7 @@ ol > li::before {
       background-attachment: scroll;
       position: relative;
     }
-    #bhasini .main-content-inner .main-acc-btn {
-      position: absolute;
-      right: -0.7%;
-      top: 75%;
-      width: 70px;
-      height: 70px;
-      /* background: rgba(22, 47, 106, 1); */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      font-size: 2.5rem; 
-      cursor: pointer;
-      z-index: 500;
-    }
-    #bhasini .main-content-inner .main-acc-btn i{
-      color: #162F6A;
-    }
-
-    #bhasini .main-content-inner .main-acc-btn:hover {
-      font-size: 3.2rem;
-    }
-
-    #bhasini .main-content-inner .main-info {
-      width: 100%;
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: #333;
-      padding: 1rem 7rem;
-    }
-
-   #bhasini .main-content-inner .social-content {
-      position: absolute;        
-      right: 0; 
-      top: -10%;
-      transform: translateY(50%);  
-      z-index: 500;           
-    }
-
-    #bhasini .main-content-inner .social-content .social-icons {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      background: rgba(22, 47, 106, 1);
-      border-radius: 8px 0 0 8px;  
-    }
-
-    #bhasini .main-content-inner .social-content .social-icons a {
-      text-decoration: none;
-      color: #fff;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.2s;
-      font-size: 1rem;
-    }
-
-    #bhasini .main-content-inner .social-content .social-icons a:hover {
-      background: rgba(255,255,255,0.15);
-    }
-
-@media(max-width:1024px){
-  #bhasini .main-content-inner .social-content {  
-      top: -10%;
-    }
-    #bhasini .main-content-inner .main-acc-btn{
-      right: -1.2%;
-      top: 70%;
-    }
-}
-@media(max-width:600px){
-  /* .social-content {  
-      top: 10%;
-    } */
-    #bhasini .main-content-inner .main-acc-btn{
-      right: -3%;
-      top: 55%;
-    }
-  }
+    
 
   #bhasini .main-content-inner .HyperLink {
     width: 100%;
